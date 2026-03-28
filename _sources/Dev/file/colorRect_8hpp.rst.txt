@@ -1,0 +1,4 @@
+File colorRect.hpp
+==================
+
+.. doxygenfile:: colorRect.hpp

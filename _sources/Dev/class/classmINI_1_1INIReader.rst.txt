@@ -1,0 +1,5 @@
+Class mINI::INIReader
+=====================
+
+.. doxygenclass:: mINI::INIReader
+   :members:

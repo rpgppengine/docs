@@ -1,0 +1,5 @@
+Class ScriptFile
+================
+
+.. doxygenclass:: ScriptFile
+   :members:

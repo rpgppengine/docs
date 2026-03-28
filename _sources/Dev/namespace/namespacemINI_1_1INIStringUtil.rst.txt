@@ -1,0 +1,5 @@
+Namespace mINI::INIStringUtil
+=============================
+
+.. doxygennamespace:: mINI::INIStringUtil
+   :members:

@@ -1,0 +1,5 @@
+Class TextArea
+==============
+
+.. doxygenclass:: TextArea
+   :members:

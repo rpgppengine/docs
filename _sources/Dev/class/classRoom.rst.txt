@@ -1,0 +1,5 @@
+Class Room
+==========
+
+.. doxygenclass:: Room
+   :members:

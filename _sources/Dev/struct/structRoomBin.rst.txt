@@ -1,0 +1,5 @@
+Struct RoomBin
+==============
+
+.. doxygenstruct:: RoomBin
+   :members:

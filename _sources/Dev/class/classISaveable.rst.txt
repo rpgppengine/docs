@@ -1,0 +1,5 @@
+Class ISaveable
+===============
+
+.. doxygenclass:: ISaveable
+   :members:

@@ -1,0 +1,5 @@
+Struct GameData
+===============
+
+.. doxygenstruct:: GameData
+   :members:

@@ -1,0 +1,5 @@
+Struct MusicBin
+===============
+
+.. doxygenstruct:: MusicBin
+   :members:

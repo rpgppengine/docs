@@ -1,0 +1,5 @@
+Struct ImageBin
+===============
+
+.. doxygenstruct:: ImageBin
+   :members:

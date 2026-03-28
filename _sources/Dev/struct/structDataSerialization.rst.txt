@@ -1,0 +1,5 @@
+Struct DataSerialization
+========================
+
+.. doxygenstruct:: DataSerialization
+   :members:

@@ -1,0 +1,5 @@
+Class mINI::INIMap
+==================
+
+.. doxygenclass:: mINI::INIMap
+   :members:

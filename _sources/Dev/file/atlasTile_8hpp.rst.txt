@@ -1,0 +1,4 @@
+File atlasTile.hpp
+==================
+
+.. doxygenfile:: atlasTile.hpp

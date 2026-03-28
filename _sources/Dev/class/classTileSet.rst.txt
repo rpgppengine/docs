@@ -1,0 +1,5 @@
+Class TileSet
+=============
+
+.. doxygenclass:: TileSet
+   :members:

@@ -1,0 +1,5 @@
+Struct InteractableBin
+======================
+
+.. doxygenstruct:: InteractableBin
+   :members:

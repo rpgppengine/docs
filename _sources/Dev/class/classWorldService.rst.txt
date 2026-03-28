@@ -1,0 +1,5 @@
+Class WorldService
+==================
+
+.. doxygenclass:: WorldService
+   :members:

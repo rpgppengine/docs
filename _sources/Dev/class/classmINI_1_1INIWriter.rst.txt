@@ -1,0 +1,5 @@
+Class mINI::INIWriter
+=====================
+
+.. doxygenclass:: mINI::INIWriter
+   :members:

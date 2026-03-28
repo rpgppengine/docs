@@ -1,0 +1,5 @@
+Class StateService
+==================
+
+.. doxygenclass:: StateService
+   :members:

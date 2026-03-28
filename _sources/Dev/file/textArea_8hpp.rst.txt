@@ -1,0 +1,4 @@
+File textArea.hpp
+=================
+
+.. doxygenfile:: textArea.hpp

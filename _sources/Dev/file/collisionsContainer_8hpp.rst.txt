@@ -1,0 +1,4 @@
+File collisionsContainer.hpp
+============================
+
+.. doxygenfile:: collisionsContainer.hpp

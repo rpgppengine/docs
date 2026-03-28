@@ -1,0 +1,4 @@
+File dialogue.hpp
+=================
+
+.. doxygenfile:: dialogue.hpp

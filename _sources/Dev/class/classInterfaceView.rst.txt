@@ -1,0 +1,5 @@
+Class InterfaceView
+===================
+
+.. doxygenclass:: InterfaceView
+   :members:

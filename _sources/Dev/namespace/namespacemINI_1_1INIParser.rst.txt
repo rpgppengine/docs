@@ -1,0 +1,5 @@
+Namespace mINI::INIParser
+=========================
+
+.. doxygennamespace:: mINI::INIParser
+   :members:

@@ -1,0 +1,1121 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File imageRect.hpp" href="imageRect_8hpp.html"><link rel="prev" title="File game.hpp" href="game_8hpp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>File gamedata.hpp - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../filelist.html">File list</a><input aria-label="Toggle navigation of File list" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../moduleDirectory/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Dev/file/gamedata_8hpp.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="file-gamedata-hpp">
+<h1>File gamedata.hpp<a class="headerlink" href="#file-gamedata-hpp" title="Link to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.RPGPP_DRAW_MULTIPLIER">
+<span class="target" id="gamedata_8hpp_1a5b6a66942b551b898bbfbf88f3f83100"></span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_DRAW_MULTIPLIER</span></span></span><a class="headerlink" href="#c.RPGPP_DRAW_MULTIPLIER" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419serializeDataToFileNSt6stringE8GameData">
+<span id="_CPPv319serializeDataToFileNSt6stringE8GameData"></span><span id="_CPPv219serializeDataToFileNSt6stringE8GameData"></span><span id="serializeDataToFile__ss.GameData"></span><span class="target" id="gamedata_8hpp_1a07d95bea7ff253978be527cf264a1580"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">serializeDataToFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileName</span></span>, <a class="reference internal" href="#_CPPv48GameData" title="GameData"><span class="n"><span class="pre">GameData</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419serializeDataToFileNSt6stringE8GameData" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415deserializeFileNSt6stringE">
+<span id="_CPPv315deserializeFileNSt6stringE"></span><span id="_CPPv215deserializeFileNSt6stringE"></span><span id="deserializeFile__ss"></span><span class="target" id="gamedata_8hpp_1a2979c04ab28a9bd699eaaa3a6e337d48"></span><a class="reference internal" href="#_CPPv48GameData" title="GameData"><span class="n"><span class="pre">GameData</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">deserializeFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415deserializeFileNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv47IVector">
+<span id="_CPPv37IVector"></span><span id="_CPPv27IVector"></span><span id="IVector"></span><span class="target" id="structIVector"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IVector</span></span></span><a class="headerlink" href="#_CPPv47IVector" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7IVectoreqERK7IVector">
+<span id="_CPPv3NK7IVectoreqERK7IVector"></span><span id="_CPPv2NK7IVectoreqERK7IVector"></span><span id="IVector::eq-operator__IVectorCRC"></span><span class="target" id="structIVector_1ab1490dc434323fd34d3fcd4ec9a51a48"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7IVectoreqERK7IVector" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7IVectorltERK7IVector">
+<span id="_CPPv3NK7IVectorltERK7IVector"></span><span id="_CPPv2NK7IVectorltERK7IVector"></span><span id="IVector::lt-operator__IVectorCRC"></span><span class="target" id="structIVector_1a6ee875dcfad46646e8025a814f8857c1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7IVectorltERK7IVector" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7IVector7IVectorEv">
+<span id="_CPPv3N7IVector7IVectorEv"></span><span id="_CPPv2N7IVector7IVectorEv"></span><span id="IVector::IVector"></span><span class="target" id="structIVector_1ae1b04f180af01fff30b4f59748de0f5f"></span><span class="sig-name descname"><span class="n"><span class="pre">IVector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N7IVector7IVectorEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7IVector7IVectorEii">
+<span id="_CPPv3N7IVector7IVectorEii"></span><span id="_CPPv2N7IVector7IVectorEii"></span><span id="IVector::IVector__i.i"></span><span class="target" id="structIVector_1adeabc4b0f4932cda5b4c8040da2dfc62"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IVector</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7IVector7IVectorEii" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7IVector7IVectorERK7Vector2">
+<span id="_CPPv3N7IVector7IVectorERK7Vector2"></span><span id="_CPPv2N7IVector7IVectorERK7Vector2"></span><span id="IVector::IVector__Vector2CR"></span><span class="target" id="structIVector_1a22a78efa97e2dc8fe9e7189268ad8c99"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IVector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">from</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7IVector7IVectorERK7Vector2" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7IVector1xE">
+<span id="_CPPv3N7IVector1xE"></span><span id="_CPPv2N7IVector1xE"></span><span id="IVector::x__i"></span><span class="target" id="structIVector_1a9657c1b646052cef581e7146ff1baae9"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">x</span></span></span><a class="headerlink" href="#_CPPv4N7IVector1xE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7IVector1yE">
+<span id="_CPPv3N7IVector1yE"></span><span id="_CPPv2N7IVector1yE"></span><span id="IVector::y__i"></span><span class="target" id="structIVector_1a4dce73ac0ce6b9f6e81d71b7244c7a52"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">y</span></span></span><a class="headerlink" href="#_CPPv4N7IVector1yE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv45IRect">
+<span id="_CPPv35IRect"></span><span id="_CPPv25IRect"></span><span id="IRect"></span><span class="target" id="structIRect"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IRect</span></span></span><a class="headerlink" href="#_CPPv45IRect" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5IRect1xE">
+<span id="_CPPv3N5IRect1xE"></span><span id="_CPPv2N5IRect1xE"></span><span id="IRect::x__i"></span><span class="target" id="structIRect_1a5458ddff45b242a20aa0841eb520f67a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">x</span></span></span><a class="headerlink" href="#_CPPv4N5IRect1xE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5IRect1yE">
+<span id="_CPPv3N5IRect1yE"></span><span id="_CPPv2N5IRect1yE"></span><span id="IRect::y__i"></span><span class="target" id="structIRect_1aa64716e9bbec62b1cff035682755a4be"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">y</span></span></span><a class="headerlink" href="#_CPPv4N5IRect1yE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5IRect5widthE">
+<span id="_CPPv3N5IRect5widthE"></span><span id="_CPPv2N5IRect5widthE"></span><span id="IRect::width__i"></span><span class="target" id="structIRect_1a89388051667834aff29e25029f2840ad"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><a class="headerlink" href="#_CPPv4N5IRect5widthE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5IRect6heightE">
+<span id="_CPPv3N5IRect6heightE"></span><span id="_CPPv2N5IRect6heightE"></span><span id="IRect::height__i"></span><span class="target" id="structIRect_1aa8110eda708d3673c10137e488c1a80a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">height</span></span></span><a class="headerlink" href="#_CPPv4N5IRect6heightE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv48ActorBin">
+<span id="_CPPv38ActorBin"></span><span id="_CPPv28ActorBin"></span><span id="ActorBin"></span><span class="target" id="structActorBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ActorBin</span></span></span><a class="headerlink" href="#_CPPv48ActorBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ActorBin4nameE">
+<span id="_CPPv3N8ActorBin4nameE"></span><span id="_CPPv2N8ActorBin4nameE"></span><span id="ActorBin::name__ss"></span><span class="target" id="structActorBin_1af78c098a93d8924980413ab3c50bdcd1"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N8ActorBin4nameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ActorBin11tileSetNameE">
+<span id="_CPPv3N8ActorBin11tileSetNameE"></span><span id="_CPPv2N8ActorBin11tileSetNameE"></span><span id="ActorBin::tileSetName__ss"></span><span class="target" id="structActorBin_1af74cce9081e6ddfc8124d336c5fe3327"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSetName</span></span></span><a class="headerlink" href="#_CPPv4N8ActorBin11tileSetNameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ActorBin9collisionE">
+<span id="_CPPv3N8ActorBin9collisionE"></span><span id="_CPPv2N8ActorBin9collisionE"></span><span id="ActorBin::collision__IRect"></span><span class="target" id="structActorBin_1a1954d20f46640b1f06e995aa3cda322d"></span><a class="reference internal" href="#_CPPv45IRect" title="IRect"><span class="n"><span class="pre">IRect</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collision</span></span></span><a class="headerlink" href="#_CPPv4N8ActorBin9collisionE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ActorBin10animationsE">
+<span id="_CPPv3N8ActorBin10animationsE"></span><span id="_CPPv2N8ActorBin10animationsE"></span><span id="ActorBin::animations__std::array:std::vector:IVector:.8:"></span><span class="target" id="structActorBin_1a1e39f5df88a34d4083773d3b0af388fd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">animations</span></span></span><a class="headerlink" href="#_CPPv4N8ActorBin10animationsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv414ActorInRoomBin">
+<span id="_CPPv314ActorInRoomBin"></span><span id="_CPPv214ActorInRoomBin"></span><span id="ActorInRoomBin"></span><span class="target" id="structActorInRoomBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ActorInRoomBin</span></span></span><a class="headerlink" href="#_CPPv414ActorInRoomBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14ActorInRoomBin4nameE">
+<span id="_CPPv3N14ActorInRoomBin4nameE"></span><span id="_CPPv2N14ActorInRoomBin4nameE"></span><span id="ActorInRoomBin::name__ss"></span><span class="target" id="structActorInRoomBin_1af70cfeb37d4259cfe3822bc0f3efe408"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N14ActorInRoomBin4nameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14ActorInRoomBin6sourceE">
+<span id="_CPPv3N14ActorInRoomBin6sourceE"></span><span id="_CPPv2N14ActorInRoomBin6sourceE"></span><span id="ActorInRoomBin::source__ss"></span><span class="target" id="structActorInRoomBin_1a2c250e5e0a919be9f6d8c3a50303d022"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">source</span></span></span><a class="headerlink" href="#_CPPv4N14ActorInRoomBin6sourceE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14ActorInRoomBin7tilePosE">
+<span id="_CPPv3N14ActorInRoomBin7tilePosE"></span><span id="_CPPv2N14ActorInRoomBin7tilePosE"></span><span id="ActorInRoomBin::tilePos__IVector"></span><span class="target" id="structActorInRoomBin_1a3d0bc90eea02ddc1f3cb5b4c75848b5f"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tilePos</span></span></span><a class="headerlink" href="#_CPPv4N14ActorInRoomBin7tilePosE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv47TileBin">
+<span id="_CPPv37TileBin"></span><span id="_CPPv27TileBin"></span><span id="TileBin"></span><span class="target" id="structTileBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TileBin</span></span></span><a class="headerlink" href="#_CPPv47TileBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileBin8atlasPosE">
+<span id="_CPPv3N7TileBin8atlasPosE"></span><span id="_CPPv2N7TileBin8atlasPosE"></span><span id="TileBin::atlasPos__IVector"></span><span class="target" id="structTileBin_1a9969a8a7fbdacd80384208e4dba07216"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atlasPos</span></span></span><a class="headerlink" href="#_CPPv4N7TileBin8atlasPosE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileBin8worldPosE">
+<span id="_CPPv3N7TileBin8worldPosE"></span><span id="_CPPv2N7TileBin8worldPosE"></span><span id="TileBin::worldPos__IVector"></span><span class="target" id="structTileBin_1ae771757d8615da75bfbf15545e45764a"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">worldPos</span></span></span><a class="headerlink" href="#_CPPv4N7TileBin8worldPosE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv415InteractableBin">
+<span id="_CPPv315InteractableBin"></span><span id="_CPPv215InteractableBin"></span><span id="InteractableBin"></span><span class="target" id="structInteractableBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InteractableBin</span></span></span><a class="headerlink" href="#_CPPv415InteractableBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15InteractableBin8typeNameE">
+<span id="_CPPv3N15InteractableBin8typeNameE"></span><span id="_CPPv2N15InteractableBin8typeNameE"></span><span id="InteractableBin::typeName__ss"></span><span class="target" id="structInteractableBin_1a799e99f4b540c46aac6d9f34672de23d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">typeName</span></span></span><a class="headerlink" href="#_CPPv4N15InteractableBin8typeNameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15InteractableBin10scriptPathE">
+<span id="_CPPv3N15InteractableBin10scriptPathE"></span><span id="_CPPv2N15InteractableBin10scriptPathE"></span><span id="InteractableBin::scriptPath__ss"></span><span class="target" id="structInteractableBin_1a542dc8390678eca3064bdb671cbe230e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scriptPath</span></span></span><a class="headerlink" href="#_CPPv4N15InteractableBin10scriptPathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15InteractableBin5propsE">
+<span id="_CPPv3N15InteractableBin5propsE"></span><span id="_CPPv2N15InteractableBin5propsE"></span><span id="InteractableBin::props__std::vector:std::uint8_t:"></span><span class="target" id="structInteractableBin_1a59ac69e83397c3914f9a2a237c0b1d85"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">props</span></span></span><a class="headerlink" href="#_CPPv4N15InteractableBin5propsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv49ScriptBin">
+<span id="_CPPv39ScriptBin"></span><span id="_CPPv29ScriptBin"></span><span id="ScriptBin"></span><span class="target" id="structScriptBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ScriptBin</span></span></span><a class="headerlink" href="#_CPPv49ScriptBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N9ScriptBin8bytecodeE">
+<span id="_CPPv3N9ScriptBin8bytecodeE"></span><span id="_CPPv2N9ScriptBin8bytecodeE"></span><span id="ScriptBin::bytecode__ss"></span><span class="target" id="structScriptBin_1a1349f3dff4c56746f6aa6115a24cf136"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bytecode</span></span></span><a class="headerlink" href="#_CPPv4N9ScriptBin8bytecodeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv421InteractableInRoomBin">
+<span id="_CPPv321InteractableInRoomBin"></span><span id="_CPPv221InteractableInRoomBin"></span><span id="InteractableInRoomBin"></span><span class="target" id="structInteractableInRoomBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InteractableInRoomBin</span></span></span><a class="headerlink" href="#_CPPv421InteractableInRoomBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N21InteractableInRoomBin1xE">
+<span id="_CPPv3N21InteractableInRoomBin1xE"></span><span id="_CPPv2N21InteractableInRoomBin1xE"></span><span id="InteractableInRoomBin::x__i"></span><span class="target" id="structInteractableInRoomBin_1afa05b9b4ed65a692d18b8ef08ad6aef2"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">x</span></span></span><a class="headerlink" href="#_CPPv4N21InteractableInRoomBin1xE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N21InteractableInRoomBin1yE">
+<span id="_CPPv3N21InteractableInRoomBin1yE"></span><span id="_CPPv2N21InteractableInRoomBin1yE"></span><span id="InteractableInRoomBin::y__i"></span><span class="target" id="structInteractableInRoomBin_1adefde5368bf1880da7d49288a54a2d66"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">y</span></span></span><a class="headerlink" href="#_CPPv4N21InteractableInRoomBin1yE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N21InteractableInRoomBin7onTouchE">
+<span id="_CPPv3N21InteractableInRoomBin7onTouchE"></span><span id="_CPPv2N21InteractableInRoomBin7onTouchE"></span><span id="InteractableInRoomBin::onTouch__b"></span><span class="target" id="structInteractableInRoomBin_1ae7305255f91f1a0fb857a659a66554fa"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onTouch</span></span></span><a class="headerlink" href="#_CPPv4N21InteractableInRoomBin7onTouchE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N21InteractableInRoomBin4typeE">
+<span id="_CPPv3N21InteractableInRoomBin4typeE"></span><span id="_CPPv2N21InteractableInRoomBin4typeE"></span><span id="InteractableInRoomBin::type__ss"></span><span class="target" id="structInteractableInRoomBin_1a8125bc08c09ec3c8dc820635ba4e2c74"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><a class="headerlink" href="#_CPPv4N21InteractableInRoomBin4typeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N21InteractableInRoomBin9propsCborE">
+<span id="_CPPv3N21InteractableInRoomBin9propsCborE"></span><span id="_CPPv2N21InteractableInRoomBin9propsCborE"></span><span id="InteractableInRoomBin::propsCbor__std::vector:std::uint8_t:"></span><span class="target" id="structInteractableInRoomBin_1aeeb1feb77c24a13901b89a7a4778ce1c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">propsCbor</span></span></span><a class="headerlink" href="#_CPPv4N21InteractableInRoomBin9propsCborE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv413PropInRoomBin">
+<span id="_CPPv313PropInRoomBin"></span><span id="_CPPv213PropInRoomBin"></span><span id="PropInRoomBin"></span><span class="target" id="structPropInRoomBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PropInRoomBin</span></span></span><a class="headerlink" href="#_CPPv413PropInRoomBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13PropInRoomBin4nameE">
+<span id="_CPPv3N13PropInRoomBin4nameE"></span><span id="_CPPv2N13PropInRoomBin4nameE"></span><span id="PropInRoomBin::name__ss"></span><span class="target" id="structPropInRoomBin_1ad85ca4a57aa8dfb0e7a291bf6e873015"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N13PropInRoomBin4nameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13PropInRoomBin7tilePosE">
+<span id="_CPPv3N13PropInRoomBin7tilePosE"></span><span id="_CPPv2N13PropInRoomBin7tilePosE"></span><span id="PropInRoomBin::tilePos__IVector"></span><span class="target" id="structPropInRoomBin_1ac3f56de8cf294ff81e33ffef6bfbeddd"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tilePos</span></span></span><a class="headerlink" href="#_CPPv4N13PropInRoomBin7tilePosE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13PropInRoomBin7onTouchE">
+<span id="_CPPv3N13PropInRoomBin7onTouchE"></span><span id="_CPPv2N13PropInRoomBin7onTouchE"></span><span id="PropInRoomBin::onTouch__b"></span><span class="target" id="structPropInRoomBin_1ab219e0780a962a0cce13bd384495fb17"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onTouch</span></span></span><a class="headerlink" href="#_CPPv4N13PropInRoomBin7onTouchE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13PropInRoomBin9propsCborE">
+<span id="_CPPv3N13PropInRoomBin9propsCborE"></span><span id="_CPPv2N13PropInRoomBin9propsCborE"></span><span id="PropInRoomBin::propsCbor__std::vector:std::uint8_t:"></span><span class="target" id="structPropInRoomBin_1a962ee2a30f8524ba6738cd4eb721832f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">propsCbor</span></span></span><a class="headerlink" href="#_CPPv4N13PropInRoomBin9propsCborE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv410TileSetBin">
+<span id="_CPPv310TileSetBin"></span><span id="_CPPv210TileSetBin"></span><span id="TileSetBin"></span><span class="target" id="structTileSetBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TileSetBin</span></span></span><a class="headerlink" href="#_CPPv410TileSetBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10TileSetBin4nameE">
+<span id="_CPPv3N10TileSetBin4nameE"></span><span id="_CPPv2N10TileSetBin4nameE"></span><span id="TileSetBin::name__ss"></span><span class="target" id="structTileSetBin_1ae9a3515a5d67ed0c6023735c4dbac9b0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N10TileSetBin4nameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10TileSetBin9extensionE">
+<span id="_CPPv3N10TileSetBin9extensionE"></span><span id="_CPPv2N10TileSetBin9extensionE"></span><span id="TileSetBin::extension__ss"></span><span class="target" id="structTileSetBin_1aae11be1faf7feb687ad220564bfeed86"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extension</span></span></span><a class="headerlink" href="#_CPPv4N10TileSetBin9extensionE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10TileSetBin8tileSizeE">
+<span id="_CPPv3N10TileSetBin8tileSizeE"></span><span id="_CPPv2N10TileSetBin8tileSizeE"></span><span id="TileSetBin::tileSize__IVector"></span><span class="target" id="structTileSetBin_1a2e6529c910f2bd85cb3903fb4281d5c3"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSize</span></span></span><a class="headerlink" href="#_CPPv4N10TileSetBin8tileSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10TileSetBin5imageE">
+<span id="_CPPv3N10TileSetBin5imageE"></span><span id="_CPPv2N10TileSetBin5imageE"></span><span id="TileSetBin::image__std::vector:unsigned-c:"></span><span class="target" id="structTileSetBin_1a1f3e476228d0c1107b774706f20128fc"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">image</span></span></span><a class="headerlink" href="#_CPPv4N10TileSetBin5imageE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N10TileSetBin8dataSizeE">
+<span id="_CPPv3N10TileSetBin8dataSizeE"></span><span id="_CPPv2N10TileSetBin8dataSizeE"></span><span id="TileSetBin::dataSize__i"></span><span class="target" id="structTileSetBin_1ab385fcfe563c6d3e238b7ee6b66bc748"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataSize</span></span></span><a class="headerlink" href="#_CPPv4N10TileSetBin8dataSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv48ImageBin">
+<span id="_CPPv38ImageBin"></span><span id="_CPPv28ImageBin"></span><span id="ImageBin"></span><span class="target" id="structImageBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ImageBin</span></span></span><a class="headerlink" href="#_CPPv48ImageBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ImageBin4dataE">
+<span id="_CPPv3N8ImageBin4dataE"></span><span id="_CPPv2N8ImageBin4dataE"></span><span id="ImageBin::data__std::vector:unsigned-c:"></span><span class="target" id="structImageBin_1ac391fbc69c1224f41860e3e849e0068b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#_CPPv4N8ImageBin4dataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ImageBin8dataSizeE">
+<span id="_CPPv3N8ImageBin8dataSizeE"></span><span id="_CPPv2N8ImageBin8dataSizeE"></span><span id="ImageBin::dataSize__i"></span><span class="target" id="structImageBin_1aa8c0e9663b56bdd45eda098822847dfc"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataSize</span></span></span><a class="headerlink" href="#_CPPv4N8ImageBin8dataSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8ImageBin3extE">
+<span id="_CPPv3N8ImageBin3extE"></span><span id="_CPPv2N8ImageBin3extE"></span><span id="ImageBin::ext__ss"></span><span class="target" id="structImageBin_1a4310fa39194cf4b22b5c05c23ce798a6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ext</span></span></span><a class="headerlink" href="#_CPPv4N8ImageBin3extE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv48MusicBin">
+<span id="_CPPv38MusicBin"></span><span id="_CPPv28MusicBin"></span><span id="MusicBin"></span><span class="target" id="structMusicBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MusicBin</span></span></span><a class="headerlink" href="#_CPPv48MusicBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8MusicBin12relativePathE">
+<span id="_CPPv3N8MusicBin12relativePathE"></span><span id="_CPPv2N8MusicBin12relativePathE"></span><span id="MusicBin::relativePath__ss"></span><span class="target" id="structMusicBin_1a8b37152269b60015ab56b54faa3859ba"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">relativePath</span></span></span><a class="headerlink" href="#_CPPv4N8MusicBin12relativePathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8MusicBin7isSoundE">
+<span id="_CPPv3N8MusicBin7isSoundE"></span><span id="_CPPv2N8MusicBin7isSoundE"></span><span id="MusicBin::isSound__b"></span><span class="target" id="structMusicBin_1a57a823d1b2ae3e32d3bad61f49e34c92"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isSound</span></span></span><a class="headerlink" href="#_CPPv4N8MusicBin7isSoundE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8MusicBin8fileDataE">
+<span id="_CPPv3N8MusicBin8fileDataE"></span><span id="_CPPv2N8MusicBin8fileDataE"></span><span id="MusicBin::fileData__std::vector:unsigned-c:"></span><span class="target" id="structMusicBin_1a9447c4daf4238508e42d5f5ee8949673"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileData</span></span></span><a class="headerlink" href="#_CPPv4N8MusicBin8fileDataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8MusicBin7fileExtE">
+<span id="_CPPv3N8MusicBin7fileExtE"></span><span id="_CPPv2N8MusicBin7fileExtE"></span><span id="MusicBin::fileExt__ss"></span><span class="target" id="structMusicBin_1a3507acb27086ea7bd29973fb9f5a30d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileExt</span></span></span><a class="headerlink" href="#_CPPv4N8MusicBin7fileExtE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv47PropBin">
+<span id="_CPPv37PropBin"></span><span id="_CPPv27PropBin"></span><span id="PropBin"></span><span class="target" id="structPropBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PropBin</span></span></span><a class="headerlink" href="#_CPPv47PropBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7PropBin4nameE">
+<span id="_CPPv3N7PropBin4nameE"></span><span id="_CPPv2N7PropBin4nameE"></span><span id="PropBin::name__ss"></span><span class="target" id="structPropBin_1a2b284d6ba63e80d6082597e94b68e513"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N7PropBin4nameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7PropBin9atlasRectE">
+<span id="_CPPv3N7PropBin9atlasRectE"></span><span id="_CPPv2N7PropBin9atlasRectE"></span><span id="PropBin::atlasRect__IRect"></span><span class="target" id="structPropBin_1a6125537d9158d27fcccbcfee6d2d27b2"></span><a class="reference internal" href="#_CPPv45IRect" title="IRect"><span class="n"><span class="pre">IRect</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atlasRect</span></span></span><a class="headerlink" href="#_CPPv4N7PropBin9atlasRectE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7PropBin13collisionRectE">
+<span id="_CPPv3N7PropBin13collisionRectE"></span><span id="_CPPv2N7PropBin13collisionRectE"></span><span id="PropBin::collisionRect__IRect"></span><span class="target" id="structPropBin_1a2a68d4098bb7554d75de1777097bc9d2"></span><a class="reference internal" href="#_CPPv45IRect" title="IRect"><span class="n"><span class="pre">IRect</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisionRect</span></span></span><a class="headerlink" href="#_CPPv4N7PropBin13collisionRectE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7PropBin9imagePathE">
+<span id="_CPPv3N7PropBin9imagePathE"></span><span id="_CPPv2N7PropBin9imagePathE"></span><span id="PropBin::imagePath__ss"></span><span class="target" id="structPropBin_1a68fe20334c3802b7476f431b88add320"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imagePath</span></span></span><a class="headerlink" href="#_CPPv4N7PropBin9imagePathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7PropBin15hasInteractableE">
+<span id="_CPPv3N7PropBin15hasInteractableE"></span><span id="_CPPv2N7PropBin15hasInteractableE"></span><span id="PropBin::hasInteractable__b"></span><span class="target" id="structPropBin_1a99c600adfa70995688931b005b812260"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasInteractable</span></span></span><a class="headerlink" href="#_CPPv4N7PropBin15hasInteractableE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7PropBin7intTypeE">
+<span id="_CPPv3N7PropBin7intTypeE"></span><span id="_CPPv2N7PropBin7intTypeE"></span><span id="PropBin::intType__ss"></span><span class="target" id="structPropBin_1a4de5e0eb82abff47b1b563da46f27f36"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">intType</span></span></span><a class="headerlink" href="#_CPPv4N7PropBin7intTypeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv47RoomBin">
+<span id="_CPPv37RoomBin"></span><span id="_CPPv27RoomBin"></span><span id="RoomBin"></span><span class="target" id="structRoomBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RoomBin</span></span></span><a class="headerlink" href="#_CPPv47RoomBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin4nameE">
+<span id="_CPPv3N7RoomBin4nameE"></span><span id="_CPPv2N7RoomBin4nameE"></span><span id="RoomBin::name__ss"></span><span class="target" id="structRoomBin_1af7cd76a1a7a29d620638d2e8f34a8a67"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin4nameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin11tileSetNameE">
+<span id="_CPPv3N7RoomBin11tileSetNameE"></span><span id="_CPPv2N7RoomBin11tileSetNameE"></span><span id="RoomBin::tileSetName__ss"></span><span class="target" id="structRoomBin_1a29350a077823a2a29a111c992ed9de58"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSetName</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin11tileSetNameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin5widthE">
+<span id="_CPPv3N7RoomBin5widthE"></span><span id="_CPPv2N7RoomBin5widthE"></span><span id="RoomBin::width__i"></span><span class="target" id="structRoomBin_1a774d4fad6552934ae6190b3288e05708"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin5widthE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin6heightE">
+<span id="_CPPv3N7RoomBin6heightE"></span><span id="_CPPv2N7RoomBin6heightE"></span><span id="RoomBin::height__i"></span><span class="target" id="structRoomBin_1ad6c874619de7bfcb3973f2e6dd86264b"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">height</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin6heightE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin10startPointE">
+<span id="_CPPv3N7RoomBin10startPointE"></span><span id="_CPPv2N7RoomBin10startPointE"></span><span id="RoomBin::startPoint__IVector"></span><span class="target" id="structRoomBin_1a43fd014af9e0d5581eb042c720b9962b"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startPoint</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin10startPointE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin10collisionsE">
+<span id="_CPPv3N7RoomBin10collisionsE"></span><span id="_CPPv2N7RoomBin10collisionsE"></span><span id="RoomBin::collisions__std::vector:IVector:"></span><span class="target" id="structRoomBin_1a7b9ff4a610cefd9b2ca9a3d4e895cd39"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisions</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin10collisionsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin13interactablesE">
+<span id="_CPPv3N7RoomBin13interactablesE"></span><span id="_CPPv2N7RoomBin13interactablesE"></span><span id="RoomBin::interactables__std::vector:InteractableInRoomBin:"></span><span class="target" id="structRoomBin_1a9becb1e36d40015a649e2c9767d77688"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv421InteractableInRoomBin" title="InteractableInRoomBin"><span class="n"><span class="pre">InteractableInRoomBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interactables</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin13interactablesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin5propsE">
+<span id="_CPPv3N7RoomBin5propsE"></span><span id="_CPPv2N7RoomBin5propsE"></span><span id="RoomBin::props__std::vector:PropInRoomBin:"></span><span class="target" id="structRoomBin_1a03d310c3ac089e27995562f87890d374"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv413PropInRoomBin" title="PropInRoomBin"><span class="n"><span class="pre">PropInRoomBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">props</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin5propsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin6actorsE">
+<span id="_CPPv3N7RoomBin6actorsE"></span><span id="_CPPv2N7RoomBin6actorsE"></span><span id="RoomBin::actors__std::vector:ActorInRoomBin:"></span><span class="target" id="structRoomBin_1a7975d076f0c3a329015f04a5f973d4e1"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv414ActorInRoomBin" title="ActorInRoomBin"><span class="n"><span class="pre">ActorInRoomBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">actors</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin6actorsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin5tilesE">
+<span id="_CPPv3N7RoomBin5tilesE"></span><span id="_CPPv2N7RoomBin5tilesE"></span><span id="RoomBin::tiles__std::vector:std::vector:TileBin::"></span><span class="target" id="structRoomBin_1af10219add693cf47af6b406e092852df"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv47TileBin" title="TileBin"><span class="n"><span class="pre">TileBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tiles</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin5tilesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7RoomBin11musicSourceE">
+<span id="_CPPv3N7RoomBin11musicSourceE"></span><span id="_CPPv2N7RoomBin11musicSourceE"></span><span id="RoomBin::musicSource__ss"></span><span class="target" id="structRoomBin_1a909c84c0db39efd268890c70a0d38c89"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">musicSource</span></span></span><a class="headerlink" href="#_CPPv4N7RoomBin11musicSourceE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv415GameBinSettings">
+<span id="_CPPv315GameBinSettings"></span><span id="_CPPv215GameBinSettings"></span><span id="GameBinSettings"></span><span class="target" id="structGameBinSettings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GameBinSettings</span></span></span><a class="headerlink" href="#_CPPv415GameBinSettings" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15GameBinSettings11playerActorE">
+<span id="_CPPv3N15GameBinSettings11playerActorE"></span><span id="_CPPv2N15GameBinSettings11playerActorE"></span><span id="GameBinSettings::playerActor__ss"></span><span class="target" id="structGameBinSettings_1a96c9cbbdfd346bd82126909af673fa25"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playerActor</span></span></span><a class="headerlink" href="#_CPPv4N15GameBinSettings11playerActorE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv48GameData">
+<span id="_CPPv38GameData"></span><span id="_CPPv28GameData"></span><span id="GameData"></span><span class="target" id="structGameData"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GameData</span></span></span><a class="headerlink" href="#_CPPv48GameData" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData5titleE">
+<span id="_CPPv3N8GameData5titleE"></span><span id="_CPPv2N8GameData5titleE"></span><span id="GameData::title__ss"></span><span class="target" id="structGameData_1a15fa62d95ac4631e993d7fddd86a7138"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">title</span></span></span><a class="headerlink" href="#_CPPv4N8GameData5titleE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData6imagesE">
+<span id="_CPPv3N8GameData6imagesE"></span><span id="_CPPv2N8GameData6imagesE"></span><span id="GameData::images__std::map:ss.ImageBin:"></span><span class="target" id="structGameData_1a9ddfa46c4e3fef774c297c07eb75dd64"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv48ImageBin" title="ImageBin"><span class="n"><span class="pre">ImageBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">images</span></span></span><a class="headerlink" href="#_CPPv4N8GameData6imagesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData8tilesetsE">
+<span id="_CPPv3N8GameData8tilesetsE"></span><span id="_CPPv2N8GameData8tilesetsE"></span><span id="GameData::tilesets__std::map:ss.TileSetBin:"></span><span class="target" id="structGameData_1ab92c9c8a503cb8cdf194f79f652b2755"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv410TileSetBin" title="TileSetBin"><span class="n"><span class="pre">TileSetBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tilesets</span></span></span><a class="headerlink" href="#_CPPv4N8GameData8tilesetsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData13interactablesE">
+<span id="_CPPv3N8GameData13interactablesE"></span><span id="_CPPv2N8GameData13interactablesE"></span><span id="GameData::interactables__std::map:ss.InteractableBin:"></span><span class="target" id="structGameData_1ac5f91f2dfc77037c0ebe3198eaae232b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415InteractableBin" title="InteractableBin"><span class="n"><span class="pre">InteractableBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interactables</span></span></span><a class="headerlink" href="#_CPPv4N8GameData13interactablesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData5roomsE">
+<span id="_CPPv3N8GameData5roomsE"></span><span id="_CPPv2N8GameData5roomsE"></span><span id="GameData::rooms__std::vector:RoomBin:"></span><span class="target" id="structGameData_1aac8f739152136b2fa1ff941ca80fc912"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv47RoomBin" title="RoomBin"><span class="n"><span class="pre">RoomBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rooms</span></span></span><a class="headerlink" href="#_CPPv4N8GameData5roomsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData6actorsE">
+<span id="_CPPv3N8GameData6actorsE"></span><span id="_CPPv2N8GameData6actorsE"></span><span id="GameData::actors__std::map:ss.ActorBin:"></span><span class="target" id="structGameData_1a41026ff9186ddf466381944d81cfa6ef"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv48ActorBin" title="ActorBin"><span class="n"><span class="pre">ActorBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">actors</span></span></span><a class="headerlink" href="#_CPPv4N8GameData6actorsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData5propsE">
+<span id="_CPPv3N8GameData5propsE"></span><span id="_CPPv2N8GameData5propsE"></span><span id="GameData::props__std::vector:PropBin:"></span><span class="target" id="structGameData_1ade3675eea57c780e4001298bf1c90307"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv47PropBin" title="PropBin"><span class="n"><span class="pre">PropBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">props</span></span></span><a class="headerlink" href="#_CPPv4N8GameData5propsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData9dialoguesE">
+<span id="_CPPv3N8GameData9dialoguesE"></span><span id="_CPPv2N8GameData9dialoguesE"></span><span id="GameData::dialogues__std::map:ss.DialogueBin:"></span><span class="target" id="structGameData_1adf06020c17335df065c570f4dca5171d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="dialogueBalloon_8hpp.html#_CPPv411DialogueBin" title="DialogueBin"><span class="n"><span class="pre">DialogueBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dialogues</span></span></span><a class="headerlink" href="#_CPPv4N8GameData9dialoguesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData5musicE">
+<span id="_CPPv3N8GameData5musicE"></span><span id="_CPPv2N8GameData5musicE"></span><span id="GameData::music__std::map:ss.MusicBin:"></span><span class="target" id="structGameData_1a414ed5877ff3c55b4cbaa64eb822f2d4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv48MusicBin" title="MusicBin"><span class="n"><span class="pre">MusicBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">music</span></span></span><a class="headerlink" href="#_CPPv4N8GameData5musicE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData7scriptsE">
+<span id="_CPPv3N8GameData7scriptsE"></span><span id="_CPPv2N8GameData7scriptsE"></span><span id="GameData::scripts__std::map:ss.ScriptBin:"></span><span class="target" id="structGameData_1a97d60595cb73f29d3a0f5b38617b7e9f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ScriptBin" title="ScriptBin"><span class="n"><span class="pre">ScriptBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scripts</span></span></span><a class="headerlink" href="#_CPPv4N8GameData7scriptsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv417DataSerialization">
+<span id="_CPPv317DataSerialization"></span><span id="_CPPv217DataSerialization"></span><span id="DataSerialization"></span><span class="target" id="structDataSerialization"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DataSerialization</span></span></span><a class="headerlink" href="#_CPPv417DataSerialization" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N17DataSerialization5bytesE">
+<span id="_CPPv3N17DataSerialization5bytesE"></span><span id="_CPPv2N17DataSerialization5bytesE"></span><span id="DataSerialization::bytes__std::vector:uint8_t:"></span><span class="target" id="structDataSerialization_1a7afefde9d92763bcbc359369216f5882"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bytes</span></span></span><a class="headerlink" href="#_CPPv4N17DataSerialization5bytesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N17DataSerialization5countE">
+<span id="_CPPv3N17DataSerialization5countE"></span><span id="_CPPv2N17DataSerialization5countE"></span><span id="DataSerialization::count__i"></span><span class="target" id="structDataSerialization_1af3cca18e09df6e2c38bb1da7008eb278"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">count</span></span></span><a class="headerlink" href="#_CPPv4N17DataSerialization5countE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="imageRect_8hpp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">File imageRect.hpp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="game_8hpp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">File game.hpp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">File gamedata.hpp</a><ul>
+<li><a class="reference internal" href="#c.RPGPP_DRAW_MULTIPLIER"><code class="docutils literal notranslate"><span class="pre">RPGPP_DRAW_MULTIPLIER</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv419serializeDataToFileNSt6stringE8GameData"><code class="docutils literal notranslate"><span class="pre">serializeDataToFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv415deserializeFileNSt6stringE"><code class="docutils literal notranslate"><span class="pre">deserializeFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47IVector"><code class="docutils literal notranslate"><span class="pre">IVector</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4NK7IVectoreqERK7IVector"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7IVectorltERK7IVector"><code class="docutils literal notranslate"><span class="pre">operator&lt;()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7IVector7IVectorEv"><code class="docutils literal notranslate"><span class="pre">IVector()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7IVector7IVectorEii"><code class="docutils literal notranslate"><span class="pre">IVector()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7IVector7IVectorERK7Vector2"><code class="docutils literal notranslate"><span class="pre">IVector()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7IVector1xE"><code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7IVector1yE"><code class="docutils literal notranslate"><span class="pre">y</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv45IRect"><code class="docutils literal notranslate"><span class="pre">IRect</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N5IRect1xE"><code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5IRect1yE"><code class="docutils literal notranslate"><span class="pre">y</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5IRect5widthE"><code class="docutils literal notranslate"><span class="pre">width</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5IRect6heightE"><code class="docutils literal notranslate"><span class="pre">height</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv48ActorBin"><code class="docutils literal notranslate"><span class="pre">ActorBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N8ActorBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8ActorBin11tileSetNameE"><code class="docutils literal notranslate"><span class="pre">tileSetName</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8ActorBin9collisionE"><code class="docutils literal notranslate"><span class="pre">collision</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8ActorBin10animationsE"><code class="docutils literal notranslate"><span class="pre">animations</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv414ActorInRoomBin"><code class="docutils literal notranslate"><span class="pre">ActorInRoomBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin6sourceE"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin7tilePosE"><code class="docutils literal notranslate"><span class="pre">tilePos</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv47TileBin"><code class="docutils literal notranslate"><span class="pre">TileBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N7TileBin8atlasPosE"><code class="docutils literal notranslate"><span class="pre">atlasPos</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileBin8worldPosE"><code class="docutils literal notranslate"><span class="pre">worldPos</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv415InteractableBin"><code class="docutils literal notranslate"><span class="pre">InteractableBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N15InteractableBin8typeNameE"><code class="docutils literal notranslate"><span class="pre">typeName</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15InteractableBin10scriptPathE"><code class="docutils literal notranslate"><span class="pre">scriptPath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15InteractableBin5propsE"><code class="docutils literal notranslate"><span class="pre">props</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv49ScriptBin"><code class="docutils literal notranslate"><span class="pre">ScriptBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9ScriptBin8bytecodeE"><code class="docutils literal notranslate"><span class="pre">bytecode</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv421InteractableInRoomBin"><code class="docutils literal notranslate"><span class="pre">InteractableInRoomBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N21InteractableInRoomBin1xE"><code class="docutils literal notranslate"><span class="pre">x</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N21InteractableInRoomBin1yE"><code class="docutils literal notranslate"><span class="pre">y</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N21InteractableInRoomBin7onTouchE"><code class="docutils literal notranslate"><span class="pre">onTouch</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N21InteractableInRoomBin4typeE"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N21InteractableInRoomBin9propsCborE"><code class="docutils literal notranslate"><span class="pre">propsCbor</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv413PropInRoomBin"><code class="docutils literal notranslate"><span class="pre">PropInRoomBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N13PropInRoomBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13PropInRoomBin7tilePosE"><code class="docutils literal notranslate"><span class="pre">tilePos</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13PropInRoomBin7onTouchE"><code class="docutils literal notranslate"><span class="pre">onTouch</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13PropInRoomBin9propsCborE"><code class="docutils literal notranslate"><span class="pre">propsCbor</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv410TileSetBin"><code class="docutils literal notranslate"><span class="pre">TileSetBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N10TileSetBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10TileSetBin9extensionE"><code class="docutils literal notranslate"><span class="pre">extension</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10TileSetBin8tileSizeE"><code class="docutils literal notranslate"><span class="pre">tileSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10TileSetBin5imageE"><code class="docutils literal notranslate"><span class="pre">image</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N10TileSetBin8dataSizeE"><code class="docutils literal notranslate"><span class="pre">dataSize</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv48ImageBin"><code class="docutils literal notranslate"><span class="pre">ImageBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N8ImageBin4dataE"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8ImageBin8dataSizeE"><code class="docutils literal notranslate"><span class="pre">dataSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8ImageBin3extE"><code class="docutils literal notranslate"><span class="pre">ext</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv48MusicBin"><code class="docutils literal notranslate"><span class="pre">MusicBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N8MusicBin12relativePathE"><code class="docutils literal notranslate"><span class="pre">relativePath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8MusicBin7isSoundE"><code class="docutils literal notranslate"><span class="pre">isSound</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8MusicBin8fileDataE"><code class="docutils literal notranslate"><span class="pre">fileData</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8MusicBin7fileExtE"><code class="docutils literal notranslate"><span class="pre">fileExt</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv47PropBin"><code class="docutils literal notranslate"><span class="pre">PropBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N7PropBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7PropBin9atlasRectE"><code class="docutils literal notranslate"><span class="pre">atlasRect</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7PropBin13collisionRectE"><code class="docutils literal notranslate"><span class="pre">collisionRect</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7PropBin9imagePathE"><code class="docutils literal notranslate"><span class="pre">imagePath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7PropBin15hasInteractableE"><code class="docutils literal notranslate"><span class="pre">hasInteractable</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7PropBin7intTypeE"><code class="docutils literal notranslate"><span class="pre">intType</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv47RoomBin"><code class="docutils literal notranslate"><span class="pre">RoomBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin11tileSetNameE"><code class="docutils literal notranslate"><span class="pre">tileSetName</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin5widthE"><code class="docutils literal notranslate"><span class="pre">width</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin6heightE"><code class="docutils literal notranslate"><span class="pre">height</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin10startPointE"><code class="docutils literal notranslate"><span class="pre">startPoint</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin10collisionsE"><code class="docutils literal notranslate"><span class="pre">collisions</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin13interactablesE"><code class="docutils literal notranslate"><span class="pre">interactables</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin5propsE"><code class="docutils literal notranslate"><span class="pre">props</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin6actorsE"><code class="docutils literal notranslate"><span class="pre">actors</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin5tilesE"><code class="docutils literal notranslate"><span class="pre">tiles</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7RoomBin11musicSourceE"><code class="docutils literal notranslate"><span class="pre">musicSource</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv415GameBinSettings"><code class="docutils literal notranslate"><span class="pre">GameBinSettings</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N15GameBinSettings11playerActorE"><code class="docutils literal notranslate"><span class="pre">playerActor</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv48GameData"><code class="docutils literal notranslate"><span class="pre">GameData</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N8GameData5titleE"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData6imagesE"><code class="docutils literal notranslate"><span class="pre">images</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData8tilesetsE"><code class="docutils literal notranslate"><span class="pre">tilesets</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData13interactablesE"><code class="docutils literal notranslate"><span class="pre">interactables</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData5roomsE"><code class="docutils literal notranslate"><span class="pre">rooms</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData6actorsE"><code class="docutils literal notranslate"><span class="pre">actors</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData5propsE"><code class="docutils literal notranslate"><span class="pre">props</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData9dialoguesE"><code class="docutils literal notranslate"><span class="pre">dialogues</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData5musicE"><code class="docutils literal notranslate"><span class="pre">music</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData7scriptsE"><code class="docutils literal notranslate"><span class="pre">scripts</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv417DataSerialization"><code class="docutils literal notranslate"><span class="pre">DataSerialization</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N17DataSerialization5bytesE"><code class="docutils literal notranslate"><span class="pre">bytes</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N17DataSerialization5countE"><code class="docutils literal notranslate"><span class="pre">count</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

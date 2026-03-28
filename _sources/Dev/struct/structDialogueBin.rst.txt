@@ -1,0 +1,5 @@
+Struct DialogueBin
+==================
+
+.. doxygenstruct:: DialogueBin
+   :members:

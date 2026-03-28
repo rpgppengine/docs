@@ -1,0 +1,5 @@
+Struct PropBin
+==============
+
+.. doxygenstruct:: PropBin
+   :members:

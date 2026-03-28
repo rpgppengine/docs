@@ -1,0 +1,5 @@
+Class mINI::INIFile
+===================
+
+.. doxygenclass:: mINI::INIFile
+   :members:

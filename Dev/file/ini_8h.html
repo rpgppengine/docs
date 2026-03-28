@@ -1,0 +1,956 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File interactable.hpp" href="interactable_8hpp.html"><link rel="prev" title="File imageRect.hpp" href="imageRect_8hpp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>File ini.h - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../filelist.html">File list</a><input aria-label="Toggle navigation of File list" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../moduleDirectory/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Dev/file/ini_8h.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="file-ini-h">
+<h1>File ini.h<a class="headerlink" href="#file-ini-h" title="Link to this heading">¶</a></h1>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv44mINI">
+<span id="_CPPv34mINI"></span><span id="_CPPv24mINI"></span><span id="mINI"></span><span class="target" id="namespacemINI"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mINI</span></span></span><a class="headerlink" href="#_CPPv44mINI" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIStructureE">
+<span id="_CPPv3N4mINI12INIStructureE"></span><span id="_CPPv2N4mINI12INIStructureE"></span><span class="target" id="namespacemINI_1a7ebad9b80453aa82944eb63fb2782a9d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIStructure</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap"><span class="n"><span class="pre">INIMap</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap"><span class="n"><span class="pre">INIMap</span></span></a><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI12INIStructureE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI7INIFileE">
+<span id="_CPPv3N4mINI7INIFileE"></span><span id="_CPPv2N4mINI7INIFileE"></span><span id="mINI::INIFile"></span><span class="target" id="classmINI_1_1INIFile"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIFile</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ini.h&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI7INIFile7INIFileENSt10filesystem4pathE">
+<span id="_CPPv3N4mINI7INIFile7INIFileENSt10filesystem4pathE"></span><span id="_CPPv2N4mINI7INIFile7INIFileENSt10filesystem4pathE"></span><span id="mINI::INIFile::INIFile__std::filesystem::path"></span><span class="target" id="classmINI_1_1INIFile_1a7bd50df74716b97337a73f457e069d02"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI7INIFile7INIFileENSt10filesystem4pathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI7INIFileD0Ev">
+<span id="_CPPv3N4mINI7INIFileD0Ev"></span><span id="_CPPv2N4mINI7INIFileD0Ev"></span><span id="mINI::INIFile::~INIFile"></span><span class="target" id="classmINI_1_1INIFile_1afcf83108a7d6f4af290e812f37d942cd"></span><span class="sig-name descname"><span class="n"><span class="pre">~INIFile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4mINI7INIFileD0Ev" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI7INIFile4readER12INIStructure">
+<span id="_CPPv3NK4mINI7INIFile4readER12INIStructure"></span><span id="_CPPv2NK4mINI7INIFile4readER12INIStructure"></span><span id="mINI::INIFile::read__INIStructureRC"></span><span class="target" id="classmINI_1_1INIFile_1a0ead9063903c7a465b38d9d772fb0df7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI7INIFile4readER12INIStructure" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI7INIFile8generateERK12INIStructureb">
+<span id="_CPPv3NK4mINI7INIFile8generateERK12INIStructureb"></span><span id="_CPPv2NK4mINI7INIFile8generateERK12INIStructureb"></span><span id="mINI::INIFile::generate__INIStructureCR.bC"></span><span class="target" id="classmINI_1_1INIFile_1a4d5be7c70113c62f31515464e35876e4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">generate</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pretty</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI7INIFile8generateERK12INIStructureb" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI7INIFile5writeER12INIStructureb">
+<span id="_CPPv3NK4mINI7INIFile5writeER12INIStructureb"></span><span id="_CPPv2NK4mINI7INIFile5writeER12INIStructureb"></span><span id="mINI::INIFile::write__INIStructureR.bC"></span><span class="target" id="classmINI_1_1INIFile_1ad69199d7e6aa3ff8cb78478f0cdc6422"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pretty</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI7INIFile5writeER12INIStructureb" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI7INIFile8filenameE">
+<span id="_CPPv3N4mINI7INIFile8filenameE"></span><span id="_CPPv2N4mINI7INIFile8filenameE"></span><span id="mINI::INIFile::filename__std::filesystem::path"></span><span class="target" id="classmINI_1_1INIFile_1ab401db0e2460093bfc4f8e7c26739cd1"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filename</span></span></span><a class="headerlink" href="#_CPPv4N4mINI7INIFile8filenameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIGeneratorE">
+<span id="_CPPv3N4mINI12INIGeneratorE"></span><span id="_CPPv2N4mINI12INIGeneratorE"></span><span id="mINI::INIGenerator"></span><span class="target" id="classmINI_1_1INIGenerator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIGenerator</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ini.h&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIGenerator12INIGeneratorERKNSt10filesystem4pathE">
+<span id="_CPPv3N4mINI12INIGenerator12INIGeneratorERKNSt10filesystem4pathE"></span><span id="_CPPv2N4mINI12INIGenerator12INIGeneratorERKNSt10filesystem4pathE"></span><span id="mINI::INIGenerator::INIGenerator__std::filesystem::pathCR"></span><span class="target" id="classmINI_1_1INIGenerator_1a3144e27d4c54cc5e7a7631311e66abb5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIGenerator</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI12INIGenerator12INIGeneratorERKNSt10filesystem4pathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIGeneratorD0Ev">
+<span id="_CPPv3N4mINI12INIGeneratorD0Ev"></span><span id="_CPPv2N4mINI12INIGeneratorD0Ev"></span><span id="mINI::INIGenerator::~INIGenerator"></span><span class="target" id="classmINI_1_1INIGenerator_1aa7e774098827af19328ab2f4696aca0b"></span><span class="sig-name descname"><span class="n"><span class="pre">~INIGenerator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4mINI12INIGeneratorD0Ev" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIGeneratorlsERK12INIStructure">
+<span id="_CPPv3N4mINI12INIGeneratorlsERK12INIStructure"></span><span id="_CPPv2N4mINI12INIGeneratorlsERK12INIStructure"></span><span id="mINI::INIGenerator::lshift-operator__INIStructureCR"></span><span class="target" id="classmINI_1_1INIGenerator_1a4467dcc252494ea342221a45e826d2e1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI12INIGeneratorlsERK12INIStructure" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIGenerator11prettyPrintE">
+<span id="_CPPv3N4mINI12INIGenerator11prettyPrintE"></span><span id="_CPPv2N4mINI12INIGenerator11prettyPrintE"></span><span id="mINI::INIGenerator::prettyPrint__b"></span><span class="target" id="classmINI_1_1INIGenerator_1a1563799d9d19c7494da9e42a00b54b76"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">prettyPrint</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N4mINI12INIGenerator11prettyPrintE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI12INIGenerator15fileWriteStreamE">
+<span id="_CPPv3N4mINI12INIGenerator15fileWriteStreamE"></span><span id="_CPPv2N4mINI12INIGenerator15fileWriteStreamE"></span><span id="mINI::INIGenerator::fileWriteStream__std::ofstream"></span><span class="target" id="classmINI_1_1INIGenerator_1af90aafb13098ac811bf4a26688c8217a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ofstream</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileWriteStream</span></span></span><a class="headerlink" href="#_CPPv4N4mINI12INIGenerator15fileWriteStreamE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN4mINI6INIMapE">
+<span id="_CPPv3I0EN4mINI6INIMapE"></span><span id="_CPPv2I0EN4mINI6INIMapE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classmINI_1_1INIMap"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIMap</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ini.h&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap14const_iteratorE">
+<span id="_CPPv3N4mINI6INIMap14const_iteratorE"></span><span id="_CPPv2N4mINI6INIMap14const_iteratorE"></span><span class="target" id="classmINI_1_1INIMap_1a038bd69fd4b5014d167b6221ef964cc6"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">const_iterator</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI6INIMap15T_DataContainerE" title="mINI::INIMap::T_DataContainer"><span class="n"><span class="pre">T_DataContainer</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">const_iterator</span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap14const_iteratorE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap6INIMapEv">
+<span id="_CPPv3N4mINI6INIMap6INIMapEv"></span><span id="_CPPv2N4mINI6INIMap6INIMapEv"></span><span id="mINI::INIMap::INIMap"></span><span class="target" id="classmINI_1_1INIMap_1a960688d7cd1f5c1f8ae49fc7f5f830f9"></span><span class="sig-name descname"><span class="n"><span class="pre">INIMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap6INIMapEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap6INIMapERK6INIMap">
+<span id="_CPPv3N4mINI6INIMap6INIMapERK6INIMap"></span><span id="_CPPv2N4mINI6INIMap6INIMapERK6INIMap"></span><span id="mINI::INIMap::INIMap__INIMapCR"></span><span class="target" id="classmINI_1_1INIMap_1af13fda075f8603eaf72715991d02a744"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIMap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI6INIMap6INIMapERK6INIMap" title="mINI::INIMap::INIMap"><span class="n"><span class="pre">INIMap</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMap6INIMapERK6INIMap" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMapixENSt6stringE">
+<span id="_CPPv3N4mINI6INIMapixENSt6stringE"></span><span id="_CPPv2N4mINI6INIMapixENSt6stringE"></span><span id="mINI::INIMap::subscript-operator__ss"></span><span class="target" id="classmINI_1_1INIMap_1abc5f37ef14321ad4b227646b29255139"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMapixENSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI6INIMap3getENSt6stringE">
+<span id="_CPPv3NK4mINI6INIMap3getENSt6stringE"></span><span id="_CPPv2NK4mINI6INIMap3getENSt6stringE"></span><span id="mINI::INIMap::get__ssC"></span><span class="target" id="classmINI_1_1INIMap_1a03713f77edbfee3e32fc2da9d57c7911"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI6INIMap3getENSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI6INIMap3hasENSt6stringE">
+<span id="_CPPv3NK4mINI6INIMap3hasENSt6stringE"></span><span id="_CPPv2NK4mINI6INIMap3hasENSt6stringE"></span><span id="mINI::INIMap::has__ssC"></span><span class="target" id="classmINI_1_1INIMap_1a9403e3ff093497a548eee31d16136c4a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI6INIMap3hasENSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap3setENSt6stringE1T">
+<span id="_CPPv3N4mINI6INIMap3setENSt6stringE1T"></span><span id="_CPPv2N4mINI6INIMap3setENSt6stringE1T"></span><span id="mINI::INIMap::set__ss.T"></span><span class="target" id="classmINI_1_1INIMap_1ac6a42d8dc2610b55b7e7849d2008954f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span>, <a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">obj</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMap3setENSt6stringE1T" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap3setERK11T_MultiArgs">
+<span id="_CPPv3N4mINI6INIMap3setERK11T_MultiArgs"></span><span id="_CPPv2N4mINI6INIMap3setERK11T_MultiArgs"></span><span id="mINI::INIMap::set__T_MultiArgsCR"></span><span class="target" id="classmINI_1_1INIMap_1a06fc697987cf1990b6cb5e78b4afafb5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI6INIMap11T_MultiArgsE" title="mINI::INIMap::T_MultiArgs"><span class="n"><span class="pre">T_MultiArgs</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">multiArgs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMap3setERK11T_MultiArgs" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap6removeENSt6stringE">
+<span id="_CPPv3N4mINI6INIMap6removeENSt6stringE"></span><span id="_CPPv2N4mINI6INIMap6removeENSt6stringE"></span><span id="mINI::INIMap::remove__ss"></span><span class="target" id="classmINI_1_1INIMap_1ab71316b8d144eaa86bf263e7bcae201f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">remove</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMap6removeENSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap5clearEv">
+<span id="_CPPv3N4mINI6INIMap5clearEv"></span><span id="_CPPv2N4mINI6INIMap5clearEv"></span><span id="mINI::INIMap::clear"></span><span class="target" id="classmINI_1_1INIMap_1af0b1251e710882fbdb5bced08a4fe341"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clear</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMap5clearEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI6INIMap4sizeEv">
+<span id="_CPPv3NK4mINI6INIMap4sizeEv"></span><span id="_CPPv2NK4mINI6INIMap4sizeEv"></span><span id="mINI::INIMap::sizeC"></span><span class="target" id="classmINI_1_1INIMap_1afbfa4c9a30218b05aff20032f74fefca"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI6INIMap4sizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI6INIMap5beginEv">
+<span id="_CPPv3NK4mINI6INIMap5beginEv"></span><span id="_CPPv2NK4mINI6INIMap5beginEv"></span><span id="mINI::INIMap::beginC"></span><span class="target" id="classmINI_1_1INIMap_1a558596a7a8fd4b523ba33f9a40d7ebc9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI6INIMap14const_iteratorE" title="mINI::INIMap::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI6INIMap5beginEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI6INIMap3endEv">
+<span id="_CPPv3NK4mINI6INIMap3endEv"></span><span id="_CPPv2NK4mINI6INIMap3endEv"></span><span id="mINI::INIMap::endC"></span><span class="target" id="classmINI_1_1INIMap_1a1ed4163625857f0dd513368ef54869d5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI6INIMap14const_iteratorE" title="mINI::INIMap::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI6INIMap3endEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap14T_DataIndexMapE">
+<span id="_CPPv3N4mINI6INIMap14T_DataIndexMapE"></span><span id="_CPPv2N4mINI6INIMap14T_DataIndexMapE"></span><span class="target" id="classmINI_1_1INIMap_1a6ef62741c329c510eff2039ea97d23de"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_DataIndexMap</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap14T_DataIndexMapE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap10T_DataItemE">
+<span id="_CPPv3N4mINI6INIMap10T_DataItemE"></span><span id="_CPPv2N4mINI6INIMap10T_DataItemE"></span><span class="target" id="classmINI_1_1INIMap_1a2e4ab7232be4dee0500dafc8626ea43a"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_DataItem</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap10T_DataItemE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap15T_DataContainerE">
+<span id="_CPPv3N4mINI6INIMap15T_DataContainerE"></span><span id="_CPPv2N4mINI6INIMap15T_DataContainerE"></span><span class="target" id="classmINI_1_1INIMap_1aac285c79b0771a38bc830b3c1ac96e88"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_DataContainer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4mINI6INIMap10T_DataItemE" title="mINI::INIMap::T_DataItem"><span class="n"><span class="pre">T_DataItem</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap15T_DataContainerE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap11T_MultiArgsE">
+<span id="_CPPv3N4mINI6INIMap11T_MultiArgsE"></span><span id="_CPPv2N4mINI6INIMap11T_MultiArgsE"></span><span class="target" id="classmINI_1_1INIMap_1ad340d19f41bdcdc0f213f3bda53bc647"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_MultiArgs</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE" title="mINI::INIMap::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap11T_MultiArgsE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap8setEmptyERNSt6stringE">
+<span id="_CPPv3N4mINI6INIMap8setEmptyERNSt6stringE"></span><span id="_CPPv2N4mINI6INIMap8setEmptyERNSt6stringE"></span><span id="mINI::INIMap::setEmpty__ssR"></span><span class="target" id="classmINI_1_1INIMap_1ad852d58a13a46988ff3052cab36b0b68"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEmpty</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI6INIMap8setEmptyERNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap12dataIndexMapE">
+<span id="_CPPv3N4mINI6INIMap12dataIndexMapE"></span><span id="_CPPv2N4mINI6INIMap12dataIndexMapE"></span><span id="mINI::INIMap::dataIndexMap__T_DataIndexMap"></span><span class="target" id="classmINI_1_1INIMap_1a058659178aad092ee8ceec5b67469293"></span><a class="reference internal" href="#_CPPv4N4mINI6INIMap14T_DataIndexMapE" title="mINI::INIMap::T_DataIndexMap"><span class="n"><span class="pre">T_DataIndexMap</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataIndexMap</span></span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap12dataIndexMapE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI6INIMap4dataE">
+<span id="_CPPv3N4mINI6INIMap4dataE"></span><span id="_CPPv2N4mINI6INIMap4dataE"></span><span id="mINI::INIMap::data__T_DataContainer"></span><span class="target" id="classmINI_1_1INIMap_1ab3ee50e539c426b5152aa9db2b003c68"></span><a class="reference internal" href="#_CPPv4N4mINI6INIMap15T_DataContainerE" title="mINI::INIMap::T_DataContainer"><span class="n"><span class="pre">T_DataContainer</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#_CPPv4N4mINI6INIMap4dataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReaderE">
+<span id="_CPPv3N4mINI9INIReaderE"></span><span id="_CPPv2N4mINI9INIReaderE"></span><span id="mINI::INIReader"></span><span class="target" id="classmINI_1_1INIReader"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIReader</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ini.h&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader10T_LineDataE">
+<span id="_CPPv3N4mINI9INIReader10T_LineDataE"></span><span id="_CPPv2N4mINI9INIReader10T_LineDataE"></span><span class="target" id="classmINI_1_1INIReader_1ab2561d08dbf2694aed7eaa5aa4181b4c"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_LineData</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIReader10T_LineDataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader13T_LineDataPtrE">
+<span id="_CPPv3N4mINI9INIReader13T_LineDataPtrE"></span><span id="_CPPv2N4mINI9INIReader13T_LineDataPtrE"></span><span class="target" id="classmINI_1_1INIReader_1ac797e3f4dd2bec006bc827e70f8a5373"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_LineDataPtr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4mINI9INIReader10T_LineDataE" title="mINI::INIReader::T_LineData"><span class="n"><span class="pre">T_LineData</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIReader13T_LineDataPtrE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader9INIReaderERKNSt10filesystem4pathEb">
+<span id="_CPPv3N4mINI9INIReader9INIReaderERKNSt10filesystem4pathEb"></span><span id="_CPPv2N4mINI9INIReader9INIReaderERKNSt10filesystem4pathEb"></span><span id="mINI::INIReader::INIReader__std::filesystem::pathCR.b"></span><span class="target" id="classmINI_1_1INIReader_1aef3335eac87d9c97649bd8f5e145d38e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIReader</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keepLineData</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIReader9INIReaderERKNSt10filesystem4pathEb" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReaderD0Ev">
+<span id="_CPPv3N4mINI9INIReaderD0Ev"></span><span id="_CPPv2N4mINI9INIReaderD0Ev"></span><span id="mINI::INIReader::~INIReader"></span><span class="target" id="classmINI_1_1INIReader_1a5a54fa4142532ec2ef7ec075f96e14cb"></span><span class="sig-name descname"><span class="n"><span class="pre">~INIReader</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIReaderD0Ev" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReaderrsER12INIStructure">
+<span id="_CPPv3N4mINI9INIReaderrsER12INIStructure"></span><span id="_CPPv2N4mINI9INIReaderrsER12INIStructure"></span><span id="mINI::INIReader::rshift-operator__INIStructureR"></span><span class="target" id="classmINI_1_1INIReader_1a4cb3bf02943c31380cb8fbfb7834a844"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;&gt;</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIReaderrsER12INIStructure" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader8getLinesEv">
+<span id="_CPPv3N4mINI9INIReader8getLinesEv"></span><span id="_CPPv2N4mINI9INIReader8getLinesEv"></span><span id="mINI::INIReader::getLines"></span><span class="target" id="classmINI_1_1INIReader_1a81a93e1857a329b7dc34dd4bc1d58c20"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI9INIReader13T_LineDataPtrE" title="mINI::INIReader::T_LineDataPtr"><span class="n"><span class="pre">T_LineDataPtr</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLines</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIReader8getLinesEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader5isBOME">
+<span id="_CPPv3N4mINI9INIReader5isBOME"></span><span id="_CPPv2N4mINI9INIReader5isBOME"></span><span id="mINI::INIReader::isBOM__b"></span><span class="target" id="classmINI_1_1INIReader_1ab1d440967ddda5be8cefc33016681da7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isBOM</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIReader5isBOME" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader8readFileEv">
+<span id="_CPPv3N4mINI9INIReader8readFileEv"></span><span id="_CPPv2N4mINI9INIReader8readFileEv"></span><span id="mINI::INIReader::readFile"></span><span class="target" id="classmINI_1_1INIReader_1a88db39e61968629545105ded85e77fc1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI9INIReader10T_LineDataE" title="mINI::INIReader::T_LineData"><span class="n"><span class="pre">T_LineData</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">readFile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIReader8readFileEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader14fileReadStreamE">
+<span id="_CPPv3N4mINI9INIReader14fileReadStreamE"></span><span id="_CPPv2N4mINI9INIReader14fileReadStreamE"></span><span id="mINI::INIReader::fileReadStream__std::ifstream"></span><span class="target" id="classmINI_1_1INIReader_1ace078f277077ae10cfe3d92e65b56ec7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ifstream</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileReadStream</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIReader14fileReadStreamE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIReader8lineDataE">
+<span id="_CPPv3N4mINI9INIReader8lineDataE"></span><span id="_CPPv2N4mINI9INIReader8lineDataE"></span><span id="mINI::INIReader::lineData__T_LineDataPtr"></span><span class="target" id="classmINI_1_1INIReader_1a296a6b5fbb96a3528c9497e7d329a58a"></span><a class="reference internal" href="#_CPPv4N4mINI9INIReader13T_LineDataPtrE" title="mINI::INIReader::T_LineDataPtr"><span class="n"><span class="pre">T_LineDataPtr</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lineData</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIReader8lineDataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriterE">
+<span id="_CPPv3N4mINI9INIWriterE"></span><span id="_CPPv2N4mINI9INIWriterE"></span><span id="mINI::INIWriter"></span><span class="target" id="classmINI_1_1INIWriter"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIWriter</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ini.h&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriter9INIWriterENSt10filesystem4pathE">
+<span id="_CPPv3N4mINI9INIWriter9INIWriterENSt10filesystem4pathE"></span><span id="_CPPv2N4mINI9INIWriter9INIWriterENSt10filesystem4pathE"></span><span id="mINI::INIWriter::INIWriter__std::filesystem::path"></span><span class="target" id="classmINI_1_1INIWriter_1af78c70976306d9a42eb2a655aee198f8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIWriter</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIWriter9INIWriterENSt10filesystem4pathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriterD0Ev">
+<span id="_CPPv3N4mINI9INIWriterD0Ev"></span><span id="_CPPv2N4mINI9INIWriterD0Ev"></span><span id="mINI::INIWriter::~INIWriter"></span><span class="target" id="classmINI_1_1INIWriter_1aede2dde9ed8ca7c3c823fc8f1ce22dfe"></span><span class="sig-name descname"><span class="n"><span class="pre">~INIWriter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIWriterD0Ev" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriterlsER12INIStructure">
+<span id="_CPPv3N4mINI9INIWriterlsER12INIStructure"></span><span id="_CPPv2N4mINI9INIWriterlsER12INIStructure"></span><span id="mINI::INIWriter::lshift-operator__INIStructureR"></span><span class="target" id="classmINI_1_1INIWriter_1a7183dcd6388af073deb84afd80f1c0c1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIWriterlsER12INIStructure" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriter11prettyPrintE">
+<span id="_CPPv3N4mINI9INIWriter11prettyPrintE"></span><span id="_CPPv2N4mINI9INIWriter11prettyPrintE"></span><span id="mINI::INIWriter::prettyPrint__b"></span><span class="target" id="classmINI_1_1INIWriter_1a0ba92158dd3eaaf671252accfedab8b1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">prettyPrint</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIWriter11prettyPrintE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriter10T_LineDataE">
+<span id="_CPPv3N4mINI9INIWriter10T_LineDataE"></span><span id="_CPPv2N4mINI9INIWriter10T_LineDataE"></span><span class="target" id="classmINI_1_1INIWriter_1a4aab037d27eee30be7a1e9b70a9eefe1"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_LineData</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIWriter10T_LineDataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriter13T_LineDataPtrE">
+<span id="_CPPv3N4mINI9INIWriter13T_LineDataPtrE"></span><span id="_CPPv2N4mINI9INIWriter13T_LineDataPtrE"></span><span class="target" id="classmINI_1_1INIWriter_1a687d992f97a67e109c4105ffcd4bb6a8"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_LineDataPtr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4mINI9INIWriter10T_LineDataE" title="mINI::INIWriter::T_LineData"><span class="n"><span class="pre">T_LineData</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIWriter13T_LineDataPtrE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4mINI9INIWriter13getLazyOutputERK13T_LineDataPtrR12INIStructureR12INIStructure">
+<span id="_CPPv3NK4mINI9INIWriter13getLazyOutputERK13T_LineDataPtrR12INIStructureR12INIStructure"></span><span id="_CPPv2NK4mINI9INIWriter13getLazyOutputERK13T_LineDataPtrR12INIStructureR12INIStructure"></span><span id="mINI::INIWriter::getLazyOutput__T_LineDataPtrCR.INIStructureR.INIStructureRC"></span><span class="target" id="classmINI_1_1INIWriter_1af07ebb6a204244c2d9750ec7840d8129"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI9INIWriter10T_LineDataE" title="mINI::INIWriter::T_LineData"><span class="n"><span class="pre">T_LineData</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLazyOutput</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N4mINI9INIWriter13T_LineDataPtrE" title="mINI::INIWriter::T_LineDataPtr"><span class="n"><span class="pre">T_LineDataPtr</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lineData</span></span>, <a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">data</span></span>, <a class="reference internal" href="#_CPPv4N4mINI12INIStructureE" title="mINI::INIStructure"><span class="n"><span class="pre">INIStructure</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">original</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4mINI9INIWriter13getLazyOutputERK13T_LineDataPtrR12INIStructureR12INIStructure" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIWriter8filenameE">
+<span id="_CPPv3N4mINI9INIWriter8filenameE"></span><span id="_CPPv2N4mINI9INIWriter8filenameE"></span><span id="mINI::INIWriter::filename__std::filesystem::path"></span><span class="target" id="classmINI_1_1INIWriter_1a0bc4e1eb7dc16b04b0801c0f77a78db1"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filename</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIWriter8filenameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParserE">
+<span id="_CPPv3N4mINI9INIParserE"></span><span id="_CPPv2N4mINI9INIParserE"></span><span id="mINI::INIParser"></span><span class="target" id="namespacemINI_1_1INIParser"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIParser</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParserE" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser13T_ParseValuesE">
+<span id="_CPPv3N4mINI9INIParser13T_ParseValuesE"></span><span id="_CPPv2N4mINI9INIParser13T_ParseValuesE"></span><span class="target" id="namespacemINI_1_1INIParser_1a894f6f595fdba981ebb3a68a9a12e722"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T_ParseValues</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser13T_ParseValuesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9PDataTypeE">
+<span id="_CPPv3N4mINI9INIParser9PDataTypeE"></span><span id="_CPPv2N4mINI9INIParser9PDataTypeE"></span><span class="target" id="namespacemINI_1_1INIParser_1a933476e35f3fe30f8739e9326eccba60"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PDataType</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9PDataTypeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">
+<span id="_CPPv3N4mINI9INIParser9PDataType10PDATA_NONEE"></span><span id="_CPPv2N4mINI9INIParser9PDataType10PDATA_NONEE"></span><span class="target" id="namespacemINI_1_1INIParser_1a933476e35f3fe30f8739e9326eccba60ae9a2376147f4752a74a9967fcc8c633e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PDATA_NONE</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">
+<span id="_CPPv3N4mINI9INIParser9PDataType13PDATA_COMMENTE"></span><span id="_CPPv2N4mINI9INIParser9PDataType13PDATA_COMMENTE"></span><span class="target" id="namespacemINI_1_1INIParser_1a933476e35f3fe30f8739e9326eccba60a6ca9814d1ea90f8a4b819a50a4505203"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PDATA_COMMENT</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9PDataType13PDATA_SECTIONE">
+<span id="_CPPv3N4mINI9INIParser9PDataType13PDATA_SECTIONE"></span><span id="_CPPv2N4mINI9INIParser9PDataType13PDATA_SECTIONE"></span><span class="target" id="namespacemINI_1_1INIParser_1a933476e35f3fe30f8739e9326eccba60ac266f8ea940bb562878bc3a77617a09b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PDATA_SECTION</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9PDataType13PDATA_SECTIONE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">
+<span id="_CPPv3N4mINI9INIParser9PDataType14PDATA_KEYVALUEE"></span><span id="_CPPv2N4mINI9INIParser9PDataType14PDATA_KEYVALUEE"></span><span class="target" id="namespacemINI_1_1INIParser_1a933476e35f3fe30f8739e9326eccba60a48c6c7a65cdc60ab89b719ce050d63ff"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PDATA_KEYVALUE</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9PDataType13PDATA_UNKNOWNE">
+<span id="_CPPv3N4mINI9INIParser9PDataType13PDATA_UNKNOWNE"></span><span id="_CPPv2N4mINI9INIParser9PDataType13PDATA_UNKNOWNE"></span><span class="target" id="namespacemINI_1_1INIParser_1a933476e35f3fe30f8739e9326eccba60af55e49a2f30a72b396dd360596e72e9f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PDATA_UNKNOWN</span></span></span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9PDataType13PDATA_UNKNOWNE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues">
+<span id="_CPPv3N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues"></span><span id="_CPPv2N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues"></span><span id="mINI::INIParser::parseLine__ss.T_ParseValuesR"></span><span class="target" id="namespacemINI_1_1INIParser_1a35c71b789896a8d02f6ca9a8b08824b6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataTypeE" title="mINI::INIParser::PDataType"><span class="n"><span class="pre">PDataType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">parseLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">line</span></span>, <a class="reference internal" href="#_CPPv4N4mINI9INIParser13T_ParseValuesE" title="mINI::INIParser::T_ParseValues"><span class="n"><span class="pre">T_ParseValues</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">parseData</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI13INIStringUtilE">
+<span id="_CPPv3N4mINI13INIStringUtilE"></span><span id="_CPPv2N4mINI13INIStringUtilE"></span><span id="mINI::INIStringUtil"></span><span class="target" id="namespacemINI_1_1INIStringUtil"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INIStringUtil</span></span></span><a class="headerlink" href="#_CPPv4N4mINI13INIStringUtilE" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI13INIStringUtil4trimERNSt6stringE">
+<span id="_CPPv3N4mINI13INIStringUtil4trimERNSt6stringE"></span><span id="_CPPv2N4mINI13INIStringUtil4trimERNSt6stringE"></span><span id="mINI::INIStringUtil::trim__ssR"></span><span class="target" id="namespacemINI_1_1INIStringUtil_1adcbaf06b60e9bed7a2f8d48f45c1a615"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">trim</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI13INIStringUtil4trimERNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI13INIStringUtil7toLowerERNSt6stringE">
+<span id="_CPPv3N4mINI13INIStringUtil7toLowerERNSt6stringE"></span><span id="_CPPv2N4mINI13INIStringUtil7toLowerERNSt6stringE"></span><span id="mINI::INIStringUtil::toLower__ssR"></span><span class="target" id="namespacemINI_1_1INIStringUtil_1aab66a8d081db7826eeea906cfd567281"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toLower</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI13INIStringUtil7toLowerERNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE"></span><span id="mINI::INIStringUtil::replace__ssR.ssCR.ssCR"></span><span class="target" id="namespacemINI_1_1INIStringUtil_1a7e002cc156d2377c091de83634e9063f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">replace</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">a</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI13INIStringUtil20whitespaceDelimitersE">
+<span id="_CPPv3N4mINI13INIStringUtil20whitespaceDelimitersE"></span><span id="_CPPv2N4mINI13INIStringUtil20whitespaceDelimitersE"></span><span id="mINI::INIStringUtil::whitespaceDelimiters__cCPC"></span><span class="target" id="namespacemINI_1_1INIStringUtil_1a7631c088e3dfd2dcdb9345dc10988fac"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">whitespaceDelimiters</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;</span> <span class="pre">\t\n\r\f\v&quot;</span></span><a class="headerlink" href="#_CPPv4N4mINI13INIStringUtil20whitespaceDelimitersE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4mINI13INIStringUtil4endlE">
+<span id="_CPPv3N4mINI13INIStringUtil4endlE"></span><span id="_CPPv2N4mINI13INIStringUtil4endlE"></span><span id="mINI::INIStringUtil::endl__cCPC"></span><span class="target" id="namespacemINI_1_1INIStringUtil_1a6a07bc25b9c17bd55c297f69cc90eee2"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">endl</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;\n&quot;</span></span><a class="headerlink" href="#_CPPv4N4mINI13INIStringUtil4endlE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="interactable_8hpp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">File interactable.hpp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="imageRect_8hpp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">File imageRect.hpp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">File ini.h</a><ul>
+<li><a class="reference internal" href="#_CPPv44mINI"><code class="docutils literal notranslate"><span class="pre">mINI</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIStructureE"><code class="docutils literal notranslate"><span class="pre">INIStructure</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI7INIFileE"><code class="docutils literal notranslate"><span class="pre">mINI::INIFile</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI7INIFile7INIFileENSt10filesystem4pathE"><code class="docutils literal notranslate"><span class="pre">INIFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI7INIFileD0Ev"><code class="docutils literal notranslate"><span class="pre">~INIFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI7INIFile4readER12INIStructure"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI7INIFile8generateERK12INIStructureb"><code class="docutils literal notranslate"><span class="pre">generate()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI7INIFile5writeER12INIStructureb"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI7INIFile8filenameE"><code class="docutils literal notranslate"><span class="pre">filename</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIGeneratorE"><code class="docutils literal notranslate"><span class="pre">mINI::INIGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIGenerator12INIGeneratorERKNSt10filesystem4pathE"><code class="docutils literal notranslate"><span class="pre">INIGenerator()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIGeneratorD0Ev"><code class="docutils literal notranslate"><span class="pre">~INIGenerator()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIGeneratorlsERK12INIStructure"><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIGenerator11prettyPrintE"><code class="docutils literal notranslate"><span class="pre">prettyPrint</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI12INIGenerator15fileWriteStreamE"><code class="docutils literal notranslate"><span class="pre">fileWriteStream</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4I0EN4mINI6INIMapE"><code class="docutils literal notranslate"><span class="pre">mINI::INIMap</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap14const_iteratorE"><code class="docutils literal notranslate"><span class="pre">const_iterator</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap6INIMapEv"><code class="docutils literal notranslate"><span class="pre">INIMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap6INIMapERK6INIMap"><code class="docutils literal notranslate"><span class="pre">INIMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMapixENSt6stringE"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI6INIMap3getENSt6stringE"><code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI6INIMap3hasENSt6stringE"><code class="docutils literal notranslate"><span class="pre">has()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap3setENSt6stringE1T"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap3setERK11T_MultiArgs"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap6removeENSt6stringE"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap5clearEv"><code class="docutils literal notranslate"><span class="pre">clear()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI6INIMap4sizeEv"><code class="docutils literal notranslate"><span class="pre">size()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI6INIMap5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI6INIMap3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap14T_DataIndexMapE"><code class="docutils literal notranslate"><span class="pre">T_DataIndexMap</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap10T_DataItemE"><code class="docutils literal notranslate"><span class="pre">T_DataItem</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap15T_DataContainerE"><code class="docutils literal notranslate"><span class="pre">T_DataContainer</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap11T_MultiArgsE"><code class="docutils literal notranslate"><span class="pre">T_MultiArgs</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap8setEmptyERNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setEmpty()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap12dataIndexMapE"><code class="docutils literal notranslate"><span class="pre">dataIndexMap</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI6INIMap4dataE"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReaderE"><code class="docutils literal notranslate"><span class="pre">mINI::INIReader</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader10T_LineDataE"><code class="docutils literal notranslate"><span class="pre">T_LineData</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader13T_LineDataPtrE"><code class="docutils literal notranslate"><span class="pre">T_LineDataPtr</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader9INIReaderERKNSt10filesystem4pathEb"><code class="docutils literal notranslate"><span class="pre">INIReader()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReaderD0Ev"><code class="docutils literal notranslate"><span class="pre">~INIReader()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReaderrsER12INIStructure"><code class="docutils literal notranslate"><span class="pre">operator&gt;&gt;()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader8getLinesEv"><code class="docutils literal notranslate"><span class="pre">getLines()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader5isBOME"><code class="docutils literal notranslate"><span class="pre">isBOM</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader8readFileEv"><code class="docutils literal notranslate"><span class="pre">readFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader14fileReadStreamE"><code class="docutils literal notranslate"><span class="pre">fileReadStream</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIReader8lineDataE"><code class="docutils literal notranslate"><span class="pre">lineData</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriterE"><code class="docutils literal notranslate"><span class="pre">mINI::INIWriter</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriter9INIWriterENSt10filesystem4pathE"><code class="docutils literal notranslate"><span class="pre">INIWriter()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriterD0Ev"><code class="docutils literal notranslate"><span class="pre">~INIWriter()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriterlsER12INIStructure"><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriter11prettyPrintE"><code class="docutils literal notranslate"><span class="pre">prettyPrint</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriter10T_LineDataE"><code class="docutils literal notranslate"><span class="pre">T_LineData</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriter13T_LineDataPtrE"><code class="docutils literal notranslate"><span class="pre">T_LineDataPtr</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK4mINI9INIWriter13getLazyOutputERK13T_LineDataPtrR12INIStructureR12INIStructure"><code class="docutils literal notranslate"><span class="pre">getLazyOutput()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIWriter8filenameE"><code class="docutils literal notranslate"><span class="pre">filename</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParserE"><code class="docutils literal notranslate"><span class="pre">mINI::INIParser</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser13T_ParseValuesE"><code class="docutils literal notranslate"><span class="pre">T_ParseValues</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataTypeE"><code class="docutils literal notranslate"><span class="pre">PDataType</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE"><code class="docutils literal notranslate"><span class="pre">PDATA_NONE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE"><code class="docutils literal notranslate"><span class="pre">PDATA_COMMENT</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataType13PDATA_SECTIONE"><code class="docutils literal notranslate"><span class="pre">PDATA_SECTION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE"><code class="docutils literal notranslate"><span class="pre">PDATA_KEYVALUE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9PDataType13PDATA_UNKNOWNE"><code class="docutils literal notranslate"><span class="pre">PDATA_UNKNOWN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues"><code class="docutils literal notranslate"><span class="pre">parseLine()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv4N4mINI13INIStringUtilE"><code class="docutils literal notranslate"><span class="pre">mINI::INIStringUtil</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N4mINI13INIStringUtil4trimERNSt6stringE"><code class="docutils literal notranslate"><span class="pre">trim()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI13INIStringUtil7toLowerERNSt6stringE"><code class="docutils literal notranslate"><span class="pre">toLower()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI13INIStringUtil20whitespaceDelimitersE"><code class="docutils literal notranslate"><span class="pre">whitespaceDelimiters</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4mINI13INIStringUtil4endlE"><code class="docutils literal notranslate"><span class="pre">endl</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

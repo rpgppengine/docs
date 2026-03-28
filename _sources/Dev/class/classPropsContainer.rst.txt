@@ -1,0 +1,5 @@
+Class PropsContainer
+====================
+
+.. doxygenclass:: PropsContainer
+   :members:

@@ -1,0 +1,5 @@
+Class Player
+============
+
+.. doxygenclass:: Player
+   :members:

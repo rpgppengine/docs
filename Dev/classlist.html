@@ -1,0 +1,759 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Class Actor" href="class/classActor.html"><link rel="prev" title="Developer Docs" href="../dev.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Class list - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Class list</a><input aria-label="Toggle navigation of Class list" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classColorRect.html">Class ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classImageRect.html">Class ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTextArea.html">Class TextArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="filelist.html">File list</a><input aria-label="Toggle navigation of File list" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="file/actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file/worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../moduleDirectory/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/Dev/classlist.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="class-list">
+<h1>Class list<a class="headerlink" href="#class-list" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="class/classActor.html">Class Actor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classActor.html#_CPPv45Actor"><code class="docutils literal notranslate"><span class="pre">Actor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor5ActorEv"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor5ActorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor5ActorERK8ActorBin"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor13getSourcePathEv"><code class="docutils literal notranslate"><span class="pre">getSourcePath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor11getPositionEv"><code class="docutils literal notranslate"><span class="pre">getPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor11setPositionE7Vector2"><code class="docutils literal notranslate"><span class="pre">setPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor15setTilePositionE7Vector27Vector2"><code class="docutils literal notranslate"><span class="pre">setTilePosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor15getTilePositionEv"><code class="docutils literal notranslate"><span class="pre">getTilePosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor14moveByVelocityE7Vector2"><code class="docutils literal notranslate"><span class="pre">moveByVelocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor7getRectEv"><code class="docutils literal notranslate"><span class="pre">getRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor10getTileSetEv"><code class="docutils literal notranslate"><span class="pre">getTileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor15getCurrentFrameEv"><code class="docutils literal notranslate"><span class="pre">getCurrentFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor14resetAnimationEv"><code class="docutils literal notranslate"><span class="pre">resetAnimation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor21getAnimationDirectionEv"><code class="docutils literal notranslate"><span class="pre">getAnimationDirection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor24getCurrentAnimationAtlasEv"><code class="docutils literal notranslate"><span class="pre">getCurrentAnimationAtlas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor28getCurrentAnimationRectangleEv"><code class="docutils literal notranslate"><span class="pre">getCurrentAnimationRectangle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor22getAnimationAtlasByIdxEi"><code class="docutils literal notranslate"><span class="pre">getAnimationAtlasByIdx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor17setAnimationFrameEi"><code class="docutils literal notranslate"><span class="pre">setAnimationFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor17getAnimationCountEv"><code class="docutils literal notranslate"><span class="pre">getAnimationCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor10setTileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getCollisionRectE7Vector2"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor18getCollisionCenterEv"><code class="docutils literal notranslate"><span class="pre">getCollisionCenter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2"><code class="docutils literal notranslate"><span class="pre">addAnimationFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor20removeAnimationFrameE9Directioni"><code class="docutils literal notranslate"><span class="pre">removeAnimationFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2"><code class="docutils literal notranslate"><span class="pre">setAnimationFrame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE"><code class="docutils literal notranslate"><span class="pre">addAnimationFrames()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor13playAnimationE9Direction"><code class="docutils literal notranslate"><span class="pre">playAnimation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor22isTempAnimationPlayingEv"><code class="docutils literal notranslate"><span class="pre">isTempAnimationPlaying()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor15changeAnimationE9Direction"><code class="docutils literal notranslate"><span class="pre">changeAnimation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getTileSetSourceEv"><code class="docutils literal notranslate"><span class="pre">getTileSetSource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getAnimationsRawEv"><code class="docutils literal notranslate"><span class="pre">getAnimationsRaw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor15getAnimationRawE9Direction"><code class="docutils literal notranslate"><span class="pre">getAnimationRaw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor16setCollisionRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">setCollisionRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor14onFrameChangedE"><code class="docutils literal notranslate"><span class="pre">onFrameChanged</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classActorContainer.html">Class ActorContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classActorContainer.html#_CPPv414ActorContainer"><code class="docutils literal notranslate"><span class="pre">ActorContainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html#_CPPv4N14ActorContainer14ActorContainerEv"><code class="docutils literal notranslate"><span class="pre">ActorContainer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html#_CPPv4N14ActorContainer9getActorsEv"><code class="docutils literal notranslate"><span class="pre">getActors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html#_CPPv4N14ActorContainer8getActorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getActor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html#_CPPv4N14ActorContainer8addActorE7Vector2RKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addActor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html#_CPPv4N14ActorContainer11removeActorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">removeActor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActorContainer.html#_CPPv4N14ActorContainer11actorExistsERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">actorExists()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classAtlasTile.html">Class AtlasTile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classAtlasTile.html#_CPPv49AtlasTile"><code class="docutils literal notranslate"><span class="pre">AtlasTile</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classAtlasTile.html#_CPPv4N9AtlasTile9AtlasTileEv"><code class="docutils literal notranslate"><span class="pre">AtlasTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classAtlasTile.html#_CPPv4N9AtlasTile9AtlasTileEP7Texture7Vector2"><code class="docutils literal notranslate"><span class="pre">AtlasTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classAtlasTile.html#_CPPv4NK9AtlasTile14getAtlasCoordsEv"><code class="docutils literal notranslate"><span class="pre">getAtlasCoords()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classBaseContainer.html">Class BaseContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classBaseContainer.html#_CPPv4I0E13BaseContainer"><code class="docutils literal notranslate"><span class="pre">BaseContainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classBaseContainer.html#_CPPv4N13BaseContainer10pushObjectE7IVector1T"><code class="docutils literal notranslate"><span class="pre">pushObject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classBaseContainer.html#_CPPv4N13BaseContainer12removeObjectE7IVector"><code class="docutils literal notranslate"><span class="pre">removeObject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classBaseContainer.html#_CPPv4N13BaseContainer22objectExistsAtPositionE7IVector"><code class="docutils literal notranslate"><span class="pre">objectExistsAtPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classBaseContainer.html#_CPPv4N13BaseContainer19getObjectAtPositionE7IVector"><code class="docutils literal notranslate"><span class="pre">getObjectAtPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classBaseContainer.html#_CPPv4N13BaseContainer10getObjectsEv"><code class="docutils literal notranslate"><span class="pre">getObjects()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classCollisionsContainer.html">Class CollisionsContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classCollisionsContainer.html#_CPPv419CollisionsContainer"><code class="docutils literal notranslate"><span class="pre">CollisionsContainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classCollisionsContainer.html#_CPPv4N19CollisionsContainer19CollisionsContainerEv"><code class="docutils literal notranslate"><span class="pre">CollisionsContainer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classCollisionsContainer.html#_CPPv4N19CollisionsContainer13pushCollisionE7IVector"><code class="docutils literal notranslate"><span class="pre">pushCollision()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classColorRect.html">Class ColorRect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classColorRect.html#_CPPv49ColorRect"><code class="docutils literal notranslate"><span class="pre">ColorRect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classDialogue.html">Class Dialogue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classDialogue.html#_CPPv48Dialogue"><code class="docutils literal notranslate"><span class="pre">Dialogue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classDialogueBalloon.html">Class DialogueBalloon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classDialogueBalloon.html#_CPPv415DialogueBalloon"><code class="docutils literal notranslate"><span class="pre">DialogueBalloon</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classGame.html">Class Game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classGame.html#_CPPv44Game"><code class="docutils literal notranslate"><span class="pre">Game</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classISaveable.html">Class ISaveable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classISaveable.html#_CPPv49ISaveable"><code class="docutils literal notranslate"><span class="pre">ISaveable</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classImageRect.html">Class ImageRect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classImageRect.html#_CPPv49ImageRect"><code class="docutils literal notranslate"><span class="pre">ImageRect</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classInteractable.html">Class Interactable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classInteractable.html#_CPPv412Interactable"><code class="docutils literal notranslate"><span class="pre">Interactable</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable12InteractableEv"><code class="docutils literal notranslate"><span class="pre">Interactable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable12InteractableERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Interactable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable12InteractableERKNSt6stringE7Vector2i"><code class="docutils literal notranslate"><span class="pre">Interactable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable12InteractableE21InteractableInRoomBin"><code class="docutils literal notranslate"><span class="pre">Interactable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4NK12Interactable7isValidEv"><code class="docutils literal notranslate"><span class="pre">isValid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4NK12Interactable7getRectEv"><code class="docutils literal notranslate"><span class="pre">getRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4NK12Interactable7getTypeEv"><code class="docutils literal notranslate"><span class="pre">getType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4NK12Interactable11getWorldPosEv"><code class="docutils literal notranslate"><span class="pre">getWorldPos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4NK12Interactable9isOnTouchEv"><code class="docutils literal notranslate"><span class="pre">isOnTouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable10setOnTouchEb"><code class="docutils literal notranslate"><span class="pre">setOnTouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable8interactEv"><code class="docutils literal notranslate"><span class="pre">interact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable7setTypeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable7setPropENSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">setProp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE"><code class="docutils literal notranslate"><span class="pre">setProps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable19getScriptSourcePathEv"><code class="docutils literal notranslate"><span class="pre">getScriptSourcePath()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable8getPropsEv"><code class="docutils literal notranslate"><span class="pre">getProps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable15setDisplayTitleERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setDisplayTitle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable15getDisplayTitleEv"><code class="docutils literal notranslate"><span class="pre">getDisplayTitle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classInteractablesContainer.html">Class InteractablesContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv422InteractablesContainer"><code class="docutils literal notranslate"><span class="pre">InteractablesContainer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer22InteractablesContainerEv"><code class="docutils literal notranslate"><span class="pre">InteractablesContainer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer3addE7IVectorRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer6addBinE21InteractableInRoomBin"><code class="docutils literal notranslate"><span class="pre">addBin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer18addBinFromTypenameE7Vector2RKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addBinFromTypename()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer6getIntE7IVector"><code class="docutils literal notranslate"><span class="pre">getInt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer19setInteractableTypeE7IVectorRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setInteractableType()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer7getListEv"><code class="docutils literal notranslate"><span class="pre">getList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer12addBinVectorERKNSt6vectorI21InteractableInRoomBinEE"><code class="docutils literal notranslate"><span class="pre">addBinVector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer11addJsonDataE4json"><code class="docutils literal notranslate"><span class="pre">addJsonData()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classInterfaceService.html">Class InterfaceService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classInterfaceService.html#_CPPv416InterfaceService"><code class="docutils literal notranslate"><span class="pre">InterfaceService</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4N16InterfaceService16InterfaceServiceEv"><code class="docutils literal notranslate"><span class="pre">InterfaceService()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4NK16InterfaceService7getFontEv"><code class="docutils literal notranslate"><span class="pre">getFont()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4NK16InterfaceService10getTextureEv"><code class="docutils literal notranslate"><span class="pre">getTexture()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4N16InterfaceService12showDialogueERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">showDialogue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4N16InterfaceService12showDialogueERK11DialogueBin"><code class="docutils literal notranslate"><span class="pre">showDialogue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4N16InterfaceService6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4N16InterfaceService4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInterfaceService.html#_CPPv4NK16InterfaceService6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classInterfaceView.html">Class InterfaceView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classInterfaceView.html#_CPPv413InterfaceView"><code class="docutils literal notranslate"><span class="pre">InterfaceView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classPlayer.html">Class Player</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classPlayer.html#_CPPv46Player"><code class="docutils literal notranslate"><span class="pre">Player</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4N6Player6PlayerENSt10unique_ptrI5ActorEER4Room"><code class="docutils literal notranslate"><span class="pre">Player()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4N6Player6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player7setRoomER4Room"><code class="docutils literal notranslate"><span class="pre">setRoom()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player8getActorEv"><code class="docutils literal notranslate"><span class="pre">getActor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4N6Player14moveByVelocityE7Vector2"><code class="docutils literal notranslate"><span class="pre">moveByVelocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player11getPositionEv"><code class="docutils literal notranslate"><span class="pre">getPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4N6Player11setPositionE7Vector2"><code class="docutils literal notranslate"><span class="pre">setPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player17getCenterPositionEv"><code class="docutils literal notranslate"><span class="pre">getCenterPosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player15getTilePositionEv"><code class="docutils literal notranslate"><span class="pre">getTilePosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4N6Player15setTilePositionE7Vector2"><code class="docutils literal notranslate"><span class="pre">setTilePosition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player15getCollisionPosEv"><code class="docutils literal notranslate"><span class="pre">getCollisionPos()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classProp.html">Class Prop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classProp.html#_CPPv44Prop"><code class="docutils literal notranslate"><span class="pre">Prop</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classPropsContainer.html">Class PropsContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classPropsContainer.html#_CPPv414PropsContainer"><code class="docutils literal notranslate"><span class="pre">PropsContainer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classResourceService.html">Class ResourceService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classResourceService.html#_CPPv415ResourceService"><code class="docutils literal notranslate"><span class="pre">ResourceService</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classRoom.html">Class Room</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classRoom.html#_CPPv44Room"><code class="docutils literal notranslate"><span class="pre">Room</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomEv"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomERK7RoomBin"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room9addPlayerENSt10unique_ptrI6PlayerEE"><code class="docutils literal notranslate"><span class="pre">addPlayer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room9getPlayerEv"><code class="docutils literal notranslate"><span class="pre">getPlayer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room10getTileMapEv"><code class="docutils literal notranslate"><span class="pre">getTileMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room14getMusicSourceEv"><code class="docutils literal notranslate"><span class="pre">getMusicSource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room14setMusicSourceERKNSt11string_viewE"><code class="docutils literal notranslate"><span class="pre">setMusicSource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room12getStartTileEv"><code class="docutils literal notranslate"><span class="pre">getStartTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room12setStartTileE7Vector2"><code class="docutils literal notranslate"><span class="pre">setStartTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room13getCollisionsEv"><code class="docutils literal notranslate"><span class="pre">getCollisions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room16getInteractablesEv"><code class="docutils literal notranslate"><span class="pre">getInteractables()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4NK4Room8getPropsEv"><code class="docutils literal notranslate"><span class="pre">getProps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room9getActorsEv"><code class="docutils literal notranslate"><span class="pre">getActors()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classScriptFile.html">Class ScriptFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classScriptFile.html#_CPPv410ScriptFile"><code class="docutils literal notranslate"><span class="pre">ScriptFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classScriptService.html">Class ScriptService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classScriptService.html#_CPPv413ScriptService"><code class="docutils literal notranslate"><span class="pre">ScriptService</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classSoundService.html">Class SoundService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classSoundService.html#_CPPv412SoundService"><code class="docutils literal notranslate"><span class="pre">SoundService</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classStateService.html">Class StateService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classStateService.html#_CPPv412StateService"><code class="docutils literal notranslate"><span class="pre">StateService</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classStateService.html#_CPPv4N12StateService12StateServiceEv"><code class="docutils literal notranslate"><span class="pre">StateService()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classStateService.html#_CPPv4N12StateService7setPropERKNSt6stringE5Value"><code class="docutils literal notranslate"><span class="pre">setProp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classStateService.html#_CPPv4NK12StateService7getPropERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getProp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classStateService.html#_CPPv4NK12StateService6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classTextArea.html">Class TextArea</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classTextArea.html#_CPPv48TextArea"><code class="docutils literal notranslate"><span class="pre">TextArea</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classTile.html">Class Tile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classTile.html#_CPPv44Tile"><code class="docutils literal notranslate"><span class="pre">Tile</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classTile.html#_CPPv4NK4Tile8isPlacedEv"><code class="docutils literal notranslate"><span class="pre">isPlaced()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTile.html#_CPPv4N4Tile5placeE9AtlasTile7Vector2"><code class="docutils literal notranslate"><span class="pre">place()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTile.html#_CPPv4N4Tile5eraseEv"><code class="docutils literal notranslate"><span class="pre">erase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTile.html#_CPPv4NK4Tile12getAtlasTileEv"><code class="docutils literal notranslate"><span class="pre">getAtlasTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTile.html#_CPPv4NK4Tile14getWorldCoordsEv"><code class="docutils literal notranslate"><span class="pre">getWorldCoords()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classTileMap.html">Class TileMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classTileMap.html#_CPPv47TileMap"><code class="docutils literal notranslate"><span class="pre">TileMap</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap7TileMapERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap7TileMapERKNSt6stringEiiii"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap7TileMapERK7TileSetiiii"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap7TileMapERK7RoomBin"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap16getTileSetSourceEv"><code class="docutils literal notranslate"><span class="pre">getTileSetSource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap10getTileSetEv"><code class="docutils literal notranslate"><span class="pre">getTileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap10setTileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap7getTileEii"><code class="docutils literal notranslate"><span class="pre">getTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap7setTileE7Vector27Vector2"><code class="docutils literal notranslate"><span class="pre">setTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap12setEmptyTileE7Vector2"><code class="docutils literal notranslate"><span class="pre">setEmptyTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap8drawTileEii"><code class="docutils literal notranslate"><span class="pre">drawTile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4NK7TileMap15getMaxWorldSizeEv"><code class="docutils literal notranslate"><span class="pre">getMaxWorldSize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileMap.html#_CPPv4N7TileMap12setWorldSizeE7Vector2"><code class="docutils literal notranslate"><span class="pre">setWorldSize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classTileSet.html">Class TileSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classTileSet.html#_CPPv47TileSet"><code class="docutils literal notranslate"><span class="pre">TileSet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet7TileSetEv"><code class="docutils literal notranslate"><span class="pre">TileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet7TileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">TileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet7TileSetERKNSt6stringE7Vector2"><code class="docutils literal notranslate"><span class="pre">TileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet7TileSetERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">TileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet7TileSetE10TileSetBin"><code class="docutils literal notranslate"><span class="pre">TileSet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4NK7TileSet6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4NK7TileSet11getTileSizeEv"><code class="docutils literal notranslate"><span class="pre">getTileSize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet11setTileSizeEi"><code class="docutils literal notranslate"><span class="pre">setTileSize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet17setTileSizeVectorE7Vector2"><code class="docutils literal notranslate"><span class="pre">setTileSizeVector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet13getTileHeightEv"><code class="docutils literal notranslate"><span class="pre">getTileHeight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet12getTileWidthEv"><code class="docutils literal notranslate"><span class="pre">getTileWidth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet13setTileHeightEi"><code class="docutils literal notranslate"><span class="pre">setTileHeight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet12setTileWidthEi"><code class="docutils literal notranslate"><span class="pre">setTileWidth()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4NK7TileSet10getTextureEv"><code class="docutils literal notranslate"><span class="pre">getTexture()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet16getTextureSourceEv"><code class="docutils literal notranslate"><span class="pre">getTextureSource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet16setTextureSourceERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTextureSource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4NK7TileSet19areAtlasCoordsValidE7Vector2"><code class="docutils literal notranslate"><span class="pre">areAtlasCoordsValid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classTileSet.html#_CPPv4N7TileSet7getTileE7Vector2"><code class="docutils literal notranslate"><span class="pre">getTile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classUIElement.html">Class UIElement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classUIElement.html#_CPPv49UIElement"><code class="docutils literal notranslate"><span class="pre">UIElement</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classWorldService.html">Class WorldService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classWorldService.html#_CPPv412WorldService"><code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4N12WorldService12WorldServiceEv"><code class="docutils literal notranslate"><span class="pre">WorldService()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4NK12WorldService7getRoomEv"><code class="docutils literal notranslate"><span class="pre">getRoom()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4N12WorldService7setRoomERKNSt11string_viewE"><code class="docutils literal notranslate"><span class="pre">setRoom()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4N12WorldService10setRoomBinE7RoomBin"><code class="docutils literal notranslate"><span class="pre">setRoomBin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4N12WorldService10setRoomBinERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setRoomBin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4N12WorldService16doFadeTransitionEv"><code class="docutils literal notranslate"><span class="pre">doFadeTransition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4NK12WorldService9getPlayerEv"><code class="docutils literal notranslate"><span class="pre">getPlayer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4N12WorldService6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4NK12WorldService4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classWorldService.html#_CPPv4NK12WorldService6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classmINI_1_1INIFile.html">Class mINI::INIFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classmINI_1_1INIFile.html#_CPPv4N4mINI7INIFileE"><code class="docutils literal notranslate"><span class="pre">mINI::INIFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classmINI_1_1INIGenerator.html#_CPPv4N4mINI12INIGeneratorE"><code class="docutils literal notranslate"><span class="pre">mINI::INIGenerator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classmINI_1_1INIMap.html">Class mINI::INIMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE"><code class="docutils literal notranslate"><span class="pre">mINI::INIMap</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classmINI_1_1INIReader.html">Class mINI::INIReader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classmINI_1_1INIReader.html#_CPPv4N4mINI9INIReaderE"><code class="docutils literal notranslate"><span class="pre">mINI::INIReader</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class/classmINI_1_1INIWriter.html#_CPPv4N4mINI9INIWriterE"><code class="docutils literal notranslate"><span class="pre">mINI::INIWriter</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="class/classActor.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Class Actor</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../dev.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Developer Docs</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

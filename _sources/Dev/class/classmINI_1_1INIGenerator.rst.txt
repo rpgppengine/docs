@@ -1,0 +1,5 @@
+Class mINI::INIGenerator
+========================
+
+.. doxygenclass:: mINI::INIGenerator
+   :members:

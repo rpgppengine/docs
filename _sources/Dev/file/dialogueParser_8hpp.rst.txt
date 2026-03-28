@@ -1,0 +1,4 @@
+File dialogueParser.hpp
+=======================
+
+.. doxygenfile:: dialogueParser.hpp

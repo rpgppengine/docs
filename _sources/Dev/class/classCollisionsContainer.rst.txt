@@ -1,0 +1,5 @@
+Class CollisionsContainer
+=========================
+
+.. doxygenclass:: CollisionsContainer
+   :members:

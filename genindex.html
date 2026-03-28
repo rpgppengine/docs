@@ -1,0 +1,1833 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#"><link rel="search" title="Search" href="search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 --><title>Index - RPG++ documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Dev/classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classColorRect.html">Class ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classImageRect.html">Class ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classTextArea.html">Class TextArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Dev/structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Dev/filelist.html">File list</a><input aria-label="Toggle navigation of File list" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="Dev/namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Dev/namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="moduleDirectory/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          
+<section class="genindex-section">
+  <h1 id="index">Index</h1>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a></div>
+</section>
+<section id="_" class="genindex-section">
+  <h2>_</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/tilemap_8hpp.html#c._RPGPP_TILESIZE">_RPGPP_TILESIZE (C macro)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classActor.html#_CPPv45Actor">Actor (C++ class)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv45Actor">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE">Actor::Actor (C++ function)</a>, <a href="Dev/class/classActor.html#_CPPv4N5Actor5ActorERK8ActorBin">[1]</a>, <a href="Dev/class/classActor.html#_CPPv4N5Actor5ActorERKNSt6stringE">[2]</a>, <a href="Dev/class/classActor.html#_CPPv4N5Actor5ActorEv">[3]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE">[4]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor5ActorERK8ActorBin">[5]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor5ActorERKNSt6stringE">[6]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor5ActorEv">[7]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2">Actor::addAnimationFrame (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE">Actor::addAnimationFrames (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor10animationsE">Actor::animations (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor15changeAnimationE9Direction">Actor::changeAnimation (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor15changeAnimationE9Direction">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor13collisionRectE">Actor::collisionRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor16currentAnimationE">Actor::currentAnimation (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor12currentFrameE">Actor::currentFrame (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor4drawEv">Actor::draw (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor4drawEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor8dumpJsonEv">Actor::dumpJson (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor8dumpJsonEv">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor12frameCounterE">Actor::frameCounter (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor10frameSpeedE">Actor::frameSpeed (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor22getAnimationAtlasByIdxEi">Actor::getAnimationAtlasByIdx (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor22getAnimationAtlasByIdxEi">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor17getAnimationCountEv">Actor::getAnimationCount (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor17getAnimationCountEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor21getAnimationDirectionEv">Actor::getAnimationDirection (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor21getAnimationDirectionEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor15getAnimationRawE9Direction">Actor::getAnimationRaw (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor15getAnimationRawE9Direction">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor16getAnimationsRawEv">Actor::getAnimationsRaw (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor16getAnimationsRawEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor18getCollisionCenterEv">Actor::getCollisionCenter (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor18getCollisionCenterEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor16getCollisionRectE7Vector2">Actor::getCollisionRect (C++ function)</a>, <a href="Dev/class/classActor.html#_CPPv4NK5Actor16getCollisionRectEv">[1]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor16getCollisionRectE7Vector2">[2]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor16getCollisionRectEv">[3]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor24getCurrentAnimationAtlasEv">Actor::getCurrentAnimationAtlas (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor24getCurrentAnimationAtlasEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor28getCurrentAnimationRectangleEv">Actor::getCurrentAnimationRectangle (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor28getCurrentAnimationRectangleEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor15getCurrentFrameEv">Actor::getCurrentFrame (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor15getCurrentFrameEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor11getPositionEv">Actor::getPosition (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor11getPositionEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor7getRectEv">Actor::getRect (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor7getRectEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor13getSourcePathEv">Actor::getSourcePath (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor13getSourcePathEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor15getTilePositionEv">Actor::getTilePosition (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor15getTilePositionEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor10getTileSetEv">Actor::getTileSet (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor10getTileSetEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor16getTileSetSourceEv">Actor::getTileSetSource (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor16getTileSetSourceEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor22isTempAnimationPlayingEv">Actor::isTempAnimationPlaying (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor22isTempAnimationPlayingEv">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor13lastAnimationE">Actor::lastAnimation (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor14moveByVelocityE7Vector2">Actor::moveByVelocity (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor14moveByVelocityE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor14onFrameChangedE">Actor::onFrameChanged (C++ member)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor14onFrameChangedE">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor13playAnimationE9Direction">Actor::playAnimation (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor13playAnimationE9Direction">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor8positionE">Actor::position (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor20removeAnimationFrameE9Directioni">Actor::removeAnimationFrame (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor20removeAnimationFrameE9Directioni">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor14resetAnimationEv">Actor::resetAnimation (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor14resetAnimationEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2">Actor::setAnimationFrame (C++ function)</a>, <a href="Dev/class/classActor.html#_CPPv4N5Actor17setAnimationFrameEi">[1]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2">[2]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor17setAnimationFrameEi">[3]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor16setCollisionRectE9Rectangle">Actor::setCollisionRect (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor16setCollisionRectE9Rectangle">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor11setPositionE7Vector2">Actor::setPosition (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor11setPositionE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor15setTilePositionE7Vector27Vector2">Actor::setTilePosition (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor15setTilePositionE7Vector27Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor10setTileSetERKNSt6stringE">Actor::setTileSet (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor10setTileSetERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor10sourcePathE">Actor::sourcePath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor16tempAnimIsPlayedE">Actor::tempAnimIsPlayed (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor4tileE">Actor::tile (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor12tilePositionE">Actor::tilePosition (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor7tileSetE">Actor::tileSet (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor13tileSetSourceE">Actor::tileSetSource (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor6unloadEv">Actor::unload (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor6updateEv">Actor::update (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor6updateEv">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv48ActorBin">ActorBin (C++ struct)</a>, <a href="Dev/struct/structActorBin.html#_CPPv48ActorBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ActorBin10animationsE">ActorBin::animations (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ActorBin9collisionE">ActorBin::collision (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ActorBin4nameE">ActorBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ActorBin11tileSetNameE">ActorBin::tileSetName (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv414ActorContainer">ActorContainer (C++ class)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv414ActorContainer">[1]</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv4N14ActorContainer14ActorContainerEv">ActorContainer::ActorContainer (C++ function)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer14ActorContainerEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv4N14ActorContainer11actorExistsERKNSt6stringE">ActorContainer::actorExists (C++ function)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer11actorExistsERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer6actorsE">ActorContainer::actors (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv4N14ActorContainer8addActorE7Vector2RKNSt6stringERKNSt6stringE">ActorContainer::addActor (C++ function)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer8addActorE7Vector2RKNSt6stringERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv4N14ActorContainer8getActorERKNSt6stringE">ActorContainer::getActor (C++ function)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer8getActorERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv4N14ActorContainer9getActorsEv">ActorContainer::getActors (C++ function)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer9getActorsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classActorContainer.html#_CPPv4N14ActorContainer11removeActorERKNSt6stringE">ActorContainer::removeActor (C++ function)</a>, <a href="Dev/file/actorContainer_8hpp.html#_CPPv4N14ActorContainer11removeActorERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv414ActorInRoomBin">ActorInRoomBin (C++ struct)</a>, <a href="Dev/struct/structActorInRoomBin.html#_CPPv414ActorInRoomBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin4nameE">ActorInRoomBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin6sourceE">ActorInRoomBin::source (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin7tilePosE">ActorInRoomBin::tilePos (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classAtlasTile.html#_CPPv49AtlasTile">AtlasTile (C++ class)</a>, <a href="Dev/file/atlasTile_8hpp.html#_CPPv49AtlasTile">[1]</a>
+</li>
+        <li><a href="Dev/file/atlasTile_8hpp.html#_CPPv4N9AtlasTile11atlasCoordsE">AtlasTile::atlasCoords (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classAtlasTile.html#_CPPv4N9AtlasTile9AtlasTileEP7Texture7Vector2">AtlasTile::AtlasTile (C++ function)</a>, <a href="Dev/class/classAtlasTile.html#_CPPv4N9AtlasTile9AtlasTileEv">[1]</a>, <a href="Dev/file/atlasTile_8hpp.html#_CPPv4N9AtlasTile9AtlasTileEP7Texture7Vector2">[2]</a>, <a href="Dev/file/atlasTile_8hpp.html#_CPPv4N9AtlasTile9AtlasTileEv">[3]</a>
+</li>
+        <li><a href="Dev/class/classAtlasTile.html#_CPPv4NK9AtlasTile14getAtlasCoordsEv">AtlasTile::getAtlasCoords (C++ function)</a>, <a href="Dev/file/atlasTile_8hpp.html#_CPPv4NK9AtlasTile14getAtlasCoordsEv">[1]</a>
+</li>
+        <li><a href="Dev/file/atlasTile_8hpp.html#_CPPv4N9AtlasTile7textureE">AtlasTile::texture (C++ member)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classBaseContainer.html#_CPPv4I0E13BaseContainer">BaseContainer (C++ class)</a>, <a href="Dev/file/baseContainer_8hpp.html#_CPPv4I0E13BaseContainer">[1]</a>
+</li>
+        <li><a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer13BaseContainerEv">BaseContainer::BaseContainer (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classBaseContainer.html#_CPPv4N13BaseContainer19getObjectAtPositionE7IVector">BaseContainer::getObjectAtPosition (C++ function)</a>, <a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer19getObjectAtPositionE7IVector">[1]</a>
+</li>
+        <li><a href="Dev/class/classBaseContainer.html#_CPPv4N13BaseContainer10getObjectsEv">BaseContainer::getObjects (C++ function)</a>, <a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer10getObjectsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classBaseContainer.html#_CPPv4N13BaseContainer22objectExistsAtPositionE7IVector">BaseContainer::objectExistsAtPosition (C++ function)</a>, <a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer22objectExistsAtPositionE7IVector">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer26objectExistsAtPositionVec2E7Vector2">BaseContainer::objectExistsAtPositionVec2 (C++ function)</a>
+</li>
+        <li><a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer7objectsE">BaseContainer::objects (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classBaseContainer.html#_CPPv4N13BaseContainer10pushObjectE7IVector1T">BaseContainer::pushObject (C++ function)</a>, <a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer10pushObjectE7IVector1T">[1]</a>
+</li>
+        <li><a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer14pushObjectVec2E7Vector21T">BaseContainer::pushObjectVec2 (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classBaseContainer.html#_CPPv4N13BaseContainer12removeObjectE7IVector">BaseContainer::removeObject (C++ function)</a>, <a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer12removeObjectE7IVector">[1]</a>
+</li>
+        <li><a href="Dev/file/baseContainer_8hpp.html#_CPPv4N13BaseContainer16removeObjectVec2E7Vector2">BaseContainer::removeObjectVec2 (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv416calcActorTilePos7Vector27Vector2P7TileSet">calcActorTilePos (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classCollisionsContainer.html#_CPPv419CollisionsContainer">CollisionsContainer (C++ class)</a>, <a href="Dev/file/collisionsContainer_8hpp.html#_CPPv419CollisionsContainer">[1]</a>
+</li>
+        <li><a href="Dev/class/classCollisionsContainer.html#_CPPv4N19CollisionsContainer19CollisionsContainerEv">CollisionsContainer::CollisionsContainer (C++ function)</a>, <a href="Dev/file/collisionsContainer_8hpp.html#_CPPv4N19CollisionsContainer19CollisionsContainerEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classCollisionsContainer.html#_CPPv4N19CollisionsContainer13pushCollisionE7IVector">CollisionsContainer::pushCollision (C++ function)</a>, <a href="Dev/file/collisionsContainer_8hpp.html#_CPPv4N19CollisionsContainer13pushCollisionE7IVector">[1]</a>
+</li>
+        <li><a href="Dev/class/classColorRect.html#_CPPv49ColorRect">ColorRect (C++ class)</a>, <a href="Dev/file/colorRect_8hpp.html#_CPPv49ColorRect">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect5colorE">ColorRect::color (C++ member)</a>
+</li>
+        <li><a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect9ColorRectE9Rectangle">ColorRect::ColorRect (C++ function)</a>, <a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect9ColorRectEv">[1]</a>
+</li>
+        <li><a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect4drawEv">ColorRect::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect4rectE">ColorRect::rect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect8setColorE5Color">ColorRect::setColor (C++ function)</a>
+</li>
+        <li><a href="Dev/file/colorRect_8hpp.html#_CPPv4N9ColorRect6updateEv">ColorRect::update (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv417DataSerialization">DataSerialization (C++ struct)</a>, <a href="Dev/struct/structDataSerialization.html#_CPPv417DataSerialization">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N17DataSerialization5bytesE">DataSerialization::bytes (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N17DataSerialization5countE">DataSerialization::count (C++ member)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv419DEFAULT_PLAYER_PATH">DEFAULT_PLAYER_PATH (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv415deserializeFileNSt6stringE">deserializeFile (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classDialogue.html#_CPPv48Dialogue">Dialogue (C++ class)</a>, <a href="Dev/file/dialogue_8hpp.html#_CPPv48Dialogue">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogue_8hpp.html#_CPPv4N8Dialogue10addNewLineEv">Dialogue::addNewLine (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogue_8hpp.html#_CPPv4N8Dialogue8DialogueERKNSt6stringE">Dialogue::Dialogue (C++ function)</a>, <a href="Dev/file/dialogue_8hpp.html#_CPPv4N8Dialogue8DialogueEv">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogue_8hpp.html#_CPPv4N8Dialogue11dialogueBinE">Dialogue::dialogueBin (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogue_8hpp.html#_CPPv4N8Dialogue8dumpJsonEv">Dialogue::dumpJson (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogue_8hpp.html#_CPPv4N8Dialogue7getDataEv">Dialogue::getData (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classDialogueBalloon.html#_CPPv415DialogueBalloon">DialogueBalloon (C++ class)</a>, <a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv415DialogueBalloon">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon6activeE">DialogueBalloon::active (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon9charIndexE">DialogueBalloon::charIndex (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon5charPE7Vector2PKc5Color">DialogueBalloon::charP (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon8dialogueE">DialogueBalloon::dialogue (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon15DialogueBalloonE9Rectangle">DialogueBalloon::DialogueBalloon (C++ function)</a>, <a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon15DialogueBalloonEv">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon4drawEv">DialogueBalloon::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4NK15DialogueBalloon12drawPortraitEv">DialogueBalloon::drawPortrait (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon14firstCharTypedE">DialogueBalloon::firstCharTyped (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12frameCounterE">DialogueBalloon::frameCounter (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12hideDialogueEv">DialogueBalloon::hideDialogue (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon14lastSectionLenE">DialogueBalloon::lastSectionLen (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon9lineIndexE">DialogueBalloon::lineIndex (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon4rectE">DialogueBalloon::rect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12sectionIndexE">DialogueBalloon::sectionIndex (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon11sectionTextE">DialogueBalloon::sectionText (C++ member)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12showDialogueERK11DialogueBin">DialogueBalloon::showDialogue (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon4textE">DialogueBalloon::text (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon9textColorE">DialogueBalloon::textColor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon16textPortraitRectE">DialogueBalloon::textPortraitRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon7textPosE">DialogueBalloon::textPos (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon8textRectE">DialogueBalloon::textRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon6updateEv">DialogueBalloon::update (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv411DialogueBin">DialogueBin (C++ struct)</a>, <a href="Dev/struct/structDialogueBin.html#_CPPv411DialogueBin">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N11DialogueBin5linesE">DialogueBin::lines (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N11DialogueBin5titleE">DialogueBin::title (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv412DialogueLine">DialogueLine (C++ struct)</a>, <a href="Dev/struct/structDialogueLine.html#_CPPv412DialogueLine">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine13characterNameE">DialogueLine::characterName (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine11hasPortraitE">DialogueLine::hasPortrait (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine7imageIdE">DialogueLine::imageId (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine8sectionsE">DialogueLine::sections (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine4textE">DialogueLine::text (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv419DialogueTextSection">DialogueTextSection (C++ struct)</a>, <a href="Dev/struct/structDialogueTextSection.html#_CPPv419DialogueTextSection">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection3keyE">DialogueTextSection::key (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection4textE">DialogueTextSection::text (C++ member)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv49Direction">Direction (C++ enum)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction10RPGPP_DOWNE">Direction::RPGPP_DOWN (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction15RPGPP_DOWN_IDLEE">Direction::RPGPP_DOWN_IDLE (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction10RPGPP_LEFTE">Direction::RPGPP_LEFT (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction15RPGPP_LEFT_IDLEE">Direction::RPGPP_LEFT_IDLE (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction11RPGPP_RIGHTE">Direction::RPGPP_RIGHT (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction16RPGPP_RIGHT_IDLEE">Direction::RPGPP_RIGHT_IDLE (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction8RPGPP_UPE">Direction::RPGPP_UP (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N9Direction13RPGPP_UP_IDLEE">Direction::RPGPP_UP_IDLE (C++ enumerator)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/conversion_8hpp.html#_CPPv411fromIVectorRK7IVector">fromIVector (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/conversion_8hpp.html#_CPPv411fromVector2RK7Vector2">fromVector2 (C++ function)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classGame.html#_CPPv44Game">Game (C++ class)</a>, <a href="Dev/file/game_8hpp.html#_CPPv44Game">[1]</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game4drawEv">Game::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game4GameEv">Game::Game (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game8gameDataE">Game::gameData (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6getBinEv">Game::getBin (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game12getResourcesEv">Game::getResources (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game10getScriptsEv">Game::getScripts (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game9getSoundsEv">Game::getSounds (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game8getStateEv">Game::getState (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game5getUiEv">Game::getUi (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game8getWorldEv">Game::getWorld (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game4initEv">Game::init (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game8instanceEv">Game::instance (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game9instance_E">Game::instance_ (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game9resourcesE">Game::resources (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game7scriptsE">Game::scripts (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6setLuaEN3sol10state_viewE">Game::setLua (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6soundsE">Game::sounds (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game5stateE">Game::state (C++ member)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game2uiE">Game::ui (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6unloadEv">Game::unload (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6updateEv">Game::update (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6useBinERKNSt6stringE">Game::useBin (C++ function)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game7usesBinE">Game::usesBin (C++ member)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game5worldE">Game::world (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv415GameBinSettings">GameBinSettings (C++ struct)</a>, <a href="Dev/struct/structGameBinSettings.html#_CPPv415GameBinSettings">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N15GameBinSettings11playerActorE">GameBinSettings::playerActor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv48GameData">GameData (C++ struct)</a>, <a href="Dev/struct/structGameData.html#_CPPv48GameData">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData6actorsE">GameData::actors (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData9dialoguesE">GameData::dialogues (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData6imagesE">GameData::images (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData13interactablesE">GameData::interactables (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5musicE">GameData::music (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5propsE">GameData::props (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5roomsE">GameData::rooms (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData7scriptsE">GameData::scripts (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData8tilesetsE">GameData::tilesets (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5titleE">GameData::title (C++ member)</a>
+</li>
+        <li><a href="moduleDirectory/index.html#lua-meow.WorldService.GetPlayer">GetPlayer (function in meow.WorldService)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv48ImageBin">ImageBin (C++ struct)</a>, <a href="Dev/struct/structImageBin.html#_CPPv48ImageBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ImageBin4dataE">ImageBin::data (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ImageBin8dataSizeE">ImageBin::dataSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8ImageBin3extE">ImageBin::ext (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classImageRect.html#_CPPv49ImageRect">ImageRect (C++ class)</a>, <a href="Dev/file/imageRect_8hpp.html#_CPPv49ImageRect">[1]</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect4drawEv">ImageRect::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect9ImageRectE9Rectangle">ImageRect::ImageRect (C++ function)</a>, <a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect9ImageRectEv">[1]</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect4rectE">ImageRect::rect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect9setSourceERKNSt6stringE">ImageRect::setSource (C++ function)</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect10setTextureE9Texture2D">ImageRect::setTexture (C++ function)</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect6sourceE">ImageRect::source (C++ member)</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect7textureE">ImageRect::texture (C++ member)</a>
+</li>
+        <li><a href="Dev/file/imageRect_8hpp.html#_CPPv4N9ImageRect6updateEv">ImageRect::update (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv412Interactable">Interactable (C++ class)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv412Interactable">[1]</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable11absolutePosE">Interactable::absolutePos (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable12displayTitleE">Interactable::displayTitle (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8dumpJsonEv">Interactable::dumpJson (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8dumpJsonEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable15getDisplayTitleEv">Interactable::getDisplayTitle (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable15getDisplayTitleEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8getPropsEv">Interactable::getProps (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8getPropsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4NK12Interactable7getRectEv">Interactable::getRect (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4NK12Interactable7getRectEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable19getScriptSourcePathEv">Interactable::getScriptSourcePath (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable19getScriptSourcePathEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4NK12Interactable7getTypeEv">Interactable::getType (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4NK12Interactable7getTypeEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4NK12Interactable11getWorldPosEv">Interactable::getWorldPos (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4NK12Interactable11getWorldPosEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8interactEv">Interactable::interact (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8interactEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable12InteractableE21InteractableInRoomBin">Interactable::Interactable (C++ function)</a>, <a href="Dev/class/classInteractable.html#_CPPv4N12Interactable12InteractableERKNSt6stringE">[1]</a>, <a href="Dev/class/classInteractable.html#_CPPv4N12Interactable12InteractableERKNSt6stringE7Vector2i">[2]</a>, <a href="Dev/class/classInteractable.html#_CPPv4N12Interactable12InteractableEv">[3]</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable12InteractableE21InteractableInRoomBin">[4]</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable12InteractableERKNSt6stringE">[5]</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable12InteractableERKNSt6stringE7Vector2i">[6]</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable12InteractableEv">[7]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4NK12Interactable9isOnTouchEv">Interactable::isOnTouch (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4NK12Interactable9isOnTouchEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4NK12Interactable7isValidEv">Interactable::isValid (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4NK12Interactable7isValidEv">[1]</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7onTouchE">Interactable::onTouch (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable5propsE">Interactable::props (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable4rectE">Interactable::rect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable10scriptPathE">Interactable::scriptPath (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable15setDisplayTitleERKNSt6stringE">Interactable::setDisplayTitle (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable15setDisplayTitleERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable10setOnTouchEb">Interactable::setOnTouch (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable10setOnTouchEb">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable7setPropENSt6stringENSt6stringE">Interactable::setProp (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7setPropENSt6stringENSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE">Interactable::setProps (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable7setTypeERKNSt6stringE">Interactable::setType (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7setTypeERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7tilePosE">Interactable::tilePos (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8tileSizeE">Interactable::tileSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable4typeE">Interactable::type (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable5validE">Interactable::valid (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12InteractableD0Ev">Interactable::~Interactable (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv415InteractableBin">InteractableBin (C++ struct)</a>, <a href="Dev/struct/structInteractableBin.html#_CPPv415InteractableBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N15InteractableBin5propsE">InteractableBin::props (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N15InteractableBin10scriptPathE">InteractableBin::scriptPath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N15InteractableBin8typeNameE">InteractableBin::typeName (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv421InteractableInRoomBin">InteractableInRoomBin (C++ struct)</a>, <a href="Dev/struct/structInteractableInRoomBin.html#_CPPv421InteractableInRoomBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin7onTouchE">InteractableInRoomBin::onTouch (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin9propsCborE">InteractableInRoomBin::propsCbor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin4typeE">InteractableInRoomBin::type (C++ member)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin1xE">InteractableInRoomBin::x (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin1yE">InteractableInRoomBin::y (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv422InteractablesContainer">InteractablesContainer (C++ class)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv422InteractablesContainer">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer3addE7IVectorRKNSt6stringE">InteractablesContainer::add (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer3addE7IVectorRKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer6addBinE21InteractableInRoomBin">InteractablesContainer::addBin (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer6addBinE21InteractableInRoomBin">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer18addBinFromTypenameE7Vector2RKNSt6stringE">InteractablesContainer::addBinFromTypename (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer18addBinFromTypenameE7Vector2RKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer12addBinVectorERKNSt6vectorI21InteractableInRoomBinEE">InteractablesContainer::addBinVector (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer12addBinVectorERKNSt6vectorI21InteractableInRoomBinEE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer11addJsonDataE4json">InteractablesContainer::addJsonData (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer11addJsonDataE4json">[1]</a>
+</li>
+        <li><a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer8dumpJsonEv">InteractablesContainer::dumpJson (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer6getIntE7IVector">InteractablesContainer::getInt (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer6getIntE7IVector">[1]</a>
+</li>
+        <li><a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer10getIntVec2E7Vector2">InteractablesContainer::getIntVec2 (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer7getListEv">InteractablesContainer::getList (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer7getListEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer22InteractablesContainerEv">InteractablesContainer::InteractablesContainer (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer22InteractablesContainerEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer19setInteractableTypeE7IVectorRKNSt6stringE">InteractablesContainer::setInteractableType (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer19setInteractableTypeE7IVectorRKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv416InterfaceService">InterfaceService (C++ class)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv416InterfaceService">[1]</a>
+</li>
+        <li><a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService8dialogueE">InterfaceService::dialogue (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4N16InterfaceService4drawEv">InterfaceService::draw (C++ function)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService4drawEv">[1]</a>
+</li>
+        <li><a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService4fontE">InterfaceService::font (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService10fpsVisibleE">InterfaceService::fpsVisible (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4NK16InterfaceService7getFontEv">InterfaceService::getFont (C++ function)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4NK16InterfaceService7getFontEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4NK16InterfaceService10getTextureEv">InterfaceService::getTexture (C++ function)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4NK16InterfaceService10getTextureEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4N16InterfaceService16InterfaceServiceEv">InterfaceService::InterfaceService (C++ function)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService16InterfaceServiceEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4N16InterfaceService12showDialogueERK11DialogueBin">InterfaceService::showDialogue (C++ function)</a>, <a href="Dev/class/classInterfaceService.html#_CPPv4N16InterfaceService12showDialogueERKNSt6stringE">[1]</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService12showDialogueERK11DialogueBin">[2]</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService12showDialogueERKNSt6stringE">[3]</a>
+</li>
+        <li><a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService9uiTextureE">InterfaceService::uiTexture (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4NK16InterfaceService6unloadEv">InterfaceService::unload (C++ function)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4NK16InterfaceService6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInterfaceService.html#_CPPv4N16InterfaceService6updateEv">InterfaceService::update (C++ function)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService6updateEv">[1]</a>
+</li>
+        <li><a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceService5viewsE">InterfaceService::views (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interfaceService_8hpp.html#_CPPv4N16InterfaceServiceD0Ev">InterfaceService::~InterfaceService (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classInterfaceView.html#_CPPv413InterfaceView">InterfaceView (C++ class)</a>, <a href="Dev/file/interfaceView_8hpp.html#_CPPv413InterfaceView">[1]</a>
+</li>
+        <li><a href="Dev/file/interfaceView_8hpp.html#_CPPv4N13InterfaceView10addElementEP9UIElement">InterfaceView::addElement (C++ function)</a>
+</li>
+        <li><a href="Dev/file/interfaceView_8hpp.html#_CPPv4NK13InterfaceView4drawEv">InterfaceView::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/interfaceView_8hpp.html#_CPPv4N13InterfaceView8elementsE">InterfaceView::elements (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interfaceView_8hpp.html#_CPPv4N13InterfaceView13InterfaceViewE9Rectangle">InterfaceView::InterfaceView (C++ function)</a>, <a href="Dev/file/interfaceView_8hpp.html#_CPPv4N13InterfaceView13InterfaceViewEv">[1]</a>
+</li>
+        <li><a href="Dev/file/interfaceView_8hpp.html#_CPPv4N13InterfaceView4rectE">InterfaceView::rect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/interfaceView_8hpp.html#_CPPv4NK13InterfaceView6updateEv">InterfaceView::update (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv45IRect">IRect (C++ struct)</a>, <a href="Dev/struct/structIRect.html#_CPPv45IRect">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N5IRect6heightE">IRect::height (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N5IRect5widthE">IRect::width (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N5IRect1xE">IRect::x (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N5IRect1yE">IRect::y (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classISaveable.html#_CPPv49ISaveable">ISaveable (C++ class)</a>, <a href="Dev/file/saveable_8hpp.html#_CPPv49ISaveable">[1]</a>
+</li>
+        <li><a href="Dev/file/saveable_8hpp.html#_CPPv4N9ISaveable8dumpJsonEv">ISaveable::dumpJson (C++ function)</a>
+</li>
+        <li><a href="Dev/file/saveable_8hpp.html#_CPPv4N9ISaveable9ISaveableEv">ISaveable::ISaveable (C++ function)</a>
+</li>
+        <li><a href="Dev/file/saveable_8hpp.html#_CPPv4N9ISaveableD0Ev">ISaveable::~ISaveable (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv47IVector">IVector (C++ struct)</a>, <a href="Dev/struct/structIVector.html#_CPPv47IVector">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7IVector7IVectorERK7Vector2">IVector::IVector (C++ function)</a>, <a href="Dev/file/gamedata_8hpp.html#_CPPv4N7IVector7IVectorEii">[1]</a>, <a href="Dev/file/gamedata_8hpp.html#_CPPv4N7IVector7IVectorEv">[2]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4NK7IVectorltERK7IVector">IVector::operator&lt; (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4NK7IVectoreqERK7IVector">IVector::operator== (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7IVector1xE">IVector::x (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7IVector1yE">IVector::y (C++ member)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="J" class="genindex-section">
+  <h2>J</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv44json">json (C++ type)</a>, <a href="Dev/file/dialogueParser_8hpp.html#_CPPv44json">[1]</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv44json">[2]</a>, <a href="Dev/file/prop_8hpp.html#_CPPv44json">[3]</a>, <a href="Dev/file/room_8hpp.html#_CPPv44json">[4]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv44json">[5]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv44json">[6]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="moduleDirectory/index.html#lua-meow">meow (module)</a>
+</li>
+        <li><a href="moduleDirectory/index.html#lua-meow.MeowingBackend">MeowingBackend (class in meow)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv44mINI">mINI (C++ type)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv44mINI">[1]</a>
+</li>
+        <li><a href="Dev/class/classmINI_1_1INIFile.html#_CPPv4N4mINI7INIFileE">mINI::INIFile (C++ class)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI7INIFileE">[1]</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI7INIFileE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI7INIFile8filenameE">mINI::INIFile::filename (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI7INIFile8generateERK12INIStructureb">mINI::INIFile::generate (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI7INIFile7INIFileENSt10filesystem4pathE">mINI::INIFile::INIFile (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI7INIFile4readER12INIStructure">mINI::INIFile::read (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI7INIFile5writeER12INIStructureb">mINI::INIFile::write (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI7INIFileD0Ev">mINI::INIFile::~INIFile (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classmINI_1_1INIGenerator.html#_CPPv4N4mINI12INIGeneratorE">mINI::INIGenerator (C++ class)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIGeneratorE">[1]</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI12INIGeneratorE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIGenerator15fileWriteStreamE">mINI::INIGenerator::fileWriteStream (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIGenerator12INIGeneratorERKNSt10filesystem4pathE">mINI::INIGenerator::INIGenerator (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIGeneratorlsERK12INIStructure">mINI::INIGenerator::operator&lt;&lt; (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIGenerator11prettyPrintE">mINI::INIGenerator::prettyPrint (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIGeneratorD0Ev">mINI::INIGenerator::~INIGenerator (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classmINI_1_1INIMap.html#_CPPv4I0EN4mINI6INIMapE">mINI::INIMap (C++ class)</a>, <a href="Dev/file/ini_8h.html#_CPPv4I0EN4mINI6INIMapE">[1]</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4I0EN4mINI6INIMapE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI6INIMap5beginEv">mINI::INIMap::begin (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap5clearEv">mINI::INIMap::clear (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap14const_iteratorE">mINI::INIMap::const_iterator (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap4dataE">mINI::INIMap::data (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap12dataIndexMapE">mINI::INIMap::dataIndexMap (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI6INIMap3endEv">mINI::INIMap::end (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI6INIMap3getENSt6stringE">mINI::INIMap::get (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI6INIMap3hasENSt6stringE">mINI::INIMap::has (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap6INIMapERK6INIMap">mINI::INIMap::INIMap (C++ function)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap6INIMapEv">[1]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMapixENSt6stringE">mINI::INIMap::operator[] (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap6removeENSt6stringE">mINI::INIMap::remove (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap3setENSt6stringE1T">mINI::INIMap::set (C++ function)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap3setERK11T_MultiArgs">[1]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap8setEmptyERNSt6stringE">mINI::INIMap::setEmpty (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI6INIMap4sizeEv">mINI::INIMap::size (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap15T_DataContainerE">mINI::INIMap::T_DataContainer (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap14T_DataIndexMapE">mINI::INIMap::T_DataIndexMap (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap10T_DataItemE">mINI::INIMap::T_DataItem (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI6INIMap11T_MultiArgsE">mINI::INIMap::T_MultiArgs (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParserE">mINI::INIParser (C++ type)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParserE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParserE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues">mINI::INIParser::parseLine (C++ function)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9parseLineENSt6stringER13T_ParseValues">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataTypeE">mINI::INIParser::PDataType (C++ enum)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataTypeE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataTypeE">[2]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">mINI::INIParser::PDataType::PDATA_COMMENT (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">mINI::INIParser::PDataType::PDATA_KEYVALUE (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">mINI::INIParser::PDataType::PDATA_NONE (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_SECTIONE">mINI::INIParser::PDataType::PDATA_SECTION (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_SECTIONE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_SECTIONE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_UNKNOWNE">mINI::INIParser::PDataType::PDATA_UNKNOWN (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_UNKNOWNE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_UNKNOWNE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser13T_ParseValuesE">mINI::INIParser::T_ParseValues (C++ type)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser13T_ParseValuesE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser13T_ParseValuesE">[2]</a>
+</li>
+        <li><a href="Dev/class/classmINI_1_1INIReader.html#_CPPv4N4mINI9INIReaderE">mINI::INIReader (C++ class)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReaderE">[1]</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIReaderE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader14fileReadStreamE">mINI::INIReader::fileReadStream (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader8getLinesEv">mINI::INIReader::getLines (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader9INIReaderERKNSt10filesystem4pathEb">mINI::INIReader::INIReader (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader5isBOME">mINI::INIReader::isBOM (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader8lineDataE">mINI::INIReader::lineData (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReaderrsER12INIStructure">mINI::INIReader::operator&gt;&gt; (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader8readFileEv">mINI::INIReader::readFile (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader10T_LineDataE">mINI::INIReader::T_LineData (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReader13T_LineDataPtrE">mINI::INIReader::T_LineDataPtr (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIReaderD0Ev">mINI::INIReader::~INIReader (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI13INIStringUtilE">mINI::INIStringUtil (C++ type)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI13INIStringUtilE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIStringUtil.html#_CPPv4N4mINI13INIStringUtilE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI13INIStringUtil4endlE">mINI::INIStringUtil::endl (C++ member)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI13INIStringUtil4endlE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIStringUtil.html#_CPPv4N4mINI13INIStringUtil4endlE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE">mINI::INIStringUtil::replace (C++ function)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIStringUtil.html#_CPPv4N4mINI13INIStringUtil7replaceERNSt6stringERKNSt6stringERKNSt6stringE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI13INIStringUtil7toLowerERNSt6stringE">mINI::INIStringUtil::toLower (C++ function)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI13INIStringUtil7toLowerERNSt6stringE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIStringUtil.html#_CPPv4N4mINI13INIStringUtil7toLowerERNSt6stringE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI13INIStringUtil4trimERNSt6stringE">mINI::INIStringUtil::trim (C++ function)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI13INIStringUtil4trimERNSt6stringE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIStringUtil.html#_CPPv4N4mINI13INIStringUtil4trimERNSt6stringE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI13INIStringUtil20whitespaceDelimitersE">mINI::INIStringUtil::whitespaceDelimiters (C++ member)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI13INIStringUtil20whitespaceDelimitersE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIStringUtil.html#_CPPv4N4mINI13INIStringUtil20whitespaceDelimitersE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI12INIStructureE">mINI::INIStructure (C++ type)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI12INIStructureE">[1]</a>
+</li>
+        <li><a href="Dev/class/classmINI_1_1INIWriter.html#_CPPv4N4mINI9INIWriterE">mINI::INIWriter (C++ class)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriterE">[1]</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIWriterE">[2]</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriter8filenameE">mINI::INIWriter::filename (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4NK4mINI9INIWriter13getLazyOutputERK13T_LineDataPtrR12INIStructureR12INIStructure">mINI::INIWriter::getLazyOutput (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriter9INIWriterENSt10filesystem4pathE">mINI::INIWriter::INIWriter (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriterlsER12INIStructure">mINI::INIWriter::operator&lt;&lt; (C++ function)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriter11prettyPrintE">mINI::INIWriter::prettyPrint (C++ member)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriter10T_LineDataE">mINI::INIWriter::T_LineData (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriter13T_LineDataPtrE">mINI::INIWriter::T_LineDataPtr (C++ type)</a>
+</li>
+        <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIWriterD0Ev">mINI::INIWriter::~INIWriter (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv48MusicBin">MusicBin (C++ struct)</a>, <a href="Dev/struct/structMusicBin.html#_CPPv48MusicBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8MusicBin8fileDataE">MusicBin::fileData (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8MusicBin7fileExtE">MusicBin::fileExt (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8MusicBin7isSoundE">MusicBin::isSound (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8MusicBin12relativePathE">MusicBin::relativePath (C++ member)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/dialogueParser_8hpp.html#_CPPv420parseDialogueContentRKNSt6stringE">parseDialogueContent (C++ function)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv416ParseVsWhereDataNSt6stringE">ParseVsWhereData (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv46Player">Player (C++ class)</a>, <a href="Dev/file/player_8hpp.html#_CPPv46Player">[1]</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player5actorE">Player::actor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player16currentDirectionE">Player::currentDirection (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player4drawEv">Player::draw (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player4drawEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player8getActorEv">Player::getActor (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player8getActorEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player17getCenterPositionEv">Player::getCenterPosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player17getCenterPositionEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player15getCollisionPosEv">Player::getCollisionPos (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player15getCollisionPosEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player11getPositionEv">Player::getPosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player11getPositionEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player15getTilePositionEv">Player::getTilePosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player15getTilePositionEv">[1]</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player15handleCollisionEv">Player::handleCollision (C++ function)</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player17handleInteractionEv">Player::handleInteraction (C++ function)</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player13idleDirectionE">Player::idleDirection (C++ member)</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player16interactableAreaE">Player::interactableArea (C++ member)</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player4lockE">Player::lock (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4N6Player14moveByVelocityE7Vector2">Player::moveByVelocity (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4N6Player14moveByVelocityE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4N6Player6PlayerENSt10unique_ptrI5ActorEER4Room">Player::Player (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4N6Player6PlayerENSt10unique_ptrI5ActorEER4Room">[1]</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player8positionE">Player::position (C++ member)</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player4roomE">Player::room (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4N6Player11setPositionE7Vector2">Player::setPosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4N6Player11setPositionE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player7setRoomER4Room">Player::setRoom (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player7setRoomER4Room">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4N6Player15setTilePositionE7Vector2">Player::setTilePosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4N6Player15setTilePositionE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player4sizeE">Player::size (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player6unloadEv">Player::unload (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4N6Player6updateEv">Player::update (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4N6Player6updateEv">[1]</a>
+</li>
+        <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player8velocityE">Player::velocity (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classProp.html#_CPPv44Prop">Prop (C++ class)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv44Prop">[1]</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop9applyJsonE4json">Prop::applyJson (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop9atlasRectE">Prop::atlasRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop13collisionRectE">Prop::collisionRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop4drawEv">Prop::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop8dumpJsonEv">Prop::dumpJson (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop12getAtlasRectEv">Prop::getAtlasRect (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop18getCollisionCenterEv">Prop::getCollisionCenter (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop16getCollisionRectEv">Prop::getCollisionRect (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop18getHasInteractableEv">Prop::getHasInteractable (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop12getImagePathEv">Prop::getImagePath (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop15getInteractableEv">Prop::getInteractable (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop19getInteractableTypeEv">Prop::getInteractableType (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop13getSourcePathEv">Prop::getSourcePath (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop10getTextureEv">Prop::getTexture (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop21getWorldCollisionRectEv">Prop::getWorldCollisionRect (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop11getWorldPosEv">Prop::getWorldPos (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop15getWorldTilePosEv">Prop::getWorldTilePos (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop15hasInteractableE">Prop::hasInteractable (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop9imagePathE">Prop::imagePath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop12interactableE">Prop::interactable (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop4PropE7PropBin">Prop::Prop (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop4PropE9Rectangle7Vector2">[1]</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop4PropERKNSt6stringE">[2]</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop4PropEv">[3]</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop12setAtlasRectE9Rectangle">Prop::setAtlasRect (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop16setCollisionRectE9Rectangle">Prop::setCollisionRect (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop18setHasInteractableEb">Prop::setHasInteractable (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop19setInteractableTypeERKNSt6stringE">Prop::setInteractableType (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop10setTextureE9Texture2D">Prop::setTexture (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop18setTextureFromPathERKNSt6stringE">Prop::setTextureFromPath (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop11setWorldPosE7Vector2">Prop::setWorldPos (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop15setWorldTilePosE7Vector2i">Prop::setWorldTilePos (C++ function)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop10sourcePathE">Prop::sourcePath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop7textureE">Prop::texture (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop7tilePosE">Prop::tilePos (C++ member)</a>
+</li>
+        <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop8worldPosE">Prop::worldPos (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv47PropBin">PropBin (C++ struct)</a>, <a href="Dev/struct/structPropBin.html#_CPPv47PropBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7PropBin9atlasRectE">PropBin::atlasRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7PropBin13collisionRectE">PropBin::collisionRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7PropBin15hasInteractableE">PropBin::hasInteractable (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7PropBin9imagePathE">PropBin::imagePath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7PropBin7intTypeE">PropBin::intType (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7PropBin4nameE">PropBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv413PropInRoomBin">PropInRoomBin (C++ struct)</a>, <a href="Dev/struct/structPropInRoomBin.html#_CPPv413PropInRoomBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N13PropInRoomBin4nameE">PropInRoomBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N13PropInRoomBin7onTouchE">PropInRoomBin::onTouch (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N13PropInRoomBin9propsCborE">PropInRoomBin::propsCbor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N13PropInRoomBin7tilePosE">PropInRoomBin::tilePos (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classPropsContainer.html#_CPPv414PropsContainer">PropsContainer (C++ class)</a>, <a href="Dev/file/propsContainer_8hpp.html#_CPPv414PropsContainer">[1]</a>
+</li>
+        <li><a href="Dev/file/propsContainer_8hpp.html#_CPPv4N14PropsContainer7addPropE7Vector2RKNSt6stringE">PropsContainer::addProp (C++ function)</a>
+</li>
+        <li><a href="Dev/file/propsContainer_8hpp.html#_CPPv4N14PropsContainer9getPropAtE7Vector2">PropsContainer::getPropAt (C++ function)</a>
+</li>
+        <li><a href="Dev/file/propsContainer_8hpp.html#_CPPv4N14PropsContainer14PropsContainerEv">PropsContainer::PropsContainer (C++ function)</a>
+</li>
+        <li><a href="moduleDirectory/index.html#lua-meow.purr">purr (function in meow)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classResourceService.html#_CPPv415ResourceService">ResourceService (C++ class)</a>, <a href="Dev/file/resourceService_8hpp.html#_CPPv415ResourceService">[1]</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService10addTextureERKNSt6stringE9Texture2D">ResourceService::addTexture (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService18addTextureFromFileERKNSt6stringE">ResourceService::addTextureFromFile (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService10getTextureERKNSt6stringE">ResourceService::getTexture (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService15ResourceServiceEv">ResourceService::ResourceService (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService8texturesE">ResourceService::textures (C++ member)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4NK15ResourceService6unloadEv">ResourceService::unload (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceServiceD0Ev">ResourceService::~ResourceService (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv44Room">Room (C++ class)</a>, <a href="Dev/file/room_8hpp.html#_CPPv44Room">[1]</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room6actorsE">Room::actors (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room9addPlayerENSt10unique_ptrI6PlayerEE">Room::addPlayer (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room9addPlayerENSt10unique_ptrI6PlayerEE">[1]</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room6cameraE">Room::camera (C++ member)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room10collisionsE">Room::collisions (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room4drawEv">Room::draw (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room4drawEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room8dumpJsonEv">Room::dumpJson (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room8dumpJsonEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room9getActorsEv">Room::getActors (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room9getActorsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room13getCollisionsEv">Room::getCollisions (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room13getCollisionsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room16getInteractablesEv">Room::getInteractables (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room16getInteractablesEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room14getMusicSourceEv">Room::getMusicSource (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room14getMusicSourceEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room9getPlayerEv">Room::getPlayer (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room9getPlayerEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room8getPropsEv">Room::getProps (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room8getPropsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room12getStartTileEv">Room::getStartTile (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room12getStartTileEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room10getTileMapEv">Room::getTileMap (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room10getTileMapEv">[1]</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4NK4Room16getWorldTileSizeEv">Room::getWorldTileSize (C++ function)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room13interactablesE">Room::interactables (C++ member)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room4lockE">Room::lock (C++ member)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room11musicSourceE">Room::musicSource (C++ member)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room6playerE">Room::player (C++ member)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room5propsE">Room::props (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE">Room::Room (C++ function)</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomERK7RoomBin">[1]</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomERKNSt6stringEi">[2]</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomEv">[3]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE">[4]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomERK7RoomBin">[5]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomERKNSt6stringEi">[6]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomEv">[7]</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room7setLockEb">Room::setLock (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room14setMusicSourceERKNSt11string_viewE">Room::setMusicSource (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room14setMusicSourceERKNSt11string_viewE">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room12setStartTileE7Vector2">Room::setStartTile (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room12setStartTileE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room10setTileMapEP7TileMap">Room::setTileMap (C++ function)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room16setWorldTileSizeEi">Room::setWorldTileSize (C++ function)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room9startTileE">Room::startTile (C++ member)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room7tileMapE">Room::tileMap (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4NK4Room6unloadEv">Room::unload (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4NK4Room6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room6updateEv">Room::update (C++ function)</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room6updateEv">[1]</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room12updateCameraEv">Room::updateCamera (C++ function)</a>
+</li>
+        <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room13worldTileSizeE">Room::worldTileSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv47RoomBin">RoomBin (C++ struct)</a>, <a href="Dev/struct/structRoomBin.html#_CPPv47RoomBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin6actorsE">RoomBin::actors (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin10collisionsE">RoomBin::collisions (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin6heightE">RoomBin::height (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin13interactablesE">RoomBin::interactables (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin11musicSourceE">RoomBin::musicSource (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin4nameE">RoomBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin5propsE">RoomBin::props (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin10startPointE">RoomBin::startPoint (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin5tilesE">RoomBin::tiles (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin11tileSetNameE">RoomBin::tileSetName (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7RoomBin5widthE">RoomBin::width (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#c.RPGPP_DRAW_MULTIPLIER">RPGPP_DRAW_MULTIPLIER (C macro)</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#c.RPGPP_MAX_DIRECTION">RPGPP_MAX_DIRECTION (C macro)</a>
+</li>
+        <li><a href="Dev/file/game_8hpp.html#c.RPGPP_VER">RPGPP_VER (C macro)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv49ScriptBin">ScriptBin (C++ struct)</a>, <a href="Dev/struct/structScriptBin.html#_CPPv49ScriptBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N9ScriptBin8bytecodeE">ScriptBin::bytecode (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classScriptFile.html#_CPPv410ScriptFile">ScriptFile (C++ class)</a>, <a href="Dev/file/scriptFile_8h.html#_CPPv410ScriptFile">[1]</a>
+</li>
+        <li><a href="Dev/file/scriptFile_8h.html#_CPPv4N10ScriptFile8dumpJsonEv">ScriptFile::dumpJson (C++ function)</a>
+</li>
+        <li><a href="Dev/file/scriptFile_8h.html#_CPPv4N10ScriptFile12fileContentsE">ScriptFile::fileContents (C++ member)</a>
+</li>
+        <li><a href="Dev/file/scriptFile_8h.html#_CPPv4N10ScriptFile15getFileContentsEv">ScriptFile::getFileContents (C++ function)</a>
+</li>
+        <li><a href="Dev/file/scriptFile_8h.html#_CPPv4N10ScriptFile10ScriptFileERKNSt6stringE">ScriptFile::ScriptFile (C++ function)</a>, <a href="Dev/file/scriptFile_8h.html#_CPPv4N10ScriptFile10ScriptFileEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classScriptService.html#_CPPv413ScriptService">ScriptService (C++ class)</a>, <a href="Dev/file/scriptService_8hpp.html#_CPPv413ScriptService">[1]</a>
+</li>
+        <li><a href="Dev/file/scriptService_8hpp.html#_CPPv4N13ScriptService10addToStateERN8nlohmann4jsonE">ScriptService::addToState (C++ function)</a>
+</li>
+        <li><a href="Dev/file/scriptService_8hpp.html#_CPPv4N13ScriptService8getStateEv">ScriptService::getState (C++ function)</a>
+</li>
+        <li><a href="Dev/file/scriptService_8hpp.html#_CPPv4N13ScriptService13ScriptServiceEv">ScriptService::ScriptService (C++ function)</a>
+</li>
+        <li><a href="Dev/file/scriptService_8hpp.html#_CPPv4N13ScriptService6setLuaEN3sol10state_viewE">ScriptService::setLua (C++ function)</a>
+</li>
+        <li><a href="Dev/file/scriptService_8hpp.html#_CPPv4N13ScriptService5stateE">ScriptService::state (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv419serializeDataToFileNSt6stringE8GameData">serializeDataToFile (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classSoundService.html#_CPPv412SoundService">SoundService (C++ class)</a>, <a href="Dev/file/soundService_8hpp.html#_CPPv412SoundService">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService6lastIdE">SoundService::lastId (C++ member)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService9loadMusicERKNSt6stringE">SoundService::loadMusic (C++ function)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService5musicE">SoundService::music (C++ member)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService11musicLoadedE">SoundService::musicLoaded (C++ member)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4NK12SoundService9playMusicEv">SoundService::playMusic (C++ function)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4NK12SoundService9playSoundERKNSt6stringE">SoundService::playSound (C++ function)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService12SoundServiceEv">SoundService::SoundService (C++ function)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4NK12SoundService6unloadEv">SoundService::unload (C++ function)</a>
+</li>
+        <li><a href="Dev/file/soundService_8hpp.html#_CPPv4NK12SoundService6updateEv">SoundService::update (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classStateService.html#_CPPv412StateService">StateService (C++ class)</a>, <a href="Dev/file/stateService_8hpp.html#_CPPv412StateService">[1]</a>
+</li>
+        <li><a href="Dev/file/stateService_8hpp.html#_CPPv4N12StateService9gameStateE">StateService::gameState (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classStateService.html#_CPPv4NK12StateService7getPropERKNSt6stringE">StateService::getProp (C++ function)</a>, <a href="Dev/file/stateService_8hpp.html#_CPPv4NK12StateService7getPropERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classStateService.html#_CPPv4N12StateService7setPropERKNSt6stringE5Value">StateService::setProp (C++ function)</a>, <a href="Dev/file/stateService_8hpp.html#_CPPv4N12StateService7setPropERKNSt6stringE5Value">[1]</a>
+</li>
+        <li><a href="Dev/class/classStateService.html#_CPPv4N12StateService12StateServiceEv">StateService::StateService (C++ function)</a>, <a href="Dev/file/stateService_8hpp.html#_CPPv4N12StateService12StateServiceEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classStateService.html#_CPPv4NK12StateService6unloadEv">StateService::unload (C++ function)</a>, <a href="Dev/file/stateService_8hpp.html#_CPPv4NK12StateService6unloadEv">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classTextArea.html#_CPPv48TextArea">TextArea (C++ class)</a>, <a href="Dev/file/textArea_8hpp.html#_CPPv48TextArea">[1]</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea7contentE">TextArea::content (C++ member)</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea4drawEv">TextArea::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4NK8TextArea7putCharEiP7Vector2P7Vector2">TextArea::putChar (C++ function)</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea4rectE">TextArea::rect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea7setTextERKNSt6stringE">TextArea::setText (C++ function)</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea8TextAreaE9Rectangle">TextArea::TextArea (C++ function)</a>, <a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea8TextAreaEv">[1]</a>
+</li>
+        <li><a href="Dev/file/textArea_8hpp.html#_CPPv4N8TextArea6updateEv">TextArea::update (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classTile.html#_CPPv44Tile">Tile (C++ class)</a>, <a href="Dev/file/tile_8hpp.html#_CPPv44Tile">[1]</a>
+</li>
+        <li><a href="Dev/file/tile_8hpp.html#_CPPv4N4Tile9atlasTileE">Tile::atlasTile (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTile.html#_CPPv4N4Tile5eraseEv">Tile::erase (C++ function)</a>, <a href="Dev/file/tile_8hpp.html#_CPPv4N4Tile5eraseEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTile.html#_CPPv4NK4Tile12getAtlasTileEv">Tile::getAtlasTile (C++ function)</a>, <a href="Dev/file/tile_8hpp.html#_CPPv4NK4Tile12getAtlasTileEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTile.html#_CPPv4NK4Tile14getWorldCoordsEv">Tile::getWorldCoords (C++ function)</a>, <a href="Dev/file/tile_8hpp.html#_CPPv4NK4Tile14getWorldCoordsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTile.html#_CPPv4NK4Tile8isPlacedEv">Tile::isPlaced (C++ function)</a>, <a href="Dev/file/tile_8hpp.html#_CPPv4NK4Tile8isPlacedEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTile.html#_CPPv4N4Tile5placeE9AtlasTile7Vector2">Tile::place (C++ function)</a>, <a href="Dev/file/tile_8hpp.html#_CPPv4N4Tile5placeE9AtlasTile7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/file/tile_8hpp.html#_CPPv4N4Tile6placedE">Tile::placed (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tile_8hpp.html#_CPPv4N4Tile4TileEv">Tile::Tile (C++ function)</a>
+</li>
+        <li><a href="Dev/file/tile_8hpp.html#_CPPv4N4Tile11worldCoordsE">Tile::worldCoords (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv47TileBin">TileBin (C++ struct)</a>, <a href="Dev/struct/structTileBin.html#_CPPv47TileBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7TileBin8atlasPosE">TileBin::atlasPos (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7TileBin8worldPosE">TileBin::worldPos (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv47TileMap">TileMap (C++ class)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv47TileMap">[1]</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap15atlasPosIsValidE7Vector2">TileMap::atlasPosIsValid (C++ function)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap13atlasTileSizeE">TileMap::atlasTileSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7basePosE">TileMap::basePos (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap4drawEv">TileMap::draw (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap4drawEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap8drawTileEii">TileMap::drawTile (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap8drawTileE7Vector27Vector2">[1]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap8drawTileE7Vector29AtlasTile">[2]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap8drawTileEii">[3]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4N7TileMap8dumpJsonEv">TileMap::dumpJson (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap8dumpJsonEv">[1]</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap16getAtlasTileSizeEv">TileMap::getAtlasTileSize (C++ function)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap15getMaxAtlasSizeEv">TileMap::getMaxAtlasSize (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap15getMaxWorldSizeEv">TileMap::getMaxWorldSize (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap15getMaxWorldSizeEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap7getTileEii">TileMap::getTile (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap7getTileEii">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap10getTileSetEv">TileMap::getTileSet (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap10getTileSetEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap16getTileSetSourceEv">TileMap::getTileSetSource (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap16getTileSetSourceEv">[1]</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap16getWorldTileSizeEv">TileMap::getWorldTileSize (C++ function)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap6heightE">TileMap::height (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap14maxAtlasHeightE">TileMap::maxAtlasHeight (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap13maxAtlasWidthE">TileMap::maxAtlasWidth (C++ member)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4N7TileMap12setEmptyTileE7Vector2">TileMap::setEmptyTile (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap12setEmptyTileE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4N7TileMap7setTileE7Vector27Vector2">TileMap::setTile (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7setTileE7Vector27Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4N7TileMap10setTileSetERKNSt6stringE">TileMap::setTileSet (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap10setTileSetERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4N7TileMap12setWorldSizeE7Vector2">TileMap::setWorldSize (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap12setWorldSizeE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii">TileMap::TileMap (C++ function)</a>, <a href="Dev/class/classTileMap.html#_CPPv4N7TileMap7TileMapERK7RoomBin">[1]</a>, <a href="Dev/class/classTileMap.html#_CPPv4N7TileMap7TileMapERK7TileSetiiii">[2]</a>, <a href="Dev/class/classTileMap.html#_CPPv4N7TileMap7TileMapERKNSt6stringE">[3]</a>, <a href="Dev/class/classTileMap.html#_CPPv4N7TileMap7TileMapERKNSt6stringEiiii">[4]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii">[5]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7TileMapERK7RoomBin">[6]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7TileMapERK7TileSetiiii">[7]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7TileMapERKNSt6stringE">[8]</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7TileMapERKNSt6stringEiiii">[9]</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap5tilesE">TileMap::tiles (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap7tileSetE">TileMap::tileSet (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap13tileSetSourceE">TileMap::tileSetSource (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap6unloadEv">TileMap::unload (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileMap.html#_CPPv4NK7TileMap6updateEv">TileMap::update (C++ function)</a>, <a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap6updateEv">[1]</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap5widthE">TileMap::width (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4NK7TileMap15worldPosIsValidE7Vector2">TileMap::worldPosIsValid (C++ function)</a>
+</li>
+        <li><a href="Dev/file/tilemap_8hpp.html#_CPPv4N7TileMap13worldTileSizeE">TileMap::worldTileSize (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv47TileSet">TileSet (C++ class)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv47TileSet">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4NK7TileSet19areAtlasCoordsValidE7Vector2">TileSet::areAtlasCoordsValid (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4NK7TileSet19areAtlasCoordsValidE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet8dumpJsonEv">TileSet::dumpJson (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet8dumpJsonEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4NK7TileSet10getTextureEv">TileSet::getTexture (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4NK7TileSet10getTextureEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet16getTextureSourceEv">TileSet::getTextureSource (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet16getTextureSourceEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet7getTileE7Vector2">TileSet::getTile (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7getTileE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet13getTileHeightEv">TileSet::getTileHeight (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet13getTileHeightEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4NK7TileSet11getTileSizeEv">TileSet::getTileSize (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4NK7TileSet11getTileSizeEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet12getTileWidthEv">TileSet::getTileWidth (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet12getTileWidthEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet16setTextureSourceERKNSt6stringE">TileSet::setTextureSource (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet16setTextureSourceERKNSt6stringE">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet13setTileHeightEi">TileSet::setTileHeight (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet13setTileHeightEi">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet11setTileSizeEi">TileSet::setTileSize (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet11setTileSizeEi">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet17setTileSizeVectorE7Vector2">TileSet::setTileSizeVector (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet17setTileSizeVectorE7Vector2">[1]</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet12setTileWidthEi">TileSet::setTileWidth (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet12setTileWidthEi">[1]</a>
+</li>
+        <li><a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7textureE">TileSet::texture (C++ member)</a>
+</li>
+        <li><a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet13textureSourceE">TileSet::textureSource (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4N7TileSet7TileSetE10TileSetBin">TileSet::TileSet (C++ function)</a>, <a href="Dev/class/classTileSet.html#_CPPv4N7TileSet7TileSetERKNSt6stringE">[1]</a>, <a href="Dev/class/classTileSet.html#_CPPv4N7TileSet7TileSetERKNSt6stringE7Vector2">[2]</a>, <a href="Dev/class/classTileSet.html#_CPPv4N7TileSet7TileSetERKNSt6stringEi">[3]</a>, <a href="Dev/class/classTileSet.html#_CPPv4N7TileSet7TileSetEv">[4]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7TileSetE10TileSetBin">[5]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7TileSetERK7Texture7Vector2">[6]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7TileSetERKNSt6stringE">[7]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7TileSetERKNSt6stringE7Vector2">[8]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7TileSetERKNSt6stringEi">[9]</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet7TileSetEv">[10]</a>
+</li>
+        <li><a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSet8tileSizeE">TileSet::tileSize (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classTileSet.html#_CPPv4NK7TileSet6unloadEv">TileSet::unload (C++ function)</a>, <a href="Dev/file/tileset_8hpp.html#_CPPv4NK7TileSet6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/file/tileset_8hpp.html#_CPPv4N7TileSetD0Ev">TileSet::~TileSet (C++ function)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv410TileSetBin">TileSetBin (C++ struct)</a>, <a href="Dev/struct/structTileSetBin.html#_CPPv410TileSetBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N10TileSetBin8dataSizeE">TileSetBin::dataSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N10TileSetBin9extensionE">TileSetBin::extension (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N10TileSetBin5imageE">TileSetBin::image (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N10TileSetBin4nameE">TileSetBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N10TileSetBin8tileSizeE">TileSetBin::tileSize (C++ member)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classUIElement.html#_CPPv49UIElement">UIElement (C++ class)</a>, <a href="Dev/file/uiElement_8hpp.html#_CPPv49UIElement">[1]</a>
+</li>
+        <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement4drawEv">UIElement::draw (C++ function)</a>
+</li>
+        <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement9UIElementEv">UIElement::UIElement (C++ function)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement6updateEv">UIElement::update (C++ function)</a>
+</li>
+        <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElementD0Ev">UIElement::~UIElement (C++ function)</a>
+</li>
+        <li><a href="moduleDirectory/index.html#lua-meow.utils">utils (table in meow)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="V" class="genindex-section">
+  <h2>V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/stateService_8hpp.html#_CPPv45Value">Value (C++ type)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv46VsInfo">VsInfo (C++ struct)</a>, <a href="Dev/struct/structVsInfo.html#_CPPv46VsInfo">[1]</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv4N6VsInfo13auxiliaryPathE">VsInfo::auxiliaryPath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv4N6VsInfo16installationPathE">VsInfo::installationPath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv4N6VsInfo12vsdevcmdPathE">VsInfo::vsdevcmdPath (C++ member)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv413WinCreateProcNSt6stringE">WinCreateProc (C++ function)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv420WinOpenFileAssociateNSt6stringENSt6stringE">WinOpenFileAssociate (C++ function)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv410WinVsWhereNSt6stringE">WinVsWhere (C++ function)</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv412WorldService">WorldService (C++ class)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv412WorldService">[1]</a>
+
+        <ul>
+          <li><a href="moduleDirectory/index.html#lua-meow.WorldService">(table in meow)</a>
+</li>
+        </ul></li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService5alphaE">WorldService::alpha (C++ member)</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService14deferredRoomIdE">WorldService::deferredRoomId (C++ member)</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService15deferRoomChangeE">WorldService::deferRoomChange (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4N12WorldService16doFadeTransitionEv">WorldService::doFadeTransition (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService16doFadeTransitionEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService4drawEv">WorldService::draw (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService4drawEv">[1]</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService12frameCounterE">WorldService::frameCounter (C++ member)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService9getPlayerEv">WorldService::getPlayer (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService9getPlayerEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService7getRoomEv">WorldService::getRoom (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService7getRoomEv">[1]</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService4lockE">WorldService::lock (C++ member)</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService4roomE">WorldService::room (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4N12WorldService7setRoomERKNSt11string_viewE">WorldService::setRoom (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService7setRoomERKNSt11string_viewE">[1]</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4N12WorldService10setRoomBinE7RoomBin">WorldService::setRoomBin (C++ function)</a>, <a href="Dev/class/classWorldService.html#_CPPv4N12WorldService10setRoomBinERKNSt6stringE">[1]</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService10setRoomBinE7RoomBin">[2]</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService10setRoomBinERKNSt6stringE">[3]</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService16transitionActiveE">WorldService::transitionActive (C++ member)</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService15transitionColorE">WorldService::transitionColor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService21transitionSecondStageE">WorldService::transitionSecondStage (C++ member)</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService6unloadEv">WorldService::unload (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService6unloadEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4N12WorldService6updateEv">WorldService::update (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService6updateEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4N12WorldService12WorldServiceEv">WorldService::WorldService (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService12WorldServiceEv">[1]</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+File resourceService.hpp
+========================
+
+.. doxygenfile:: resourceService.hpp

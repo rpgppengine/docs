@@ -1,0 +1,697 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File tileset.hpp" href="tileset_8hpp.html"><link rel="prev" title="File tile.hpp" href="tile_8hpp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>File tilemap.hpp - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../filelist.html">File list</a><input aria-label="Toggle navigation of File list" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../moduleDirectory/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Dev/file/tilemap_8hpp.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="file-tilemap-hpp">
+<h1>File tilemap.hpp<a class="headerlink" href="#file-tilemap-hpp" title="Link to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c._RPGPP_TILESIZE">
+<span class="target" id="tilemap_8hpp_1a2007002b6d5b7376b27b9ba11062d1a9"></span><span class="sig-name descname"><span class="n"><span class="pre">_RPGPP_TILESIZE</span></span></span><a class="headerlink" href="#c._RPGPP_TILESIZE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv44json">
+<span id="_CPPv34json"></span><span id="_CPPv24json"></span><span class="target" id="tilemap_8hpp_1ab701e3ac61a85b337ec5c1abaad6742d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">json</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">nlohmann</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">json</span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv47TileMap">
+<span id="_CPPv37TileMap"></span><span id="_CPPv27TileMap"></span><span id="TileMap"></span><span class="target" id="classTileMap"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TileMap</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;tilemap.hpp&gt;</em></div>
+<p>A <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a> represents a map of the placed tiles in a <a class="reference internal" href="room_8hpp.html#classRoom"><span class="std std-ref">Room</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7TileMapERKNSt6stringE">
+<span id="_CPPv3N7TileMap7TileMapERKNSt6stringE"></span><span id="_CPPv2N7TileMap7TileMapERKNSt6stringE"></span><span id="TileMap::TileMap__ssCR"></span><span class="target" id="classTileMap_1a40036e023361a947e946214d6b5a8c05"></span><span class="sig-name descname"><span class="n"><span class="pre">TileMap</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct from a file name/path </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7TileMapERKNSt6stringEiiii">
+<span id="_CPPv3N7TileMap7TileMapERKNSt6stringEiiii"></span><span id="_CPPv2N7TileMap7TileMapERKNSt6stringEiiii"></span><span id="TileMap::TileMap__ssCR.i.i.i.i"></span><span class="target" id="classTileMap_1a830ede84f5d9863bf13e25c198ef0bb2"></span><span class="sig-name descname"><span class="n"><span class="pre">TileMap</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tileSetSource</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasTileSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldTileSize</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct using a <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> path, width, height </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7TileMapERK7TileSetiiii">
+<span id="_CPPv3N7TileMap7TileMapERK7TileSetiiii"></span><span id="_CPPv2N7TileMap7TileMapERK7TileSetiiii"></span><span id="TileMap::TileMap__TileSetCR.i.i.i.i"></span><span class="target" id="classTileMap_1a0ec1ad9874a52afd6f990fb8302be7f5"></span><span class="sig-name descname"><span class="n"><span class="pre">TileMap</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tileSet</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasTileSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldTileSize</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor using a <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> object </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii">
+<span id="_CPPv3N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii"></span><span id="_CPPv2N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii"></span><span id="TileMap::TileMap__std::unique_ptr:TileSet:.i.i.i.i"></span><span class="target" id="classTileMap_1a85ad52737df6c1a074fb356d93ed2172"></span><span class="sig-name descname"><span class="n"><span class="pre">TileMap</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSetPtr</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">width</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">height</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasTileSize</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldTileSize</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor using a unique_ptr of a <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7TileMapERK7RoomBin">
+<span id="_CPPv3N7TileMap7TileMapERK7RoomBin"></span><span id="_CPPv2N7TileMap7TileMapERK7RoomBin"></span><span id="TileMap::TileMap__RoomBinCR"></span><span class="target" id="classTileMap_1a33471be402da8b792a082e2fd5708017"></span><span class="sig-name descname"><span class="n"><span class="pre">TileMap</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="gamedata_8hpp.html#_CPPv47RoomBin" title="RoomBin"><span class="n"><span class="pre">RoomBin</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bin</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor using a <a class="reference internal" href="../struct/structRoomBin.html#structRoomBin"><span class="std std-ref">RoomBin</span></a> binary structure </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap8dumpJsonEv">
+<span id="_CPPv3N7TileMap8dumpJsonEv"></span><span id="_CPPv2N7TileMap8dumpJsonEv"></span><span id="TileMap::dumpJson"></span><span class="target" id="classTileMap_1af7299d24ac1f47a85a5fcd3e70635e74"></span><a class="reference internal" href="actor_8hpp.html#_CPPv44json" title="json"><span class="n"><span class="pre">json</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dumpJson</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Dump the <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a>’s data into a nlohmann::json object </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap6unloadEv">
+<span id="_CPPv3NK7TileMap6unloadEv"></span><span id="_CPPv2NK7TileMap6unloadEv"></span><span id="TileMap::unloadC"></span><span class="target" id="classTileMap_1a411ede30b5031730b27ea068df999dd6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unload</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Unload routine. Typically calls raylib’s UnloadTexture. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap6updateEv">
+<span id="_CPPv3NK7TileMap6updateEv"></span><span id="_CPPv2NK7TileMap6updateEv"></span><span id="TileMap::updateC"></span><span class="target" id="classTileMap_1a62fc9eda2535b2259a474f46e241c075"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Update routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap4drawEv">
+<span id="_CPPv3NK7TileMap4drawEv"></span><span id="_CPPv2NK7TileMap4drawEv"></span><span id="TileMap::drawC"></span><span class="target" id="classTileMap_1a410adfdec8e02ecb1378bb22cdf73844"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Draw routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap16getTileSetSourceEv">
+<span id="_CPPv3NK7TileMap16getTileSetSourceEv"></span><span id="_CPPv2NK7TileMap16getTileSetSourceEv"></span><span id="TileMap::getTileSetSourceC"></span><span class="target" id="classTileMap_1a12d499aed10bc2d789915dcaa30a81f7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTileSetSource</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the path of the <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> resource </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap10getTileSetEv">
+<span id="_CPPv3NK7TileMap10getTileSetEv"></span><span id="_CPPv2NK7TileMap10getTileSetEv"></span><span id="TileMap::getTileSetC"></span><span class="target" id="classTileMap_1a0b2a1bda53ed405332cd2c711cb40fa2"></span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTileSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get a pointer to the used <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap10setTileSetERKNSt6stringE">
+<span id="_CPPv3N7TileMap10setTileSetERKNSt6stringE"></span><span id="_CPPv2N7TileMap10setTileSetERKNSt6stringE"></span><span id="TileMap::setTileSet__ssCR"></span><span class="target" id="classTileMap_1a090187dc23df26f0742139bdf5e64d6e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTileSet</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tileSetSource</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set a new <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> for this <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a> using a path for the new <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap16getAtlasTileSizeEv">
+<span id="_CPPv3NK7TileMap16getAtlasTileSizeEv"></span><span id="_CPPv2NK7TileMap16getAtlasTileSizeEv"></span><span id="TileMap::getAtlasTileSizeC"></span><span class="target" id="classTileMap_1a936c01e428d7c9b47c189e7437b08857"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAtlasTileSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap16getAtlasTileSizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap16getWorldTileSizeEv">
+<span id="_CPPv3NK7TileMap16getWorldTileSizeEv"></span><span id="_CPPv2NK7TileMap16getWorldTileSizeEv"></span><span id="TileMap::getWorldTileSizeC"></span><span class="target" id="classTileMap_1a9a81c13e59d72e980e55e2a13b1777bc"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldTileSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap16getWorldTileSizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap15atlasPosIsValidE7Vector2">
+<span id="_CPPv3NK7TileMap15atlasPosIsValidE7Vector2"></span><span id="_CPPv2NK7TileMap15atlasPosIsValidE7Vector2"></span><span id="TileMap::atlasPosIsValid__Vector2C"></span><span class="target" id="classTileMap_1ac31c7c283993b77e8edecbf44bc6fc82"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atlasPosIsValid</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasPos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap15atlasPosIsValidE7Vector2" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap15worldPosIsValidE7Vector2">
+<span id="_CPPv3NK7TileMap15worldPosIsValidE7Vector2"></span><span id="_CPPv2NK7TileMap15worldPosIsValidE7Vector2"></span><span id="TileMap::worldPosIsValid__Vector2C"></span><span class="target" id="classTileMap_1aa7e9feb0595618aa4865c975ac1436be"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">worldPosIsValid</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasPos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap15worldPosIsValidE7Vector2" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap7getTileEii">
+<span id="_CPPv3NK7TileMap7getTileEii"></span><span id="_CPPv2NK7TileMap7getTileEii"></span><span id="TileMap::getTile__i.iC"></span><span class="target" id="classTileMap_1a1cf2a305eeb5e2d3465d77997626328e"></span><a class="reference internal" href="../class/classTile.html#_CPPv44Tile" title="Tile"><span class="n"><span class="pre">Tile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTile</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the <a class="reference internal" href="tile_8hpp.html#classTile"><span class="std std-ref">Tile</span></a> at the specified x and y position </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7setTileE7Vector27Vector2">
+<span id="_CPPv3N7TileMap7setTileE7Vector27Vector2"></span><span id="_CPPv2N7TileMap7setTileE7Vector27Vector2"></span><span id="TileMap::setTile__Vector2.Vector2"></span><span class="target" id="classTileMap_1ab9e21aefb875878520629d998afc6ec5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasPos</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the tile at the specified world position to be a tile at the specified atlas position from the <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap12setEmptyTileE7Vector2">
+<span id="_CPPv3N7TileMap12setEmptyTileE7Vector2"></span><span id="_CPPv2N7TileMap12setEmptyTileE7Vector2"></span><span id="TileMap::setEmptyTile__Vector2"></span><span class="target" id="classTileMap_1abb47089a384d5969f8c05cc0be0c4095"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setEmptyTile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the tile at the specified world position to be empty (not drawn) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap8drawTileEii">
+<span id="_CPPv3NK7TileMap8drawTileEii"></span><span id="_CPPv2NK7TileMap8drawTileEii"></span><span id="TileMap::drawTile__i.iC"></span><span class="target" id="classTileMap_1ad10a2297a8898f0a0548d15644c75780"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drawTile</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Draw the tile at the specified world x and y coordinates </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap8drawTileE7Vector27Vector2">
+<span id="_CPPv3NK7TileMap8drawTileE7Vector27Vector2"></span><span id="_CPPv2NK7TileMap8drawTileE7Vector27Vector2"></span><span id="TileMap::drawTile__Vector2.Vector2C"></span><span class="target" id="classTileMap_1a1d492c0df9a37323d9faa870be446053"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drawTile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasPos</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap8drawTileE7Vector27Vector2" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap8drawTileE7Vector29AtlasTile">
+<span id="_CPPv3NK7TileMap8drawTileE7Vector29AtlasTile"></span><span id="_CPPv2NK7TileMap8drawTileE7Vector29AtlasTile"></span><span id="TileMap::drawTile__Vector2.AtlasTileC"></span><span class="target" id="classTileMap_1adf282a2875a47b0542f2396a33ea1f60"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drawTile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span>, <a class="reference internal" href="../class/classAtlasTile.html#_CPPv49AtlasTile" title="AtlasTile"><span class="n"><span class="pre">AtlasTile</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">tile</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap8drawTileE7Vector29AtlasTile" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap15getMaxAtlasSizeEv">
+<span id="_CPPv3NK7TileMap15getMaxAtlasSizeEv"></span><span id="_CPPv2NK7TileMap15getMaxAtlasSizeEv"></span><span id="TileMap::getMaxAtlasSizeC"></span><span class="target" id="classTileMap_1ac819f996f2bc4978179a3fe2afb8bc6b"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxAtlasSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7TileMap15getMaxAtlasSizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7TileMap15getMaxWorldSizeEv">
+<span id="_CPPv3NK7TileMap15getMaxWorldSizeEv"></span><span id="_CPPv2NK7TileMap15getMaxWorldSizeEv"></span><span id="TileMap::getMaxWorldSizeC"></span><span class="target" id="classTileMap_1a3489235467ffb85da25f0b8481a7b613"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxWorldSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the size of this <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the size in a Vector2. The x component is the width; the y component is the height. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap12setWorldSizeE7Vector2">
+<span id="_CPPv3N7TileMap12setWorldSizeE7Vector2"></span><span id="_CPPv2N7TileMap12setWorldSizeE7Vector2"></span><span id="TileMap::setWorldSize__Vector2"></span><span class="target" id="classTileMap_1a01263e5b622372eefc86e2945f69bad9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWorldSize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the size of this <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> using the provided Vector2 argument. The x ocmponent will be the new width; the y component will be the new height. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7basePosE">
+<span id="_CPPv3N7TileMap7basePosE"></span><span id="_CPPv2N7TileMap7basePosE"></span><span id="TileMap::basePos__Vector2"></span><span class="target" id="classTileMap_1aef20f601468fff2296a09ec92c6b92c8"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">basePos</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7TileMap7basePosE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Base position of this <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap13tileSetSourceE">
+<span id="_CPPv3N7TileMap13tileSetSourceE"></span><span id="_CPPv2N7TileMap13tileSetSourceE"></span><span id="TileMap::tileSetSource__ss"></span><span class="target" id="classTileMap_1ac36978406cc808edb57fce66ae34966f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSetSource</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap13tileSetSourceE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>File path to the source of the used <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap7tileSetE">
+<span id="_CPPv3N7TileMap7tileSetE"></span><span id="_CPPv2N7TileMap7tileSetE"></span><span id="TileMap::tileSet__std::unique_ptr:TileSet:"></span><span class="target" id="classTileMap_1a780fae68f66a7bad7f557fece6505f66"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSet</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap7tileSetE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A unique_ptr to the used <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap13atlasTileSizeE">
+<span id="_CPPv3N7TileMap13atlasTileSizeE"></span><span id="_CPPv2N7TileMap13atlasTileSizeE"></span><span id="TileMap::atlasTileSize__i"></span><span class="target" id="classTileMap_1a4d3a1956ee4d7d81c3c0ff91a087aafb"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atlasTileSize</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap13atlasTileSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap13worldTileSizeE">
+<span id="_CPPv3N7TileMap13worldTileSizeE"></span><span id="_CPPv2N7TileMap13worldTileSizeE"></span><span id="TileMap::worldTileSize__i"></span><span class="target" id="classTileMap_1aababaadaae1ae4742161eec30e3567f7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">worldTileSize</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap13worldTileSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap5widthE">
+<span id="_CPPv3N7TileMap5widthE"></span><span id="_CPPv2N7TileMap5widthE"></span><span id="TileMap::width__i"></span><span class="target" id="classTileMap_1a19cd73adf67526029c73a160e3bf5fd8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">width</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap5widthE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Width of the <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a> in tiles </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap6heightE">
+<span id="_CPPv3N7TileMap6heightE"></span><span id="_CPPv2N7TileMap6heightE"></span><span id="TileMap::height__i"></span><span class="target" id="classTileMap_1a9b7ab9aca2bb39e6a7086b639ff6f910"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">height</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap6heightE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Height of the <a class="reference internal" href="#classTileMap"><span class="std std-ref">TileMap</span></a> in height </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap13maxAtlasWidthE">
+<span id="_CPPv3N7TileMap13maxAtlasWidthE"></span><span id="_CPPv2N7TileMap13maxAtlasWidthE"></span><span id="TileMap::maxAtlasWidth__i"></span><span class="target" id="classTileMap_1ae737da8ac68d9705c75f97d43b1fb155"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxAtlasWidth</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap13maxAtlasWidthE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap14maxAtlasHeightE">
+<span id="_CPPv3N7TileMap14maxAtlasHeightE"></span><span id="_CPPv2N7TileMap14maxAtlasHeightE"></span><span id="TileMap::maxAtlasHeight__i"></span><span class="target" id="classTileMap_1aca831a9b50901b3c6cadf8dea0f3b824"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxAtlasHeight</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap14maxAtlasHeightE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7TileMap5tilesE">
+<span id="_CPPv3N7TileMap5tilesE"></span><span id="_CPPv2N7TileMap5tilesE"></span><span id="TileMap::tiles__std::vector:std::vector:Tile::"></span><span class="target" id="classTileMap_1aebe07aa4af11a90200da1e0675ac659f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTile.html#_CPPv44Tile" title="Tile"><span class="n"><span class="pre">Tile</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tiles</span></span></span><a class="headerlink" href="#_CPPv4N7TileMap5tilesE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A collection representing the tiles in this map </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="tileset_8hpp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">File tileset.hpp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="tile_8hpp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">File tile.hpp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">File tilemap.hpp</a><ul>
+<li><a class="reference internal" href="#c._RPGPP_TILESIZE"><code class="docutils literal notranslate"><span class="pre">_RPGPP_TILESIZE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv44json"><code class="docutils literal notranslate"><span class="pre">json</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47TileMap"><code class="docutils literal notranslate"><span class="pre">TileMap</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7TileMapERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7TileMapERKNSt6stringEiiii"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7TileMapERK7TileSetiiii"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7TileMapENSt10unique_ptrI7TileSetEEiiii"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7TileMapERK7RoomBin"><code class="docutils literal notranslate"><span class="pre">TileMap()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap16getTileSetSourceEv"><code class="docutils literal notranslate"><span class="pre">getTileSetSource()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap10getTileSetEv"><code class="docutils literal notranslate"><span class="pre">getTileSet()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap10setTileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTileSet()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap16getAtlasTileSizeEv"><code class="docutils literal notranslate"><span class="pre">getAtlasTileSize()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap16getWorldTileSizeEv"><code class="docutils literal notranslate"><span class="pre">getWorldTileSize()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap15atlasPosIsValidE7Vector2"><code class="docutils literal notranslate"><span class="pre">atlasPosIsValid()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap15worldPosIsValidE7Vector2"><code class="docutils literal notranslate"><span class="pre">worldPosIsValid()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap7getTileEii"><code class="docutils literal notranslate"><span class="pre">getTile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7setTileE7Vector27Vector2"><code class="docutils literal notranslate"><span class="pre">setTile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap12setEmptyTileE7Vector2"><code class="docutils literal notranslate"><span class="pre">setEmptyTile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap8drawTileEii"><code class="docutils literal notranslate"><span class="pre">drawTile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap8drawTileE7Vector27Vector2"><code class="docutils literal notranslate"><span class="pre">drawTile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap8drawTileE7Vector29AtlasTile"><code class="docutils literal notranslate"><span class="pre">drawTile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap15getMaxAtlasSizeEv"><code class="docutils literal notranslate"><span class="pre">getMaxAtlasSize()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK7TileMap15getMaxWorldSizeEv"><code class="docutils literal notranslate"><span class="pre">getMaxWorldSize()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap12setWorldSizeE7Vector2"><code class="docutils literal notranslate"><span class="pre">setWorldSize()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7basePosE"><code class="docutils literal notranslate"><span class="pre">basePos</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap13tileSetSourceE"><code class="docutils literal notranslate"><span class="pre">tileSetSource</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap7tileSetE"><code class="docutils literal notranslate"><span class="pre">tileSet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap13atlasTileSizeE"><code class="docutils literal notranslate"><span class="pre">atlasTileSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap13worldTileSizeE"><code class="docutils literal notranslate"><span class="pre">worldTileSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap5widthE"><code class="docutils literal notranslate"><span class="pre">width</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap6heightE"><code class="docutils literal notranslate"><span class="pre">height</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap13maxAtlasWidthE"><code class="docutils literal notranslate"><span class="pre">maxAtlasWidth</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap14maxAtlasHeightE"><code class="docutils literal notranslate"><span class="pre">maxAtlasHeight</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7TileMap5tilesE"><code class="docutils literal notranslate"><span class="pre">tiles</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

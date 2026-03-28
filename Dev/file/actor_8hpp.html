@@ -1,0 +1,915 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File atlasTile.hpp" href="atlasTile_8hpp.html"><link rel="prev" title="File actorContainer.hpp" href="actorContainer_8hpp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>File actor.hpp - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../filelist.html">File list</a><input aria-label="Toggle navigation of File list" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../moduleDirectory/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Dev/file/actor_8hpp.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="file-actor-hpp">
+<h1>File actor.hpp<a class="headerlink" href="#file-actor-hpp" title="Link to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.RPGPP_MAX_DIRECTION">
+<span class="target" id="actor_8hpp_1ad8f32694101a4ff11b2d11072cf880a6"></span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_MAX_DIRECTION</span></span></span><a class="headerlink" href="#c.RPGPP_MAX_DIRECTION" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv44json">
+<span id="_CPPv34json"></span><span id="_CPPv24json"></span><span class="target" id="actor_8hpp_1ab701e3ac61a85b337ec5c1abaad6742d"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">json</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">nlohmann</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">json</span></span><a class="headerlink" href="#_CPPv44json" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv49Direction">
+<span id="_CPPv39Direction"></span><span id="_CPPv29Direction"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Direction</span></span></span><a class="headerlink" href="#_CPPv49Direction" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Direction enum, representing an animation state. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction15RPGPP_DOWN_IDLEE">
+<span id="_CPPv3N9Direction15RPGPP_DOWN_IDLEE"></span><span id="_CPPv2N9Direction15RPGPP_DOWN_IDLEE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380abb15515ca1de99db739f5ffc27441ec5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_DOWN_IDLE</span></span></span><a class="headerlink" href="#_CPPv4N9Direction15RPGPP_DOWN_IDLEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Down Idle state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction10RPGPP_DOWNE">
+<span id="_CPPv3N9Direction10RPGPP_DOWNE"></span><span id="_CPPv2N9Direction10RPGPP_DOWNE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380a8de2862d5f1308eea1a33e727d15ba57"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_DOWN</span></span></span><a class="headerlink" href="#_CPPv4N9Direction10RPGPP_DOWNE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Down state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction13RPGPP_UP_IDLEE">
+<span id="_CPPv3N9Direction13RPGPP_UP_IDLEE"></span><span id="_CPPv2N9Direction13RPGPP_UP_IDLEE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380a0003303c59756e0683b158951d67c312"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_UP_IDLE</span></span></span><a class="headerlink" href="#_CPPv4N9Direction13RPGPP_UP_IDLEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Up Idle state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction8RPGPP_UPE">
+<span id="_CPPv3N9Direction8RPGPP_UPE"></span><span id="_CPPv2N9Direction8RPGPP_UPE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380a676cad91f655a3c3e672f92a50bf7e42"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_UP</span></span></span><a class="headerlink" href="#_CPPv4N9Direction8RPGPP_UPE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Up state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction15RPGPP_LEFT_IDLEE">
+<span id="_CPPv3N9Direction15RPGPP_LEFT_IDLEE"></span><span id="_CPPv2N9Direction15RPGPP_LEFT_IDLEE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380aee408e78289d20570c23dd1893f49c9a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_LEFT_IDLE</span></span></span><a class="headerlink" href="#_CPPv4N9Direction15RPGPP_LEFT_IDLEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Left Idle state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction10RPGPP_LEFTE">
+<span id="_CPPv3N9Direction10RPGPP_LEFTE"></span><span id="_CPPv2N9Direction10RPGPP_LEFTE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380a8f5a14d7350b1bb593ee32ad03724309"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_LEFT</span></span></span><a class="headerlink" href="#_CPPv4N9Direction10RPGPP_LEFTE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Left state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction16RPGPP_RIGHT_IDLEE">
+<span id="_CPPv3N9Direction16RPGPP_RIGHT_IDLEE"></span><span id="_CPPv2N9Direction16RPGPP_RIGHT_IDLEE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380ad45fd29cd5bd20d2e20b0cce1bf582a6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_RIGHT_IDLE</span></span></span><a class="headerlink" href="#_CPPv4N9Direction16RPGPP_RIGHT_IDLEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Right Idle state. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9Direction11RPGPP_RIGHTE">
+<span id="_CPPv3N9Direction11RPGPP_RIGHTE"></span><span id="_CPPv2N9Direction11RPGPP_RIGHTE"></span><span class="target" id="actor_8hpp_1a5106bc7dff95b3ba27f8fb42d1357380a77730fc4409b113a245b711dcca29ce9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RPGPP_RIGHT</span></span></span><a class="headerlink" href="#_CPPv4N9Direction11RPGPP_RIGHTE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Right state. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416calcActorTilePos7Vector27Vector2P7TileSet">
+<span id="_CPPv316calcActorTilePos7Vector27Vector2P7TileSet"></span><span id="_CPPv216calcActorTilePos7Vector27Vector2P7TileSet"></span><span id="calcActorTilePos__Vector2.Vector2.TileSetP"></span><span class="target" id="actor_8hpp_1a6d7a7c46d9f78df99f9bfa0958a7b0fa"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">calcActorTilePos</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newPosition</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldTileSize</span></span>, <a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">tileSet</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416calcActorTilePos7Vector27Vector2P7TileSet" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv45Actor">
+<span id="_CPPv35Actor"></span><span id="_CPPv25Actor"></span><span id="Actor"></span><span class="target" id="classActor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Actor</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../class/classISaveable.html#_CPPv49ISaveable" title="ISaveable"><span class="n"><span class="pre">ISaveable</span></span></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;actor.hpp&gt;</em></div>
+<p>The <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a> class represents an <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a> in the game’s world. <div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Direction </p>
+</div>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor5ActorEv">
+<span id="_CPPv3N5Actor5ActorEv"></span><span id="_CPPv2N5Actor5ActorEv"></span><span id="Actor::Actor"></span><span class="target" id="classActor_1af1a502eb04e2295a15a2857fa2126c9b"></span><span class="sig-name descname"><span class="n"><span class="pre">Actor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><br /></dt>
+<dd><p>Empty constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor5ActorERKNSt6stringE">
+<span id="_CPPv3N5Actor5ActorERKNSt6stringE"></span><span id="_CPPv2N5Actor5ActorERKNSt6stringE"></span><span id="Actor::Actor__ssCR"></span><span class="target" id="classActor_1a5eb14013e4a174104c7615490e40dc07"></span><span class="sig-name descname"><span class="n"><span class="pre">Actor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor that takes a path to the .ractor file. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE">
+<span id="_CPPv3N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE"></span><span id="_CPPv2N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE"></span><span id="Actor::Actor__std::unique_ptr:TileSet:.Vector2.ss"></span><span class="target" id="classActor_1a6338b91def82563aac32eb271dd134aa"></span><span class="sig-name descname"><span class="n"><span class="pre">Actor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSet</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasPos</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSetSource</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor that takes a <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>, the atlas position of the tile to use, and the path to the <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor5ActorERK8ActorBin">
+<span id="_CPPv3N5Actor5ActorERK8ActorBin"></span><span id="_CPPv2N5Actor5ActorERK8ActorBin"></span><span id="Actor::Actor__ActorBinCR"></span><span class="target" id="classActor_1a5986ea50a9c055c3b3e162358cbffbf8"></span><span class="sig-name descname"><span class="n"><span class="pre">Actor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="gamedata_8hpp.html#_CPPv48ActorBin" title="ActorBin"><span class="n"><span class="pre">ActorBin</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bin</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Constructor that takes an <a class="reference internal" href="../struct/structActorBin.html#structActorBin"><span class="std std-ref">ActorBin</span></a> binary structure </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor8dumpJsonEv">
+<span id="_CPPv3N5Actor8dumpJsonEv"></span><span id="_CPPv2N5Actor8dumpJsonEv"></span><span id="Actor::dumpJson"></span><span class="target" id="classActor_1ad0b717da74aadf19c76cd08d0348a504"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv44json" title="json"><span class="n"><span class="pre">json</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dumpJson</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
+<dd><p>Dump this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s data to a nlohmann::json object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor6unloadEv">
+<span id="_CPPv3NK5Actor6unloadEv"></span><span id="_CPPv2NK5Actor6unloadEv"></span><span id="Actor::unloadC"></span><span class="target" id="classActor_1a4595f8e208566e94a0f9d2ee6e04e742"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unload</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Unload routine. The UnloadTexture function will called here. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor6updateEv">
+<span id="_CPPv3N5Actor6updateEv"></span><span id="_CPPv2N5Actor6updateEv"></span><span id="Actor::update"></span><span class="target" id="classActor_1af10d6f5b2ce4f5ab7a43c813b8b5bf95"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Update routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor4drawEv">
+<span id="_CPPv3NK5Actor4drawEv"></span><span id="_CPPv2NK5Actor4drawEv"></span><span id="Actor::drawC"></span><span class="target" id="classActor_1adbbdc379c1a471cc9763d871b0790d7e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Draw routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor13getSourcePathEv">
+<span id="_CPPv3NK5Actor13getSourcePathEv"></span><span id="_CPPv2NK5Actor13getSourcePathEv"></span><span id="Actor::getSourcePathC"></span><span class="target" id="classActor_1a133d1522739a98425284a0cd08600db2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSourcePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the source file’s path for this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor11getPositionEv">
+<span id="_CPPv3NK5Actor11getPositionEv"></span><span id="_CPPv2NK5Actor11getPositionEv"></span><span id="Actor::getPositionC"></span><span class="target" id="classActor_1aa9ec748e8c122106cfce89b321716ba3"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPosition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get this actor’s position in the world. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor11setPositionE7Vector2">
+<span id="_CPPv3N5Actor11setPositionE7Vector2"></span><span id="_CPPv2N5Actor11setPositionE7Vector2"></span><span id="Actor::setPosition__Vector2"></span><span class="target" id="classActor_1ab8193a9c5964faf649ec835401d3ee65"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPosition</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newPosition</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s position. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor15setTilePositionE7Vector27Vector2">
+<span id="_CPPv3N5Actor15setTilePositionE7Vector27Vector2"></span><span id="_CPPv2N5Actor15setTilePositionE7Vector27Vector2"></span><span id="Actor::setTilePosition__Vector2.Vector2"></span><span class="target" id="classActor_1a9bbad00bc94397a7df098b19bf671eb5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTilePosition</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newPosition</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSize</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a> position relative to a tile in the world. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor15getTilePositionEv">
+<span id="_CPPv3NK5Actor15getTilePositionEv"></span><span id="_CPPv2NK5Actor15getTilePositionEv"></span><span id="Actor::getTilePositionC"></span><span class="target" id="classActor_1ad93dca61c5e2d0cbe87cd9575604ea8f"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTilePosition</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s tile position. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor14moveByVelocityE7Vector2">
+<span id="_CPPv3N5Actor14moveByVelocityE7Vector2"></span><span id="_CPPv2N5Actor14moveByVelocityE7Vector2"></span><span id="Actor::moveByVelocity__Vector2"></span><span class="target" id="classActor_1a3da3c0067a9c4b1de9319f3c6691aff1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">moveByVelocity</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">velocity</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Move the <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a> using a velocity vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor7getRectEv">
+<span id="_CPPv3NK5Actor7getRectEv"></span><span id="_CPPv2NK5Actor7getRectEv"></span><span id="Actor::getRectC"></span><span class="target" id="classActor_1a5eeaf74088f0f44d4276fc4fea55c5a3"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the bounding box of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor10getTileSetEv">
+<span id="_CPPv3NK5Actor10getTileSetEv"></span><span id="_CPPv2NK5Actor10getTileSetEv"></span><span id="Actor::getTileSetC"></span><span class="target" id="classActor_1afb13cf28a5bf3bb4b65c909cd8e8d2b5"></span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTileSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get a reference to this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor15getCurrentFrameEv">
+<span id="_CPPv3NK5Actor15getCurrentFrameEv"></span><span id="_CPPv2NK5Actor15getCurrentFrameEv"></span><span id="Actor::getCurrentFrameC"></span><span class="target" id="classActor_1ae4ea50b765628fbe0b577e12071bf31a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentFrame</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current frame of this actor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor14resetAnimationEv">
+<span id="_CPPv3N5Actor14resetAnimationEv"></span><span id="_CPPv2N5Actor14resetAnimationEv"></span><span id="Actor::resetAnimation"></span><span class="target" id="classActor_1a0d49787648861af7c964c88b4ff70830"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetAnimation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Reset the animation back to frame 0. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor21getAnimationDirectionEv">
+<span id="_CPPv3NK5Actor21getAnimationDirectionEv"></span><span id="_CPPv2NK5Actor21getAnimationDirectionEv"></span><span id="Actor::getAnimationDirectionC"></span><span class="target" id="classActor_1aa86937ffc2b9b374929deb72eb848100"></span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAnimationDirection</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current direction of this actor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor24getCurrentAnimationAtlasEv">
+<span id="_CPPv3NK5Actor24getCurrentAnimationAtlasEv"></span><span id="_CPPv2NK5Actor24getCurrentAnimationAtlasEv"></span><span id="Actor::getCurrentAnimationAtlasC"></span><span class="target" id="classActor_1a76d356eee39ccac8031b79b503b26f61"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentAnimationAtlas</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current animation atlas of this actor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor28getCurrentAnimationRectangleEv">
+<span id="_CPPv3NK5Actor28getCurrentAnimationRectangleEv"></span><span id="_CPPv2NK5Actor28getCurrentAnimationRectangleEv"></span><span id="Actor::getCurrentAnimationRectangleC"></span><span class="target" id="classActor_1aff8e14a3c36a6c75bec354438d239d46"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCurrentAnimationRectangle</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current animation rectangle of this actor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor22getAnimationAtlasByIdxEi">
+<span id="_CPPv3NK5Actor22getAnimationAtlasByIdxEi"></span><span id="_CPPv2NK5Actor22getAnimationAtlasByIdxEi"></span><span id="Actor::getAnimationAtlasByIdx__iC"></span><span class="target" id="classActor_1a237771f617f843b48733576b8d193212"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAnimationAtlasByIdx</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frameIndex</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get an atlas of this actor by frame index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor17setAnimationFrameEi">
+<span id="_CPPv3N5Actor17setAnimationFrameEi"></span><span id="_CPPv2N5Actor17setAnimationFrameEi"></span><span id="Actor::setAnimationFrame__i"></span><span class="target" id="classActor_1a0296ec4ef4dbc4139d684fb3b2c90820"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAnimationFrame</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frameIndex</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the current frame. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor17getAnimationCountEv">
+<span id="_CPPv3NK5Actor17getAnimationCountEv"></span><span id="_CPPv2NK5Actor17getAnimationCountEv"></span><span id="Actor::getAnimationCountC"></span><span class="target" id="classActor_1abdb730053846783feff65d138c3b6d64"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAnimationCount</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the current size of the animation in the direction. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor10setTileSetERKNSt6stringE">
+<span id="_CPPv3N5Actor10setTileSetERKNSt6stringE"></span><span id="_CPPv2N5Actor10setTileSetERKNSt6stringE"></span><span id="Actor::setTileSet__ssCR"></span><span class="target" id="classActor_1af43cc9042c944d35748f8feb0a2af75f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTileSet</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newTileSetSource</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> using a path to the tileset file. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor16getCollisionRectE7Vector2">
+<span id="_CPPv3NK5Actor16getCollisionRectE7Vector2"></span><span id="_CPPv2NK5Actor16getCollisionRectE7Vector2"></span><span id="Actor::getCollisionRect__Vector2C"></span><span class="target" id="classActor_1a913d4d567f94da96e30d932bc902fea6"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">velocity</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the collision rectangle of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a> if it was moved by the velocity vector </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor18getCollisionCenterEv">
+<span id="_CPPv3NK5Actor18getCollisionCenterEv"></span><span id="_CPPv2NK5Actor18getCollisionCenterEv"></span><span id="Actor::getCollisionCenterC"></span><span class="target" id="classActor_1ace22c5fd15a5140e9de745d06846efae"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionCenter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get collision center point. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2">
+<span id="_CPPv3N5Actor17addAnimationFrameE9Direction7Vector2"></span><span id="_CPPv2N5Actor17addAnimationFrameE9Direction7Vector2"></span><span id="Actor::addAnimationFrame__Direction.Vector2"></span><span class="target" id="classActor_1aaf90707359629d077312f86e5a37cc51"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addAnimationFrame</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasPos</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add a frame in the chosen animation. The frame represents an atlas tile from this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor20removeAnimationFrameE9Directioni">
+<span id="_CPPv3N5Actor20removeAnimationFrameE9Directioni"></span><span id="_CPPv2N5Actor20removeAnimationFrameE9Directioni"></span><span id="Actor::removeAnimationFrame__Direction.i"></span><span class="target" id="classActor_1a7bb97bb019ff1f392cf3bcb365cf637e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeAnimationFrame</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frameIndex</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Remove a frame in the chosen animation, specified by an index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2">
+<span id="_CPPv3N5Actor17setAnimationFrameE9Directioni7Vector2"></span><span id="_CPPv2N5Actor17setAnimationFrameE9Directioni7Vector2"></span><span id="Actor::setAnimationFrame__Direction.i.Vector2"></span><span class="target" id="classActor_1a82f434b59097dcd54445a86800812127"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAnimationFrame</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frameIndex</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasTile</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change a frame in the chosen animation to another atlas tile from the <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE">
+<span id="_CPPv3N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE"></span><span id="_CPPv2N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE"></span><span id="Actor::addAnimationFrames__Direction.std::vector:std::vector:i::CR"></span><span class="target" id="classActor_1a290d73f82493631051f60365a202eb80"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addAnimationFrames</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">frames</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add multiple frames to the chosen animation. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor13playAnimationE9Direction">
+<span id="_CPPv3N5Actor13playAnimationE9Direction"></span><span id="_CPPv2N5Actor13playAnimationE9Direction"></span><span id="Actor::playAnimation__Direction"></span><span class="target" id="classActor_1a9449729f7fc737475a0964b3a8b6facf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playAnimation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Temporarily play an animation </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor22isTempAnimationPlayingEv">
+<span id="_CPPv3N5Actor22isTempAnimationPlayingEv"></span><span id="_CPPv2N5Actor22isTempAnimationPlayingEv"></span><span id="Actor::isTempAnimationPlaying"></span><span class="target" id="classActor_1a0bb26936ac18f4e5b90ea8eddd03b0df"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isTempAnimationPlaying</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check whether a temporary animation is playing </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor15changeAnimationE9Direction">
+<span id="_CPPv3N5Actor15changeAnimationE9Direction"></span><span id="_CPPv2N5Actor15changeAnimationE9Direction"></span><span id="Actor::changeAnimation__Direction"></span><span class="target" id="classActor_1a72ce0330eb307244e577486dcc55af94"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">changeAnimation</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change the <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s current animation and play it. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor16getTileSetSourceEv">
+<span id="_CPPv3NK5Actor16getTileSetSourceEv"></span><span id="_CPPv2NK5Actor16getTileSetSourceEv"></span><span id="Actor::getTileSetSourceC"></span><span class="target" id="classActor_1ad913b19d9a3a2aee921d6429674a6f6c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTileSetSource</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the path of the used <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor16getAnimationsRawEv">
+<span id="_CPPv3NK5Actor16getAnimationsRawEv"></span><span id="_CPPv2NK5Actor16getAnimationsRawEv"></span><span id="Actor::getAnimationsRawC"></span><span class="target" id="classActor_1a95607d4956aee7a34f8d221754625d27"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAnimationsRaw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get an array of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s animations </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor15getAnimationRawE9Direction">
+<span id="_CPPv3NK5Actor15getAnimationRawE9Direction"></span><span id="_CPPv2NK5Actor15getAnimationRawE9Direction"></span><span id="Actor::getAnimationRaw__DirectionC"></span><span class="target" id="classActor_1ab70d50352d3fadf220bbc046d70e201f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAnimationRaw</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get a specific animation </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor16getCollisionRectEv">
+<span id="_CPPv3NK5Actor16getCollisionRectEv"></span><span id="_CPPv2NK5Actor16getCollisionRectEv"></span><span id="Actor::getCollisionRectC"></span><span class="target" id="classActor_1ab42cb51eef78a1e9b8e7ee1c66f1da84"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the collision Rectangle of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor16setCollisionRectE9Rectangle">
+<span id="_CPPv3N5Actor16setCollisionRectE9Rectangle"></span><span id="_CPPv2N5Actor16setCollisionRectE9Rectangle"></span><span id="Actor::setCollisionRect__Rectangle"></span><span class="target" id="classActor_1a60ede43a713c434da7d90a5d20238f5b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCollisionRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s collision Rectangle </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor14onFrameChangedE">
+<span id="_CPPv3N5Actor14onFrameChangedE"></span><span id="_CPPv2N5Actor14onFrameChangedE"></span><span class="target" id="classActor_1a1dd913a0581aaf2121ccd16695eb68f9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onFrameChanged</span></span></span><br /></dt>
+<dd><p>The callback when the current frame changes. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor10sourcePathE">
+<span id="_CPPv3N5Actor10sourcePathE"></span><span id="_CPPv2N5Actor10sourcePathE"></span><span id="Actor::sourcePath__ss"></span><span class="target" id="classActor_1a87bc3bd316393c5f7f7702608eb56dd6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sourcePath</span></span></span><a class="headerlink" href="#_CPPv4N5Actor10sourcePathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor7tileSetE">
+<span id="_CPPv3N5Actor7tileSetE"></span><span id="_CPPv2N5Actor7tileSetE"></span><span id="Actor::tileSet__std::unique_ptr:TileSet:"></span><span class="target" id="classActor_1a14e065811a10ff0a1b50431a4f884104"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTileSet.html#_CPPv47TileSet" title="TileSet"><span class="n"><span class="pre">TileSet</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSet</span></span></span><a class="headerlink" href="#_CPPv4N5Actor7tileSetE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The used <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> for this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>’s sprites. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor13tileSetSourceE">
+<span id="_CPPv3N5Actor13tileSetSourceE"></span><span id="_CPPv2N5Actor13tileSetSourceE"></span><span id="Actor::tileSetSource__ss"></span><span class="target" id="classActor_1af91c465798ac9432b4e20cfc65e8b033"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSetSource</span></span></span><a class="headerlink" href="#_CPPv4N5Actor13tileSetSourceE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The path to the <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a> file. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor4tileE">
+<span id="_CPPv3N5Actor4tileE"></span><span id="_CPPv2N5Actor4tileE"></span><span id="Actor::tile__AtlasTile"></span><span class="target" id="classActor_1a49983930b195c6755071594587ca763a"></span><a class="reference internal" href="../class/classAtlasTile.html#_CPPv49AtlasTile" title="AtlasTile"><span class="n"><span class="pre">AtlasTile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tile</span></span></span><a class="headerlink" href="#_CPPv4N5Actor4tileE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The currently shown tile from the <a class="reference internal" href="tileset_8hpp.html#classTileSet"><span class="std std-ref">TileSet</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor8positionE">
+<span id="_CPPv3N5Actor8positionE"></span><span id="_CPPv2N5Actor8positionE"></span><span id="Actor::position__Vector2"></span><span class="target" id="classActor_1ac50766040ecd3bb807af4d111a49bb02"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">position</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Actor8positionE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Current position in the world of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor12tilePositionE">
+<span id="_CPPv3N5Actor12tilePositionE"></span><span id="_CPPv2N5Actor12tilePositionE"></span><span id="Actor::tilePosition__Vector2"></span><span class="target" id="classActor_1add55af80de5693030c66082fc2d8096b"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tilePosition</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Actor12tilePositionE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Current tile position of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a> if such is set. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor12frameCounterE">
+<span id="_CPPv3N5Actor12frameCounterE"></span><span id="_CPPv2N5Actor12frameCounterE"></span><span id="Actor::frameCounter__i"></span><span class="target" id="classActor_1a7cedc6fb638edf90e7fcb9c74bf59fbf"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">frameCounter</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Actor12frameCounterE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor10frameSpeedE">
+<span id="_CPPv3N5Actor10frameSpeedE"></span><span id="_CPPv2N5Actor10frameSpeedE"></span><span id="Actor::frameSpeed__i"></span><span class="target" id="classActor_1aa093b23b0a3b20543ce82d4c4e53e695"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">frameSpeed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Actor10frameSpeedE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor12currentFrameE">
+<span id="_CPPv3N5Actor12currentFrameE"></span><span id="_CPPv2N5Actor12currentFrameE"></span><span id="Actor::currentFrame__i"></span><span class="target" id="classActor_1a5cb0f110c2df77458e2a6a641af34252"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentFrame</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Actor12currentFrameE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor13collisionRectE">
+<span id="_CPPv3N5Actor13collisionRectE"></span><span id="_CPPv2N5Actor13collisionRectE"></span><span id="Actor::collisionRect__Rectangle"></span><span class="target" id="classActor_1a98ab046ddaaf9fec09e8021dcb4ea4ea"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisionRect</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N5Actor13collisionRectE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Rectangle, representing the collision of this <a class="reference internal" href="#classActor"><span class="std std-ref">Actor</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor10animationsE">
+<span id="_CPPv3N5Actor10animationsE"></span><span id="_CPPv2N5Actor10animationsE"></span><span id="Actor::animations__std::array:std::vector:Vector2:.8:"></span><span class="target" id="classActor_1a8ee8c652309595b8549975e62352dc6f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Vector2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">8</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">animations</span></span></span><a class="headerlink" href="#_CPPv4N5Actor10animationsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>An array of the animations. Each <a class="reference internal" href="baseContainer_8hpp.html#classBaseContainer_1a3268f98034cc71b1bb6c6a4f6f498c0d"><span class="std std-ref">std::vector&lt;Vector2&gt;</span></a> represents the frames of an animation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor16currentAnimationE">
+<span id="_CPPv3N5Actor16currentAnimationE"></span><span id="_CPPv2N5Actor16currentAnimationE"></span><span id="Actor::currentAnimation__Direction"></span><span class="target" id="classActor_1a7c25e8fea054dbf4dcef223a38ccb722"></span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentAnimation</span></span></span><a class="headerlink" href="#_CPPv4N5Actor16currentAnimationE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A Direction enum, showing the current animation that is being played. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor13lastAnimationE">
+<span id="_CPPv3N5Actor13lastAnimationE"></span><span id="_CPPv2N5Actor13lastAnimationE"></span><span id="Actor::lastAnimation__Direction"></span><span class="target" id="classActor_1a870e7006f0b7c42275b7403c62291488"></span><a class="reference internal" href="#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lastAnimation</span></span></span><a class="headerlink" href="#_CPPv4N5Actor13lastAnimationE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor16tempAnimIsPlayedE">
+<span id="_CPPv3N5Actor16tempAnimIsPlayedE"></span><span id="_CPPv2N5Actor16tempAnimIsPlayedE"></span><span id="Actor::tempAnimIsPlayed__b"></span><span class="target" id="classActor_1a45f7152ec2c977a699a4804570899d48"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tempAnimIsPlayed</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N5Actor16tempAnimIsPlayedE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="atlasTile_8hpp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">File atlasTile.hpp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="actorContainer_8hpp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">File actorContainer.hpp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">File actor.hpp</a><ul>
+<li><a class="reference internal" href="#c.RPGPP_MAX_DIRECTION"><code class="docutils literal notranslate"><span class="pre">RPGPP_MAX_DIRECTION</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv44json"><code class="docutils literal notranslate"><span class="pre">json</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49Direction"><code class="docutils literal notranslate"><span class="pre">Direction</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9Direction15RPGPP_DOWN_IDLEE"><code class="docutils literal notranslate"><span class="pre">RPGPP_DOWN_IDLE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction10RPGPP_DOWNE"><code class="docutils literal notranslate"><span class="pre">RPGPP_DOWN</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction13RPGPP_UP_IDLEE"><code class="docutils literal notranslate"><span class="pre">RPGPP_UP_IDLE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction8RPGPP_UPE"><code class="docutils literal notranslate"><span class="pre">RPGPP_UP</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction15RPGPP_LEFT_IDLEE"><code class="docutils literal notranslate"><span class="pre">RPGPP_LEFT_IDLE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction10RPGPP_LEFTE"><code class="docutils literal notranslate"><span class="pre">RPGPP_LEFT</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction16RPGPP_RIGHT_IDLEE"><code class="docutils literal notranslate"><span class="pre">RPGPP_RIGHT_IDLE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9Direction11RPGPP_RIGHTE"><code class="docutils literal notranslate"><span class="pre">RPGPP_RIGHT</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv416calcActorTilePos7Vector27Vector2P7TileSet"><code class="docutils literal notranslate"><span class="pre">calcActorTilePos()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv45Actor"><code class="docutils literal notranslate"><span class="pre">Actor</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N5Actor5ActorEv"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor5ActorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor5ActorENSt10unique_ptrI7TileSetEE7Vector2NSt6stringE"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor5ActorERK8ActorBin"><code class="docutils literal notranslate"><span class="pre">Actor()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor13getSourcePathEv"><code class="docutils literal notranslate"><span class="pre">getSourcePath()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor11getPositionEv"><code class="docutils literal notranslate"><span class="pre">getPosition()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor11setPositionE7Vector2"><code class="docutils literal notranslate"><span class="pre">setPosition()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor15setTilePositionE7Vector27Vector2"><code class="docutils literal notranslate"><span class="pre">setTilePosition()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor15getTilePositionEv"><code class="docutils literal notranslate"><span class="pre">getTilePosition()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor14moveByVelocityE7Vector2"><code class="docutils literal notranslate"><span class="pre">moveByVelocity()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor7getRectEv"><code class="docutils literal notranslate"><span class="pre">getRect()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor10getTileSetEv"><code class="docutils literal notranslate"><span class="pre">getTileSet()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor15getCurrentFrameEv"><code class="docutils literal notranslate"><span class="pre">getCurrentFrame()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor14resetAnimationEv"><code class="docutils literal notranslate"><span class="pre">resetAnimation()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor21getAnimationDirectionEv"><code class="docutils literal notranslate"><span class="pre">getAnimationDirection()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor24getCurrentAnimationAtlasEv"><code class="docutils literal notranslate"><span class="pre">getCurrentAnimationAtlas()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor28getCurrentAnimationRectangleEv"><code class="docutils literal notranslate"><span class="pre">getCurrentAnimationRectangle()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor22getAnimationAtlasByIdxEi"><code class="docutils literal notranslate"><span class="pre">getAnimationAtlasByIdx()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor17setAnimationFrameEi"><code class="docutils literal notranslate"><span class="pre">setAnimationFrame()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor17getAnimationCountEv"><code class="docutils literal notranslate"><span class="pre">getAnimationCount()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor10setTileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTileSet()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor16getCollisionRectE7Vector2"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor18getCollisionCenterEv"><code class="docutils literal notranslate"><span class="pre">getCollisionCenter()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2"><code class="docutils literal notranslate"><span class="pre">addAnimationFrame()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor20removeAnimationFrameE9Directioni"><code class="docutils literal notranslate"><span class="pre">removeAnimationFrame()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2"><code class="docutils literal notranslate"><span class="pre">setAnimationFrame()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor18addAnimationFramesE9DirectionRKNSt6vectorINSt6vectorIiEEEE"><code class="docutils literal notranslate"><span class="pre">addAnimationFrames()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor13playAnimationE9Direction"><code class="docutils literal notranslate"><span class="pre">playAnimation()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor22isTempAnimationPlayingEv"><code class="docutils literal notranslate"><span class="pre">isTempAnimationPlaying()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor15changeAnimationE9Direction"><code class="docutils literal notranslate"><span class="pre">changeAnimation()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor16getTileSetSourceEv"><code class="docutils literal notranslate"><span class="pre">getTileSetSource()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor16getAnimationsRawEv"><code class="docutils literal notranslate"><span class="pre">getAnimationsRaw()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor15getAnimationRawE9Direction"><code class="docutils literal notranslate"><span class="pre">getAnimationRaw()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor16setCollisionRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">setCollisionRect()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor14onFrameChangedE"><code class="docutils literal notranslate"><span class="pre">onFrameChanged</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor10sourcePathE"><code class="docutils literal notranslate"><span class="pre">sourcePath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor7tileSetE"><code class="docutils literal notranslate"><span class="pre">tileSet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor13tileSetSourceE"><code class="docutils literal notranslate"><span class="pre">tileSetSource</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor4tileE"><code class="docutils literal notranslate"><span class="pre">tile</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor8positionE"><code class="docutils literal notranslate"><span class="pre">position</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor12tilePositionE"><code class="docutils literal notranslate"><span class="pre">tilePosition</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor12frameCounterE"><code class="docutils literal notranslate"><span class="pre">frameCounter</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor10frameSpeedE"><code class="docutils literal notranslate"><span class="pre">frameSpeed</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor12currentFrameE"><code class="docutils literal notranslate"><span class="pre">currentFrame</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor13collisionRectE"><code class="docutils literal notranslate"><span class="pre">collisionRect</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor10animationsE"><code class="docutils literal notranslate"><span class="pre">animations</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor16currentAnimationE"><code class="docutils literal notranslate"><span class="pre">currentAnimation</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor13lastAnimationE"><code class="docutils literal notranslate"><span class="pre">lastAnimation</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor16tempAnimIsPlayedE"><code class="docutils literal notranslate"><span class="pre">tempAnimIsPlayed</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

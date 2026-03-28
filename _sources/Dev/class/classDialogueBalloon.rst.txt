@@ -1,0 +1,5 @@
+Class DialogueBalloon
+=====================
+
+.. doxygenclass:: DialogueBalloon
+   :members:
