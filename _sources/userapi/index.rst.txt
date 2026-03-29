@@ -1,0 +1,12 @@
+Module ``meow``
+===============
+
+.. lua:currentmodule:: None
+
+.. lua:autoobject:: meow
+   :members: 
+   :recursive: 
+   :index-table: 
+   :exclude-members: 
+   
+
