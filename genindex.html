@@ -200,7 +200,10 @@
 <p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -245,7 +248,7 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#_"><strong>_</strong></a> | <a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a></div>
 </section>
 <section id="_" class="genindex-section">
   <h2>_</h2>
@@ -651,12 +654,12 @@
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game5stateE">Game::state (C++ member)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game2uiE">Game::ui (C++ member)</a>
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6unloadEv">Game::unload (C++ function)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6updateEv">Game::update (C++ function)</a>
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6useBinERKNSt6stringE">Game::useBin (C++ function)</a>
@@ -691,7 +694,13 @@
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5titleE">GameData::title (C++ member)</a>
 </li>
-        <li><a href="userapi/index.html#lua-meow.WorldService.GetPlayer">GetPlayer (function in meow.WorldService)</a>
+        <li><a href="userapi/state/index.html#lua-GameState">GameState (module)</a>
+</li>
+        <li><a href="userapi/state/index.html#lua-GameState.Get">Get (function in GameState)</a>
+</li>
+        <li><a href="userapi/world/index.html#lua-WorldService.GetPlayer">GetPlayer (function in WorldService)</a>
+</li>
+        <li><a href="userapi/world/index.html#lua-WorldService.GetRoom">GetRoom (function in WorldService)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -799,10 +808,10 @@
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin4typeE">InteractableInRoomBin::type (C++ member)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin1xE">InteractableInRoomBin::x (C++ member)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin1yE">InteractableInRoomBin::y (C++ member)</a>
 </li>
         <li><a href="Dev/class/classInteractablesContainer.html#_CPPv422InteractablesContainer">InteractablesContainer (C++ class)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv422InteractablesContainer">[1]</a>
@@ -828,6 +837,8 @@
         <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer22InteractablesContainerEv">InteractablesContainer::InteractablesContainer (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer22InteractablesContainerEv">[1]</a>
 </li>
         <li><a href="Dev/class/classInteractablesContainer.html#_CPPv4N22InteractablesContainer19setInteractableTypeE7IVectorRKNSt6stringE">InteractablesContainer::setInteractableType (C++ function)</a>, <a href="Dev/file/interactablesContainer_8hpp.html#_CPPv4N22InteractablesContainer19setInteractableTypeE7IVectorRKNSt6stringE">[1]</a>
+</li>
+        <li><a href="userapi/interface/index.html#lua-Interface">Interface (module)</a>
 </li>
         <li><a href="Dev/class/classInterfaceService.html#_CPPv416InterfaceService">InterfaceService (C++ class)</a>, <a href="Dev/file/interfaceService_8hpp.html#_CPPv416InterfaceService">[1]</a>
 </li>
@@ -915,14 +926,20 @@
   </tr></table>
 </section>
 
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="userapi/sounds/index.html#lua-Sounds.LoadMusic">LoadMusic (function in Sounds)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="M" class="genindex-section">
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="userapi/index.html#lua-meow">meow (module)</a>
-</li>
-        <li><a href="userapi/index.html#lua-meow.MeowingBackend">MeowingBackend (class in meow)</a>
-</li>
         <li><a href="Dev/file/ini_8h.html#_CPPv44mINI">mINI (C++ type)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv44mINI">[1]</a>
 </li>
         <li><a href="Dev/class/classmINI_1_1INIFile.html#_CPPv4N4mINI7INIFileE">mINI::INIFile (C++ class)</a>, <a href="Dev/file/ini_8h.html#_CPPv4N4mINI7INIFileE">[1]</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI7INIFileE">[2]</a>
@@ -995,10 +1012,10 @@
 </li>
         <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataTypeE">mINI::INIParser::PDataType (C++ enum)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataTypeE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataTypeE">[2]</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">mINI::INIParser::PDataType::PDATA_COMMENT (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType13PDATA_COMMENTE">[2]</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">mINI::INIParser::PDataType::PDATA_KEYVALUE (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType14PDATA_KEYVALUEE">[2]</a>
 </li>
         <li><a href="Dev/file/ini_8h.html#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">mINI::INIParser::PDataType::PDATA_NONE (C++ enumerator)</a>, <a href="Dev/namespace/namespacemINI.html#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">[1]</a>, <a href="Dev/namespace/namespacemINI_1_1INIParser.html#_CPPv4N4mINI9INIParser9PDataType10PDATA_NONEE">[2]</a>
@@ -1077,6 +1094,16 @@
   </tr></table>
 </section>
 
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="userapi/interface/index.html#lua-Interface.OpenDialogue">OpenDialogue (function in Interface)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="P" class="genindex-section">
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
@@ -1135,6 +1162,10 @@
 </li>
         <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player8velocityE">Player::velocity (C++ member)</a>
 </li>
+        <li><a href="userapi/sounds/index.html#lua-Sounds.PlayMusic">PlayMusic (function in Sounds)</a>
+</li>
+        <li><a href="userapi/sounds/index.html#lua-Sounds.PlaySound">PlaySound (function in Sounds)</a>
+</li>
         <li><a href="Dev/class/classProp.html#_CPPv44Prop">Prop (C++ class)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv44Prop">[1]</a>
 </li>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop9applyJsonE4json">Prop::applyJson (C++ function)</a>
@@ -1155,12 +1186,12 @@
 </li>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop18getHasInteractableEv">Prop::getHasInteractable (C++ function)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop12getImagePathEv">Prop::getImagePath (C++ function)</a>
 </li>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop15getInteractableEv">Prop::getInteractable (C++ function)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop19getInteractableTypeEv">Prop::getInteractableType (C++ function)</a>
 </li>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop13getSourcePathEv">Prop::getSourcePath (C++ function)</a>
@@ -1236,8 +1267,6 @@
         <li><a href="Dev/file/propsContainer_8hpp.html#_CPPv4N14PropsContainer9getPropAtE7Vector2">PropsContainer::getPropAt (C++ function)</a>
 </li>
         <li><a href="Dev/file/propsContainer_8hpp.html#_CPPv4N14PropsContainer14PropsContainerEv">PropsContainer::PropsContainer (C++ function)</a>
-</li>
-        <li><a href="userapi/index.html#lua-meow.purr">purr (function in meow)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1397,10 +1426,16 @@
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv419serializeDataToFileNSt6stringE8GameData">serializeDataToFile (C++ function)</a>
 </li>
-        <li><a href="Dev/class/classSoundService.html#_CPPv412SoundService">SoundService (C++ class)</a>, <a href="Dev/file/soundService_8hpp.html#_CPPv412SoundService">[1]</a>
+        <li><a href="userapi/state/index.html#lua-GameState.Set">Set (function in GameState)</a>
+</li>
+        <li><a href="userapi/world/index.html#lua-WorldService.SetRoom">SetRoom (function in WorldService)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="userapi/sounds/index.html#lua-Sounds">Sounds (module)</a>
+</li>
+        <li><a href="Dev/class/classSoundService.html#_CPPv412SoundService">SoundService (C++ class)</a>, <a href="Dev/file/soundService_8hpp.html#_CPPv412SoundService">[1]</a>
+</li>
         <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService6lastIdE">SoundService::lastId (C++ member)</a>
 </li>
         <li><a href="Dev/file/soundService_8hpp.html#_CPPv4N12SoundService9loadMusicERKNSt6stringE">SoundService::loadMusic (C++ function)</a>
@@ -1607,15 +1642,13 @@
 </li>
         <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement4drawEv">UIElement::draw (C++ function)</a>
 </li>
-        <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement9UIElementEv">UIElement::UIElement (C++ function)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement9UIElementEv">UIElement::UIElement (C++ function)</a>
+</li>
         <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElement6updateEv">UIElement::update (C++ function)</a>
 </li>
         <li><a href="Dev/file/uiElement_8hpp.html#_CPPv4N9UIElementD0Ev">UIElement::~UIElement (C++ function)</a>
-</li>
-        <li><a href="userapi/index.html#lua-meow.utils">utils (table in meow)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -1654,7 +1687,7 @@
         <li><a href="Dev/class/classWorldService.html#_CPPv412WorldService">WorldService (C++ class)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv412WorldService">[1]</a>
 
         <ul>
-          <li><a href="userapi/index.html#lua-meow.WorldService">(table in meow)</a>
+          <li><a href="userapi/world/index.html#lua-WorldService">(module)</a>
 </li>
         </ul></li>
         <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService5alphaE">WorldService::alpha (C++ member)</a>

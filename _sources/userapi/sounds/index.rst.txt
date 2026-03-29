@@ -1,0 +1,12 @@
+Module ``Sounds``
+=================
+
+.. lua:currentmodule:: None
+
+.. lua:autoobject:: Sounds
+   :members: 
+   :recursive: 
+   :index-table: 
+   :exclude-members: 
+   
+

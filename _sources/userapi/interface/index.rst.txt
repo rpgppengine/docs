@@ -1,0 +1,12 @@
+Module ``Interface``
+====================
+
+.. lua:currentmodule:: None
+
+.. lua:autoobject:: Interface
+   :members: 
+   :recursive: 
+   :index-table: 
+   :exclude-members: 
+   
+

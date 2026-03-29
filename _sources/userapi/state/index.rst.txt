@@ -1,0 +1,12 @@
+Module ``GameState``
+====================
+
+.. lua:currentmodule:: None
+
+.. lua:autoobject:: GameState
+   :members: 
+   :recursive: 
+   :index-table: 
+   :exclude-members: 
+   
+

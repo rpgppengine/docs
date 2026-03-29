@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Module meow" href="userapi/index.html"><link rel="prev" title="Make a New Project" href="guide/newproject.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Module GameState" href="userapi/state/index.html"><link rel="prev" title="Make a New Project" href="guide/newproject.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>User Docs - RPG++ documentation</title>
@@ -202,7 +202,10 @@
 <p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">User Docs</a><input aria-label="Toggle navigation of User Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,16 +257,39 @@
 <h1>User Docs<a class="headerlink" href="#user-docs" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="userapi/index.html">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/index.html#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/index.html#api-reference">Api reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/index.html#lua-meow.utils"><code class="docutils literal notranslate"><span class="pre">meow.utils</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/index.html#lua-meow.purr"><code class="docutils literal notranslate"><span class="pre">meow.purr()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/index.html#lua-meow.MeowingBackend"><code class="docutils literal notranslate"><span class="pre">meow.MeowingBackend</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/index.html#lua-meow.WorldService"><code class="docutils literal notranslate"><span class="pre">meow.WorldService</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="userapi/index.html#lua-meow.WorldService.GetPlayer"><code class="docutils literal notranslate"><span class="pre">GetPlayer()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html#api-reference">Api reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/state/index.html#lua-GameState.Get"><code class="docutils literal notranslate"><span class="pre">GameState.Get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/state/index.html#lua-GameState.Set"><code class="docutils literal notranslate"><span class="pre">GameState.Set()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html#api-reference">Api reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/world/index.html#lua-WorldService.GetPlayer"><code class="docutils literal notranslate"><span class="pre">WorldService.GetPlayer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/world/index.html#lua-WorldService.SetRoom"><code class="docutils literal notranslate"><span class="pre">WorldService.SetRoom()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/world/index.html#lua-WorldService.GetRoom"><code class="docutils literal notranslate"><span class="pre">WorldService.GetRoom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html#api-reference">Api reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/sounds/index.html#lua-Sounds.PlaySound"><code class="docutils literal notranslate"><span class="pre">Sounds.PlaySound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/sounds/index.html#lua-Sounds.LoadMusic"><code class="docutils literal notranslate"><span class="pre">Sounds.LoadMusic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/sounds/index.html#lua-Sounds.PlayMusic"><code class="docutils literal notranslate"><span class="pre">Sounds.PlayMusic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html#index">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html#api-reference">Api reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/interface/index.html#lua-Interface.OpenDialogue"><code class="docutils literal notranslate"><span class="pre">Interface.OpenDialogue()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -277,12 +303,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="userapi/index.html">
+          <a class="next-page" href="userapi/state/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Module <code class="docutils literal notranslate"><span class="pre">meow</span></code></div>
+                <div class="title">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

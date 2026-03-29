@@ -1,0 +1,12 @@
+Module ``WorldService``
+=======================
+
+.. lua:currentmodule:: None
+
+.. lua:autoobject:: WorldService
+   :members: 
+   :recursive: 
+   :index-table: 
+   :exclude-members: 
+   
+
