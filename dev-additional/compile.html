@@ -363,27 +363,41 @@
 <h1>Compiling RPG++<a class="headerlink" href="#compiling-rpg" title="Link to this heading">¶</a></h1>
 <section id="getting-dependencies">
 <h2>Getting dependencies<a class="headerlink" href="#getting-dependencies" title="Link to this heading">¶</a></h2>
-<p>To build RPG++, you’ll need to install the following tools/packages:</p>
-<ul class="simple">
-<li><p><strong>For all platforms</strong>:</p>
+<p>To build RPG++, you will need the following tools and packages:</p>
 <ul>
+<li><p><strong>For all platforms</strong>:</p>
+<ul class="simple">
 <li><p><a class="reference external" href="https://xmake.io/">xmake</a> (follow the instructions on the website to install XMake on your system)</p></li>
 <li><p><a class="reference external" href="https://git-scm.com/">git</a></p></li>
 </ul>
 </li>
-<li><p>Specifically for <strong>Linux</strong>:</p>
+<li><p>Specifically for <strong>Linux</strong> (instructions to install packages are listed below):</p>
 <ul>
-<li><p>gcc, g++, make, and ninja (on Debian-based distros, you can install this via <cite>sudo apt install build-essential</cite>)</p></li>
-<li><p>libx11-dev, libxrandr-dev, libxinerama-dev, libxcursor-dev, libxi-dev, libgl1-mesa-dev, and mesa-common-dev (Debian-based distros can install this via <cite>sudo apt install libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev mesa-common-dev</cite>)</p></li>
+<li><p>Packages: <code class="docutils literal notranslate"><span class="pre">gcc</span></code>, <code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">ninja</span></code>, <code class="docutils literal notranslate"><span class="pre">libx11-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">libxrandr-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">libxinerama-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">libxcursor-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">libxi-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">libgl1-mesa-dev</span></code>, and <code class="docutils literal notranslate"><span class="pre">mesa-common-dev</span></code></p></li>
+<li><p>Debian:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>ninja-build<span class="w"> </span>libx11-dev<span class="w"> </span>libxrandr-dev<span class="w"> </span>libxinerama-dev<span class="w"> </span>libxcursor-dev<span class="w"> </span>libxi-dev<span class="w"> </span>libgl1-mesa-dev<span class="w"> </span>mesa-common-dev
+</pre></div>
+</div>
+</li>
+<li><p>Fedora:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>gcc<span class="w"> </span>gcc-c++<span class="w"> </span>make<span class="w"> </span>ninja-build<span class="w"> </span>libX11-devel<span class="w"> </span>libXrandr-devel<span class="w"> </span>libXinerama-devel<span class="w"> </span>libXcursor-devel<span class="w"> </span>libXi-devel<span class="w"> </span>mesa-libGL-devel
+</pre></div>
+</div>
+</li>
+<li><p>Arch Linux:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>base-devel<span class="w"> </span>ninja<span class="w"> </span>libx11<span class="w"> </span>libxrandr<span class="w"> </span>libxinerama<span class="w"> </span>libxcursor<span class="w"> </span>libxi<span class="w"> </span>mesa
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
 <li><p>Specifically for <strong>Windows</strong>:</p>
-<ul>
+<ul class="simple">
 <li><p>Visual Studio 2019 or later with Desktop development with C++ (community edition will suffice)</p></li>
 </ul>
 </li>
 <li><p>Specifically for <strong>MacOS</strong>:</p>
-<ul>
+<ul class="simple">
 <li><p>Xcode</p></li>
 </ul>
 </li>
@@ -396,13 +410,13 @@
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/rpgppengine/rpgpp.git</span></code></p>
 <ol class="arabic simple" start="2">
-<li><p>Build all targets by running and following the instructions if there’s one</p></li>
+<li><p>Build all targets by running the following commands (follow the instructions to install packages if there is one)</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">build</span> <span class="pre">--all</span></code></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If build fails.
-You can try the following:</p>
+<p>If build fails.</p>
+<p>You can try the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xmake</span> <span class="n">clean</span> <span class="o">--</span><span class="nb">all</span> <span class="c1"># remove build artifacts</span>
 <span class="n">xmake</span> <span class="n">require</span> <span class="o">--</span><span class="n">clean</span> <span class="c1"># remove installed package cache for project</span>
 <span class="n">xmake</span> <span class="n">require</span> <span class="o">--</span><span class="n">force</span> <span class="c1"># force install of package</span>
