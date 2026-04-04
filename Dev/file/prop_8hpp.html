@@ -213,10 +213,7 @@
 <p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html">Lua API Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -385,32 +382,38 @@
 <span id="_CPPv34Prop"></span><span id="_CPPv24Prop"></span><span id="Prop"></span><span class="target" id="classProp"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../class/classISaveable.html#_CPPv49ISaveable" title="ISaveable"><span class="n"><span class="pre">ISaveable</span></span></a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;prop.hpp&gt;</em></div>
+<p>A <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a> is an object in the world that has an image and optionally has an <a class="reference internal" href="interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a>. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop4PropEv">
-<span id="_CPPv3N4Prop4PropEv"></span><span id="_CPPv2N4Prop4PropEv"></span><span id="Prop::Prop"></span><span class="target" id="classProp_1a56a4a14522376e3cc7c3dde21ff95dc6"></span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop4PropEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop4PropEv"></span><span id="_CPPv2N4Prop4PropEv"></span><span id="Prop::Prop"></span><span class="target" id="classProp_1a56a4a14522376e3cc7c3dde21ff95dc6"></span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Empty constructor </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop4PropERKNSt6stringE">
-<span id="_CPPv3N4Prop4PropERKNSt6stringE"></span><span id="_CPPv2N4Prop4PropERKNSt6stringE"></span><span id="Prop::Prop__ssCR"></span><span class="target" id="classProp_1a8fc9e684935795c1dcb052cc0c8c41b4"></span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop4PropERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop4PropERKNSt6stringE"></span><span id="_CPPv2N4Prop4PropERKNSt6stringE"></span><span id="Prop::Prop__ssCR"></span><span class="target" id="classProp_1a8fc9e684935795c1dcb052cc0c8c41b4"></span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct from a file. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop4PropE9Rectangle7Vector2">
-<span id="_CPPv3N4Prop4PropE9Rectangle7Vector2"></span><span id="_CPPv2N4Prop4PropE9Rectangle7Vector2"></span><span id="Prop::Prop__Rectangle.Vector2"></span><span class="target" id="classProp_1abc4b3164bfd198c7a93e6c8f1ae7669f"></span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasRect</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop4PropE9Rectangle7Vector2" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop4PropE9Rectangle7Vector2"></span><span id="_CPPv2N4Prop4PropE9Rectangle7Vector2"></span><span id="Prop::Prop__Rectangle.Vector2"></span><span class="target" id="classProp_1abc4b3164bfd198c7a93e6c8f1ae7669f"></span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasRect</span></span>, <span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct from an atlas rect and an absolute world position. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop4PropE7PropBin">
-<span id="_CPPv3N4Prop4PropE7PropBin"></span><span id="_CPPv2N4Prop4PropE7PropBin"></span><span id="Prop::Prop__PropBin"></span><span class="target" id="classProp_1a9d8b82b1aa4f72b5386f9381017b983d"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="gamedata_8hpp.html#_CPPv47PropBin" title="PropBin"><span class="n"><span class="pre">PropBin</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">bin</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop4PropE7PropBin" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop4PropE7PropBin"></span><span id="_CPPv2N4Prop4PropE7PropBin"></span><span id="Prop::Prop__PropBin"></span><span class="target" id="classProp_1a9d8b82b1aa4f72b5386f9381017b983d"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Prop</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="gamedata_8hpp.html#_CPPv47PropBin" title="PropBin"><span class="n"><span class="pre">PropBin</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">bin</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct from a binary structure. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop8dumpJsonEv">
-<span id="_CPPv3N4Prop8dumpJsonEv"></span><span id="_CPPv2N4Prop8dumpJsonEv"></span><span id="Prop::dumpJson"></span><span class="target" id="classProp_1a325a69139eb9782eac14568d162badc3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="actor_8hpp.html#_CPPv44json" title="json"><span class="n"><span class="pre">json</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dumpJson</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop8dumpJsonEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop8dumpJsonEv"></span><span id="_CPPv2N4Prop8dumpJsonEv"></span><span id="Prop::dumpJson"></span><span class="target" id="classProp_1a325a69139eb9782eac14568d162badc3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="actor_8hpp.html#_CPPv44json" title="json"><span class="n"><span class="pre">json</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dumpJson</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Dump the JSON of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop9applyJsonE4json">
@@ -419,108 +422,129 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop13getSourcePathEv">
-<span id="_CPPv3NK4Prop13getSourcePathEv"></span><span id="_CPPv2NK4Prop13getSourcePathEv"></span><span id="Prop::getSourcePathC"></span><span class="target" id="classProp_1ae96037a7ec456db0713f008a481b07b7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSourcePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop13getSourcePathEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop13getSourcePathEv"></span><span id="_CPPv2NK4Prop13getSourcePathEv"></span><span id="Prop::getSourcePathC"></span><span class="target" id="classProp_1ae96037a7ec456db0713f008a481b07b7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSourcePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the source file, used for instantiating this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop10setTextureE9Texture2D">
-<span id="_CPPv3N4Prop10setTextureE9Texture2D"></span><span id="_CPPv2N4Prop10setTextureE9Texture2D"></span><span id="Prop::setTexture__Texture2D"></span><span class="target" id="classProp_1ad5ed97d495605381cbaf17b3fbd54053"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTexture</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Texture2D</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">texture</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop10setTextureE9Texture2D" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop10setTextureE9Texture2D"></span><span id="_CPPv2N4Prop10setTextureE9Texture2D"></span><span id="Prop::setTexture__Texture2D"></span><span class="target" id="classProp_1ad5ed97d495605381cbaf17b3fbd54053"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTexture</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Texture2D</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">texture</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the Texture for this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop10getTextureEv">
-<span id="_CPPv3NK4Prop10getTextureEv"></span><span id="_CPPv2NK4Prop10getTextureEv"></span><span id="Prop::getTextureC"></span><span class="target" id="classProp_1a0984217ae47ee1fc89f2e05f52f280d1"></span><span class="n"><span class="pre">Texture2D</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTexture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop10getTextureEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop10getTextureEv"></span><span id="_CPPv2NK4Prop10getTextureEv"></span><span id="Prop::getTextureC"></span><span class="target" id="classProp_1a0984217ae47ee1fc89f2e05f52f280d1"></span><span class="n"><span class="pre">Texture2D</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTexture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the Texture for this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop18setTextureFromPathERKNSt6stringE">
-<span id="_CPPv3N4Prop18setTextureFromPathERKNSt6stringE"></span><span id="_CPPv2N4Prop18setTextureFromPathERKNSt6stringE"></span><span id="Prop::setTextureFromPath__ssCR"></span><span class="target" id="classProp_1ab41225e2fabbb9170f9f6a85c713161b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTextureFromPath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">imagePath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop18setTextureFromPathERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop18setTextureFromPathERKNSt6stringE"></span><span id="_CPPv2N4Prop18setTextureFromPathERKNSt6stringE"></span><span id="Prop::setTextureFromPath__ssCR"></span><span class="target" id="classProp_1ab41225e2fabbb9170f9f6a85c713161b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setTextureFromPath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">imagePath</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the Texture, using an image path. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop12getImagePathEv">
-<span id="_CPPv3NK4Prop12getImagePathEv"></span><span id="_CPPv2NK4Prop12getImagePathEv"></span><span id="Prop::getImagePathC"></span><span class="target" id="classProp_1abcd3d8d2ffba635c2cd8ab9cd41dc9f5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getImagePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop12getImagePathEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop12getImagePathEv"></span><span id="_CPPv2NK4Prop12getImagePathEv"></span><span id="Prop::getImagePathC"></span><span class="target" id="classProp_1abcd3d8d2ffba635c2cd8ab9cd41dc9f5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getImagePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the path to the image used for this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop16setCollisionRectE9Rectangle">
-<span id="_CPPv3N4Prop16setCollisionRectE9Rectangle"></span><span id="_CPPv2N4Prop16setCollisionRectE9Rectangle"></span><span id="Prop::setCollisionRect__Rectangle"></span><span class="target" id="classProp_1a96bef8dc15e0fb408243fec24f6137e6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCollisionRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">collisionRect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop16setCollisionRectE9Rectangle" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop16setCollisionRectE9Rectangle"></span><span id="_CPPv2N4Prop16setCollisionRectE9Rectangle"></span><span id="Prop::setCollisionRect__Rectangle"></span><span class="target" id="classProp_1a96bef8dc15e0fb408243fec24f6137e6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCollisionRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">collisionRect</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the collision rectangle. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop15setWorldTilePosE7Vector2i">
-<span id="_CPPv3N4Prop15setWorldTilePosE7Vector2i"></span><span id="_CPPv2N4Prop15setWorldTilePosE7Vector2i"></span><span id="Prop::setWorldTilePos__Vector2.i"></span><span class="target" id="classProp_1a9a4c44b7bedef802386d8714706ae27e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWorldTilePos</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop15setWorldTilePosE7Vector2i" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop15setWorldTilePosE7Vector2i"></span><span id="_CPPv2N4Prop15setWorldTilePosE7Vector2i"></span><span id="Prop::setWorldTilePos__Vector2.i"></span><span class="target" id="classProp_1a9a4c44b7bedef802386d8714706ae27e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWorldTilePos</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSize</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the tile position of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop11setWorldPosE7Vector2">
-<span id="_CPPv3N4Prop11setWorldPosE7Vector2"></span><span id="_CPPv2N4Prop11setWorldPosE7Vector2"></span><span id="Prop::setWorldPos__Vector2"></span><span class="target" id="classProp_1a2b1a57905b6fa4938e8f9f95055b4b1e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWorldPos</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop11setWorldPosE7Vector2" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop11setWorldPosE7Vector2"></span><span id="_CPPv2N4Prop11setWorldPosE7Vector2"></span><span id="Prop::setWorldPos__Vector2"></span><span class="target" id="classProp_1a2b1a57905b6fa4938e8f9f95055b4b1e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setWorldPos</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">worldPos</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the absolute world position of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop11getWorldPosEv">
-<span id="_CPPv3NK4Prop11getWorldPosEv"></span><span id="_CPPv2NK4Prop11getWorldPosEv"></span><span id="Prop::getWorldPosC"></span><span class="target" id="classProp_1a90dd31e12569b322278a343d88da575f"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldPos</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop11getWorldPosEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop11getWorldPosEv"></span><span id="_CPPv2NK4Prop11getWorldPosEv"></span><span id="Prop::getWorldPosC"></span><span class="target" id="classProp_1a90dd31e12569b322278a343d88da575f"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldPos</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the absolute world position of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop15getWorldTilePosEv">
-<span id="_CPPv3NK4Prop15getWorldTilePosEv"></span><span id="_CPPv2NK4Prop15getWorldTilePosEv"></span><span id="Prop::getWorldTilePosC"></span><span class="target" id="classProp_1a78b581baa486a4bccb9b64fb74a817b1"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldTilePos</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop15getWorldTilePosEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop15getWorldTilePosEv"></span><span id="_CPPv2NK4Prop15getWorldTilePosEv"></span><span id="Prop::getWorldTilePosC"></span><span class="target" id="classProp_1a78b581baa486a4bccb9b64fb74a817b1"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldTilePos</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the tile position of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop12setAtlasRectE9Rectangle">
-<span id="_CPPv3N4Prop12setAtlasRectE9Rectangle"></span><span id="_CPPv2N4Prop12setAtlasRectE9Rectangle"></span><span id="Prop::setAtlasRect__Rectangle"></span><span class="target" id="classProp_1a648c3b1b5fb96db5d1072cd0f4750508"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAtlasRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasRect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop12setAtlasRectE9Rectangle" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop12setAtlasRectE9Rectangle"></span><span id="_CPPv2N4Prop12setAtlasRectE9Rectangle"></span><span id="Prop::setAtlasRect__Rectangle"></span><span class="target" id="classProp_1a648c3b1b5fb96db5d1072cd0f4750508"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setAtlasRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">atlasRect</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the Atlas rectangle of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. (which part of the image is used for drawing) </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop12getAtlasRectEv">
-<span id="_CPPv3NK4Prop12getAtlasRectEv"></span><span id="_CPPv2NK4Prop12getAtlasRectEv"></span><span id="Prop::getAtlasRectC"></span><span class="target" id="classProp_1a522d902ba399e616e9db65cec3e3dcbe"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAtlasRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop12getAtlasRectEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop12getAtlasRectEv"></span><span id="_CPPv2NK4Prop12getAtlasRectEv"></span><span id="Prop::getAtlasRectC"></span><span class="target" id="classProp_1a522d902ba399e616e9db65cec3e3dcbe"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAtlasRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the Atlas rectangle of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop16getCollisionRectEv">
-<span id="_CPPv3NK4Prop16getCollisionRectEv"></span><span id="_CPPv2NK4Prop16getCollisionRectEv"></span><span id="Prop::getCollisionRectC"></span><span class="target" id="classProp_1aee147f27424bbcbdc2349cc68161d3a1"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop16getCollisionRectEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop16getCollisionRectEv"></span><span id="_CPPv2NK4Prop16getCollisionRectEv"></span><span id="Prop::getCollisionRectC"></span><span class="target" id="classProp_1aee147f27424bbcbdc2349cc68161d3a1"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the collision rectangle of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>, relative to the <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a> itself. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop21getWorldCollisionRectEv">
-<span id="_CPPv3NK4Prop21getWorldCollisionRectEv"></span><span id="_CPPv2NK4Prop21getWorldCollisionRectEv"></span><span id="Prop::getWorldCollisionRectC"></span><span class="target" id="classProp_1a9bae9534a19caceddfbeb65b363e9dfd"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop21getWorldCollisionRectEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop21getWorldCollisionRectEv"></span><span id="_CPPv2NK4Prop21getWorldCollisionRectEv"></span><span id="Prop::getWorldCollisionRectC"></span><span class="target" id="classProp_1a9bae9534a19caceddfbeb65b363e9dfd"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getWorldCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the collision rectangle with position relative to the World. (absolute) </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop18getCollisionCenterEv">
-<span id="_CPPv3NK4Prop18getCollisionCenterEv"></span><span id="_CPPv2NK4Prop18getCollisionCenterEv"></span><span id="Prop::getCollisionCenterC"></span><span class="target" id="classProp_1ab8011be3387de25c41d51cf2947109ac"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionCenter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop18getCollisionCenterEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop18getCollisionCenterEv"></span><span id="_CPPv2NK4Prop18getCollisionCenterEv"></span><span id="Prop::getCollisionCenterC"></span><span class="target" id="classProp_1ab8011be3387de25c41d51cf2947109ac"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionCenter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the position of the center of the collision rectangle. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop18getHasInteractableEv">
-<span id="_CPPv3NK4Prop18getHasInteractableEv"></span><span id="_CPPv2NK4Prop18getHasInteractableEv"></span><span id="Prop::getHasInteractableC"></span><span class="target" id="classProp_1ad182ef6266575cf14eb53324b9f33562"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHasInteractable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop18getHasInteractableEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop18getHasInteractableEv"></span><span id="_CPPv2NK4Prop18getHasInteractableEv"></span><span id="Prop::getHasInteractableC"></span><span class="target" id="classProp_1ad182ef6266575cf14eb53324b9f33562"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getHasInteractable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Whether this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a> has an Interactangle or not. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop18setHasInteractableEb">
-<span id="_CPPv3N4Prop18setHasInteractableEb"></span><span id="_CPPv2N4Prop18setHasInteractableEb"></span><span id="Prop::setHasInteractable__b"></span><span class="target" id="classProp_1a5e32dc86f3840e9cf275b18125ac20c4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHasInteractable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop18setHasInteractableEb" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop18setHasInteractableEb"></span><span id="_CPPv2N4Prop18setHasInteractableEb"></span><span id="Prop::setHasInteractable__b"></span><span class="target" id="classProp_1a5e32dc86f3840e9cf275b18125ac20c4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHasInteractable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the ‘hasInteractable’ flag. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop15getInteractableEv">
-<span id="_CPPv3NK4Prop15getInteractableEv"></span><span id="_CPPv2NK4Prop15getInteractableEv"></span><span id="Prop::getInteractableC"></span><span class="target" id="classProp_1a84a3cb9f8038158b522b3edfcebff41d"></span><a class="reference internal" href="../class/classInteractable.html#_CPPv412Interactable" title="Interactable"><span class="n"><span class="pre">Interactable</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getInteractable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop15getInteractableEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop15getInteractableEv"></span><span id="_CPPv2NK4Prop15getInteractableEv"></span><span id="Prop::getInteractableC"></span><span class="target" id="classProp_1a84a3cb9f8038158b522b3edfcebff41d"></span><a class="reference internal" href="../class/classInteractable.html#_CPPv412Interactable" title="Interactable"><span class="n"><span class="pre">Interactable</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getInteractable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get a pointer to the <a class="reference internal" href="interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a> of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop19setInteractableTypeERKNSt6stringE">
-<span id="_CPPv3N4Prop19setInteractableTypeERKNSt6stringE"></span><span id="_CPPv2N4Prop19setInteractableTypeERKNSt6stringE"></span><span id="Prop::setInteractableType__ssCR"></span><span class="target" id="classProp_1a9c7380fbba91f5c51a01f66c6383a817"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setInteractableType</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Prop19setInteractableTypeERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N4Prop19setInteractableTypeERKNSt6stringE"></span><span id="_CPPv2N4Prop19setInteractableTypeERKNSt6stringE"></span><span id="Prop::setInteractableType__ssCR"></span><span class="target" id="classProp_1a9c7380fbba91f5c51a01f66c6383a817"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setInteractableType</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the type of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>’s <a class="reference internal" href="interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop19getInteractableTypeEv">
-<span id="_CPPv3NK4Prop19getInteractableTypeEv"></span><span id="_CPPv2NK4Prop19getInteractableTypeEv"></span><span id="Prop::getInteractableTypeC"></span><span class="target" id="classProp_1aede80c52bfc2b891d4699cee6bb10b6f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInteractableType</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop19getInteractableTypeEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop19getInteractableTypeEv"></span><span id="_CPPv2NK4Prop19getInteractableTypeEv"></span><span id="Prop::getInteractableTypeC"></span><span class="target" id="classProp_1aede80c52bfc2b891d4699cee6bb10b6f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInteractableType</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Get the type of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>’s <a class="reference internal" href="interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4Prop4drawEv">
-<span id="_CPPv3NK4Prop4drawEv"></span><span id="_CPPv2NK4Prop4drawEv"></span><span id="Prop::drawC"></span><span class="target" id="classProp_1ab1d8be1363f48cc4bff2ed12ef1a1119"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4Prop4drawEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3NK4Prop4drawEv"></span><span id="_CPPv2NK4Prop4drawEv"></span><span id="Prop::drawC"></span><span class="target" id="classProp_1ab1d8be1363f48cc4bff2ed12ef1a1119"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><br /></dt>
+<dd><p>Draw routine. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -528,47 +552,56 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop10sourcePathE">
 <span id="_CPPv3N4Prop10sourcePathE"></span><span id="_CPPv2N4Prop10sourcePathE"></span><span id="Prop::sourcePath__ss"></span><span class="target" id="classProp_1a1e3c4aa2ccdc70f0bd70dbba4c5d2f22"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sourcePath</span></span></span><a class="headerlink" href="#_CPPv4N4Prop10sourcePathE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Path to the file, used for instantiating this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop8worldPosE">
 <span id="_CPPv3N4Prop8worldPosE"></span><span id="_CPPv2N4Prop8worldPosE"></span><span id="Prop::worldPos__Vector2"></span><span class="target" id="classProp_1a8181f0ae2e652d9253f045d69e5500a0"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">worldPos</span></span></span><a class="headerlink" href="#_CPPv4N4Prop8worldPosE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Absolute world position of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop7tilePosE">
 <span id="_CPPv3N4Prop7tilePosE"></span><span id="_CPPv2N4Prop7tilePosE"></span><span id="Prop::tilePos__Vector2"></span><span class="target" id="classProp_1a4d4623cc7a76fa21a2de6433c9796296"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tilePos</span></span></span><a class="headerlink" href="#_CPPv4N4Prop7tilePosE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Position of this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>, defined in tiles. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop9atlasRectE">
 <span id="_CPPv3N4Prop9atlasRectE"></span><span id="_CPPv2N4Prop9atlasRectE"></span><span id="Prop::atlasRect__Rectangle"></span><span class="target" id="classProp_1a53863d168bcc3475af3b0f2c08bb6b2c"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atlasRect</span></span></span><a class="headerlink" href="#_CPPv4N4Prop9atlasRectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Atlas Rectangle which defines which part of the image is used for drawing this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop7textureE">
 <span id="_CPPv3N4Prop7textureE"></span><span id="_CPPv2N4Prop7textureE"></span><span id="Prop::texture__Texture2D"></span><span class="target" id="classProp_1ae94ab989a359bdee53d4107f32c66583"></span><span class="n"><span class="pre">Texture2D</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">texture</span></span></span><a class="headerlink" href="#_CPPv4N4Prop7textureE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Texture instance which is used for drawing this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop13collisionRectE">
 <span id="_CPPv3N4Prop13collisionRectE"></span><span id="_CPPv2N4Prop13collisionRectE"></span><span id="Prop::collisionRect__Rectangle"></span><span class="target" id="classProp_1a3ab92c0c340e60db0c970bfa1ecb34ed"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">collisionRect</span></span></span><a class="headerlink" href="#_CPPv4N4Prop13collisionRectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Collision Rectangle which defines where exactly is the collision. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop9imagePathE">
 <span id="_CPPv3N4Prop9imagePathE"></span><span id="_CPPv2N4Prop9imagePathE"></span><span id="Prop::imagePath__ss"></span><span class="target" id="classProp_1aba62dc3a6e9175c930947264f03ea875"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">imagePath</span></span></span><a class="headerlink" href="#_CPPv4N4Prop9imagePathE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Path to the image used for this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop15hasInteractableE">
 <span id="_CPPv3N4Prop15hasInteractableE"></span><span id="_CPPv2N4Prop15hasInteractableE"></span><span id="Prop::hasInteractable__b"></span><span class="target" id="classProp_1a5ed1aafcc480308f4f64becf023b2079"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasInteractable</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N4Prop15hasInteractableE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Whether this <a class="reference internal" href="#classProp"><span class="std std-ref">Prop</span></a> has an <a class="reference internal" href="interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a>. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Prop12interactableE">
 <span id="_CPPv3N4Prop12interactableE"></span><span id="_CPPv2N4Prop12interactableE"></span><span id="Prop::interactable__std::unique_ptr:Interactable:"></span><span class="target" id="classProp_1a53071e25a20a8d11f202b0e21965dfbd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classInteractable.html#_CPPv412Interactable" title="Interactable"><span class="n"><span class="pre">Interactable</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interactable</span></span></span><a class="headerlink" href="#_CPPv4N4Prop12interactableE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>Smart pointer that owns the <a class="reference internal" href="interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a></p>
+</dd></dl>
 
 </div>
 </dd></dl>

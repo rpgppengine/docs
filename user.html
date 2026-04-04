@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Module GameState" href="userapi/state/index.html"><link rel="prev" title="Prop" href="guide/resourcetypes/prop.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Lua API Reference" href="userapi/doc.html"><link rel="prev" title="Prop" href="guide/resourcetypes/prop.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>User Docs - RPG++ documentation</title>
@@ -213,10 +213,7 @@
 <p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">User Docs</a><input aria-label="Toggle navigation of User Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html">Lua API Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -374,39 +371,113 @@
 <h1>User Docs<a class="headerlink" href="#user-docs" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html#api-reference">Api reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/state/index.html#lua-GameState.Get"><code class="docutils literal notranslate"><span class="pre">GameState.Get()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/state/index.html#lua-GameState.Set"><code class="docutils literal notranslate"><span class="pre">GameState.Set()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html">Lua API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#actor">Actor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#changeanimation">ChangeAnimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getposition">GetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#gettileposition">GetTilePosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#movebyvelocity">MoveByVelocity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#playanimation">PlayAnimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setposition">SetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#settileposition">SetTilePosition</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#actorcontainer">ActorContainer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#exists">Exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#get">Get</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#push">Push</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#remove">Remove</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html#api-reference">Api reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/world/index.html#lua-WorldService.GetPlayer"><code class="docutils literal notranslate"><span class="pre">WorldService.GetPlayer()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/world/index.html#lua-WorldService.SetRoom"><code class="docutils literal notranslate"><span class="pre">WorldService.SetRoom()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/world/index.html#lua-WorldService.GetRoom"><code class="docutils literal notranslate"><span class="pre">WorldService.GetRoom()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#collisionscontainer">CollisionsContainer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id1">Exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id2">Push</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id3">Remove</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#gamestate">GameState</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id4">Get</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#set">Set</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html#api-reference">Api reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/sounds/index.html#lua-Sounds.PlaySound"><code class="docutils literal notranslate"><span class="pre">Sounds.PlaySound()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/sounds/index.html#lua-Sounds.LoadMusic"><code class="docutils literal notranslate"><span class="pre">Sounds.LoadMusic()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/sounds/index.html#lua-Sounds.PlayMusic"><code class="docutils literal notranslate"><span class="pre">Sounds.PlayMusic()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interactable">Interactable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id5">GetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#gettype">GetType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#isontouch">IsOnTouch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setontouch">SetOnTouch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setprop">SetProp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#settype">SetType</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interactablescontainer">InteractablesContainer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id6">Exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getat">GetAt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id7">Push</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id8">Remove</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html#index">Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html#api-reference">Api reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/interface/index.html#lua-Interface.OpenDialogue"><code class="docutils literal notranslate"><span class="pre">Interface.OpenDialogue()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interface">Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#opendialogue">OpenDialogue</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#player">Player</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getactor">GetActor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id9">GetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id10">GetTilePosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id11">MoveByVelocity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id12">SetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id13">SetTilePosition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#prop">Prop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getinteractable">GetInteractable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id14">GetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id15">GetTilePosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id16">SetPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id17">SetTilePosition</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#propscontainer">PropsContainer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id18">Exists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id19">GetAt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id20">Push</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id21">Remove</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#room">Room</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getactors">GetActors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getcollisions">GetCollisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getinteractables">GetInteractables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getplayer">GetPlayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getprops">GetProps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getstarttile">GetStartTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#gettilemap">GetTileMap</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#sounds">Sounds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#loadmusic">LoadMusic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#playmusic">PlayMusic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#playsound">PlaySound</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#tilemap">TileMap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getworldsizeintiles">GetWorldSizeInTiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setemptytile">SetEmptyTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#settile">SetTile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#vector2">Vector2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#new">new</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#x">x</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#y">y</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#worldservice">WorldService</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id22">GetPlayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getroom">GetRoom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setroom">SetRoom</a></li>
 </ul>
 </li>
 </ul>
@@ -420,12 +491,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="userapi/state/index.html">
+          <a class="next-page" href="userapi/doc.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></div>
+                <div class="title">Lua API Reference</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

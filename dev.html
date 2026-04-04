@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Compiling RPG++" href="dev-additional/compile.html"><link rel="prev" title="Module Interface" href="userapi/interface/index.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Compiling RPG++" href="dev-additional/compile.html"><link rel="prev" title="Lua API Reference" href="userapi/doc.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Developer Docs - RPG++ documentation</title>
@@ -213,10 +213,7 @@
 <p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/state/index.html">Module <code class="docutils literal notranslate"><span class="pre">GameState</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/world/index.html">Module <code class="docutils literal notranslate"><span class="pre">WorldService</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/sounds/index.html">Module <code class="docutils literal notranslate"><span class="pre">Sounds</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/interface/index.html">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html">Lua API Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -569,7 +566,35 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Dev/class/classProp.html">Class Prop</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Dev/class/classProp.html#_CPPv44Prop"><code class="docutils literal notranslate"><span class="pre">Prop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classProp.html#_CPPv44Prop"><code class="docutils literal notranslate"><span class="pre">Prop</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop4PropEv"><code class="docutils literal notranslate"><span class="pre">Prop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop4PropERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Prop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop4PropE9Rectangle7Vector2"><code class="docutils literal notranslate"><span class="pre">Prop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop4PropE7PropBin"><code class="docutils literal notranslate"><span class="pre">Prop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop13getSourcePathEv"><code class="docutils literal notranslate"><span class="pre">getSourcePath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop10setTextureE9Texture2D"><code class="docutils literal notranslate"><span class="pre">setTexture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop10getTextureEv"><code class="docutils literal notranslate"><span class="pre">getTexture()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop18setTextureFromPathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTextureFromPath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop12getImagePathEv"><code class="docutils literal notranslate"><span class="pre">getImagePath()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop16setCollisionRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">setCollisionRect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop15setWorldTilePosE7Vector2i"><code class="docutils literal notranslate"><span class="pre">setWorldTilePos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop11setWorldPosE7Vector2"><code class="docutils literal notranslate"><span class="pre">setWorldPos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop11getWorldPosEv"><code class="docutils literal notranslate"><span class="pre">getWorldPos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop15getWorldTilePosEv"><code class="docutils literal notranslate"><span class="pre">getWorldTilePos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop12setAtlasRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">setAtlasRect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop12getAtlasRectEv"><code class="docutils literal notranslate"><span class="pre">getAtlasRect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop21getWorldCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getWorldCollisionRect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop18getCollisionCenterEv"><code class="docutils literal notranslate"><span class="pre">getCollisionCenter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop18getHasInteractableEv"><code class="docutils literal notranslate"><span class="pre">getHasInteractable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop18setHasInteractableEb"><code class="docutils literal notranslate"><span class="pre">setHasInteractable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop15getInteractableEv"><code class="docutils literal notranslate"><span class="pre">getInteractable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4N4Prop19setInteractableTypeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setInteractableType()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop19getInteractableTypeEv"><code class="docutils literal notranslate"><span class="pre">getInteractableType()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Dev/class/classProp.html#_CPPv4NK4Prop4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Dev/class/classPropsContainer.html">Class PropsContainer</a><ul>
@@ -1815,14 +1840,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="userapi/interface/index.html">
+          <a class="prev-page" href="userapi/doc.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Module <code class="docutils literal notranslate"><span class="pre">Interface</span></code></div>
+                <div class="title">Lua API Reference</div>
                 
               </div>
             </a>
