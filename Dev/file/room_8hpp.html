@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -400,8 +406,8 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N4Room4RoomERKNSt6stringEi">
-<span id="_CPPv3N4Room4RoomERKNSt6stringEi"></span><span id="_CPPv2N4Room4RoomERKNSt6stringEi"></span><span id="Room::Room__ssCR.i"></span><span class="target" id="classRoom_1a0c22f85b332c06ef7ce5e920fc8a11b2"></span><span class="sig-name descname"><span class="n"><span class="pre">Room</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSize</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">48</span></span><span class="sig-paren">)</span><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N4Room4RoomERKNSt6stringEib">
+<span id="_CPPv3N4Room4RoomERKNSt6stringEib"></span><span id="_CPPv2N4Room4RoomERKNSt6stringEib"></span><span id="Room::Room__ssCR.i.b"></span><span class="target" id="classRoom_1a4dcac5aa07b85acc685ad2036dbdc05b"></span><span class="sig-name descname"><span class="n"><span class="pre">Room</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tileSize</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">48</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">createPlayer</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Construct a <a class="reference internal" href="#classRoom"><span class="std std-ref">Room</span></a> from an .rmap file </p>
 </dd></dl>
 
@@ -692,7 +698,7 @@
 <li><a class="reference internal" href="#_CPPv419DEFAULT_PLAYER_PATH"><code class="docutils literal notranslate"><span class="pre">DEFAULT_PLAYER_PATH</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv44Room"><code class="docutils literal notranslate"><span class="pre">Room</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N4Room4RoomEv"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N4Room4RoomERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N4Room4RoomERKNSt6stringEib"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N4Room4RoomERK7RoomBin"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N4Room8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>

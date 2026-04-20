@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="User Docs" href="../../user.html"><link rel="prev" title="Dialogue" href="dialogue.html">
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="Interactable" href="interactable.html"><link rel="prev" title="Dialogue" href="dialogue.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Prop - RPG++ documentation</title>
@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -407,6 +413,7 @@
 <p>Atlas Rect refers to the portion of the Prop Image, that will be shown.
 Collision Rect refers to the position and size of the collision, relative to the top left corner of the Prop.
 Both properties have X and Y for position and W and H for size.</p>
+<p>You can also see a preview of your Prop under the properties. It will show how the Prop will actually look like in-game.</p>
 </section>
 </section>
 
@@ -415,12 +422,12 @@ Both properties have X and Y for position and W and H for size.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../user.html">
+          <a class="next-page" href="interactable.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">User Docs</div>
+                <div class="title">Interactable</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

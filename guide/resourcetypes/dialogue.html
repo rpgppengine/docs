@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="actor.html">Actor</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Dev/struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -374,25 +380,32 @@
 <p>A dialogue is a set of dialogue lines. Dialogue liens themselves contain a text content, an optional portrait and a character name.</p>
 <p>Example of a Dialogue file (.rdiag):</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;diag&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;Xenith&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;I changed the dialogue!&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;Xenith&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;This is the second line!&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;Xenith&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Content&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;&quot;</span>
-<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;diag&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;characterName&quot;</span><span class="p">:</span><span class="s2">&quot;Chara&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;hasOptions&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;hasPortrait&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;imageId&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;options&quot;</span><span class="p">:[],</span>
+<span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;My dialogue &lt;red&gt;text!&lt;/red&gt;&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;characterName&quot;</span><span class="p">:</span><span class="s2">&quot;Character&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;hasOptions&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;hasPortrait&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;imageId&quot;</span><span class="p">:</span><span class="s2">&quot;xenith-portrait.png&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;options&quot;</span><span class="p">:[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;nextDialogue&quot;</span><span class="p">:</span><span class="s2">&quot;mydiag.rdiag&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Option 2&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;nextDialogue&quot;</span><span class="p">:</span><span class="s2">&quot;diag.rdiag&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Spooky &lt;red&gt;RED&lt;/red&gt; text!&quot;</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
@@ -410,7 +423,23 @@
 <a class="reference internal image-reference" href="../../_images/rpgpp-newdialogueline.png"><img alt="../../_images/rpgpp-newdialogueline.png" src="../../_images/rpgpp-newdialogueline.png" style="width: 80%;" />
 </a>
 <p>The “Has a portrait?” option sets whether this line will have a portrait image shown for it. If it is on, then you can select an image to be shown.</p>
-<p>You can also edit the Character name and the text content for the dialogue line.</p>
+<p>You can also edit the Character name and the text content for the dialogue line. Dialogue text supports XML-like tags for formatting the text or achieving other effects. All tags must have a closing tag.</p>
+<ul class="simple">
+<li><p><strong>Color tags:</strong> - &lt;lightgray&gt;, &lt;gray&gt;, &lt;darkgray&gt;, &lt;gold&gt;, &lt;yellow&gt;, &lt;orange&gt;, &lt;pink&gt;, &lt;red&gt;, &lt;maroon&gt;, &lt;green&gt;, &lt;lime&gt;, &lt;darkgreen&gt;, &lt;skyblue&gt;, &lt;blue&gt;, &lt;darkblue&gt;, &lt;purple&gt;, &lt;violet&gt;, &lt;darkpurple&gt;, &lt;beige&gt;, &lt;brown&gt;, &lt;darkbrown&gt;, &lt;magenta&gt;, &lt;white&gt;, &lt;black&gt;</p></li>
+<li><p><strong>&lt;delay&gt;</strong> - Adds a delay in the typewriter effect in the dialogue UI.</p></li>
+<li><p><strong>&lt;textSize size=”int”&gt;</strong> - Changes the size of the text. It has one property <em>size</em> which is to be set to a number. Example usage: <code class="docutils literal notranslate"><span class="pre">&lt;textSize</span> <span class="pre">size=&quot;16&quot;&gt;my</span> <span class="pre">text!&lt;/textSize&gt;</span></code></p></li>
+<li><p><strong>&lt;font&gt;</strong> - Changes the font of the written text. Example: <code class="docutils literal notranslate"><span class="pre">&lt;font</span> <span class="pre">font=&quot;LanaPixel&quot;&gt;My</span> <span class="pre">text!&lt;/font&gt;</span></code></p></li>
+<li><dl class="simple">
+<dt><strong>&lt;padding&gt;</strong> - Gives the written text a padding. It can be either in pixels of percentage of the dialogue box.</dt><dd><ul>
+<li><p>Example for pixels: <code class="docutils literal notranslate"><span class="pre">&lt;padding</span> <span class="pre">px=&quot;20&quot;&gt;Padded</span> <span class="pre">text</span> <span class="pre">in</span> <span class="pre">pixels&lt;/padding&gt;</span></code></p></li>
+<li><p>Example for percentage: <code class="docutils literal notranslate"><span class="pre">&lt;padding</span> <span class="pre">percent=&quot;20&quot;&gt;Padded</span> <span class="pre">text</span> <span class="pre">in</span> <span class="pre">percentage&lt;/padding&gt;</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>&lt;sound&gt;</strong> - Plays a different sound while typing out this text. Example: <code class="docutils literal notranslate"><span class="pre">&lt;sound</span> <span class="pre">id=&quot;sheep&quot;&gt;Baa!&lt;/sound&gt;</span></code></p></li>
+<li><p><strong>&lt;nl&gt;</strong> - Positions the text on a new line. Example: <code class="docutils literal notranslate"><span class="pre">&lt;nl&gt;text&lt;/nl&gt;</span></code></p></li>
+</ul>
 <p>The ‘X’ button deletes this line.</p>
 <a class="reference internal image-reference" href="../../_images/rpgpp-editeddialogueline.png"><img alt="../../_images/rpgpp-editeddialogueline.png" src="../../_images/rpgpp-editeddialogueline.png" style="width: 80%;" />
 </a>

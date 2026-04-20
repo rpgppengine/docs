@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -387,6 +393,11 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15ResourceService4initEv">
+<span id="_CPPv3N15ResourceService4initEv"></span><span id="_CPPv2N15ResourceService4initEv"></span><span id="ResourceService::init"></span><span class="target" id="classResourceService_1a8cba75bc28e228208663d717ee5d5828"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15ResourceService4initEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N15ResourceService18addTextureFromFileERKNSt6stringE">
 <span id="_CPPv3N15ResourceService18addTextureFromFileERKNSt6stringE"></span><span id="_CPPv2N15ResourceService18addTextureFromFileERKNSt6stringE"></span><span id="ResourceService::addTextureFromFile__ssCR"></span><span class="target" id="classResourceService_1ac953d47d5f2fa085950a38310be6fecb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTextureFromFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15ResourceService18addTextureFromFileERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -402,6 +413,21 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15ResourceService7addFontERKNSt6stringE4Font">
+<span id="_CPPv3N15ResourceService7addFontERKNSt6stringE4Font"></span><span id="_CPPv2N15ResourceService7addFontERKNSt6stringE4Font"></span><span id="ResourceService::addFont__ssCR.Font"></span><span class="target" id="classResourceService_1a088689d94694b788e42ccd3bec8bfc13"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addFont</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span>, <span class="n"><span class="pre">Font</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">font</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15ResourceService7addFontERKNSt6stringE4Font" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15ResourceService15addFontFromFileERKNSt6stringEi">
+<span id="_CPPv3N15ResourceService15addFontFromFileERKNSt6stringEi"></span><span id="_CPPv2N15ResourceService15addFontFromFileERKNSt6stringEi"></span><span id="ResourceService::addFontFromFile__ssCR.i"></span><span class="target" id="classResourceService_1a0a497c67cbcf1c32faf01ece93ed20de"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addFontFromFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fontSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15ResourceService15addFontFromFileERKNSt6stringEi" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N15ResourceService7getFontERKNSt6stringE">
+<span id="_CPPv3N15ResourceService7getFontERKNSt6stringE"></span><span id="_CPPv2N15ResourceService7getFontERKNSt6stringE"></span><span id="ResourceService::getFont__ssCR"></span><span class="target" id="classResourceService_1a8be1138ba05648ffe4a5261708823c2e"></span><span class="n"><span class="pre">Font</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFont</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15ResourceService7getFontERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK15ResourceService6unloadEv">
 <span id="_CPPv3NK15ResourceService6unloadEv"></span><span id="_CPPv2NK15ResourceService6unloadEv"></span><span id="ResourceService::unloadC"></span><span class="target" id="classResourceService_1aa9be74897baadb29f9382f082bd742c7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unload</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK15ResourceService6unloadEv" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -412,6 +438,11 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N15ResourceService8texturesE">
 <span id="_CPPv3N15ResourceService8texturesE"></span><span id="_CPPv2N15ResourceService8texturesE"></span><span id="ResourceService::textures__std::map:ss.Texture2D:"></span><span class="target" id="classResourceService_1ada28d7f09738ce3d2ccfb7b7e2bbc9fc"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Texture2D</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">textures</span></span></span><a class="headerlink" href="#_CPPv4N15ResourceService8texturesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15ResourceService5fontsE">
+<span id="_CPPv3N15ResourceService5fontsE"></span><span id="_CPPv2N15ResourceService5fontsE"></span><span id="ResourceService::fonts__std::map:ss.Font:"></span><span class="target" id="classResourceService_1ac3f8b9ee53423762ee11d8a755d957a9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Font</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fonts</span></span></span><a class="headerlink" href="#_CPPv4N15ResourceService5fontsE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -478,11 +509,16 @@
 <li><a class="reference internal" href="#_CPPv415ResourceService"><code class="docutils literal notranslate"><span class="pre">ResourceService</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N15ResourceService15ResourceServiceEv"><code class="docutils literal notranslate"><span class="pre">ResourceService()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N15ResourceServiceD0Ev"><code class="docutils literal notranslate"><span class="pre">~ResourceService()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15ResourceService4initEv"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N15ResourceService18addTextureFromFileERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addTextureFromFile()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N15ResourceService10addTextureERKNSt6stringE9Texture2D"><code class="docutils literal notranslate"><span class="pre">addTexture()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N15ResourceService10getTextureERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getTexture()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15ResourceService7addFontERKNSt6stringE4Font"><code class="docutils literal notranslate"><span class="pre">addFont()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15ResourceService15addFontFromFileERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">addFontFromFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15ResourceService7getFontERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getFont()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK15ResourceService6unloadEv"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N15ResourceService8texturesE"><code class="docutils literal notranslate"><span class="pre">textures</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N15ResourceService5fontsE"><code class="docutils literal notranslate"><span class="pre">fonts</span></code></a></li>
 </ul>
 </li>
 </ul>

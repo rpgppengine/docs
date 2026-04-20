@@ -197,12 +197,14 @@
 <li class="toctree-l2"><a class="reference internal" href="guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -263,7 +265,9 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structIRect.html">Struct IRect</a></li>
@@ -272,6 +276,8 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -424,6 +430,8 @@
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor15getCurrentFrameEv">Actor::getCurrentFrame (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor15getCurrentFrameEv">[1]</a>
 </li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor15getInteractableEv">Actor::getInteractable (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor15getInteractableEv">[1]</a>
+</li>
         <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor11getPositionEv">Actor::getPosition (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor11getPositionEv">[1]</a>
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor7getRectEv">Actor::getRect (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor7getRectEv">[1]</a>
@@ -436,6 +444,10 @@
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4NK5Actor16getTileSetSourceEv">Actor::getTileSetSource (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4NK5Actor16getTileSetSourceEv">[1]</a>
 </li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor15hasInteractableEv">Actor::hasInteractable (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor15hasInteractableEv">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor12interactableE">Actor::interactable (C++ member)</a>
+</li>
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor22isTempAnimationPlayingEv">Actor::isTempAnimationPlaying (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor22isTempAnimationPlayingEv">[1]</a>
 </li>
         <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor13lastAnimationE">Actor::lastAnimation (C++ member)</a>
@@ -443,6 +455,8 @@
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor14moveByVelocityE7Vector2">Actor::moveByVelocity (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor14moveByVelocityE7Vector2">[1]</a>
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor14onFrameChangedE">Actor::onFrameChanged (C++ member)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor14onFrameChangedE">[1]</a>
+</li>
+        <li><a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor16ownsInteractableE">Actor::ownsInteractable (C++ member)</a>
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor13playAnimationE9Direction">Actor::playAnimation (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor13playAnimationE9Direction">[1]</a>
 </li>
@@ -457,6 +471,10 @@
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2">Actor::setAnimationFrame (C++ function)</a>, <a href="Dev/class/classActor.html#_CPPv4N5Actor17setAnimationFrameEi">[1]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor17setAnimationFrameE9Directioni7Vector2">[2]</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor17setAnimationFrameEi">[3]</a>
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor16setCollisionRectE9Rectangle">Actor::setCollisionRect (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor16setCollisionRectE9Rectangle">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor18setHasInteractableEb">Actor::setHasInteractable (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor18setHasInteractableEb">[1]</a>
+</li>
+        <li><a href="Dev/class/classActor.html#_CPPv4N5Actor23setInteractableFromPathERKNSt6stringE">Actor::setInteractableFromPath (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor23setInteractableFromPathERKNSt6stringE">[1]</a>
 </li>
         <li><a href="Dev/class/classActor.html#_CPPv4N5Actor11setPositionE7Vector2">Actor::setPosition (C++ function)</a>, <a href="Dev/file/actor_8hpp.html#_CPPv4N5Actor11setPositionE7Vector2">[1]</a>
 </li>
@@ -508,7 +526,11 @@
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv414ActorInRoomBin">ActorInRoomBin (C++ struct)</a>, <a href="Dev/struct/structActorInRoomBin.html#_CPPv414ActorInRoomBin">[1]</a>
 </li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin7intTypeE">ActorInRoomBin::intType (C++ member)</a>
+</li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin4nameE">ActorInRoomBin::name (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin9propsCborE">ActorInRoomBin::propsCbor (C++ member)</a>
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N14ActorInRoomBin6sourceE">ActorInRoomBin::source (C++ member)</a>
 </li>
@@ -622,9 +644,15 @@
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon6activeE">DialogueBalloon::active (C++ member)</a>
 </li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon10appliedTagE">DialogueBalloon::appliedTag (C++ member)</a>
+</li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon9charIndexE">DialogueBalloon::charIndex (C++ member)</a>
 </li>
-        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon5charPE7Vector2PKc5Color">DialogueBalloon::charP (C++ function)</a>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon5charPE7Vector2PKcR12DialogueLineR19DialogueTextSection">DialogueBalloon::charP (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon5delayE">DialogueBalloon::delay (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon13delayDurationE">DialogueBalloon::delayDuration (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon8dialogueE">DialogueBalloon::dialogue (C++ member)</a>
 </li>
@@ -634,15 +662,29 @@
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4NK15DialogueBalloon12drawPortraitEv">DialogueBalloon::drawPortrait (C++ function)</a>
 </li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon14finishedTypingE">DialogueBalloon::finishedTyping (C++ member)</a>
+</li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon14firstCharTypedE">DialogueBalloon::firstCharTyped (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon4fontE">DialogueBalloon::font (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon8fontNameE">DialogueBalloon::fontName (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12frameCounterE">DialogueBalloon::frameCounter (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12hideDialogueEv">DialogueBalloon::hideDialogue (C++ function)</a>
 </li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon13hoveredOptionE">DialogueBalloon::hoveredOption (C++ member)</a>
+</li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon14lastSectionLenE">DialogueBalloon::lastSectionLen (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon9lineIndexE">DialogueBalloon::lineIndex (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon13maxLineHeightE">DialogueBalloon::maxLineHeight (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon11optionsRectE">DialogueBalloon::optionsRect (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon7paddingE">DialogueBalloon::padding (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon4rectE">DialogueBalloon::rect (C++ member)</a>
 </li>
@@ -650,14 +692,14 @@
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon11sectionTextE">DialogueBalloon::sectionText (C++ member)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon12showDialogueERK11DialogueBin">DialogueBalloon::showDialogue (C++ function)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon4textE">DialogueBalloon::text (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon9textColorE">DialogueBalloon::textColor (C++ member)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon16textPortraitRectE">DialogueBalloon::textPortraitRect (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N15DialogueBalloon7textPosE">DialogueBalloon::textPos (C++ member)</a>
@@ -676,19 +718,51 @@
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine13characterNameE">DialogueLine::characterName (C++ member)</a>
 </li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine10hasOptionsE">DialogueLine::hasOptions (C++ member)</a>
+</li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine11hasPortraitE">DialogueLine::hasPortrait (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine7imageIdE">DialogueLine::imageId (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine7optionsE">DialogueLine::options (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine8sectionsE">DialogueLine::sections (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N12DialogueLine4textE">DialogueLine::text (C++ member)</a>
 </li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv414DialogueOption">DialogueOption (C++ struct)</a>, <a href="Dev/struct/structDialogueOption.html#_CPPv414DialogueOption">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N14DialogueOption12nextDialogueE">DialogueOption::nextDialogue (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N14DialogueOption5titleE">DialogueOption::title (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv419DialoguePaddingMode">DialoguePaddingMode (C++ enum)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialoguePaddingMode15PADDING_PERCENTE">DialoguePaddingMode::PADDING_PERCENT (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialoguePaddingMode10PADDING_PXE">DialoguePaddingMode::PADDING_PX (C++ enumerator)</a>
+</li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv419DialogueTextSection">DialogueTextSection (C++ struct)</a>, <a href="Dev/struct/structDialogueTextSection.html#_CPPv419DialogueTextSection">[1]</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection5delayE">DialogueTextSection::delay (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection4fontE">DialogueTextSection::font (C++ member)</a>
 </li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection3keyE">DialogueTextSection::key (C++ member)</a>
 </li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection7newlineE">DialogueTextSection::newline (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection7paddingE">DialogueTextSection::padding (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection11paddingModeE">DialogueTextSection::paddingMode (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection5soundE">DialogueTextSection::sound (C++ member)</a>
+</li>
         <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection4textE">DialogueTextSection::text (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection9textColorE">DialogueTextSection::textColor (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueBalloon_8hpp.html#_CPPv4N19DialogueTextSection8textSizeE">DialogueTextSection::textSize (C++ member)</a>
 </li>
         <li><a href="Dev/file/actor_8hpp.html#_CPPv49Direction">Direction (C++ enum)</a>
 </li>
@@ -716,10 +790,18 @@
   <h2>F</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="Dev/file/conversion_8hpp.html#_CPPv411fromIVectorRK7IVector">fromIVector (C++ function)</a>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv47FontBin">FontBin (C++ struct)</a>, <a href="Dev/struct/structFontBin.html#_CPPv47FontBin">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7FontBin4dataE">FontBin::data (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7FontBin8dataSizeE">FontBin::dataSize (C++ member)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N7FontBin3extE">FontBin::ext (C++ member)</a>
+</li>
+        <li><a href="Dev/file/conversion_8hpp.html#_CPPv411fromIVectorRK7IVector">fromIVector (C++ function)</a>
+</li>
         <li><a href="Dev/file/conversion_8hpp.html#_CPPv411fromVector2RK7Vector2">fromVector2 (C++ function)</a>
 </li>
     </ul></td>
@@ -758,6 +840,8 @@
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game9instance_E">Game::instance_ (C++ member)</a>
 </li>
+        <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game10isUsingBinEv">Game::isUsingBin (C++ function)</a>
+</li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game9resourcesE">Game::resources (C++ member)</a>
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game7scriptsE">Game::scripts (C++ member)</a>
@@ -768,12 +852,12 @@
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game5stateE">Game::state (C++ member)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game2uiE">Game::ui (C++ member)</a>
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6unloadEv">Game::unload (C++ function)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6updateEv">Game::update (C++ function)</a>
 </li>
         <li><a href="Dev/file/game_8hpp.html#_CPPv4N4Game6useBinERKNSt6stringE">Game::useBin (C++ function)</a>
@@ -792,11 +876,17 @@
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData9dialoguesE">GameData::dialogues (C++ member)</a>
 </li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5fontsE">GameData::fonts (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData7gameSetE">GameData::gameSet (C++ member)</a>
+</li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData6imagesE">GameData::images (C++ member)</a>
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData13interactablesE">GameData::interactables (C++ member)</a>
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5musicE">GameData::music (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData10programSetE">GameData::programSet (C++ member)</a>
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5propsE">GameData::props (C++ member)</a>
 </li>
@@ -807,6 +897,10 @@
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData8tilesetsE">GameData::tilesets (C++ member)</a>
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N8GameData5titleE">GameData::title (C++ member)</a>
+</li>
+        <li><a href="Dev/file/dialogueParser_8hpp.html#_CPPv49getColorsv">getColors (C++ function)</a>
+</li>
+        <li><a href="Dev/file/dialogueParser_8hpp.html#_CPPv413getColorTypesv">getColorTypes (C++ function)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -846,6 +940,8 @@
 </li>
         <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable11absolutePosE">Interactable::absolutePos (C++ member)</a>
 </li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable7addPropE8PropTypeRKNSt6stringE">Interactable::addProp (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7addPropE8PropTypeRKNSt6stringE">[1]</a>
+</li>
         <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable12displayTitleE">Interactable::displayTitle (C++ member)</a>
 </li>
         <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8dumpJsonEv">Interactable::dumpJson (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8dumpJsonEv">[1]</a>
@@ -853,6 +949,8 @@
         <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable15getDisplayTitleEv">Interactable::getDisplayTitle (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable15getDisplayTitleEv">[1]</a>
 </li>
         <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8getPropsEv">Interactable::getProps (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8getPropsEv">[1]</a>
+</li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable11getPropsPtrEv">Interactable::getPropsPtr (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable11getPropsPtrEv">[1]</a>
 </li>
         <li><a href="Dev/class/classInteractable.html#_CPPv4NK12Interactable7getRectEv">Interactable::getRect (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4NK12Interactable7getRectEv">[1]</a>
 </li>
@@ -886,6 +984,8 @@
 </li>
         <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE">Interactable::setProps (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE">[1]</a>
 </li>
+        <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable19setScriptSourcePathERKNSt6stringE">Interactable::setScriptSourcePath (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable19setScriptSourcePathERKNSt6stringE">[1]</a>
+</li>
         <li><a href="Dev/class/classInteractable.html#_CPPv4N12Interactable7setTypeERKNSt6stringE">Interactable::setType (C++ function)</a>, <a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7setTypeERKNSt6stringE">[1]</a>
 </li>
         <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N12Interactable7tilePosE">Interactable::tilePos (C++ member)</a>
@@ -912,10 +1012,10 @@
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin9propsCborE">InteractableInRoomBin::propsCbor (C++ member)</a>
 </li>
-        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin4typeE">InteractableInRoomBin::type (C++ member)</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin4typeE">InteractableInRoomBin::type (C++ member)</a>
+</li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin1xE">InteractableInRoomBin::x (C++ member)</a>
 </li>
         <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N21InteractableInRoomBin1yE">InteractableInRoomBin::y (C++ member)</a>
@@ -1208,6 +1308,8 @@
 </li>
         <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player17getCenterPositionEv">Player::getCenterPosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player17getCenterPositionEv">[1]</a>
 </li>
+        <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player21getCollisionCenterPosEv">Player::getCollisionCenterPos (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player21getCollisionCenterPosEv">[1]</a>
+</li>
         <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player15getCollisionPosEv">Player::getCollisionPos (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player15getCollisionPosEv">[1]</a>
 </li>
         <li><a href="Dev/class/classPlayer.html#_CPPv4NK6Player11getPositionEv">Player::getPosition (C++ function)</a>, <a href="Dev/file/player_8hpp.html#_CPPv4NK6Player11getPositionEv">[1]</a>
@@ -1246,6 +1348,36 @@
 </li>
         <li><a href="Dev/file/player_8hpp.html#_CPPv4N6Player8velocityE">Player::velocity (C++ member)</a>
 </li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv419ProjectGameSettings">ProjectGameSettings (C++ struct)</a>, <a href="Dev/struct/structProjectGameSettings.html#_CPPv419ProjectGameSettings">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N19ProjectGameSettings9debugDrawE">ProjectGameSettings::debugDraw (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N19ProjectGameSettings15defaultRoomPathE">ProjectGameSettings::defaultRoomPath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N19ProjectGameSettings15exportFontSizesE">ProjectGameSettings::exportFontSizes (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N19ProjectGameSettings17exportImageScalesE">ProjectGameSettings::exportImageScales (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N19ProjectGameSettings15playerActorPathE">ProjectGameSettings::playerActorPath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N19ProjectGameSettings8tileSizeE">ProjectGameSettings::tileSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv422ProjectProgramSettings">ProjectProgramSettings (C++ struct)</a>, <a href="Dev/struct/structProjectProgramSettings.html#_CPPv422ProjectProgramSettings">[1]</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings15programIconPathE">ProjectProgramSettings::programIconPath (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings12projectTitleE">ProjectProgramSettings::projectTitle (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings14projectVersionE">ProjectProgramSettings::projectVersion (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings9targetFPSE">ProjectProgramSettings::targetFPS (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings20windowResizeableFlagE">ProjectProgramSettings::windowResizeableFlag (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings10windowSizeE">ProjectProgramSettings::windowSize (C++ member)</a>
+</li>
+        <li><a href="Dev/file/gamedata_8hpp.html#_CPPv4N22ProjectProgramSettings15windowStateFlagE">ProjectProgramSettings::windowStateFlag (C++ member)</a>
+</li>
         <li><a href="Dev/class/classProp.html#_CPPv44Prop">Prop (C++ class)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv44Prop">[1]</a>
 </li>
         <li><a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop9applyJsonE4json">Prop::applyJson (C++ function)</a>
@@ -1258,6 +1390,8 @@
 </li>
         <li><a href="Dev/class/classProp.html#_CPPv4N4Prop8dumpJsonEv">Prop::dumpJson (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4N4Prop8dumpJsonEv">[1]</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/class/classProp.html#_CPPv4NK4Prop12getAtlasRectEv">Prop::getAtlasRect (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop12getAtlasRectEv">[1]</a>
 </li>
         <li><a href="Dev/class/classProp.html#_CPPv4NK4Prop18getCollisionCenterEv">Prop::getCollisionCenter (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop18getCollisionCenterEv">[1]</a>
@@ -1268,8 +1402,6 @@
 </li>
         <li><a href="Dev/class/classProp.html#_CPPv4NK4Prop12getImagePathEv">Prop::getImagePath (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop12getImagePathEv">[1]</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/class/classProp.html#_CPPv4NK4Prop15getInteractableEv">Prop::getInteractable (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop15getInteractableEv">[1]</a>
 </li>
         <li><a href="Dev/class/classProp.html#_CPPv4NK4Prop19getInteractableTypeEv">Prop::getInteractableType (C++ function)</a>, <a href="Dev/file/prop_8hpp.html#_CPPv4NK4Prop19getInteractableTypeEv">[1]</a>
@@ -1348,6 +1480,16 @@
 </li>
         <li><a href="Dev/file/propsContainer_8hpp.html#_CPPv4N14PropsContainer14PropsContainerEv">PropsContainer::PropsContainer (C++ function)</a>
 </li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv48PropType">PropType (C++ enum)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N8PropType12PROP_BOOLEANE">PropType::PROP_BOOLEAN (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N8PropType13PROP_DIALOGUEE">PropType::PROP_DIALOGUE (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N8PropType8PROP_INTE">PropType::PROP_INT (C++ enumerator)</a>
+</li>
+        <li><a href="Dev/file/interactable_8hpp.html#_CPPv4N8PropType11PROP_STRINGE">PropType::PROP_STRING (C++ enumerator)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -1358,11 +1500,21 @@
     <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/class/classResourceService.html#_CPPv415ResourceService">ResourceService (C++ class)</a>, <a href="Dev/file/resourceService_8hpp.html#_CPPv415ResourceService">[1]</a>
 </li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService7addFontERKNSt6stringE4Font">ResourceService::addFont (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService15addFontFromFileERKNSt6stringEi">ResourceService::addFontFromFile (C++ function)</a>
+</li>
         <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService10addTextureERKNSt6stringE9Texture2D">ResourceService::addTexture (C++ function)</a>
 </li>
         <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService18addTextureFromFileERKNSt6stringE">ResourceService::addTextureFromFile (C++ function)</a>
 </li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService5fontsE">ResourceService::fonts (C++ member)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService7getFontERKNSt6stringE">ResourceService::getFont (C++ function)</a>
+</li>
         <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService10getTextureERKNSt6stringE">ResourceService::getTexture (C++ function)</a>
+</li>
+        <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService4initEv">ResourceService::init (C++ function)</a>
 </li>
         <li><a href="Dev/file/resourceService_8hpp.html#_CPPv4N15ResourceService15ResourceServiceEv">ResourceService::ResourceService (C++ function)</a>
 </li>
@@ -1406,17 +1558,17 @@
 </li>
         <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room13interactablesE">Room::interactables (C++ member)</a>
 </li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room4lockE">Room::lock (C++ member)</a>
 </li>
         <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room11musicSourceE">Room::musicSource (C++ member)</a>
 </li>
         <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room6playerE">Room::player (C++ member)</a>
 </li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
         <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room5propsE">Room::props (C++ member)</a>
 </li>
-        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE">Room::Room (C++ function)</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomERK7RoomBin">[1]</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomERKNSt6stringEi">[2]</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomEv">[3]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE">[4]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomERK7RoomBin">[5]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomERKNSt6stringEi">[6]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomEv">[7]</a>
+        <li><a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE">Room::Room (C++ function)</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomERK7RoomBin">[1]</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomERKNSt6stringEib">[2]</a>, <a href="Dev/class/classRoom.html#_CPPv4N4Room4RoomEv">[3]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE">[4]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomERK7RoomBin">[5]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomERKNSt6stringEib">[6]</a>, <a href="Dev/file/room_8hpp.html#_CPPv4N4Room4RoomEv">[7]</a>
 </li>
         <li><a href="Dev/file/room_8hpp.html#_CPPv4N4Room7setLockEb">Room::setLock (C++ function)</a>
 </li>
@@ -1756,9 +1908,13 @@
   <h2>W</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv427WinCreateDetachedExecutableNSt6stringE">WinCreateDetachedExecutable (C++ function)</a>
+</li>
         <li><a href="Dev/file/winapi_8hpp.html#_CPPv413WinCreateProcNSt6stringE">WinCreateProc (C++ function)</a>
 </li>
         <li><a href="Dev/file/winapi_8hpp.html#_CPPv420WinOpenFileAssociateNSt6stringENSt6stringE">WinOpenFileAssociate (C++ function)</a>
+</li>
+        <li><a href="Dev/file/winapi_8hpp.html#_CPPv413WinRunWithLogNSt6stringENSt6stringE">WinRunWithLog (C++ function)</a>
 </li>
         <li><a href="Dev/file/winapi_8hpp.html#_CPPv410WinVsWhereNSt6stringE">WinVsWhere (C++ function)</a>
 </li>
@@ -1776,10 +1932,10 @@
 </li>
         <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService12frameCounterE">WorldService::frameCounter (C++ member)</a>
 </li>
-        <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService9getPlayerEv">WorldService::getPlayer (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService9getPlayerEv">[1]</a>
-</li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService9getPlayerEv">WorldService::getPlayer (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService9getPlayerEv">[1]</a>
+</li>
         <li><a href="Dev/class/classWorldService.html#_CPPv4NK12WorldService7getRoomEv">WorldService::getRoom (C++ function)</a>, <a href="Dev/file/worldService_8hpp.html#_CPPv4NK12WorldService7getRoomEv">[1]</a>
 </li>
         <li><a href="Dev/file/worldService_8hpp.html#_CPPv4N12WorldService4lockE">WorldService::lock (C++ member)</a>

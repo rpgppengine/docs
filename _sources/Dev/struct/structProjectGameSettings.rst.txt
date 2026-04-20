@@ -1,0 +1,5 @@
+Struct ProjectGameSettings
+==========================
+
+.. doxygenstruct:: ProjectGameSettings
+   :members:

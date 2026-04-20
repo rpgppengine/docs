@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -520,6 +526,16 @@
 <span id="_CPPv3N14ActorInRoomBin7tilePosE"></span><span id="_CPPv2N14ActorInRoomBin7tilePosE"></span><span id="ActorInRoomBin::tilePos__IVector"></span><span class="target" id="structActorInRoomBin_1a3d0bc90eea02ddc1f3cb5b4c75848b5f"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tilePos</span></span></span><a class="headerlink" href="#_CPPv4N14ActorInRoomBin7tilePosE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14ActorInRoomBin7intTypeE">
+<span id="_CPPv3N14ActorInRoomBin7intTypeE"></span><span id="_CPPv2N14ActorInRoomBin7intTypeE"></span><span id="ActorInRoomBin::intType__ss"></span><span class="target" id="structActorInRoomBin_1adf2c3a7b164d0b98cb927add6cf14d3f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">intType</span></span></span><a class="headerlink" href="#_CPPv4N14ActorInRoomBin7intTypeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14ActorInRoomBin9propsCborE">
+<span id="_CPPv3N14ActorInRoomBin9propsCborE"></span><span id="_CPPv2N14ActorInRoomBin9propsCborE"></span><span id="ActorInRoomBin::propsCbor__std::vector:std::uint8_t:"></span><span class="target" id="structActorInRoomBin_1ae72fc4c82d06f874f8e07b20e33d8559"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint8_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">propsCbor</span></span></span><a class="headerlink" href="#_CPPv4N14ActorInRoomBin9propsCborE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 </dd></dl>
 
@@ -678,6 +694,31 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N10TileSetBin8dataSizeE">
 <span id="_CPPv3N10TileSetBin8dataSizeE"></span><span id="_CPPv2N10TileSetBin8dataSizeE"></span><span id="TileSetBin::dataSize__i"></span><span class="target" id="structTileSetBin_1ab385fcfe563c6d3e238b7ee6b66bc748"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataSize</span></span></span><a class="headerlink" href="#_CPPv4N10TileSetBin8dataSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv47FontBin">
+<span id="_CPPv37FontBin"></span><span id="_CPPv27FontBin"></span><span id="FontBin"></span><span class="target" id="structFontBin"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FontBin</span></span></span><a class="headerlink" href="#_CPPv47FontBin" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7FontBin4dataE">
+<span id="_CPPv3N7FontBin4dataE"></span><span id="_CPPv2N7FontBin4dataE"></span><span id="FontBin::data__std::vector:unsigned-c:"></span><span class="target" id="structFontBin_1a31a5606c088d4d530d836c136a2f9ffd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><a class="headerlink" href="#_CPPv4N7FontBin4dataE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7FontBin8dataSizeE">
+<span id="_CPPv3N7FontBin8dataSizeE"></span><span id="_CPPv2N7FontBin8dataSizeE"></span><span id="FontBin::dataSize__i"></span><span class="target" id="structFontBin_1a7a024fd01f95798c7b55a8b4a0b8bf60"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataSize</span></span></span><a class="headerlink" href="#_CPPv4N7FontBin8dataSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7FontBin3extE">
+<span id="_CPPv3N7FontBin3extE"></span><span id="_CPPv2N7FontBin3extE"></span><span id="FontBin::ext__ss"></span><span class="target" id="structFontBin_1aa77aeb3a4e4cd89fcd470f4a1a673777"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ext</span></span></span><a class="headerlink" href="#_CPPv4N7FontBin3extE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -859,6 +900,91 @@
 </dd></dl>
 
 <dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv422ProjectProgramSettings">
+<span id="_CPPv322ProjectProgramSettings"></span><span id="_CPPv222ProjectProgramSettings"></span><span id="ProjectProgramSettings"></span><span class="target" id="structProjectProgramSettings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProjectProgramSettings</span></span></span><a class="headerlink" href="#_CPPv422ProjectProgramSettings" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings12projectTitleE">
+<span id="_CPPv3N22ProjectProgramSettings12projectTitleE"></span><span id="_CPPv2N22ProjectProgramSettings12projectTitleE"></span><span id="ProjectProgramSettings::projectTitle__ss"></span><span class="target" id="structProjectProgramSettings_1a64694d093f408656857bbe8da8af274f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">projectTitle</span></span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings12projectTitleE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings14projectVersionE">
+<span id="_CPPv3N22ProjectProgramSettings14projectVersionE"></span><span id="_CPPv2N22ProjectProgramSettings14projectVersionE"></span><span id="ProjectProgramSettings::projectVersion__ss"></span><span class="target" id="structProjectProgramSettings_1afeb412a1cd0befa07f49f53fb2800c05"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">projectVersion</span></span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings14projectVersionE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings10windowSizeE">
+<span id="_CPPv3N22ProjectProgramSettings10windowSizeE"></span><span id="_CPPv2N22ProjectProgramSettings10windowSizeE"></span><span id="ProjectProgramSettings::windowSize__IVector"></span><span class="target" id="structProjectProgramSettings_1ad8579fdd0f4a86ec2ef1b695448d495f"></span><a class="reference internal" href="#_CPPv47IVector" title="IVector"><span class="n"><span class="pre">IVector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windowSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">640</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">480</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings10windowSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings15programIconPathE">
+<span id="_CPPv3N22ProjectProgramSettings15programIconPathE"></span><span id="_CPPv2N22ProjectProgramSettings15programIconPathE"></span><span id="ProjectProgramSettings::programIconPath__ss"></span><span class="target" id="structProjectProgramSettings_1a02adfd0b70e06ab8b221c83f9162419f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">programIconPath</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings15programIconPathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings20windowResizeableFlagE">
+<span id="_CPPv3N22ProjectProgramSettings20windowResizeableFlagE"></span><span id="_CPPv2N22ProjectProgramSettings20windowResizeableFlagE"></span><span id="ProjectProgramSettings::windowResizeableFlag__b"></span><span class="target" id="structProjectProgramSettings_1a4595d6fceb02dd35e356a8920bd4f00f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windowResizeableFlag</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings20windowResizeableFlagE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings9targetFPSE">
+<span id="_CPPv3N22ProjectProgramSettings9targetFPSE"></span><span id="_CPPv2N22ProjectProgramSettings9targetFPSE"></span><span id="ProjectProgramSettings::targetFPS__i"></span><span class="target" id="structProjectProgramSettings_1a4dab10a3696ed15934d622e0c397e7e5"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">targetFPS</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">60</span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings9targetFPSE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22ProjectProgramSettings15windowStateFlagE">
+<span id="_CPPv3N22ProjectProgramSettings15windowStateFlagE"></span><span id="_CPPv2N22ProjectProgramSettings15windowStateFlagE"></span><span id="ProjectProgramSettings::windowStateFlag__i"></span><span class="target" id="structProjectProgramSettings_1a9b1148ac3d0539bcf63f8f6cd9aca486"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windowStateFlag</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N22ProjectProgramSettings15windowStateFlagE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv419ProjectGameSettings">
+<span id="_CPPv319ProjectGameSettings"></span><span id="_CPPv219ProjectGameSettings"></span><span id="ProjectGameSettings"></span><span class="target" id="structProjectGameSettings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ProjectGameSettings</span></span></span><a class="headerlink" href="#_CPPv419ProjectGameSettings" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;gamedata.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N19ProjectGameSettings15defaultRoomPathE">
+<span id="_CPPv3N19ProjectGameSettings15defaultRoomPathE"></span><span id="_CPPv2N19ProjectGameSettings15defaultRoomPathE"></span><span id="ProjectGameSettings::defaultRoomPath__ss"></span><span class="target" id="structProjectGameSettings_1a6f37f5f86a71b1c33d4048fd3561ea9f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">defaultRoomPath</span></span></span><a class="headerlink" href="#_CPPv4N19ProjectGameSettings15defaultRoomPathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N19ProjectGameSettings15playerActorPathE">
+<span id="_CPPv3N19ProjectGameSettings15playerActorPathE"></span><span id="_CPPv2N19ProjectGameSettings15playerActorPathE"></span><span id="ProjectGameSettings::playerActorPath__ss"></span><span class="target" id="structProjectGameSettings_1ac21230cccf2bc006be65bb07e61fa746"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">playerActorPath</span></span></span><a class="headerlink" href="#_CPPv4N19ProjectGameSettings15playerActorPathE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N19ProjectGameSettings8tileSizeE">
+<span id="_CPPv3N19ProjectGameSettings8tileSizeE"></span><span id="_CPPv2N19ProjectGameSettings8tileSizeE"></span><span id="ProjectGameSettings::tileSize__i"></span><span class="target" id="structProjectGameSettings_1aed8bb3a893e8df1b7590bb80df4e4b66"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tileSize</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">16</span></span><a class="headerlink" href="#_CPPv4N19ProjectGameSettings8tileSizeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N19ProjectGameSettings9debugDrawE">
+<span id="_CPPv3N19ProjectGameSettings9debugDrawE"></span><span id="_CPPv2N19ProjectGameSettings9debugDrawE"></span><span id="ProjectGameSettings::debugDraw__b"></span><span class="target" id="structProjectGameSettings_1aafe8a56866236e927d8e1c307282f6c7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debugDraw</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N19ProjectGameSettings9debugDrawE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N19ProjectGameSettings17exportImageScalesE">
+<span id="_CPPv3N19ProjectGameSettings17exportImageScalesE"></span><span id="_CPPv2N19ProjectGameSettings17exportImageScalesE"></span><span id="ProjectGameSettings::exportImageScales__std::vector:i:"></span><span class="target" id="structProjectGameSettings_1a4a71a054902bb0eeec66a486b8f2a9cb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exportImageScales</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N19ProjectGameSettings17exportImageScalesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N19ProjectGameSettings15exportFontSizesE">
+<span id="_CPPv3N19ProjectGameSettings15exportFontSizesE"></span><span id="_CPPv2N19ProjectGameSettings15exportFontSizesE"></span><span id="ProjectGameSettings::exportFontSizes__std::vector:i:"></span><span class="target" id="structProjectGameSettings_1ab50204e23f879cae2ee77c8b9cc87480"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exportFontSizes</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">13</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N19ProjectGameSettings15exportFontSizesE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv48GameData">
 <span id="_CPPv38GameData"></span><span id="_CPPv28GameData"></span><span id="GameData"></span><span class="target" id="structGameData"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GameData</span></span></span><a class="headerlink" href="#_CPPv48GameData" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="docutils container">
@@ -868,6 +994,21 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N8GameData5titleE">
 <span id="_CPPv3N8GameData5titleE"></span><span id="_CPPv2N8GameData5titleE"></span><span id="GameData::title__ss"></span><span class="target" id="structGameData_1a15fa62d95ac4631e993d7fddd86a7138"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">title</span></span></span><a class="headerlink" href="#_CPPv4N8GameData5titleE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData10programSetE">
+<span id="_CPPv3N8GameData10programSetE"></span><span id="_CPPv2N8GameData10programSetE"></span><span id="GameData::programSet__ProjectProgramSettings"></span><span class="target" id="structGameData_1af59229b816b512767d3287fdbac362d4"></span><a class="reference internal" href="#_CPPv422ProjectProgramSettings" title="ProjectProgramSettings"><span class="n"><span class="pre">ProjectProgramSettings</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">programSet</span></span></span><a class="headerlink" href="#_CPPv4N8GameData10programSetE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData7gameSetE">
+<span id="_CPPv3N8GameData7gameSetE"></span><span id="_CPPv2N8GameData7gameSetE"></span><span id="GameData::gameSet__ProjectGameSettings"></span><span class="target" id="structGameData_1a054a4378d6c01a0012bbf2c49818d32d"></span><a class="reference internal" href="#_CPPv419ProjectGameSettings" title="ProjectGameSettings"><span class="n"><span class="pre">ProjectGameSettings</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gameSet</span></span></span><a class="headerlink" href="#_CPPv4N8GameData7gameSetE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8GameData5fontsE">
+<span id="_CPPv3N8GameData5fontsE"></span><span id="_CPPv2N8GameData5fontsE"></span><span id="GameData::fonts__std::map:ss.FontBin:"></span><span class="target" id="structGameData_1afa5062b5337ec62f32ec36231650c19e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47FontBin" title="FontBin"><span class="n"><span class="pre">FontBin</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fonts</span></span></span><a class="headerlink" href="#_CPPv4N8GameData5fontsE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
@@ -1027,6 +1168,8 @@
 <li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin4nameE"><code class="docutils literal notranslate"><span class="pre">name</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin6sourceE"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin7tilePosE"><code class="docutils literal notranslate"><span class="pre">tilePos</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin7intTypeE"><code class="docutils literal notranslate"><span class="pre">intType</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N14ActorInRoomBin9propsCborE"><code class="docutils literal notranslate"><span class="pre">propsCbor</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#_CPPv47TileBin"><code class="docutils literal notranslate"><span class="pre">TileBin</span></code></a><ul>
@@ -1065,6 +1208,12 @@
 <li><a class="reference internal" href="#_CPPv4N10TileSetBin8tileSizeE"><code class="docutils literal notranslate"><span class="pre">tileSize</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N10TileSetBin5imageE"><code class="docutils literal notranslate"><span class="pre">image</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N10TileSetBin8dataSizeE"><code class="docutils literal notranslate"><span class="pre">dataSize</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv47FontBin"><code class="docutils literal notranslate"><span class="pre">FontBin</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N7FontBin4dataE"><code class="docutils literal notranslate"><span class="pre">data</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7FontBin8dataSizeE"><code class="docutils literal notranslate"><span class="pre">dataSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N7FontBin3extE"><code class="docutils literal notranslate"><span class="pre">ext</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#_CPPv48ImageBin"><code class="docutils literal notranslate"><span class="pre">ImageBin</span></code></a><ul>
@@ -1107,8 +1256,30 @@
 <li><a class="reference internal" href="#_CPPv4N15GameBinSettings11playerActorE"><code class="docutils literal notranslate"><span class="pre">playerActor</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#_CPPv422ProjectProgramSettings"><code class="docutils literal notranslate"><span class="pre">ProjectProgramSettings</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings12projectTitleE"><code class="docutils literal notranslate"><span class="pre">projectTitle</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings14projectVersionE"><code class="docutils literal notranslate"><span class="pre">projectVersion</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings10windowSizeE"><code class="docutils literal notranslate"><span class="pre">windowSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings15programIconPathE"><code class="docutils literal notranslate"><span class="pre">programIconPath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings20windowResizeableFlagE"><code class="docutils literal notranslate"><span class="pre">windowResizeableFlag</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings9targetFPSE"><code class="docutils literal notranslate"><span class="pre">targetFPS</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N22ProjectProgramSettings15windowStateFlagE"><code class="docutils literal notranslate"><span class="pre">windowStateFlag</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv419ProjectGameSettings"><code class="docutils literal notranslate"><span class="pre">ProjectGameSettings</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N19ProjectGameSettings15defaultRoomPathE"><code class="docutils literal notranslate"><span class="pre">defaultRoomPath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N19ProjectGameSettings15playerActorPathE"><code class="docutils literal notranslate"><span class="pre">playerActorPath</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N19ProjectGameSettings8tileSizeE"><code class="docutils literal notranslate"><span class="pre">tileSize</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N19ProjectGameSettings9debugDrawE"><code class="docutils literal notranslate"><span class="pre">debugDraw</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N19ProjectGameSettings17exportImageScalesE"><code class="docutils literal notranslate"><span class="pre">exportImageScales</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N19ProjectGameSettings15exportFontSizesE"><code class="docutils literal notranslate"><span class="pre">exportFontSizes</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#_CPPv48GameData"><code class="docutils literal notranslate"><span class="pre">GameData</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N8GameData5titleE"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData10programSetE"><code class="docutils literal notranslate"><span class="pre">programSet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData7gameSetE"><code class="docutils literal notranslate"><span class="pre">gameSet</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8GameData5fontsE"><code class="docutils literal notranslate"><span class="pre">fonts</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N8GameData6imagesE"><code class="docutils literal notranslate"><span class="pre">images</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N8GameData8tilesetsE"><code class="docutils literal notranslate"><span class="pre">tilesets</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N8GameData13interactablesE"><code class="docutils literal notranslate"><span class="pre">interactables</span></code></a></li>

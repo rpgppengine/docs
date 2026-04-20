@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -369,6 +375,35 @@
         <article role="main" id="furo-main-content">
           <section id="file-interactable-hpp">
 <h1>File interactable.hpp<a class="headerlink" href="#file-interactable-hpp" title="Link to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv48PropType">
+<span id="_CPPv38PropType"></span><span id="_CPPv28PropType"></span><span class="target" id="interactable_8hpp_1ac6a79184a0a7c1d2e3ea745512aa2d0c"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PropType</span></span></span><a class="headerlink" href="#_CPPv48PropType" title="Link to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8PropType8PROP_INTE">
+<span id="_CPPv3N8PropType8PROP_INTE"></span><span id="_CPPv2N8PropType8PROP_INTE"></span><span class="target" id="interactable_8hpp_1ac6a79184a0a7c1d2e3ea745512aa2d0ca620d0acb046e6bc10271434db1960d41"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PROP_INT</span></span></span><a class="headerlink" href="#_CPPv4N8PropType8PROP_INTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8PropType11PROP_STRINGE">
+<span id="_CPPv3N8PropType11PROP_STRINGE"></span><span id="_CPPv2N8PropType11PROP_STRINGE"></span><span class="target" id="interactable_8hpp_1ac6a79184a0a7c1d2e3ea745512aa2d0ca847d74deffc8d0ec556372561186ee41"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PROP_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8PropType11PROP_STRINGE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8PropType12PROP_BOOLEANE">
+<span id="_CPPv3N8PropType12PROP_BOOLEANE"></span><span id="_CPPv2N8PropType12PROP_BOOLEANE"></span><span class="target" id="interactable_8hpp_1ac6a79184a0a7c1d2e3ea745512aa2d0ca3f897b521d476ae35d56f769b80b54f4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PROP_BOOLEAN</span></span></span><a class="headerlink" href="#_CPPv4N8PropType12PROP_BOOLEANE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N8PropType13PROP_DIALOGUEE">
+<span id="_CPPv3N8PropType13PROP_DIALOGUEE"></span><span id="_CPPv2N8PropType13PROP_DIALOGUEE"></span><span class="target" id="interactable_8hpp_1ac6a79184a0a7c1d2e3ea745512aa2d0cafa9f9c3eaf68b3ae822aa47edfa73462"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PROP_DIALOGUE</span></span></span><a class="headerlink" href="#_CPPv4N8PropType13PROP_DIALOGUEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv412Interactable">
 <span id="_CPPv312Interactable"></span><span id="_CPPv212Interactable"></span><span id="Interactable"></span><span class="target" id="classInteractable"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Interactable</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../class/classISaveable.html#_CPPv49ISaveable" title="ISaveable"><span class="n"><span class="pre">ISaveable</span></span></a><br /></dt>
@@ -386,7 +421,7 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N12Interactable12InteractableERKNSt6stringE">
 <span id="_CPPv3N12Interactable12InteractableERKNSt6stringE"></span><span id="_CPPv2N12Interactable12InteractableERKNSt6stringE"></span><span id="Interactable::Interactable__ssCR"></span><span class="target" id="classInteractable_1ab25393e86f555d1ffa9d2580e94916d3"></span><span class="sig-name descname"><span class="n"><span class="pre">Interactable</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><br /></dt>
-<dd><p>COnstructor using a JSON file. </p>
+<dd><p>Constructor using a JSON file. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -473,6 +508,18 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12Interactable7addPropE8PropTypeRKNSt6stringE">
+<span id="_CPPv3N12Interactable7addPropE8PropTypeRKNSt6stringE"></span><span id="_CPPv2N12Interactable7addPropE8PropTypeRKNSt6stringE"></span><span id="Interactable::addProp__PropType.ssCR"></span><span class="target" id="classInteractable_1af0aae41f7c2006ad8d47448f03ca95aa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addProp</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48PropType" title="PropType"><span class="n"><span class="pre">PropType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">propType</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add a property based on the chosen property type. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12Interactable19setScriptSourcePathERKNSt6stringE">
+<span id="_CPPv3N12Interactable19setScriptSourcePathERKNSt6stringE"></span><span id="_CPPv2N12Interactable19setScriptSourcePathERKNSt6stringE"></span><span id="Interactable::setScriptSourcePath__ssCR"></span><span class="target" id="classInteractable_1ac15c77624d52e1658df4e680bd6284f2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setScriptSourcePath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newPath</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the source script file path. </p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N12Interactable19getScriptSourcePathEv">
 <span id="_CPPv3N12Interactable19getScriptSourcePathEv"></span><span id="_CPPv2N12Interactable19getScriptSourcePathEv"></span><span id="Interactable::getScriptSourcePath"></span><span class="target" id="classInteractable_1acfb088965fabc10c05d00b8e343ca65f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getScriptSourcePath</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Get source script file. </p>
@@ -482,6 +529,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N12Interactable8getPropsEv">
 <span id="_CPPv3N12Interactable8getPropsEv"></span><span id="_CPPv2N12Interactable8getPropsEv"></span><span id="Interactable::getProps"></span><span class="target" id="classInteractable_1a86fa2c8f8cc218c675d5973cef6570ec"></span><span class="n"><span class="pre">nlohmann</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getProps</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
 <dd><p>Get the properties json object. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12Interactable11getPropsPtrEv">
+<span id="_CPPv3N12Interactable11getPropsPtrEv"></span><span id="_CPPv2N12Interactable11getPropsPtrEv"></span><span id="Interactable::getPropsPtr"></span><span class="target" id="classInteractable_1a1df5b148c10fcb8371ec5f7111e02630"></span><span class="n"><span class="pre">nlohmann</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getPropsPtr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get a pointer to the properties. </p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -620,6 +673,13 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">File interactable.hpp</a><ul>
+<li><a class="reference internal" href="#_CPPv48PropType"><code class="docutils literal notranslate"><span class="pre">PropType</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N8PropType8PROP_INTE"><code class="docutils literal notranslate"><span class="pre">PROP_INT</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8PropType11PROP_STRINGE"><code class="docutils literal notranslate"><span class="pre">PROP_STRING</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8PropType12PROP_BOOLEANE"><code class="docutils literal notranslate"><span class="pre">PROP_BOOLEAN</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8PropType13PROP_DIALOGUEE"><code class="docutils literal notranslate"><span class="pre">PROP_DIALOGUE</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#_CPPv412Interactable"><code class="docutils literal notranslate"><span class="pre">Interactable</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N12Interactable12InteractableEv"><code class="docutils literal notranslate"><span class="pre">Interactable()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable12InteractableERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">Interactable()</span></code></a></li>
@@ -637,8 +697,11 @@
 <li><a class="reference internal" href="#_CPPv4N12Interactable7setTypeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setType()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable7setPropENSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">setProp()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE"><code class="docutils literal notranslate"><span class="pre">setProps()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12Interactable7addPropE8PropTypeRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addProp()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12Interactable19setScriptSourcePathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setScriptSourcePath()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable19getScriptSourcePathEv"><code class="docutils literal notranslate"><span class="pre">getScriptSourcePath()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable8getPropsEv"><code class="docutils literal notranslate"><span class="pre">getProps()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12Interactable11getPropsPtrEv"><code class="docutils literal notranslate"><span class="pre">getPropsPtr()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable15setDisplayTitleERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setDisplayTitle()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable15getDisplayTitleEv"><code class="docutils literal notranslate"><span class="pre">getDisplayTitle()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N12Interactable5validE"><code class="docutils literal notranslate"><span class="pre">valid</span></code></a></li>

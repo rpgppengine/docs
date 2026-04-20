@@ -1,0 +1,5 @@
+Struct ProjectProgramSettings
+=============================
+
+.. doxygenstruct:: ProjectProgramSettings
+   :members:

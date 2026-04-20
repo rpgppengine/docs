@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -399,6 +405,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor17getAnimationCountEv"><code class="docutils literal notranslate"><span class="pre">getAnimationCount()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor10setTileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTileSet()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getCollisionRectE7Vector2"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor18getCollisionCenterEv"><code class="docutils literal notranslate"><span class="pre">getCollisionCenter()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2"><code class="docutils literal notranslate"><span class="pre">addAnimationFrame()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor20removeAnimationFrameE9Directioni"><code class="docutils literal notranslate"><span class="pre">removeAnimationFrame()</span></code></a></li>
@@ -410,8 +417,11 @@
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getTileSetSourceEv"><code class="docutils literal notranslate"><span class="pre">getTileSetSource()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getAnimationsRawEv"><code class="docutils literal notranslate"><span class="pre">getAnimationsRaw()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor15getAnimationRawE9Direction"><code class="docutils literal notranslate"><span class="pre">getAnimationRaw()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4NK5Actor16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor16setCollisionRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">setCollisionRect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor15hasInteractableEv"><code class="docutils literal notranslate"><span class="pre">hasInteractable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor18setHasInteractableEb"><code class="docutils literal notranslate"><span class="pre">setHasInteractable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor15getInteractableEv"><code class="docutils literal notranslate"><span class="pre">getInteractable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor23setInteractableFromPathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setInteractableFromPath()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classActor.html#_CPPv4N5Actor14onFrameChangedE"><code class="docutils literal notranslate"><span class="pre">onFrameChanged</span></code></a></li>
 </ul>
 </li>
@@ -498,8 +508,11 @@
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable7setTypeERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setType()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable7setPropENSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">setProp()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable8setPropsEN8nlohmann4jsonE"><code class="docutils literal notranslate"><span class="pre">setProps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable7addPropE8PropTypeRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addProp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable19setScriptSourcePathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setScriptSourcePath()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable19getScriptSourcePathEv"><code class="docutils literal notranslate"><span class="pre">getScriptSourcePath()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable8getPropsEv"><code class="docutils literal notranslate"><span class="pre">getProps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable11getPropsPtrEv"><code class="docutils literal notranslate"><span class="pre">getPropsPtr()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable15setDisplayTitleERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setDisplayTitle()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classInteractable.html#_CPPv4N12Interactable15getDisplayTitleEv"><code class="docutils literal notranslate"><span class="pre">getDisplayTitle()</span></code></a></li>
 </ul>
@@ -554,6 +567,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player15getTilePositionEv"><code class="docutils literal notranslate"><span class="pre">getTilePosition()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4N6Player15setTilePositionE7Vector2"><code class="docutils literal notranslate"><span class="pre">setTilePosition()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player15getCollisionPosEv"><code class="docutils literal notranslate"><span class="pre">getCollisionPos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classPlayer.html#_CPPv4NK6Player21getCollisionCenterPosEv"><code class="docutils literal notranslate"><span class="pre">getCollisionCenterPos()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -601,7 +615,7 @@
 <li class="toctree-l1"><a class="reference internal" href="class/classRoom.html">Class Room</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="class/classRoom.html#_CPPv44Room"><code class="docutils literal notranslate"><span class="pre">Room</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomEv"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomERKNSt6stringEi"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomERKNSt6stringEib"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomENSt10unique_ptrI7TileMapEE"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room4RoomERK7RoomBin"><code class="docutils literal notranslate"><span class="pre">Room()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="class/classRoom.html#_CPPv4N4Room8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>

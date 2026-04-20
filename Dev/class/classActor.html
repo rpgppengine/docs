@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -536,6 +542,12 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK5Actor16getCollisionRectEv">
+<span id="_CPPv3NK5Actor16getCollisionRectEv"></span><span id="_CPPv2NK5Actor16getCollisionRectEv"></span><span id="Actor::getCollisionRectC"></span><span class="target" id="classActor_1ab42cb51eef78a1e9b8e7ee1c66f1da84"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Actor16getCollisionRectEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Get the collision Rectangle of this <a class="reference internal" href="../file/actor_8hpp.html#classActor"><span class="std std-ref">Actor</span></a></p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK5Actor18getCollisionCenterEv">
 <span id="_CPPv3NK5Actor18getCollisionCenterEv"></span><span id="_CPPv2NK5Actor18getCollisionCenterEv"></span><span id="Actor::getCollisionCenterC"></span><span class="target" id="classActor_1ace22c5fd15a5140e9de745d06846efae"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionCenter</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Actor18getCollisionCenterEv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Get collision center point. </p>
@@ -602,15 +614,33 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK5Actor16getCollisionRectEv">
-<span id="_CPPv3NK5Actor16getCollisionRectEv"></span><span id="_CPPv2NK5Actor16getCollisionRectEv"></span><span id="Actor::getCollisionRectC"></span><span class="target" id="classActor_1ab42cb51eef78a1e9b8e7ee1c66f1da84"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCollisionRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5Actor16getCollisionRectEv" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Get the collision Rectangle of this <a class="reference internal" href="../file/actor_8hpp.html#classActor"><span class="std std-ref">Actor</span></a></p>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N5Actor16setCollisionRectE9Rectangle">
 <span id="_CPPv3N5Actor16setCollisionRectE9Rectangle"></span><span id="_CPPv2N5Actor16setCollisionRectE9Rectangle"></span><span id="Actor::setCollisionRect__Rectangle"></span><span class="target" id="classActor_1a60ede43a713c434da7d90a5d20238f5b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCollisionRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Actor16setCollisionRectE9Rectangle" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Set the <a class="reference internal" href="../file/actor_8hpp.html#classActor"><span class="std std-ref">Actor</span></a>’s collision Rectangle </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor15hasInteractableEv">
+<span id="_CPPv3N5Actor15hasInteractableEv"></span><span id="_CPPv2N5Actor15hasInteractableEv"></span><span id="Actor::hasInteractable"></span><span class="target" id="classActor_1a621cf921f1c241ddbff1bc539e754053"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasInteractable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Actor15hasInteractableEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Whether this <a class="reference internal" href="../file/actor_8hpp.html#classActor"><span class="std std-ref">Actor</span></a> has an <a class="reference internal" href="../file/interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor18setHasInteractableEb">
+<span id="_CPPv3N5Actor18setHasInteractableEb"></span><span id="_CPPv2N5Actor18setHasInteractableEb"></span><span id="Actor::setHasInteractable__b"></span><span class="target" id="classActor_1a4d072ebce367a6a49f74d15528474f64"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setHasInteractable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Actor18setHasInteractableEb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Set the ‘ownsInteractable’ flag. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor15getInteractableEv">
+<span id="_CPPv3N5Actor15getInteractableEv"></span><span id="_CPPv2N5Actor15getInteractableEv"></span><span id="Actor::getInteractable"></span><span class="target" id="classActor_1ac81cb0c7fe4107073fceeeaa2aba1f01"></span><a class="reference internal" href="classInteractable.html#_CPPv412Interactable" title="Interactable"><span class="n"><span class="pre">Interactable</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getInteractable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Actor15getInteractableEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Get a pointer to this <a class="reference internal" href="../file/actor_8hpp.html#classActor"><span class="std std-ref">Actor</span></a>’s <a class="reference internal" href="../file/interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Actor23setInteractableFromPathERKNSt6stringE">
+<span id="_CPPv3N5Actor23setInteractableFromPathERKNSt6stringE"></span><span id="_CPPv2N5Actor23setInteractableFromPathERKNSt6stringE"></span><span id="Actor::setInteractableFromPath__ssCR"></span><span class="target" id="classActor_1a54f68673679fbfcf6366adef39656015"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setInteractableFromPath</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">interPath</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Actor23setInteractableFromPathERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Add an <a class="reference internal" href="../file/interactable_8hpp.html#classInteractable"><span class="std std-ref">Interactable</span></a> using an interactable file. </p>
 </dd></dl>
 
 </div>
@@ -710,6 +740,7 @@
 <li><a class="reference internal" href="#_CPPv4NK5Actor17getAnimationCountEv"><code class="docutils literal notranslate"><span class="pre">getAnimationCount()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N5Actor10setTileSetERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setTileSet()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK5Actor16getCollisionRectE7Vector2"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4NK5Actor16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK5Actor18getCollisionCenterEv"><code class="docutils literal notranslate"><span class="pre">getCollisionCenter()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N5Actor17addAnimationFrameE9Direction7Vector2"><code class="docutils literal notranslate"><span class="pre">addAnimationFrame()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N5Actor20removeAnimationFrameE9Directioni"><code class="docutils literal notranslate"><span class="pre">removeAnimationFrame()</span></code></a></li>
@@ -721,8 +752,11 @@
 <li><a class="reference internal" href="#_CPPv4NK5Actor16getTileSetSourceEv"><code class="docutils literal notranslate"><span class="pre">getTileSetSource()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK5Actor16getAnimationsRawEv"><code class="docutils literal notranslate"><span class="pre">getAnimationsRaw()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4NK5Actor15getAnimationRawE9Direction"><code class="docutils literal notranslate"><span class="pre">getAnimationRaw()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4NK5Actor16getCollisionRectEv"><code class="docutils literal notranslate"><span class="pre">getCollisionRect()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N5Actor16setCollisionRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">setCollisionRect()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor15hasInteractableEv"><code class="docutils literal notranslate"><span class="pre">hasInteractable()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor18setHasInteractableEb"><code class="docutils literal notranslate"><span class="pre">setHasInteractable()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor15getInteractableEv"><code class="docutils literal notranslate"><span class="pre">getInteractable()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Actor23setInteractableFromPathERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setInteractableFromPath()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N5Actor14onFrameChangedE"><code class="docutils literal notranslate"><span class="pre">onFrameChanged</span></code></a></li>
 </ul>
 </li>

@@ -199,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +267,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
@@ -274,6 +278,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
@@ -391,6 +397,16 @@
 <span id="_CPPv316ParseVsWhereDataNSt6stringE"></span><span id="_CPPv216ParseVsWhereDataNSt6stringE"></span><span id="ParseVsWhereData__ss"></span><span class="target" id="winapi_8hpp_1a8c08b4735c4eed31b144152add5ff699"></span><a class="reference internal" href="#_CPPv46VsInfo" title="VsInfo"><span class="n"><span class="pre">VsInfo</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ParseVsWhereData</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">output</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416ParseVsWhereDataNSt6stringE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv427WinCreateDetachedExecutableNSt6stringE">
+<span id="_CPPv327WinCreateDetachedExecutableNSt6stringE"></span><span id="_CPPv227WinCreateDetachedExecutableNSt6stringE"></span><span id="WinCreateDetachedExecutable__ss"></span><span class="target" id="winapi_8hpp_1a6e1b1315d2ede77be75afa3140113d8c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WinCreateDetachedExecutable</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427WinCreateDetachedExecutableNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413WinRunWithLogNSt6stringENSt6stringE">
+<span id="_CPPv313WinRunWithLogNSt6stringENSt6stringE"></span><span id="_CPPv213WinRunWithLogNSt6stringENSt6stringE"></span><span id="WinRunWithLog__ss.ss"></span><span class="target" id="winapi_8hpp_1a44e0d0979f9e34b8a6e317b475949a62"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WinRunWithLog</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">logName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">cmdLine</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413WinRunWithLogNSt6stringENSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv46VsInfo">
@@ -479,6 +495,8 @@
 <li><a class="reference internal" href="#_CPPv413WinCreateProcNSt6stringE"><code class="docutils literal notranslate"><span class="pre">WinCreateProc()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv410WinVsWhereNSt6stringE"><code class="docutils literal notranslate"><span class="pre">WinVsWhere()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv416ParseVsWhereDataNSt6stringE"><code class="docutils literal notranslate"><span class="pre">ParseVsWhereData()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv427WinCreateDetachedExecutableNSt6stringE"><code class="docutils literal notranslate"><span class="pre">WinCreateDetachedExecutable()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv413WinRunWithLogNSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">WinRunWithLog()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv46VsInfo"><code class="docutils literal notranslate"><span class="pre">VsInfo</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N6VsInfo16installationPathE"><code class="docutils literal notranslate"><span class="pre">installationPath</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N6VsInfo12vsdevcmdPathE"><code class="docutils literal notranslate"><span class="pre">vsdevcmdPath</span></code></a></li>

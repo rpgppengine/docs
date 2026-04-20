@@ -1,0 +1,5 @@
+Struct DialogueOption
+=====================
+
+.. doxygenstruct:: DialogueOption
+   :members:
