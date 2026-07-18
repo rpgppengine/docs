@@ -173,7 +173,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -207,6 +207,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/prop.html">Prop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guide/resourcetypes/interfaceview.html">Interface View</a></li>
 </ul>
 </li>
 </ul>
@@ -216,6 +217,27 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#world">World</a></li>
 </ul>
 </li>
 </ul>
@@ -229,12 +251,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classAtlasTile.html">Class AtlasTile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classBaseContainer.html">Class BaseContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classColorRect.html">Class ColorRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classDialogue.html">Class Dialogue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classGame.html">Class Game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classISaveable.html">Class ISaveable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classImageRect.html">Class ImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classInteractable.html">Class Interactable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classInterfaceService.html">Class InterfaceService</a></li>
@@ -248,11 +268,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classScriptService.html">Class ScriptService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classSoundService.html">Class SoundService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classStateService.html">Class StateService</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classTextArea.html">Class TextArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classTile.html">Class Tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classTileMap.html">Class TileMap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classTileSet.html">Class TileSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/class/classTweenContainer.html">Class TweenContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classWorldService.html">Class WorldService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
@@ -264,28 +283,51 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Dev/structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structActorBin.html">Struct ActorBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structComboBox.html">Struct ComboBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structDialogueArea.html">Struct DialogueArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structDialogueLine.html">Struct DialogueLine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structEvent.html">Struct Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structFontBin.html">Struct FontBin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structFontRef.html">Struct FontRef</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structIRect.html">Struct IRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structIVector.html">Struct IVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structInputC.html">Struct InputC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structLabel.html">Struct Label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structRoomBin.html">Struct RoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structTextBox.html">Struct TextBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structTileBin.html">Struct TileBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/struct/structVsInfo.html">Struct VsInfo</a></li>
 </ul>
 </li>
@@ -294,12 +336,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/actor_8hpp.html">File actor.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/atlasTile_8hpp.html">File atlasTile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/button_8hpp.html">File button.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/comboBox_8hpp.html">File comboBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/dialogueArea_8hpp.html">File dialogueArea.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/elementFactory_8hpp.html">File elementFactory.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/game_8hpp.html">File game.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/gamedata_8hpp.html">File gamedata.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/imageRect_8hpp.html">File imageRect.hpp</a></li>
@@ -308,6 +356,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/interfaceService_8hpp.html">File interfaceService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/player_8hpp.html">File player.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/prop_8hpp.html">File prop.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/propsContainer_8hpp.html">File propsContainer.hpp</a></li>
@@ -318,11 +369,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/scriptService_8hpp.html">File scriptService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/soundService_8hpp.html">File soundService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/stateService_8hpp.html">File stateService.hpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Dev/file/textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/textBox_8hpp.html">File textBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/tile_8hpp.html">File tile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/tilemap_8hpp.html">File tilemap.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/tween_8hpp.html">File tween.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Dev/file/valueSlider_8hpp.html">File valueSlider.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/winapi_8hpp.html">File winapi.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Dev/file/worldService_8hpp.html">File worldService.hpp</a></li>
 </ul>
@@ -368,24 +422,25 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="lua-api-reference">
 <h1>Lua API Reference<a class="headerlink" href="#lua-api-reference" title="Link to this heading">¶</a></h1>
+</section>
 <section id="actor">
-<h2>Actor<a class="headerlink" href="#actor" title="Link to this heading">¶</a></h2>
+<h1>Actor<a class="headerlink" href="#actor" title="Link to this heading">¶</a></h1>
 <section id="changeanimation">
-<h3>ChangeAnimation<a class="headerlink" href="#changeanimation" title="Link to this heading">¶</a></h3>
+<h2>ChangeAnimation<a class="headerlink" href="#changeanimation" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">ChangeAnimation</span><span class="p">(</span><span class="nv">dir</span><span class="p">:</span><span class="w"> </span><span class="py">Direction</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Change the Actor’s current animation and play it.</p>
 </section>
 <section id="getposition">
-<h3>GetPosition<a class="headerlink" href="#getposition" title="Link to this heading">¶</a></h3>
+<h2>GetPosition<a class="headerlink" href="#getposition" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">GetPosition</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -393,35 +448,35 @@
 <p>Get the Actor’s position</p>
 </section>
 <section id="gettileposition">
-<h3>GetTilePosition<a class="headerlink" href="#gettileposition" title="Link to this heading">¶</a></h3>
+<h2>GetTilePosition<a class="headerlink" href="#gettileposition" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">GetTilePosition</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Get this Actor’s tile position.</p>
 </section>
 <section id="movebyvelocity">
-<h3>MoveByVelocity<a class="headerlink" href="#movebyvelocity" title="Link to this heading">¶</a></h3>
+<h2>MoveByVelocity<a class="headerlink" href="#movebyvelocity" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">MoveByVelocity</span><span class="p">(</span><span class="nv">velocity</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Move the Actor using a velocity vector.</p>
 </section>
 <section id="playanimation">
-<h3>PlayAnimation<a class="headerlink" href="#playanimation" title="Link to this heading">¶</a></h3>
+<h2>PlayAnimation<a class="headerlink" href="#playanimation" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">PlayAnimation</span><span class="p">(</span><span class="nv">dir</span><span class="p">:</span><span class="w"> </span><span class="py">Direction</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Temporarily play an animation.</p>
 </section>
 <section id="setposition">
-<h3>SetPosition<a class="headerlink" href="#setposition" title="Link to this heading">¶</a></h3>
+<h2>SetPosition<a class="headerlink" href="#setposition" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">SetPosition</span><span class="p">(</span><span class="nv">newPosition</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set this Actor’s position.</p>
 </section>
 <section id="settileposition">
-<h3>SetTilePosition<a class="headerlink" href="#settileposition" title="Link to this heading">¶</a></h3>
+<h2>SetTilePosition<a class="headerlink" href="#settileposition" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Actor</span><span class="p">:</span><span class="nf">SetTilePosition</span><span class="p">(</span><span class="nv">newPosition</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">,</span><span class="w"> </span><span class="nv">tileSize</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -430,9 +485,9 @@
 </section>
 <hr class="docutils" />
 <section id="actorcontainer">
-<h2>ActorContainer<a class="headerlink" href="#actorcontainer" title="Link to this heading">¶</a></h2>
+<h1>ActorContainer<a class="headerlink" href="#actorcontainer" title="Link to this heading">¶</a></h1>
 <section id="exists">
-<h3>Exists<a class="headerlink" href="#exists" title="Link to this heading">¶</a></h3>
+<h2>Exists<a class="headerlink" href="#exists" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">ActorContainer</span><span class="p">:</span><span class="nf">Exists</span><span class="p">(</span><span class="nv">roomName</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">boolean</span>
 </pre></div>
@@ -440,7 +495,7 @@
 <p>Whether an Actor with such a name exists in the current room.</p>
 </section>
 <section id="get">
-<h3>Get<a class="headerlink" href="#get" title="Link to this heading">¶</a></h3>
+<h2>Get<a class="headerlink" href="#get" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">ActorContainer</span><span class="p">:</span><span class="nf">Get</span><span class="p">(</span><span class="nv">roomName</span><span class="p">:</span><span class="w"> </span><span class="py">any</span><span class="p">)</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Actor</span>
 </pre></div>
@@ -448,14 +503,14 @@
 <p>Get an Actor by its in-room name.</p>
 </section>
 <section id="push">
-<h3>Push<a class="headerlink" href="#push" title="Link to this heading">¶</a></h3>
+<h2>Push<a class="headerlink" href="#push" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">ActorContainer</span><span class="p">:</span><span class="nf">Push</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">,</span><span class="w"> </span><span class="nv">typeName</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">,</span><span class="w"> </span><span class="nv">roomName</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Add a new Actor at this tile position of this type. It will have this in-room name.</p>
 </section>
 <section id="remove">
-<h3>Remove<a class="headerlink" href="#remove" title="Link to this heading">¶</a></h3>
+<h2>Remove<a class="headerlink" href="#remove" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">ActorContainer</span><span class="p">:</span><span class="nf">Remove</span><span class="p">(</span><span class="nv">roomName</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -464,21 +519,21 @@
 </section>
 <hr class="docutils" />
 <section id="collisionscontainer">
-<h2>CollisionsContainer<a class="headerlink" href="#collisionscontainer" title="Link to this heading">¶</a></h2>
+<h1>CollisionsContainer<a class="headerlink" href="#collisionscontainer" title="Link to this heading">¶</a></h1>
 <section id="id1">
-<h3>Exists<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<h2>Exists<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">CollisionsContainer</span><span class="p">:</span><span class="nf">Exists</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="id2">
-<h3>Push<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<h2>Push<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">CollisionsContainer</span><span class="p">:</span><span class="nf">Push</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="id3">
-<h3>Remove<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<h2>Remove<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">CollisionsContainer</span><span class="p">:</span><span class="nf">Remove</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -486,15 +541,27 @@
 </section>
 <hr class="docutils" />
 <section id="direction">
-<h2>Direction<a class="headerlink" href="#direction" title="Link to this heading">¶</a></h2>
+<h1>Direction<a class="headerlink" href="#direction" title="Link to this heading">¶</a></h1>
+</section>
+<hr class="docutils" />
+<section id="game">
+<h1>Game<a class="headerlink" href="#game" title="Link to this heading">¶</a></h1>
+<p>The Game namespace is responsible for maanging the state of the program itself</p>
+<section id="close">
+<h2>Close<a class="headerlink" href="#close" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Game</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Closes the game.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="gamestate">
-<h2>GameState<a class="headerlink" href="#gamestate" title="Link to this heading">¶</a></h2>
+<h1>GameState<a class="headerlink" href="#gamestate" title="Link to this heading">¶</a></h1>
 <p>The StateService is responsible for storing gameplay-related variables
 that make up the state of the game.</p>
 <section id="id4">
-<h3>Get<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<h2>Get<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">GameState</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">any</span>
 </pre></div>
@@ -502,7 +569,7 @@ that make up the state of the game.</p>
 <p>Get a property</p>
 </section>
 <section id="set">
-<h3>Set<a class="headerlink" href="#set" title="Link to this heading">¶</a></h3>
+<h2>Set<a class="headerlink" href="#set" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">GameState</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nv">prop</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">,</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="py">any</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -511,9 +578,9 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="interactable">
-<h2>Interactable<a class="headerlink" href="#interactable" title="Link to this heading">¶</a></h2>
+<h1>Interactable<a class="headerlink" href="#interactable" title="Link to this heading">¶</a></h1>
 <section id="id5">
-<h3>GetPosition<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<h2>GetPosition<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Interactable</span><span class="p">:</span><span class="nf">GetPosition</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -521,7 +588,7 @@ that make up the state of the game.</p>
 <p>Get the World position of this Interactable</p>
 </section>
 <section id="gettype">
-<h3>GetType<a class="headerlink" href="#gettype" title="Link to this heading">¶</a></h3>
+<h2>GetType<a class="headerlink" href="#gettype" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Interactable</span><span class="p">:</span><span class="nf">GetType</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">string</span>
 </pre></div>
@@ -529,7 +596,7 @@ that make up the state of the game.</p>
 <p>Get this Interactable’s type</p>
 </section>
 <section id="isontouch">
-<h3>IsOnTouch<a class="headerlink" href="#isontouch" title="Link to this heading">¶</a></h3>
+<h2>IsOnTouch<a class="headerlink" href="#isontouch" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Interactable</span><span class="p">:</span><span class="nf">IsOnTouch</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">boolean</span>
 </pre></div>
@@ -537,21 +604,21 @@ that make up the state of the game.</p>
 <p>Whether this Interactable is set to be interacted with on player collision or not.</p>
 </section>
 <section id="setontouch">
-<h3>SetOnTouch<a class="headerlink" href="#setontouch" title="Link to this heading">¶</a></h3>
+<h2>SetOnTouch<a class="headerlink" href="#setontouch" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Interactable</span><span class="p">:</span><span class="nf">SetOnTouch</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="py">boolean</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set whether this interactable will be invoked when player touches it.</p>
 </section>
 <section id="setprop">
-<h3>SetProp<a class="headerlink" href="#setprop" title="Link to this heading">¶</a></h3>
+<h2>SetProp<a class="headerlink" href="#setprop" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Interactable</span><span class="p">:</span><span class="nf">SetProp</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span><span class="w"> </span><span class="py">any</span><span class="p">,</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="py">any</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set an Interactable’s property</p>
 </section>
 <section id="settype">
-<h3>SetType<a class="headerlink" href="#settype" title="Link to this heading">¶</a></h3>
+<h2>SetType<a class="headerlink" href="#settype" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Interactable</span><span class="p">:</span><span class="nf">SetType</span><span class="p">(</span><span class="nb">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -560,28 +627,28 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="interactablescontainer">
-<h2>InteractablesContainer<a class="headerlink" href="#interactablescontainer" title="Link to this heading">¶</a></h2>
+<h1>InteractablesContainer<a class="headerlink" href="#interactablescontainer" title="Link to this heading">¶</a></h1>
 <section id="id6">
-<h3>Exists<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<h2>Exists<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InteractablesContainer</span><span class="p">:</span><span class="nf">Exists</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="getat">
-<h3>GetAt<a class="headerlink" href="#getat" title="Link to this heading">¶</a></h3>
+<h2>GetAt<a class="headerlink" href="#getat" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InteractablesContainer</span><span class="p">:</span><span class="nf">GetAt</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Interactable</span>
 </pre></div>
 </div>
 </section>
 <section id="id7">
-<h3>Push<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<h2>Push<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InteractablesContainer</span><span class="p">:</span><span class="nf">Push</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="id8">
-<h3>Remove<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<h2>Remove<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InteractablesContainer</span><span class="p">:</span><span class="nf">Remove</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -589,21 +656,65 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="interface">
-<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<h1>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h1>
 <p>The InterfaceService acts for the User Interface (UI).</p>
+<section id="getcurrentview">
+<h2>GetCurrentView<a class="headerlink" href="#getcurrentview" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Interface</span><span class="p">.</span><span class="nf">GetCurrentView</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Get a reference to the current UI View.</p>
+</section>
 <section id="opendialogue">
-<h3>OpenDialogue<a class="headerlink" href="#opendialogue" title="Link to this heading">¶</a></h3>
+<h2>OpenDialogue<a class="headerlink" href="#opendialogue" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Interface</span><span class="p">.</span><span class="nf">OpenDialogue</span><span class="p">(</span><span class="nv">dialogue</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Open a dialogue with a certain title.</p>
 </section>
+<section id="openview">
+<h2>OpenView<a class="headerlink" href="#openview" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Interface</span><span class="p">.</span><span class="nf">OpenView</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Open the UI View identified by this title.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="interfaceview">
+<h1>InterfaceView<a class="headerlink" href="#interfaceview" title="Link to this heading">¶</a></h1>
+<section id="changefocus">
+<h2>ChangeFocus<a class="headerlink" href="#changefocus" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InterfaceView</span><span class="p">:</span><span class="nf">ChangeFocus</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Change focus to another UI element.</p>
+</section>
+<section id="getentity">
+<h2>GetEntity<a class="headerlink" href="#getentity" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InterfaceView</span><span class="p">:</span><span class="nf">GetEntity</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
+<span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">UIElement</span>
+</pre></div>
+</div>
+<p>Get an element from the UI View.</p>
+</section>
+<section id="reset">
+<h2>Reset<a class="headerlink" href="#reset" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">InterfaceView</span><span class="p">:</span><span class="nf">Reset</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Reset the elements to their original positions and sizes.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="luals">
+<h1>LuaLS<a class="headerlink" href="#luals" title="Link to this heading">¶</a></h1>
 </section>
 <hr class="docutils" />
 <section id="player">
-<h2>Player<a class="headerlink" href="#player" title="Link to this heading">¶</a></h2>
+<h1>Player<a class="headerlink" href="#player" title="Link to this heading">¶</a></h1>
 <section id="getactor">
-<h3>GetActor<a class="headerlink" href="#getactor" title="Link to this heading">¶</a></h3>
+<h2>GetActor<a class="headerlink" href="#getactor" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Player</span><span class="p">:</span><span class="nf">GetActor</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Actor</span>
 </pre></div>
@@ -611,7 +722,7 @@ that make up the state of the game.</p>
 <p>Get the player’s actor.</p>
 </section>
 <section id="id9">
-<h3>GetPosition<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<h2>GetPosition<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Player</span><span class="p">:</span><span class="nf">GetPosition</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -619,28 +730,28 @@ that make up the state of the game.</p>
 <p>Get the player’s position</p>
 </section>
 <section id="id10">
-<h3>GetTilePosition<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<h2>GetTilePosition<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Player</span><span class="p">:</span><span class="nf">GetTilePosition</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Get this player’s tile position.</p>
 </section>
 <section id="id11">
-<h3>MoveByVelocity<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<h2>MoveByVelocity<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Player</span><span class="p">:</span><span class="nf">MoveByVelocity</span><span class="p">(</span><span class="nv">velocity</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Move the Actor using a velocity vector.</p>
 </section>
 <section id="id12">
-<h3>SetPosition<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<h2>SetPosition<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Player</span><span class="p">:</span><span class="nf">SetPosition</span><span class="p">(</span><span class="nv">newPosition</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set this player’s position.</p>
 </section>
 <section id="id13">
-<h3>SetTilePosition<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<h2>SetTilePosition<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Player</span><span class="p">:</span><span class="nf">SetTilePosition</span><span class="p">(</span><span class="nv">newPosition</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -649,9 +760,9 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="prop">
-<h2>Prop<a class="headerlink" href="#prop" title="Link to this heading">¶</a></h2>
+<h1>Prop<a class="headerlink" href="#prop" title="Link to this heading">¶</a></h1>
 <section id="getinteractable">
-<h3>GetInteractable<a class="headerlink" href="#getinteractable" title="Link to this heading">¶</a></h3>
+<h2>GetInteractable<a class="headerlink" href="#getinteractable" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Prop</span><span class="p">:</span><span class="nf">GetInteractable</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Interactable</span>
 </pre></div>
@@ -659,7 +770,7 @@ that make up the state of the game.</p>
 <p>Get the Interactable of this Prop.</p>
 </section>
 <section id="id14">
-<h3>GetPosition<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<h2>GetPosition<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Prop</span><span class="p">:</span><span class="nf">GetPosition</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -667,7 +778,7 @@ that make up the state of the game.</p>
 <p>Get the absolute world position of this Prop.</p>
 </section>
 <section id="id15">
-<h3>GetTilePosition<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<h2>GetTilePosition<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Prop</span><span class="p">:</span><span class="nf">GetTilePosition</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -675,14 +786,14 @@ that make up the state of the game.</p>
 <p>Get the tile position of this Prop.</p>
 </section>
 <section id="id16">
-<h3>SetPosition<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<h2>SetPosition<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Prop</span><span class="p">:</span><span class="nf">SetPosition</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set the absolute world position of this Prop.</p>
 </section>
 <section id="id17">
-<h3>SetTilePosition<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<h2>SetTilePosition<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Prop</span><span class="p">:</span><span class="nf">SetTilePosition</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -691,28 +802,28 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="propscontainer">
-<h2>PropsContainer<a class="headerlink" href="#propscontainer" title="Link to this heading">¶</a></h2>
+<h1>PropsContainer<a class="headerlink" href="#propscontainer" title="Link to this heading">¶</a></h1>
 <section id="id18">
-<h3>Exists<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+<h2>Exists<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">PropsContainer</span><span class="p">:</span><span class="nf">Exists</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="id19">
-<h3>GetAt<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<h2>GetAt<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">PropsContainer</span><span class="p">:</span><span class="nf">GetAt</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Prop</span>
 </pre></div>
 </div>
 </section>
 <section id="id20">
-<h3>Push<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
+<h2>Push<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">PropsContainer</span><span class="p">:</span><span class="nf">Push</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">,</span><span class="w"> </span><span class="nb">type</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="id21">
-<h3>Remove<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<h2>Remove<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">PropsContainer</span><span class="p">:</span><span class="nf">Remove</span><span class="p">(</span><span class="nv">pos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -720,9 +831,9 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="room">
-<h2>Room<a class="headerlink" href="#room" title="Link to this heading">¶</a></h2>
+<h1>Room<a class="headerlink" href="#room" title="Link to this heading">¶</a></h1>
 <section id="getactors">
-<h3>GetActors<a class="headerlink" href="#getactors" title="Link to this heading">¶</a></h3>
+<h2>GetActors<a class="headerlink" href="#getactors" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetActors</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">ActorContainer</span>
 </pre></div>
@@ -730,7 +841,7 @@ that make up the state of the game.</p>
 <p>Get a refernece to the collection of Actors.</p>
 </section>
 <section id="getcollisions">
-<h3>GetCollisions<a class="headerlink" href="#getcollisions" title="Link to this heading">¶</a></h3>
+<h2>GetCollisions<a class="headerlink" href="#getcollisions" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetCollisions</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">CollisionsContainer</span>
 </pre></div>
@@ -738,7 +849,7 @@ that make up the state of the game.</p>
 <p>Get a reference to the CollisionsContainer of this Room.</p>
 </section>
 <section id="getinteractables">
-<h3>GetInteractables<a class="headerlink" href="#getinteractables" title="Link to this heading">¶</a></h3>
+<h2>GetInteractables<a class="headerlink" href="#getinteractables" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetInteractables</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">InteractablesContainer</span>
 </pre></div>
@@ -746,7 +857,7 @@ that make up the state of the game.</p>
 <p>Get a reference to the InteractablesContainer of this Room.</p>
 </section>
 <section id="getplayer">
-<h3>GetPlayer<a class="headerlink" href="#getplayer" title="Link to this heading">¶</a></h3>
+<h2>GetPlayer<a class="headerlink" href="#getplayer" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetPlayer</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Player</span>
 </pre></div>
@@ -754,7 +865,7 @@ that make up the state of the game.</p>
 <p>Get a reference to the Player object.</p>
 </section>
 <section id="getprops">
-<h3>GetProps<a class="headerlink" href="#getprops" title="Link to this heading">¶</a></h3>
+<h2>GetProps<a class="headerlink" href="#getprops" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetProps</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">PropsContainer</span>
 </pre></div>
@@ -762,7 +873,7 @@ that make up the state of the game.</p>
 <p>Get a reference to the PropsContainer of this Room.</p>
 </section>
 <section id="getstarttile">
-<h3>GetStartTile<a class="headerlink" href="#getstarttile" title="Link to this heading">¶</a></h3>
+<h2>GetStartTile<a class="headerlink" href="#getstarttile" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetStartTile</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -770,7 +881,7 @@ that make up the state of the game.</p>
 <p>Set the start tile position.</p>
 </section>
 <section id="gettilemap">
-<h3>GetTileMap<a class="headerlink" href="#gettilemap" title="Link to this heading">¶</a></h3>
+<h2>GetTileMap<a class="headerlink" href="#gettilemap" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">Room</span><span class="p">:</span><span class="nf">GetTileMap</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">TileMap</span>
 </pre></div>
@@ -780,24 +891,24 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="sounds">
-<h2>Sounds<a class="headerlink" href="#sounds" title="Link to this heading">¶</a></h2>
+<h1>Sounds<a class="headerlink" href="#sounds" title="Link to this heading">¶</a></h1>
 <p>The SoundService is responsible for playing sounds and managing the current background music</p>
 <section id="loadmusic">
-<h3>LoadMusic<a class="headerlink" href="#loadmusic" title="Link to this heading">¶</a></h3>
+<h2>LoadMusic<a class="headerlink" href="#loadmusic" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Sounds</span><span class="p">.</span><span class="nf">LoadMusic</span><span class="p">(</span><span class="nv">music</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Load the music with the specified id.</p>
 </section>
 <section id="playmusic">
-<h3>PlayMusic<a class="headerlink" href="#playmusic" title="Link to this heading">¶</a></h3>
+<h2>PlayMusic<a class="headerlink" href="#playmusic" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Sounds</span><span class="p">.</span><span class="nf">PlayMusic</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Play the loaded music.</p>
 </section>
 <section id="playsound">
-<h3>PlaySound<a class="headerlink" href="#playsound" title="Link to this heading">¶</a></h3>
+<h2>PlaySound<a class="headerlink" href="#playsound" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Sounds</span><span class="p">.</span><span class="nf">PlaySound</span><span class="p">(</span><span class="nv">sound</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -806,9 +917,9 @@ that make up the state of the game.</p>
 </section>
 <hr class="docutils" />
 <section id="tilemap">
-<h2>TileMap<a class="headerlink" href="#tilemap" title="Link to this heading">¶</a></h2>
+<h1>TileMap<a class="headerlink" href="#tilemap" title="Link to this heading">¶</a></h1>
 <section id="getworldsizeintiles">
-<h3>GetWorldSizeInTiles<a class="headerlink" href="#getworldsizeintiles" title="Link to this heading">¶</a></h3>
+<h2>GetWorldSizeInTiles<a class="headerlink" href="#getworldsizeintiles" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">TileMap</span><span class="p">:</span><span class="nf">GetWorldSizeInTiles</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Vector2</span>
 </pre></div>
@@ -816,14 +927,14 @@ that make up the state of the game.</p>
 <p>Get the size of this TileMap in tiles.</p>
 </section>
 <section id="setemptytile">
-<h3>SetEmptyTile<a class="headerlink" href="#setemptytile" title="Link to this heading">¶</a></h3>
+<h2>SetEmptyTile<a class="headerlink" href="#setemptytile" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">TileMap</span><span class="p">:</span><span class="nf">SetEmptyTile</span><span class="p">(</span><span class="nv">worldPos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set the tile at the specified world position to be empty (not drawn).</p>
 </section>
 <section id="settile">
-<h3>SetTile<a class="headerlink" href="#settile" title="Link to this heading">¶</a></h3>
+<h2>SetTile<a class="headerlink" href="#settile" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">TileMap</span><span class="p">:</span><span class="nf">SetTile</span><span class="p">(</span><span class="nv">worldPos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">,</span><span class="w"> </span><span class="nv">atlasPos</span><span class="p">:</span><span class="w"> </span><span class="py">Vector2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -832,24 +943,39 @@ specified atlas position from the TileSet</p>
 </section>
 </section>
 <hr class="docutils" />
+<section id="tweentype">
+<h1>TweenType<a class="headerlink" href="#tweentype" title="Link to this heading">¶</a></h1>
+</section>
+<hr class="docutils" />
+<section id="uielement">
+<h1>UIElement<a class="headerlink" href="#uielement" title="Link to this heading">¶</a></h1>
+<section id="tween">
+<h2>Tween<a class="headerlink" href="#tween" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">method</span><span class="p">)</span><span class="w"> </span><span class="nv">UIElement</span><span class="p">:</span><span class="nf">Tween</span><span class="p">(</span><span class="nv">property</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">,</span><span class="w"> </span><span class="nv">value</span><span class="p">:</span><span class="w"> </span><span class="py">any</span><span class="p">,</span><span class="w"> </span><span class="nv">duration</span><span class="p">:</span><span class="w"> </span><span class="py">number</span><span class="p">,</span><span class="w"> </span><span class="nv">tweenType</span><span class="p">:</span><span class="w"> </span><span class="py">TweenType</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tween this element.</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="vector2">
-<h2>Vector2<a class="headerlink" href="#vector2" title="Link to this heading">¶</a></h2>
+<h1>Vector2<a class="headerlink" href="#vector2" title="Link to this heading">¶</a></h1>
 <section id="new">
-<h3>new<a class="headerlink" href="#new" title="Link to this heading">¶</a></h3>
+<h2>new<a class="headerlink" href="#new" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">Vector2</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span><span class="w"> </span><span class="py">number</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="p">:</span><span class="w"> </span><span class="py">number</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Construct a new <code class="docutils literal notranslate"><span class="pre">Vector2</span></code></p>
 </section>
 <section id="x">
-<h3>x<a class="headerlink" href="#x" title="Link to this heading">¶</a></h3>
+<h2>x<a class="headerlink" href="#x" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">number</span>
 </pre></div>
 </div>
 <p>The x coordinate</p>
 </section>
 <section id="y">
-<h3>y<a class="headerlink" href="#y" title="Link to this heading">¶</a></h3>
+<h2>y<a class="headerlink" href="#y" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nv">number</span>
 </pre></div>
 </div>
@@ -857,32 +983,31 @@ specified atlas position from the TileSet</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="worldservice">
-<h2>WorldService<a class="headerlink" href="#worldservice" title="Link to this heading">¶</a></h2>
+<section id="world">
+<h1>World<a class="headerlink" href="#world" title="Link to this heading">¶</a></h1>
 <p>The WorldService is responsible for containing and drawing the Room.</p>
 <section id="id22">
-<h3>GetPlayer<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">WorldService</span><span class="p">.</span><span class="nf">GetPlayer</span><span class="p">()</span>
+<h2>GetPlayer<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">World</span><span class="p">.</span><span class="nf">GetPlayer</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Player</span>
 </pre></div>
 </div>
 <p>Get the Player.</p>
 </section>
 <section id="getroom">
-<h3>GetRoom<a class="headerlink" href="#getroom" title="Link to this heading">¶</a></h3>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">WorldService</span><span class="p">.</span><span class="nf">GetRoom</span><span class="p">()</span>
+<h2>GetRoom<a class="headerlink" href="#getroom" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">World</span><span class="p">.</span><span class="nf">GetRoom</span><span class="p">()</span>
 <span class="w">  </span><span class="o">-&gt;</span><span class="w"> </span><span class="nv">Room</span>
 </pre></div>
 </div>
 <p>Get the current Room</p>
 </section>
 <section id="setroom">
-<h3>SetRoom<a class="headerlink" href="#setroom" title="Link to this heading">¶</a></h3>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">WorldService</span><span class="p">.</span><span class="nf">SetRoom</span><span class="p">(</span><span class="nv">room</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
+<h2>SetRoom<a class="headerlink" href="#setroom" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">function</span><span class="w"> </span><span class="nc">World</span><span class="p">.</span><span class="nf">SetRoom</span><span class="p">(</span><span class="nv">room</span><span class="p">:</span><span class="w"> </span><span class="py">string</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Set the current room using a room title in the game.</p>
-</section>
 </section>
 </section>
 
@@ -929,133 +1054,8 @@ specified atlas position from the TileSet</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Lua API Reference</a><ul>
-<li><a class="reference internal" href="#actor">Actor</a><ul>
-<li><a class="reference internal" href="#changeanimation">ChangeAnimation</a></li>
-<li><a class="reference internal" href="#getposition">GetPosition</a></li>
-<li><a class="reference internal" href="#gettileposition">GetTilePosition</a></li>
-<li><a class="reference internal" href="#movebyvelocity">MoveByVelocity</a></li>
-<li><a class="reference internal" href="#playanimation">PlayAnimation</a></li>
-<li><a class="reference internal" href="#setposition">SetPosition</a></li>
-<li><a class="reference internal" href="#settileposition">SetTilePosition</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#actorcontainer">ActorContainer</a><ul>
-<li><a class="reference internal" href="#exists">Exists</a></li>
-<li><a class="reference internal" href="#get">Get</a></li>
-<li><a class="reference internal" href="#push">Push</a></li>
-<li><a class="reference internal" href="#remove">Remove</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#collisionscontainer">CollisionsContainer</a><ul>
-<li><a class="reference internal" href="#id1">Exists</a></li>
-<li><a class="reference internal" href="#id2">Push</a></li>
-<li><a class="reference internal" href="#id3">Remove</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#direction">Direction</a></li>
-<li><a class="reference internal" href="#gamestate">GameState</a><ul>
-<li><a class="reference internal" href="#id4">Get</a></li>
-<li><a class="reference internal" href="#set">Set</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interactable">Interactable</a><ul>
-<li><a class="reference internal" href="#id5">GetPosition</a></li>
-<li><a class="reference internal" href="#gettype">GetType</a></li>
-<li><a class="reference internal" href="#isontouch">IsOnTouch</a></li>
-<li><a class="reference internal" href="#setontouch">SetOnTouch</a></li>
-<li><a class="reference internal" href="#setprop">SetProp</a></li>
-<li><a class="reference internal" href="#settype">SetType</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interactablescontainer">InteractablesContainer</a><ul>
-<li><a class="reference internal" href="#id6">Exists</a></li>
-<li><a class="reference internal" href="#getat">GetAt</a></li>
-<li><a class="reference internal" href="#id7">Push</a></li>
-<li><a class="reference internal" href="#id8">Remove</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#interface">Interface</a><ul>
-<li><a class="reference internal" href="#opendialogue">OpenDialogue</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#player">Player</a><ul>
-<li><a class="reference internal" href="#getactor">GetActor</a></li>
-<li><a class="reference internal" href="#id9">GetPosition</a></li>
-<li><a class="reference internal" href="#id10">GetTilePosition</a></li>
-<li><a class="reference internal" href="#id11">MoveByVelocity</a></li>
-<li><a class="reference internal" href="#id12">SetPosition</a></li>
-<li><a class="reference internal" href="#id13">SetTilePosition</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#prop">Prop</a><ul>
-<li><a class="reference internal" href="#getinteractable">GetInteractable</a></li>
-<li><a class="reference internal" href="#id14">GetPosition</a></li>
-<li><a class="reference internal" href="#id15">GetTilePosition</a></li>
-<li><a class="reference internal" href="#id16">SetPosition</a></li>
-<li><a class="reference internal" href="#id17">SetTilePosition</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#propscontainer">PropsContainer</a><ul>
-<li><a class="reference internal" href="#id18">Exists</a></li>
-<li><a class="reference internal" href="#id19">GetAt</a></li>
-<li><a class="reference internal" href="#id20">Push</a></li>
-<li><a class="reference internal" href="#id21">Remove</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#room">Room</a><ul>
-<li><a class="reference internal" href="#getactors">GetActors</a></li>
-<li><a class="reference internal" href="#getcollisions">GetCollisions</a></li>
-<li><a class="reference internal" href="#getinteractables">GetInteractables</a></li>
-<li><a class="reference internal" href="#getplayer">GetPlayer</a></li>
-<li><a class="reference internal" href="#getprops">GetProps</a></li>
-<li><a class="reference internal" href="#getstarttile">GetStartTile</a></li>
-<li><a class="reference internal" href="#gettilemap">GetTileMap</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#sounds">Sounds</a><ul>
-<li><a class="reference internal" href="#loadmusic">LoadMusic</a></li>
-<li><a class="reference internal" href="#playmusic">PlayMusic</a></li>
-<li><a class="reference internal" href="#playsound">PlaySound</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#tilemap">TileMap</a><ul>
-<li><a class="reference internal" href="#getworldsizeintiles">GetWorldSizeInTiles</a></li>
-<li><a class="reference internal" href="#setemptytile">SetEmptyTile</a></li>
-<li><a class="reference internal" href="#settile">SetTile</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#vector2">Vector2</a><ul>
-<li><a class="reference internal" href="#new">new</a></li>
-<li><a class="reference internal" href="#x">x</a></li>
-<li><a class="reference internal" href="#y">y</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#worldservice">WorldService</a><ul>
-<li><a class="reference internal" href="#id22">GetPlayer</a></li>
-<li><a class="reference internal" href="#getroom">GetRoom</a></li>
-<li><a class="reference internal" href="#setroom">SetRoom</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

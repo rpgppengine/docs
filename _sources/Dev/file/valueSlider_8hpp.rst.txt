@@ -1,0 +1,4 @@
+File valueSlider.hpp
+====================
+
+.. doxygenfile:: valueSlider.hpp

@@ -1,0 +1,5 @@
+Struct DialogueArea
+===================
+
+.. doxygenstruct:: DialogueArea
+   :members:

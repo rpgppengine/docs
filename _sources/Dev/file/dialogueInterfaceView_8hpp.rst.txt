@@ -1,0 +1,4 @@
+File dialogueInterfaceView.hpp
+==============================
+
+.. doxygenfile:: dialogueInterfaceView.hpp

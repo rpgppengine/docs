@@ -1,0 +1,5 @@
+Struct ElementFactory
+=====================
+
+.. doxygenstruct:: ElementFactory
+   :members:

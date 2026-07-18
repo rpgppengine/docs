@@ -1,0 +1,4 @@
+File ninePatchImageRect.hpp
+===========================
+
+.. doxygenfile:: ninePatchImageRect.hpp

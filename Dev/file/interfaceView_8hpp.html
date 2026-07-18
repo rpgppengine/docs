@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File player.hpp" href="player_8hpp.html"><link rel="prev" title="File interfaceService.hpp" href="interfaceService_8hpp.html">
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File jsonConversions.hpp" href="jsonConversions_8hpp.html"><link rel="prev" title="File interfaceService.hpp" href="interfaceService_8hpp.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>File interfaceView.hpp - RPG++ documentation</title>
@@ -207,6 +207,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interfaceview.html">Interface View</a></li>
 </ul>
 </li>
 </ul>
@@ -216,6 +217,27 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#world">World</a></li>
 </ul>
 </li>
 </ul>
@@ -229,12 +251,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
@@ -248,11 +268,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTweenContainer.html">Class TweenContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
@@ -264,28 +283,51 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structComboBox.html">Struct ComboBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueArea.html">Struct DialogueArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structEvent.html">Struct Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontRef.html">Struct FontRef</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInputC.html">Struct InputC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structLabel.html">Struct Label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTextBox.html">Struct TextBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
 </ul>
 </li>
@@ -294,12 +336,18 @@
 <li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_8hpp.html">File button.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comboBox_8hpp.html">File comboBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueArea_8hpp.html">File dialogueArea.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementFactory_8hpp.html">File elementFactory.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
@@ -308,6 +356,9 @@
 <li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
@@ -318,11 +369,14 @@
 <li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textBox_8hpp.html">File textBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tween_8hpp.html">File tween.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="valueSlider_8hpp.html">File valueSlider.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
 </ul>
@@ -377,35 +431,282 @@
 <h1>File interfaceView.hpp<a class="headerlink" href="#file-interfaceview-hpp" title="Link to this heading">¶</a></h1>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv413InterfaceView">
-<span id="_CPPv313InterfaceView"></span><span id="_CPPv213InterfaceView"></span><span id="InterfaceView"></span><span class="target" id="classInterfaceView"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><br /></dt>
+<span id="_CPPv313InterfaceView"></span><span id="_CPPv213InterfaceView"></span><span id="InterfaceView"></span><span class="target" id="classInterfaceView"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../class/classISaveable.html#_CPPv49ISaveable" title="ISaveable"><span class="n"><span class="pre">ISaveable</span></span></a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;interfaceView.hpp&gt;</em></div>
+<p>An <a class="reference internal" href="#classInterfaceView"><span class="std std-ref">InterfaceView</span></a> represents a collection of UI elements drawn on the screen to make up a user interface. </p>
+<p>Subclassed by <a class="reference internal" href="dialogueInterfaceView_8hpp.html#classDialogueInterfaceView"><span class="std std-ref">DialogueInterfaceView</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13InterfaceViewEv">
-<span id="_CPPv3N13InterfaceView13InterfaceViewEv"></span><span id="_CPPv2N13InterfaceView13InterfaceViewEv"></span><span id="InterfaceView::InterfaceView"></span><span class="target" id="classInterfaceView_1ae06ceaa49e953206410ddbef8e304ee4"></span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13InterfaceView13InterfaceViewEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N13InterfaceView13InterfaceViewEv"></span><span id="_CPPv2N13InterfaceView13InterfaceViewEv"></span><span id="InterfaceView::InterfaceView"></span><span class="target" id="classInterfaceView_1ae06ceaa49e953206410ddbef8e304ee4"></span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Default constructor. </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13InterfaceViewE9Rectangle">
-<span id="_CPPv3N13InterfaceView13InterfaceViewE9Rectangle"></span><span id="_CPPv2N13InterfaceView13InterfaceViewE9Rectangle"></span><span id="InterfaceView::InterfaceView__Rectangle"></span><span class="target" id="classInterfaceView_1a8b1230f944d16e22c3456643678fff3c"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13InterfaceView13InterfaceViewE9Rectangle" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13InterfaceViewERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView13InterfaceViewERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView13InterfaceViewERKNSt6stringE"></span><span id="InterfaceView::InterfaceView__ssCR"></span><span class="target" id="classInterfaceView_1a18018b6871a6ca3fa603b1a38e1571b9"></span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filePath</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct from a UI View file. </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10addElementEP9UIElement">
-<span id="_CPPv3N13InterfaceView10addElementEP9UIElement"></span><span id="_CPPv2N13InterfaceView10addElementEP9UIElement"></span><span id="InterfaceView::addElement__UIElementP"></span><span class="target" id="classInterfaceView_1a9c417459fd149ca87da351f1347fdb5f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addElement</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/classUIElement.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">element</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13InterfaceView10addElementEP9UIElement" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13InterfaceViewER16InterfaceViewBin">
+<span id="_CPPv3N13InterfaceView13InterfaceViewER16InterfaceViewBin"></span><span id="_CPPv2N13InterfaceView13InterfaceViewER16InterfaceViewBin"></span><span id="InterfaceView::InterfaceView__InterfaceViewBinR"></span><span class="target" id="classInterfaceView_1a0f970d26417eebe7c86d682155cb155e"></span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceView</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="gamedata_8hpp.html#_CPPv416InterfaceViewBin" title="InterfaceViewBin"><span class="n"><span class="pre">InterfaceViewBin</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">bin</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Construct from binary data. </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK13InterfaceView6updateEv">
-<span id="_CPPv3NK13InterfaceView6updateEv"></span><span id="_CPPv2NK13InterfaceView6updateEv"></span><span id="InterfaceView::updateC"></span><span class="target" id="classInterfaceView_1a19a9b6c958f7246f4ef34893451ff878"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13InterfaceView6updateEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView8dumpJsonEv">
+<span id="_CPPv3N13InterfaceView8dumpJsonEv"></span><span id="_CPPv2N13InterfaceView8dumpJsonEv"></span><span id="InterfaceView::dumpJson"></span><span class="target" id="classInterfaceView_1a13479262003a928d5b323a07fc814369"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">nlohmann</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dumpJson</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Dump json data. </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK13InterfaceView4drawEv">
-<span id="_CPPv3NK13InterfaceView4drawEv"></span><span id="_CPPv2NK13InterfaceView4drawEv"></span><span id="InterfaceView::drawC"></span><span class="target" id="classInterfaceView_1a175859d546b11b2e9fd3468da4efe040"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13InterfaceView4drawEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13getEntityNameEi">
+<span id="_CPPv3N13InterfaceView13getEntityNameEi"></span><span id="_CPPv2N13InterfaceView13getEntityNameEi"></span><span id="InterfaceView::getEntityName__i"></span><span class="target" id="classInterfaceView_1abb15c49f468f2a1d093f13f28d871c64"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getEntityName</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get name of an element by index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10findByNameERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView10findByNameERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView10findByNameERKNSt6stringE"></span><span id="InterfaceView::findByName__ssCR"></span><span class="target" id="classInterfaceView_1abd57b16b76d00ded3b6226bc03f945cc"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">findByName</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the index of an element identified by its name. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13elementExistsERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView13elementExistsERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView13elementExistsERKNSt6stringE"></span><span id="InterfaceView::elementExists__ssCR"></span><span class="target" id="classInterfaceView_1af42f9aa679ea4ffe0240fe12c468d0f5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elementExists</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Whether an element with such a name exists. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10addElementERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView10addElementERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView10addElementERKNSt6stringERKNSt6stringE"></span><span id="InterfaceView::addElement__ssCR.ssCR"></span><span class="target" id="classInterfaceView_1aedf52aba059dcf757331b32d71b7f4e5"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addElement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add an element with a title and a registered type. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13removeElementERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView13removeElementERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView13removeElementERKNSt6stringE"></span><span id="InterfaceView::removeElement__ssCR"></span><span class="target" id="classInterfaceView_1a77a44d36ed502ce74cd23985cf5e8cee"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">removeElement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Remove an element by its title. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10getElementERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView10getElementERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView10getElementERKNSt6stringE"></span><span id="InterfaceView::getElement__ssCR"></span><span class="target" id="classInterfaceView_1a2ce04dcde482801775804cd26e9916c7"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getElement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get an element pointer by its title. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10getElementE12ElementIndex">
+<span id="_CPPv3N13InterfaceView10getElementE12ElementIndex"></span><span id="_CPPv2N13InterfaceView10getElementE12ElementIndex"></span><span id="InterfaceView::getElement__ElementIndex"></span><span class="target" id="classInterfaceView_1a71137ec0984438db935a3d6052dc406a"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getElement</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get an element pointer by its index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13renameElementERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView13renameElementERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView13renameElementERKNSt6stringERKNSt6stringE"></span><span id="InterfaceView::renameElement__ssCR.ssCR"></span><span class="target" id="classInterfaceView_1a02463cc922d2c53b748da063d1d59b77"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">renameElement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newTitle</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Rename an element. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView20changeFocusedElementERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView20changeFocusedElementERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView20changeFocusedElementERKNSt6stringE"></span><span id="InterfaceView::changeFocusedElement__ssCR"></span><span class="target" id="classInterfaceView_1a45303f7c483aba1ad0a6e96fe9a871ea"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">changeFocusedElement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change the focus to an element identified by its index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView20changeFocusedElementE12ElementIndex">
+<span id="_CPPv3N13InterfaceView20changeFocusedElementE12ElementIndex"></span><span id="_CPPv2N13InterfaceView20changeFocusedElementE12ElementIndex"></span><span id="InterfaceView::changeFocusedElement__ElementIndex"></span><span class="target" id="classInterfaceView_1ac5749353ac336f416261af41a3f202a3"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">changeFocusedElement</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change the focus to an element identified by an index. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView12cloneElementERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView12cloneElementERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView12cloneElementERKNSt6stringERKNSt6stringE"></span><span id="InterfaceView::cloneElement__ssCR.ssCR"></span><span class="target" id="classInterfaceView_1a4e164756dbe1df40447d87c24a39cdeb"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cloneElement</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">title</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newTitle</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Clone an element by giving it a title. It will appear right above the element that was cloned. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView11getElementsEv">
+<span id="_CPPv3N13InterfaceView11getElementsEv"></span><span id="_CPPv2N13InterfaceView11getElementsEv"></span><span id="InterfaceView::getElements"></span><span class="target" id="classInterfaceView_1a81f4a1c1489246cd31436491f0c2911e"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MAX_ELEMENTS</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getElements</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get an array of the elements. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView12swapElementsE12ElementIndex12ElementIndex">
+<span id="_CPPv3N13InterfaceView12swapElementsE12ElementIndex12ElementIndex"></span><span id="_CPPv2N13InterfaceView12swapElementsE12ElementIndex12ElementIndex"></span><span id="InterfaceView::swapElements__ElementIndex.ElementIndex"></span><span class="target" id="classInterfaceView_1a1c245e04962042cf1ed989179e311658"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">swapElements</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Swap two elements. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView14moveToPositionE12ElementIndex12ElementIndex">
+<span id="_CPPv3N13InterfaceView14moveToPositionE12ElementIndex12ElementIndex"></span><span id="_CPPv2N13InterfaceView14moveToPositionE12ElementIndex12ElementIndex"></span><span id="InterfaceView::moveToPosition__ElementIndex.ElementIndex"></span><span class="target" id="classInterfaceView_1ae3aa5d552863c632f24d869ce8462537"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">moveToPosition</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dest</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Move an element to another position within the array. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13resetElementsEv">
+<span id="_CPPv3N13InterfaceView13resetElementsEv"></span><span id="_CPPv2N13InterfaceView13resetElementsEv"></span><span id="InterfaceView::resetElements"></span><span class="target" id="classInterfaceView_1aad96c669c7f37173bf02f8d9b001ac0a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resetElements</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Reset the elements’ positions and sizes. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView7getSizeEv">
+<span id="_CPPv3N13InterfaceView7getSizeEv"></span><span id="_CPPv2N13InterfaceView7getSizeEv"></span><span id="InterfaceView::getSize"></span><span class="target" id="classInterfaceView_1aabb95eb3989affd48406accda59cab36"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the amount of elements within this View. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView8onNotifyE5Event">
+<span id="_CPPv3N13InterfaceView8onNotifyE5Event"></span><span id="_CPPv2N13InterfaceView8onNotifyE5Event"></span><span id="InterfaceView::onNotify__Event"></span><span class="target" id="classInterfaceView_1ab434bc011a7f174f38c10e2b9980d68f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">onNotify</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="gamedata_8hpp.html#_CPPv45Event" title="Event"><span class="n"><span class="pre">Event</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">event</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Notify routine, the View shall react to this event. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView6updateEv">
+<span id="_CPPv3N13InterfaceView6updateEv"></span><span id="_CPPv2N13InterfaceView6updateEv"></span><span id="InterfaceView::update"></span><span class="target" id="classInterfaceView_1af33610338f858804f77b6ed2b16afd45"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Update routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView4drawEv">
+<span id="_CPPv3N13InterfaceView4drawEv"></span><span id="_CPPv2N13InterfaceView4drawEv"></span><span id="InterfaceView::draw"></span><span class="target" id="classInterfaceView_1ac6077f2487161526e97e65ef7bbb95ce"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Draw routine. Draws all the elements. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10drawEntityE12ElementIndex">
+<span id="_CPPv3N13InterfaceView10drawEntityE12ElementIndex"></span><span id="_CPPv2N13InterfaceView10drawEntityE12ElementIndex"></span><span id="InterfaceView::drawEntity__ElementIndex"></span><span class="target" id="classInterfaceView_1af827bb39809c87ac0999a45c440fdc23"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drawEntity</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Draw a specific element. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13setScriptFileERKNSt6stringE">
+<span id="_CPPv3N13InterfaceView13setScriptFileERKNSt6stringE"></span><span id="_CPPv2N13InterfaceView13setScriptFileERKNSt6stringE"></span><span id="InterfaceView::setScriptFile__ssCR"></span><span class="target" id="classInterfaceView_1afb9fa746d0ada496b9688295972b301e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setScriptFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the script file for this UI View. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView13getScriptFileEv">
+<span id="_CPPv3N13InterfaceView13getScriptFileEv"></span><span id="_CPPv2N13InterfaceView13getScriptFileEv"></span><span id="InterfaceView::getScriptFile"></span><span class="target" id="classInterfaceView_1a0c295e8f6b4007574a1b73840199659e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getScriptFile</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the path to the script file for this UI View. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView9hasScriptEv">
+<span id="_CPPv3N13InterfaceView9hasScriptEv"></span><span id="_CPPv2N13InterfaceView9hasScriptEv"></span><span id="InterfaceView::hasScript"></span><span class="target" id="classInterfaceView_1a350d4c7624858c75fc9e7550dece95ce"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasScript</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Check whether this View has an attached script or not. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView17getLuaEnvironmentEv">
+<span id="_CPPv3N13InterfaceView17getLuaEnvironmentEv"></span><span id="_CPPv2N13InterfaceView17getLuaEnvironmentEv"></span><span id="InterfaceView::getLuaEnvironment"></span><span class="target" id="classInterfaceView_1a3b1b09b7c92de0678e1e4896a163b3d7"></span><span class="n"><span class="pre">sol</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">environment</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getLuaEnvironment</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get a reference to the Lua environment of this View. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView9getTweensEv">
+<span id="_CPPv3N13InterfaceView9getTweensEv"></span><span id="_CPPv2N13InterfaceView9getTweensEv"></span><span id="InterfaceView::getTweens"></span><span class="target" id="classInterfaceView_1aa0f3aa8e7edc8ed330cbc46889e97cb6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTweenContainer.html#_CPPv414TweenContainer" title="TweenContainer"><span class="n"><span class="pre">TweenContainer</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getTweens</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get a reference to the list of running tweens. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView17addTweenContainerE14TweenContainer">
+<span id="_CPPv3N13InterfaceView17addTweenContainerE14TweenContainer"></span><span id="_CPPv2N13InterfaceView17addTweenContainerE14TweenContainer"></span><span id="InterfaceView::addTweenContainer__TweenContainer"></span><span class="target" id="classInterfaceView_1aacbd28a0473debdc83ec2d8dc342c619"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTweenContainer</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../class/classTweenContainer.html#_CPPv414TweenContainer" title="TweenContainer"><span class="n"><span class="pre">TweenContainer</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">tweenContainer</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add a tween container to be animated. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView8addTweenE5Tween">
+<span id="_CPPv3N13InterfaceView8addTweenE5Tween"></span><span id="_CPPv2N13InterfaceView8addTweenE5Tween"></span><span id="InterfaceView::addTween__Tween"></span><span class="target" id="classInterfaceView_1ae3a25e98261e78692ab24d70d8346c80"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addTween</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="tween_8hpp.html#_CPPv45Tween" title="Tween"><span class="n"><span class="pre">Tween</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">tween</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Add a singular tween to be animated. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10abandonLuaEv">
+<span id="_CPPv3N13InterfaceView10abandonLuaEv"></span><span id="_CPPv2N13InterfaceView10abandonLuaEv"></span><span id="InterfaceView::abandonLua"></span><span class="target" id="classInterfaceView_1ae8cfe04b7154873618e3e07a8de2a893"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abandonLua</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Abandon the Lua environment. Should always be done before the end of the program. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView9runScriptE">
+<span id="_CPPv3N13InterfaceView9runScriptE"></span><span id="_CPPv2N13InterfaceView9runScriptE"></span><span id="InterfaceView::runScript__b"></span><span class="target" id="classInterfaceView_1a80d1939796286e712eb3b254db0bb5fb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">runScript</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><br /></dt>
+<dd><p>Flag whether the script should be ran. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView3binE">
+<span id="_CPPv3N13InterfaceView3binE"></span><span id="_CPPv2N13InterfaceView3binE"></span><span id="InterfaceView::bin__InterfaceViewBin"></span><span class="target" id="classInterfaceView_1a8e514e4b16b9e38221c30a6e1eb3640c"></span><a class="reference internal" href="gamedata_8hpp.html#_CPPv416InterfaceViewBin" title="InterfaceViewBin"><span class="n"><span class="pre">InterfaceViewBin</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bin</span></span></span><a class="headerlink" href="#_CPPv4N13InterfaceView3binE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The structure which was used to construct this <a class="reference internal" href="#classInterfaceView"><span class="std std-ref">InterfaceView</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView18focusedElementNameE">
+<span id="_CPPv3N13InterfaceView18focusedElementNameE"></span><span id="_CPPv2N13InterfaceView18focusedElementNameE"></span><span id="InterfaceView::focusedElementName__ss"></span><span class="target" id="classInterfaceView_1a1cad04ef628be01012fbe98d8b11276e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">focusedElementName</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView18focusedElementNameE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The title of the currently focused element. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView12scriptSourceE">
+<span id="_CPPv3N13InterfaceView12scriptSourceE"></span><span id="_CPPv2N13InterfaceView12scriptSourceE"></span><span id="InterfaceView::scriptSource__ss"></span><span class="target" id="classInterfaceView_1a1968cacde5cfe86b0b03edba07fac699"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scriptSource</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView12scriptSourceE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The source of the Lua script. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView10scriptFlagE">
+<span id="_CPPv3N13InterfaceView10scriptFlagE"></span><span id="_CPPv2N13InterfaceView10scriptFlagE"></span><span id="InterfaceView::scriptFlag__b"></span><span class="target" id="classInterfaceView_1a0d19b1f92fd9cf08be79881fb10ac142"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scriptFlag</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView10scriptFlagE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Whether this view has a script or not. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView3envE">
+<span id="_CPPv3N13InterfaceView3envE"></span><span id="_CPPv2N13InterfaceView3envE"></span><span id="InterfaceView::env__sol::environment"></span><span class="target" id="classInterfaceView_1a2fb1ec5980271410bd6da49a193bb989"></span><span class="n"><span class="pre">sol</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">environment</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">env</span></span></span><a class="headerlink" href="#_CPPv4N13InterfaceView3envE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A Lua environment for this view. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView8elementsE">
+<span id="_CPPv3N13InterfaceView8elementsE"></span><span id="_CPPv2N13InterfaceView8elementsE"></span><span id="InterfaceView::elements__std::array:std::unique_ptr:UIElement:.MAX_ELEMENTS:"></span><span class="target" id="classInterfaceView_1aa1c79f7fbbf73f1b59673662e010c77a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MAX_ELEMENTS</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elements</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView8elementsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The array of UI elements. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView12elementNamesE">
+<span id="_CPPv3N13InterfaceView12elementNamesE"></span><span id="_CPPv2N13InterfaceView12elementNamesE"></span><span id="InterfaceView::elementNames__std::array:ss.MAX_ELEMENTS:"></span><span class="target" id="classInterfaceView_1ada10586828e222f50d7b9f0f34a443eb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MAX_ELEMENTS</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elementNames</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView12elementNamesE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The array of the elements’ names. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView14currentElementE">
+<span id="_CPPv3N13InterfaceView14currentElementE"></span><span id="_CPPv2N13InterfaceView14currentElementE"></span><span id="InterfaceView::currentElement__ElementIndex"></span><span class="target" id="classInterfaceView_1a33169b1b29df46e19a12b08cc6a95e59"></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currentElement</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">MAX_ELEMENTS</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView14currentElementE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Index of the currently focused element. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView12availableIdsE">
+<span id="_CPPv3N13InterfaceView12availableIdsE"></span><span id="_CPPv2N13InterfaceView12availableIdsE"></span><span id="InterfaceView::availableIds__std::queue:ElementIndex:"></span><span class="target" id="classInterfaceView_1a9839c264a43f1e77476f66ca25d1c48d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">queue</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="uiElement_8hpp.html#_CPPv412ElementIndex" title="ElementIndex"><span class="n"><span class="pre">ElementIndex</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">availableIds</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView12availableIdsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Queue of available element indexes. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView4sizeE">
+<span id="_CPPv3N13InterfaceView4sizeE"></span><span id="_CPPv2N13InterfaceView4sizeE"></span><span id="InterfaceView::size__i"></span><span class="target" id="classInterfaceView_1a29a1d6f67b5c8966ab96b53bf357a043"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView4sizeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Amount of elements in this View. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView6tweensE">
+<span id="_CPPv3N13InterfaceView6tweensE"></span><span id="_CPPv2N13InterfaceView6tweensE"></span><span id="InterfaceView::tweens__std::list:TweenContainer:"></span><span class="target" id="classInterfaceView_1af1245416ff2ad9bc235cb280d26e3c9b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classTweenContainer.html#_CPPv414TweenContainer" title="TweenContainer"><span class="n"><span class="pre">TweenContainer</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tweens</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N13InterfaceView6tweensE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>List of the tweens currently being ran. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -413,11 +714,6 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView4rectE">
 <span id="_CPPv3N13InterfaceView4rectE"></span><span id="_CPPv2N13InterfaceView4rectE"></span><span id="InterfaceView::rect__Rectangle"></span><span class="target" id="classInterfaceView_1a2df8bce6e0835c6e03d9ae44fe6be88b"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rect</span></span></span><a class="headerlink" href="#_CPPv4N13InterfaceView4rectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N13InterfaceView8elementsE">
-<span id="_CPPv3N13InterfaceView8elementsE"></span><span id="_CPPv2N13InterfaceView8elementsE"></span><span id="InterfaceView::elements__std::vector:std::unique_ptr:UIElement::"></span><span class="target" id="classInterfaceView_1a8c98045e5425b51d71f5bf794d69e023"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../class/classUIElement.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">elements</span></span></span><a class="headerlink" href="#_CPPv4N13InterfaceView8elementsE" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -430,12 +726,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="player_8hpp.html">
+          <a class="next-page" href="jsonConversions_8hpp.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">File player.hpp</div>
+                <div class="title">File jsonConversions.hpp</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -483,12 +779,50 @@
 <li><a class="reference internal" href="#">File interfaceView.hpp</a><ul>
 <li><a class="reference internal" href="#_CPPv413InterfaceView"><code class="docutils literal notranslate"><span class="pre">InterfaceView</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N13InterfaceView13InterfaceViewEv"><code class="docutils literal notranslate"><span class="pre">InterfaceView()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N13InterfaceView13InterfaceViewE9Rectangle"><code class="docutils literal notranslate"><span class="pre">InterfaceView()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N13InterfaceView10addElementEP9UIElement"><code class="docutils literal notranslate"><span class="pre">addElement()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4NK13InterfaceView6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4NK13InterfaceView4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N13InterfaceView4rectE"><code class="docutils literal notranslate"><span class="pre">rect</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13InterfaceViewERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">InterfaceView()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13InterfaceViewER16InterfaceViewBin"><code class="docutils literal notranslate"><span class="pre">InterfaceView()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView8dumpJsonEv"><code class="docutils literal notranslate"><span class="pre">dumpJson()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13getEntityNameEi"><code class="docutils literal notranslate"><span class="pre">getEntityName()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10findByNameERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">findByName()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13elementExistsERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">elementExists()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10addElementERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13removeElementERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">removeElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10getElementERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10getElementE12ElementIndex"><code class="docutils literal notranslate"><span class="pre">getElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13renameElementERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">renameElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView20changeFocusedElementERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">changeFocusedElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView20changeFocusedElementE12ElementIndex"><code class="docutils literal notranslate"><span class="pre">changeFocusedElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView12cloneElementERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">cloneElement()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView11getElementsEv"><code class="docutils literal notranslate"><span class="pre">getElements()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView12swapElementsE12ElementIndex12ElementIndex"><code class="docutils literal notranslate"><span class="pre">swapElements()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView14moveToPositionE12ElementIndex12ElementIndex"><code class="docutils literal notranslate"><span class="pre">moveToPosition()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13resetElementsEv"><code class="docutils literal notranslate"><span class="pre">resetElements()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView7getSizeEv"><code class="docutils literal notranslate"><span class="pre">getSize()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView8onNotifyE5Event"><code class="docutils literal notranslate"><span class="pre">onNotify()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10drawEntityE12ElementIndex"><code class="docutils literal notranslate"><span class="pre">drawEntity()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13setScriptFileERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setScriptFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView13getScriptFileEv"><code class="docutils literal notranslate"><span class="pre">getScriptFile()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView9hasScriptEv"><code class="docutils literal notranslate"><span class="pre">hasScript()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView17getLuaEnvironmentEv"><code class="docutils literal notranslate"><span class="pre">getLuaEnvironment()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView9getTweensEv"><code class="docutils literal notranslate"><span class="pre">getTweens()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView17addTweenContainerE14TweenContainer"><code class="docutils literal notranslate"><span class="pre">addTweenContainer()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView8addTweenE5Tween"><code class="docutils literal notranslate"><span class="pre">addTween()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10abandonLuaEv"><code class="docutils literal notranslate"><span class="pre">abandonLua()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView9runScriptE"><code class="docutils literal notranslate"><span class="pre">runScript</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView3binE"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView18focusedElementNameE"><code class="docutils literal notranslate"><span class="pre">focusedElementName</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView12scriptSourceE"><code class="docutils literal notranslate"><span class="pre">scriptSource</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView10scriptFlagE"><code class="docutils literal notranslate"><span class="pre">scriptFlag</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView3envE"><code class="docutils literal notranslate"><span class="pre">env</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N13InterfaceView8elementsE"><code class="docutils literal notranslate"><span class="pre">elements</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView12elementNamesE"><code class="docutils literal notranslate"><span class="pre">elementNames</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView14currentElementE"><code class="docutils literal notranslate"><span class="pre">currentElement</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView12availableIdsE"><code class="docutils literal notranslate"><span class="pre">availableIds</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView4sizeE"><code class="docutils literal notranslate"><span class="pre">size</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView6tweensE"><code class="docutils literal notranslate"><span class="pre">tweens</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13InterfaceView4rectE"><code class="docutils literal notranslate"><span class="pre">rect</span></code></a></li>
 </ul>
 </li>
 </ul>

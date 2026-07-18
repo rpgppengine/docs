@@ -1,0 +1,4 @@
+File dialogueArea.hpp
+=====================
+
+.. doxygenfile:: dialogueArea.hpp

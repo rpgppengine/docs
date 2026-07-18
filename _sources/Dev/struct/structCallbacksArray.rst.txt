@@ -1,0 +1,5 @@
+Struct CallbacksArray
+=====================
+
+.. doxygenstruct:: CallbacksArray
+   :members:

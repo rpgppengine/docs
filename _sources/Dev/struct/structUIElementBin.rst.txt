@@ -1,0 +1,5 @@
+Struct UIElementBin
+===================
+
+.. doxygenstruct:: UIElementBin
+   :members:

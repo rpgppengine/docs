@@ -1,0 +1,5 @@
+Struct Event
+============
+
+.. doxygenstruct:: Event
+   :members:

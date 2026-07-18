@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Lua API Reference" href="userapi/doc.html"><link rel="prev" title="Interactable" href="guide/resourcetypes/interactable.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Lua API Reference" href="userapi/doc.html"><link rel="prev" title="Interface View" href="guide/resourcetypes/interfaceview.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>User Docs - RPG++ documentation</title>
@@ -207,6 +207,7 @@
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/prop.html">Prop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide/resourcetypes/interfaceview.html">Interface View</a></li>
 </ul>
 </li>
 </ul>
@@ -216,6 +217,27 @@
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">User Docs</a><input aria-label="Toggle navigation of User Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#world">World</a></li>
 </ul>
 </li>
 </ul>
@@ -229,12 +251,10 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classAtlasTile.html">Class AtlasTile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classBaseContainer.html">Class BaseContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/class/classColorRect.html">Class ColorRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classDialogue.html">Class Dialogue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classGame.html">Class Game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classISaveable.html">Class ISaveable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/class/classImageRect.html">Class ImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classInteractable.html">Class Interactable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classInterfaceService.html">Class InterfaceService</a></li>
@@ -248,11 +268,10 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classScriptService.html">Class ScriptService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classSoundService.html">Class SoundService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classStateService.html">Class StateService</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/class/classTextArea.html">Class TextArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classTile.html">Class Tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classTileMap.html">Class TileMap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classTileSet.html">Class TileSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/class/classTweenContainer.html">Class TweenContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classWorldService.html">Class WorldService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
@@ -264,28 +283,51 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="Dev/structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structActorBin.html">Struct ActorBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structComboBox.html">Struct ComboBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueArea.html">Struct DialogueArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueLine.html">Struct DialogueLine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structEvent.html">Struct Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structFontBin.html">Struct FontBin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structFontRef.html">Struct FontRef</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structIRect.html">Struct IRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structIVector.html">Struct IVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInputC.html">Struct InputC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structLabel.html">Struct Label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structRoomBin.html">Struct RoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTextBox.html">Struct TextBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTileBin.html">Struct TileBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/struct/structVsInfo.html">Struct VsInfo</a></li>
 </ul>
 </li>
@@ -294,12 +336,18 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/actor_8hpp.html">File actor.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/atlasTile_8hpp.html">File atlasTile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/button_8hpp.html">File button.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/comboBox_8hpp.html">File comboBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogueArea_8hpp.html">File dialogueArea.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/elementFactory_8hpp.html">File elementFactory.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/game_8hpp.html">File game.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/gamedata_8hpp.html">File gamedata.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/imageRect_8hpp.html">File imageRect.hpp</a></li>
@@ -308,6 +356,9 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/interfaceService_8hpp.html">File interfaceService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/player_8hpp.html">File player.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/prop_8hpp.html">File prop.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/propsContainer_8hpp.html">File propsContainer.hpp</a></li>
@@ -318,11 +369,14 @@
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/scriptService_8hpp.html">File scriptService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/soundService_8hpp.html">File soundService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/stateService_8hpp.html">File stateService.hpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Dev/file/textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/textBox_8hpp.html">File textBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/tile_8hpp.html">File tile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/tilemap_8hpp.html">File tilemap.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/tween_8hpp.html">File tween.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dev/file/valueSlider_8hpp.html">File valueSlider.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/winapi_8hpp.html">File winapi.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dev/file/worldService_8hpp.html">File worldService.hpp</a></li>
 </ul>
@@ -377,114 +431,130 @@
 <h1>User Docs<a class="headerlink" href="#user-docs" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html">Lua API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#actor">Actor</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#changeanimation">ChangeAnimation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getposition">GetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#gettileposition">GetTilePosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#movebyvelocity">MoveByVelocity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#playanimation">PlayAnimation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setposition">SetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#settileposition">SetTilePosition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#actor">Actor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#changeanimation">ChangeAnimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getposition">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#gettileposition">GetTilePosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#movebyvelocity">MoveByVelocity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#playanimation">PlayAnimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#setposition">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#settileposition">SetTilePosition</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#actorcontainer">ActorContainer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#exists">Exists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#get">Get</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#push">Push</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#remove">Remove</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#actorcontainer">ActorContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#exists">Exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#get">Get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#push">Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#remove">Remove</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#collisionscontainer">CollisionsContainer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id1">Exists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id2">Push</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id3">Remove</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#collisionscontainer">CollisionsContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id1">Exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id2">Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id3">Remove</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#direction">Direction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#gamestate">GameState</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id4">Get</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#set">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#game">Game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#close">Close</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interactable">Interactable</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id5">GetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#gettype">GetType</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#isontouch">IsOnTouch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setontouch">SetOnTouch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setprop">SetProp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#settype">SetType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#gamestate">GameState</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id4">Get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#set">Set</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interactablescontainer">InteractablesContainer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id6">Exists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getat">GetAt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id7">Push</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id8">Remove</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#interactable">Interactable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id5">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#gettype">GetType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#isontouch">IsOnTouch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#setontouch">SetOnTouch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#setprop">SetProp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#settype">SetType</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#interface">Interface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#opendialogue">OpenDialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#interactablescontainer">InteractablesContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id6">Exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getat">GetAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id7">Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id8">Remove</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#player">Player</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getactor">GetActor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id9">GetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id10">GetTilePosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id11">MoveByVelocity</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id12">SetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id13">SetTilePosition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#interface">Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getcurrentview">GetCurrentView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#opendialogue">OpenDialogue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#openview">OpenView</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#prop">Prop</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getinteractable">GetInteractable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id14">GetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id15">GetTilePosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id16">SetPosition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id17">SetTilePosition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#interfaceview">InterfaceView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#changefocus">ChangeFocus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getentity">GetEntity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#reset">Reset</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#propscontainer">PropsContainer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id18">Exists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id19">GetAt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id20">Push</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id21">Remove</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#player">Player</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getactor">GetActor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id9">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id10">GetTilePosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id11">MoveByVelocity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id12">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id13">SetTilePosition</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#room">Room</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getactors">GetActors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getcollisions">GetCollisions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getinteractables">GetInteractables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getplayer">GetPlayer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getprops">GetProps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getstarttile">GetStartTile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#gettilemap">GetTileMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#prop">Prop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getinteractable">GetInteractable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id14">GetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id15">GetTilePosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id16">SetPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id17">SetTilePosition</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#sounds">Sounds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#loadmusic">LoadMusic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#playmusic">PlayMusic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#playsound">PlaySound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#propscontainer">PropsContainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id18">Exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id19">GetAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id20">Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id21">Remove</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#tilemap">TileMap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getworldsizeintiles">GetWorldSizeInTiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setemptytile">SetEmptyTile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#settile">SetTile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#room">Room</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getactors">GetActors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getcollisions">GetCollisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getinteractables">GetInteractables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getplayer">GetPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getprops">GetProps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getstarttile">GetStartTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#gettilemap">GetTileMap</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#vector2">Vector2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#new">new</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#x">x</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#y">y</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#sounds">Sounds</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#loadmusic">LoadMusic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#playmusic">PlayMusic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#playsound">PlaySound</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#worldservice">WorldService</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#id22">GetPlayer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#getroom">GetRoom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="userapi/doc.html#setroom">SetRoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#tilemap">TileMap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getworldsizeintiles">GetWorldSizeInTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#setemptytile">SetEmptyTile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#settile">SetTile</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#uielement">UIElement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#tween">Tween</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#vector2">Vector2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#new">new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#x">x</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#y">y</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userapi/doc.html#world">World</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#id22">GetPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#getroom">GetRoom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userapi/doc.html#setroom">SetRoom</a></li>
 </ul>
 </li>
 </ul>
@@ -505,14 +575,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="guide/resourcetypes/interactable.html">
+          <a class="prev-page" href="guide/resourcetypes/interfaceview.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Interactable</div>
+                <div class="title">Interface View</div>
                 
               </div>
             </a>

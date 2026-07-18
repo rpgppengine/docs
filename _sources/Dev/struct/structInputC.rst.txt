@@ -1,0 +1,5 @@
+Struct InputC
+=============
+
+.. doxygenstruct:: InputC
+   :members:

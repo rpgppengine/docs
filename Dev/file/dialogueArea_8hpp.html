@@ -1,0 +1,681 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File dialogueBalloon.hpp" href="dialogueBalloon_8hpp.html"><link rel="prev" title="File conversion.hpp" href="conversion_8hpp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>File dialogueArea.hpp - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../guide.html">User Guide</a><input aria-label="Toggle navigation of User Guide" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/newproject.html">Make a New Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interfaceview.html">Interface View</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#world">World</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../dev-additional/compile.html">Compiling RPG++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTweenContainer.html">Class TweenContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structComboBox.html">Struct ComboBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueArea.html">Struct DialogueArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structEvent.html">Struct Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontRef.html">Struct FontRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInputC.html">Struct InputC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structLabel.html">Struct Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTextBox.html">Struct TextBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../filelist.html">File list</a><input aria-label="Toggle navigation of File list" checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_8hpp.html">File button.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comboBox_8hpp.html">File comboBox.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File dialogueArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementFactory_8hpp.html">File elementFactory.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textBox_8hpp.html">File textBox.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tween_8hpp.html">File tween.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="valueSlider_8hpp.html">File valueSlider.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Dev/file/dialogueArea_8hpp.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="file-dialoguearea-hpp">
+<h1>File dialogueArea.hpp<a class="headerlink" href="#file-dialoguearea-hpp" title="Link to this heading">¶</a></h1>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv412DialogueArea">
+<span id="_CPPv312DialogueArea"></span><span id="_CPPv212DialogueArea"></span><span id="DialogueArea"></span><span class="target" id="structDialogueArea"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DialogueArea</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><a class="headerlink" href="#_CPPv412DialogueArea" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;dialogueArea.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea12DialogueAreaEv">
+<span id="_CPPv3N12DialogueArea12DialogueAreaEv"></span><span id="_CPPv2N12DialogueArea12DialogueAreaEv"></span><span id="DialogueArea::DialogueArea"></span><span class="target" id="structDialogueArea_1aea9a527f3df5f96cdd3f89548191e891"></span><span class="sig-name descname"><span class="n"><span class="pre">DialogueArea</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea12DialogueAreaEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea4initEv">
+<span id="_CPPv3N12DialogueArea4initEv"></span><span id="_CPPv2N12DialogueArea4initEv"></span><span id="DialogueArea::init"></span><span class="target" id="structDialogueArea_1a23abf5d28a27bf82840ef85ed5286398"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea4initEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Initialize the properties and callbacks. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea6updateEv">
+<span id="_CPPv3N12DialogueArea6updateEv"></span><span id="_CPPv2N12DialogueArea6updateEv"></span><span id="DialogueArea::update"></span><span class="target" id="structDialogueArea_1ad145304ee9d33dc93153e62ad7ba5c22"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea6updateEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Update routine. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea4drawE9Rectangle">
+<span id="_CPPv3N12DialogueArea4drawE9Rectangle"></span><span id="_CPPv2N12DialogueArea4drawE9Rectangle"></span><span id="DialogueArea::draw__Rectangle"></span><span class="target" id="structDialogueArea_1ad0d0549639da03e2f8a12d004c30a0f3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea4drawE9Rectangle" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Draw routine using a rect. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea11setDialogueERK11DialogueBin">
+<span id="_CPPv3N12DialogueArea11setDialogueERK11DialogueBin"></span><span id="_CPPv2N12DialogueArea11setDialogueERK11DialogueBin"></span><span id="DialogueArea::setDialogue__DialogueBinCR"></span><span class="target" id="structDialogueArea_1a326e4240f6844d9cadb3d6bd2863e8b7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDialogue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="dialogueBalloon_8hpp.html#_CPPv411DialogueBin" title="DialogueBin"><span class="n"><span class="pre">DialogueBin</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dialogue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea11setDialogueERK11DialogueBin" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea7putCharE7Vector2PKc9Rectangle">
+<span id="_CPPv3N12DialogueArea7putCharE7Vector2PKc9Rectangle"></span><span id="_CPPv2N12DialogueArea7putCharE7Vector2PKc9Rectangle"></span><span id="DialogueArea::putChar__Vector2.cCP.Rectangle"></span><span class="target" id="structDialogueArea_1a07b9f5b5625900659945f2d8d473c362"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">putChar</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">charMeasure</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">c</span></span>, <span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea7putCharE7Vector2PKc9Rectangle" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea13chooseSectionEi9Rectangle">
+<span id="_CPPv3N12DialogueArea13chooseSectionEi9Rectangle"></span><span id="_CPPv2N12DialogueArea13chooseSectionEi9Rectangle"></span><span id="DialogueArea::chooseSection__i.Rectangle"></span><span class="target" id="structDialogueArea_1a210438e9acb701b0d9955da71fff2dbb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chooseSection</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea13chooseSectionEi9Rectangle" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea17advanceToNextLineEv">
+<span id="_CPPv3N12DialogueArea17advanceToNextLineEv"></span><span id="_CPPv2N12DialogueArea17advanceToNextLineEv"></span><span id="DialogueArea::advanceToNextLine"></span><span class="target" id="structDialogueArea_1a50a959e6e267996f2b7392f727da30e7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">advanceToNextLine</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12DialogueArea17advanceToNextLineEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea4textE">
+<span id="_CPPv3N12DialogueArea4textE"></span><span id="_CPPv2N12DialogueArea4textE"></span><span id="DialogueArea::text__ss"></span><span class="target" id="structDialogueArea_1a3503896de925b875b8493fe33822202a"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">text</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea4textE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea8dialogueE">
+<span id="_CPPv3N12DialogueArea8dialogueE"></span><span id="_CPPv2N12DialogueArea8dialogueE"></span><span id="DialogueArea::dialogue__DialogueBin"></span><span class="target" id="structDialogueArea_1a0d494cef5105079451dccf568ab0959e"></span><a class="reference internal" href="dialogueBalloon_8hpp.html#_CPPv411DialogueBin" title="DialogueBin"><span class="n"><span class="pre">DialogueBin</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dialogue</span></span></span><a class="headerlink" href="#_CPPv4N12DialogueArea8dialogueE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea4lineE">
+<span id="_CPPv3N12DialogueArea4lineE"></span><span id="_CPPv2N12DialogueArea4lineE"></span><span id="DialogueArea::line__DialogueLineP"></span><span class="target" id="structDialogueArea_1aad4243def4a49d93a31047d089c9d49b"></span><a class="reference internal" href="dialogueBalloon_8hpp.html#_CPPv412DialogueLine" title="DialogueLine"><span class="n"><span class="pre">DialogueLine</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">line</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea4lineE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea7sectionE">
+<span id="_CPPv3N12DialogueArea7sectionE"></span><span id="_CPPv2N12DialogueArea7sectionE"></span><span id="DialogueArea::section__DialogueTextSectionP"></span><span class="target" id="structDialogueArea_1ac8ad53740da3bcf40060ae130e5394c8"></span><a class="reference internal" href="dialogueBalloon_8hpp.html#_CPPv419DialogueTextSection" title="DialogueTextSection"><span class="n"><span class="pre">DialogueTextSection</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">section</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea7sectionE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea12frameCounterE">
+<span id="_CPPv3N12DialogueArea12frameCounterE"></span><span id="_CPPv2N12DialogueArea12frameCounterE"></span><span id="DialogueArea::frameCounter__i"></span><span class="target" id="structDialogueArea_1a7cdccd906b4604cc8553306b00fadab7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">frameCounter</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea12frameCounterE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea7textPosE">
+<span id="_CPPv3N12DialogueArea7textPosE"></span><span id="_CPPv2N12DialogueArea7textPosE"></span><span id="DialogueArea::textPos__Vector2"></span><span class="target" id="structDialogueArea_1a2a44b21aeeb909735f9740237238e143"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">textPos</span></span></span><a class="headerlink" href="#_CPPv4N12DialogueArea7textPosE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea9charIndexE">
+<span id="_CPPv3N12DialogueArea9charIndexE"></span><span id="_CPPv2N12DialogueArea9charIndexE"></span><span id="DialogueArea::charIndex__i"></span><span class="target" id="structDialogueArea_1a8dd5bebf6c501ce4bdd5ac0e03a72ee3"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">charIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea9charIndexE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea9lineIndexE">
+<span id="_CPPv3N12DialogueArea9lineIndexE"></span><span id="_CPPv2N12DialogueArea9lineIndexE"></span><span id="DialogueArea::lineIndex__i"></span><span class="target" id="structDialogueArea_1a7b09742d6899ebbe5888389b56f0c58f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lineIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea9lineIndexE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea12sectionIndexE">
+<span id="_CPPv3N12DialogueArea12sectionIndexE"></span><span id="_CPPv2N12DialogueArea12sectionIndexE"></span><span id="DialogueArea::sectionIndex__i"></span><span class="target" id="structDialogueArea_1abe353fd838a9695f90d57352b01eb5a4"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sectionIndex</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea12sectionIndexE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea10appliedTagE">
+<span id="_CPPv3N12DialogueArea10appliedTagE"></span><span id="_CPPv2N12DialogueArea10appliedTagE"></span><span id="DialogueArea::appliedTag__b"></span><span class="target" id="structDialogueArea_1ac63f836540dcec7286c93d42ae40fc3d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">appliedTag</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea10appliedTagE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea14finishedTypingE">
+<span id="_CPPv3N12DialogueArea14finishedTypingE"></span><span id="_CPPv2N12DialogueArea14finishedTypingE"></span><span id="DialogueArea::finishedTyping__b"></span><span class="target" id="structDialogueArea_1a96b549f31c64699fc000d9fe698ab21d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finishedTyping</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea14finishedTypingE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea14firstCharTypedE">
+<span id="_CPPv3N12DialogueArea14firstCharTypedE"></span><span id="_CPPv2N12DialogueArea14firstCharTypedE"></span><span id="DialogueArea::firstCharTyped__b"></span><span class="target" id="structDialogueArea_1ac47f060e64abdbb608c66d3c7c220fbe"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">firstCharTyped</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea14firstCharTypedE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea13maxLineHeightE">
+<span id="_CPPv3N12DialogueArea13maxLineHeightE"></span><span id="_CPPv2N12DialogueArea13maxLineHeightE"></span><span id="DialogueArea::maxLineHeight__float"></span><span class="target" id="structDialogueArea_1a17e693a5d42723a1dd9fbfa3967463bd"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxLineHeight</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0f</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea13maxLineHeightE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea5delayE">
+<span id="_CPPv3N12DialogueArea5delayE"></span><span id="_CPPv2N12DialogueArea5delayE"></span><span id="DialogueArea::delay__b"></span><span class="target" id="structDialogueArea_1a736e991d55015d4729a761617fc2df5c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delay</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea5delayE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea13delayDurationE">
+<span id="_CPPv3N12DialogueArea13delayDurationE"></span><span id="_CPPv2N12DialogueArea13delayDurationE"></span><span id="DialogueArea::delayDuration__float"></span><span class="target" id="structDialogueArea_1a8f9d614f9c6d4fd9d5c2a870ecdbd67c"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delayDuration</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0f</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea13delayDurationE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea7paddingE">
+<span id="_CPPv3N12DialogueArea7paddingE"></span><span id="_CPPv2N12DialogueArea7paddingE"></span><span id="DialogueArea::padding__float"></span><span class="target" id="structDialogueArea_1a69a2b805bfd50a0cab415647d06b9e26"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">padding</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0f</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea7paddingE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea4fontE">
+<span id="_CPPv3N12DialogueArea4fontE"></span><span id="_CPPv2N12DialogueArea4fontE"></span><span id="DialogueArea::font__FontRef"></span><span class="target" id="structDialogueArea_1a85e300e6db1812f3c294870b0776448d"></span><a class="reference internal" href="gamedata_8hpp.html#_CPPv47FontRef" title="FontRef"><span class="n"><span class="pre">FontRef</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">font</span></span></span><a class="headerlink" href="#_CPPv4N12DialogueArea4fontE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12DialogueArea16dialogueFinishedE">
+<span id="_CPPv3N12DialogueArea16dialogueFinishedE"></span><span id="_CPPv2N12DialogueArea16dialogueFinishedE"></span><span id="DialogueArea::dialogueFinished__b"></span><span class="target" id="structDialogueArea_1af5477e4a8eaa017173f9ae6b56fe2f87"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dialogueFinished</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N12DialogueArea16dialogueFinishedE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="dialogueBalloon_8hpp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">File dialogueBalloon.hpp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="conversion_8hpp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">File conversion.hpp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">File dialogueArea.hpp</a><ul>
+<li><a class="reference internal" href="#_CPPv412DialogueArea"><code class="docutils literal notranslate"><span class="pre">DialogueArea</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea12DialogueAreaEv"><code class="docutils literal notranslate"><span class="pre">DialogueArea()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea4initEv"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea4drawE9Rectangle"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea11setDialogueERK11DialogueBin"><code class="docutils literal notranslate"><span class="pre">setDialogue()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea7putCharE7Vector2PKc9Rectangle"><code class="docutils literal notranslate"><span class="pre">putChar()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea13chooseSectionEi9Rectangle"><code class="docutils literal notranslate"><span class="pre">chooseSection()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea17advanceToNextLineEv"><code class="docutils literal notranslate"><span class="pre">advanceToNextLine()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea4textE"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea8dialogueE"><code class="docutils literal notranslate"><span class="pre">dialogue</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea4lineE"><code class="docutils literal notranslate"><span class="pre">line</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea7sectionE"><code class="docutils literal notranslate"><span class="pre">section</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea12frameCounterE"><code class="docutils literal notranslate"><span class="pre">frameCounter</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea7textPosE"><code class="docutils literal notranslate"><span class="pre">textPos</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea9charIndexE"><code class="docutils literal notranslate"><span class="pre">charIndex</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea9lineIndexE"><code class="docutils literal notranslate"><span class="pre">lineIndex</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea12sectionIndexE"><code class="docutils literal notranslate"><span class="pre">sectionIndex</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea10appliedTagE"><code class="docutils literal notranslate"><span class="pre">appliedTag</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea14finishedTypingE"><code class="docutils literal notranslate"><span class="pre">finishedTyping</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea14firstCharTypedE"><code class="docutils literal notranslate"><span class="pre">firstCharTyped</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea13maxLineHeightE"><code class="docutils literal notranslate"><span class="pre">maxLineHeight</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea5delayE"><code class="docutils literal notranslate"><span class="pre">delay</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea13delayDurationE"><code class="docutils literal notranslate"><span class="pre">delayDuration</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea7paddingE"><code class="docutils literal notranslate"><span class="pre">padding</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea4fontE"><code class="docutils literal notranslate"><span class="pre">font</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N12DialogueArea16dialogueFinishedE"><code class="docutils literal notranslate"><span class="pre">dialogueFinished</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

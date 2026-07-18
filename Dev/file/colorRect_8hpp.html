@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File conversion.hpp" href="conversion_8hpp.html"><link rel="prev" title="File collisionsContainer.hpp" href="collisionsContainer_8hpp.html">
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File comboBox.hpp" href="comboBox_8hpp.html"><link rel="prev" title="File collisionsContainer.hpp" href="collisionsContainer_8hpp.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>File colorRect.hpp - RPG++ documentation</title>
@@ -207,6 +207,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interfaceview.html">Interface View</a></li>
 </ul>
 </li>
 </ul>
@@ -216,6 +217,27 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#world">World</a></li>
 </ul>
 </li>
 </ul>
@@ -229,12 +251,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
@@ -248,11 +268,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTweenContainer.html">Class TweenContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
@@ -264,28 +283,51 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structComboBox.html">Struct ComboBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueArea.html">Struct DialogueArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structEvent.html">Struct Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontRef.html">Struct FontRef</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInputC.html">Struct InputC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structLabel.html">Struct Label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTextBox.html">Struct TextBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
 </ul>
 </li>
@@ -294,12 +336,18 @@
 <li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_8hpp.html">File button.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comboBox_8hpp.html">File comboBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueArea_8hpp.html">File dialogueArea.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementFactory_8hpp.html">File elementFactory.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
@@ -308,6 +356,9 @@
 <li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
@@ -318,11 +369,14 @@
 <li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textBox_8hpp.html">File textBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tween_8hpp.html">File tween.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="valueSlider_8hpp.html">File valueSlider.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
 </ul>
@@ -375,50 +429,35 @@
         <article role="main" id="furo-main-content">
           <section id="file-colorrect-hpp">
 <h1>File colorRect.hpp<a class="headerlink" href="#file-colorrect-hpp" title="Link to this heading">¶</a></h1>
-<dl class="cpp class">
+<dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv49ColorRect">
-<span id="_CPPv39ColorRect"></span><span id="_CPPv29ColorRect"></span><span id="ColorRect"></span><span class="target" id="classColorRect"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ColorRect</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../class/classUIElement.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><br /></dt>
+<span id="_CPPv39ColorRect"></span><span id="_CPPv29ColorRect"></span><span id="ColorRect"></span><span class="target" id="structColorRect"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ColorRect</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="uiElement_8hpp.html#_CPPv49UIElement" title="UIElement"><span class="n"><span class="pre">UIElement</span></span></a><a class="headerlink" href="#_CPPv49ColorRect" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;colorRect.hpp&gt;</em></div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9ColorRect9ColorRectEv">
-<span id="_CPPv3N9ColorRect9ColorRectEv"></span><span id="_CPPv2N9ColorRect9ColorRectEv"></span><span id="ColorRect::ColorRect"></span><span class="target" id="classColorRect_1a193ca8aa73ab542e2d66ea0b7296d148"></span><span class="sig-name descname"><span class="n"><span class="pre">ColorRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect9ColorRectEv" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N9ColorRect9ColorRectEv"></span><span id="_CPPv2N9ColorRect9ColorRectEv"></span><span id="ColorRect::ColorRect"></span><span class="target" id="structColorRect_1a193ca8aa73ab542e2d66ea0b7296d148"></span><span class="sig-name descname"><span class="n"><span class="pre">ColorRect</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect9ColorRectEv" title="Link to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect9ColorRectE9Rectangle">
-<span id="_CPPv3N9ColorRect9ColorRectE9Rectangle"></span><span id="_CPPv2N9ColorRect9ColorRectE9Rectangle"></span><span id="ColorRect::ColorRect__Rectangle"></span><span class="target" id="classColorRect_1a07349736e301ead66bfb2cdf47179b48"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ColorRect</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect9ColorRectE9Rectangle" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect8setColorE5Color">
-<span id="_CPPv3N9ColorRect8setColorE5Color"></span><span id="_CPPv2N9ColorRect8setColorE5Color"></span><span id="ColorRect::setColor__Color"></span><span class="target" id="classColorRect_1a14893013da83e50b736392597ff3bb5e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setColor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Color</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newColor</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect8setColorE5Color" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect4initEv">
+<span id="_CPPv3N9ColorRect4initEv"></span><span id="_CPPv2N9ColorRect4initEv"></span><span id="ColorRect::init"></span><span class="target" id="structColorRect_1afb407246ed98926096f1872c5523590d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect4initEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Initialize the properties and callbacks. </p>
+</dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N9ColorRect6updateEv">
-<span id="_CPPv3N9ColorRect6updateEv"></span><span id="_CPPv2N9ColorRect6updateEv"></span><span id="ColorRect::update"></span><span class="target" id="classColorRect_1ac0634396293b576a8756d16a30b411c1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N9ColorRect6updateEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N9ColorRect6updateEv"></span><span id="_CPPv2N9ColorRect6updateEv"></span><span id="ColorRect::update"></span><span class="target" id="structColorRect_1a5f7b35d9ac75d3e92f5a9cae4c28bec9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect6updateEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Update routine. </p>
+</dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect4drawEv">
-<span id="_CPPv3N9ColorRect4drawEv"></span><span id="_CPPv2N9ColorRect4drawEv"></span><span id="ColorRect::draw"></span><span class="target" id="classColorRect_1af0f9ed2fe32a529ce683c28ea04ace76"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N9ColorRect4drawEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect4rectE">
-<span id="_CPPv3N9ColorRect4rectE"></span><span id="_CPPv2N9ColorRect4rectE"></span><span id="ColorRect::rect__Rectangle"></span><span class="target" id="classColorRect_1aed38f6c299a66ad5368809a0a5a56b79"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rect</span></span></span><a class="headerlink" href="#_CPPv4N9ColorRect4rectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect5colorE">
-<span id="_CPPv3N9ColorRect5colorE"></span><span id="_CPPv2N9ColorRect5colorE"></span><span id="ColorRect::color__Color"></span><span class="target" id="classColorRect_1a3917995df2aecb5b347ba55b4957425b"></span><span class="n"><span class="pre">Color</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">color</span></span></span><a class="headerlink" href="#_CPPv4N9ColorRect5colorE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N9ColorRect4drawE9Rectangle">
+<span id="_CPPv3N9ColorRect4drawE9Rectangle"></span><span id="_CPPv2N9ColorRect4drawE9Rectangle"></span><span id="ColorRect::draw__Rectangle"></span><span class="target" id="structColorRect_1ab9d2817f473af728e0639c086b069944"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N9ColorRect4drawE9Rectangle" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Draw routine using a rect. </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -430,12 +469,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="conversion_8hpp.html">
+          <a class="next-page" href="comboBox_8hpp.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">File conversion.hpp</div>
+                <div class="title">File comboBox.hpp</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -483,12 +522,9 @@
 <li><a class="reference internal" href="#">File colorRect.hpp</a><ul>
 <li><a class="reference internal" href="#_CPPv49ColorRect"><code class="docutils literal notranslate"><span class="pre">ColorRect</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N9ColorRect9ColorRectEv"><code class="docutils literal notranslate"><span class="pre">ColorRect()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9ColorRect9ColorRectE9Rectangle"><code class="docutils literal notranslate"><span class="pre">ColorRect()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9ColorRect8setColorE5Color"><code class="docutils literal notranslate"><span class="pre">setColor()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9ColorRect4initEv"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N9ColorRect6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9ColorRect4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9ColorRect4rectE"><code class="docutils literal notranslate"><span class="pre">rect</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N9ColorRect5colorE"><code class="docutils literal notranslate"><span class="pre">color</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9ColorRect4drawE9Rectangle"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,5 @@
+Struct Label
+============
+
+.. doxygenstruct:: Label
+   :members:

@@ -1,0 +1,5 @@
+Struct VerticalAlignment
+========================
+
+.. doxygenstruct:: VerticalAlignment
+   :members:

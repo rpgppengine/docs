@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File dialogueParser.hpp" href="dialogueParser_8hpp.html"><link rel="prev" title="File conversion.hpp" href="conversion_8hpp.html">
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File dialogueInterfaceView.hpp" href="dialogueInterfaceView_8hpp.html"><link rel="prev" title="File dialogueArea.hpp" href="dialogueArea_8hpp.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>File dialogueBalloon.hpp - RPG++ documentation</title>
@@ -207,6 +207,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interfaceview.html">Interface View</a></li>
 </ul>
 </li>
 </ul>
@@ -216,6 +217,27 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#world">World</a></li>
 </ul>
 </li>
 </ul>
@@ -229,12 +251,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classColorRect.html">Class ColorRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueBalloon.html">Class DialogueBalloon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classImageRect.html">Class ImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
@@ -248,11 +268,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classTextArea.html">Class TextArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../class/classUIElement.html">Class UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTweenContainer.html">Class TweenContainer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
@@ -264,28 +283,51 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structComboBox.html">Struct ComboBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueArea.html">Struct DialogueArea</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structEvent.html">Struct Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../struct/structGameBinSettings.html">Struct GameBinSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontRef.html">Struct FontRef</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInputC.html">Struct InputC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structLabel.html">Struct Label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTextBox.html">Struct TextBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
 </ul>
 </li>
@@ -294,12 +336,18 @@
 <li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_8hpp.html">File button.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comboBox_8hpp.html">File comboBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueArea_8hpp.html">File dialogueArea.hpp</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementFactory_8hpp.html">File elementFactory.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
@@ -308,6 +356,9 @@
 <li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
@@ -318,11 +369,14 @@
 <li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="textArea_8hpp.html">File textArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textBox_8hpp.html">File textBox.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tween_8hpp.html">File tween.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="valueSlider_8hpp.html">File valueSlider.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
 </ul>
@@ -539,187 +593,6 @@
 </div>
 </dd></dl>
 
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv415DialogueBalloon">
-<span id="_CPPv315DialogueBalloon"></span><span id="_CPPv215DialogueBalloon"></span><span id="DialogueBalloon"></span><span class="target" id="classDialogueBalloon"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DialogueBalloon</span></span></span><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;dialogueBalloon.hpp&gt;</em></div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon15DialogueBalloonEv">
-<span id="_CPPv3N15DialogueBalloon15DialogueBalloonEv"></span><span id="_CPPv2N15DialogueBalloon15DialogueBalloonEv"></span><span id="DialogueBalloon::DialogueBalloon"></span><span class="target" id="classDialogueBalloon_1a38a95e277160bc41669bc6d973a7eec9"></span><span class="sig-name descname"><span class="n"><span class="pre">DialogueBalloon</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon15DialogueBalloonEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon15DialogueBalloonE9Rectangle">
-<span id="_CPPv3N15DialogueBalloon15DialogueBalloonE9Rectangle"></span><span id="_CPPv2N15DialogueBalloon15DialogueBalloonE9Rectangle"></span><span id="DialogueBalloon::DialogueBalloon__Rectangle"></span><span class="target" id="classDialogueBalloon_1a1724c4df693018363569e901e3923265"></span><span class="sig-name descname"><span class="n"><span class="pre">DialogueBalloon</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rect</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon15DialogueBalloonE9Rectangle" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon6updateEv">
-<span id="_CPPv3N15DialogueBalloon6updateEv"></span><span id="_CPPv2N15DialogueBalloon6updateEv"></span><span id="DialogueBalloon::update"></span><span class="target" id="classDialogueBalloon_1ae30d9c09512cb0dcc8d37f13f78e755f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">update</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon6updateEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon4drawEv">
-<span id="_CPPv3N15DialogueBalloon4drawEv"></span><span id="_CPPv2N15DialogueBalloon4drawEv"></span><span id="DialogueBalloon::draw"></span><span class="target" id="classDialogueBalloon_1a142638c28cae0687dcb7fe523c366fe7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">draw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon4drawEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon12showDialogueERK11DialogueBin">
-<span id="_CPPv3N15DialogueBalloon12showDialogueERK11DialogueBin"></span><span id="_CPPv2N15DialogueBalloon12showDialogueERK11DialogueBin"></span><span id="DialogueBalloon::showDialogue__DialogueBinCR"></span><span class="target" id="classDialogueBalloon_1a3723afbecfe070f52562b1a8ed20005a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">showDialogue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411DialogueBin" title="DialogueBin"><span class="n"><span class="pre">DialogueBin</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">newDialogue</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon12showDialogueERK11DialogueBin" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon12hideDialogueEv">
-<span id="_CPPv3N15DialogueBalloon12hideDialogueEv"></span><span id="_CPPv2N15DialogueBalloon12hideDialogueEv"></span><span id="DialogueBalloon::hideDialogue"></span><span class="target" id="classDialogueBalloon_1a615d30d32ed685b9a5903b51fb18c5e4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hideDialogue</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon12hideDialogueEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon5charPE7Vector2PKcR12DialogueLineR19DialogueTextSection">
-<span id="_CPPv3N15DialogueBalloon5charPE7Vector2PKcR12DialogueLineR19DialogueTextSection"></span><span id="_CPPv2N15DialogueBalloon5charPE7Vector2PKcR12DialogueLineR19DialogueTextSection"></span><span id="DialogueBalloon::charP__Vector2.cCP.DialogueLineR.DialogueTextSectionR"></span><span class="target" id="classDialogueBalloon_1a3c09ee6bba379129c2a3aa28d923b189"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">charP</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">charMeasure</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">c</span></span>, <a class="reference internal" href="#_CPPv412DialogueLine" title="DialogueLine"><span class="n"><span class="pre">DialogueLine</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">textLine</span></span>, <a class="reference internal" href="#_CPPv419DialogueTextSection" title="DialogueTextSection"><span class="n"><span class="pre">DialogueTextSection</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">textSection</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N15DialogueBalloon5charPE7Vector2PKcR12DialogueLineR19DialogueTextSection" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK15DialogueBalloon12drawPortraitEv">
-<span id="_CPPv3NK15DialogueBalloon12drawPortraitEv"></span><span id="_CPPv2NK15DialogueBalloon12drawPortraitEv"></span><span id="DialogueBalloon::drawPortraitC"></span><span class="target" id="classDialogueBalloon_1ab5b545900c59689b79c7e76a1008896d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">drawPortrait</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK15DialogueBalloon12drawPortraitEv" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon8fontNameE">
-<span id="_CPPv3N15DialogueBalloon8fontNameE"></span><span id="_CPPv2N15DialogueBalloon8fontNameE"></span><span id="DialogueBalloon::fontName__ss"></span><span class="target" id="classDialogueBalloon_1a8e68159907aafc309d3d581dcc256a7e"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fontName</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;LanaPixel&quot;</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon8fontNameE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon4fontE">
-<span id="_CPPv3N15DialogueBalloon4fontE"></span><span id="_CPPv2N15DialogueBalloon4fontE"></span><span id="DialogueBalloon::font__Font"></span><span class="target" id="classDialogueBalloon_1a7b55c43186d4660a30fbd86d61631769"></span><span class="n"><span class="pre">Font</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">font</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon4fontE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon4rectE">
-<span id="_CPPv3N15DialogueBalloon4rectE"></span><span id="_CPPv2N15DialogueBalloon4rectE"></span><span id="DialogueBalloon::rect__Rectangle"></span><span class="target" id="classDialogueBalloon_1abdcb66b7ccda8396228359431bf2cbb3"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rect</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon4rectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon8textRectE">
-<span id="_CPPv3N15DialogueBalloon8textRectE"></span><span id="_CPPv2N15DialogueBalloon8textRectE"></span><span id="DialogueBalloon::textRect__Rectangle"></span><span class="target" id="classDialogueBalloon_1ab4da445f2a498b2f357008431021a54f"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">textRect</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon8textRectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon16textPortraitRectE">
-<span id="_CPPv3N15DialogueBalloon16textPortraitRectE"></span><span id="_CPPv2N15DialogueBalloon16textPortraitRectE"></span><span id="DialogueBalloon::textPortraitRect__Rectangle"></span><span class="target" id="classDialogueBalloon_1af4430d146064f08a51935a26c2e30546"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">textPortraitRect</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon16textPortraitRectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon11optionsRectE">
-<span id="_CPPv3N15DialogueBalloon11optionsRectE"></span><span id="_CPPv2N15DialogueBalloon11optionsRectE"></span><span id="DialogueBalloon::optionsRect__Rectangle"></span><span class="target" id="classDialogueBalloon_1a61978275c812c02a2c45df24a9f0cd52"></span><span class="n"><span class="pre">Rectangle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">optionsRect</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon11optionsRectE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon8dialogueE">
-<span id="_CPPv3N15DialogueBalloon8dialogueE"></span><span id="_CPPv2N15DialogueBalloon8dialogueE"></span><span id="DialogueBalloon::dialogue__DialogueBin"></span><span class="target" id="classDialogueBalloon_1a2f0da2664bdd934236085402e4a1eb06"></span><a class="reference internal" href="#_CPPv411DialogueBin" title="DialogueBin"><span class="n"><span class="pre">DialogueBin</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dialogue</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon8dialogueE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon4textE">
-<span id="_CPPv3N15DialogueBalloon4textE"></span><span id="_CPPv2N15DialogueBalloon4textE"></span><span id="DialogueBalloon::text__ss"></span><span class="target" id="classDialogueBalloon_1a05f2510cee0358e48bfbbfe1b2b5827d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">text</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon4textE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon11sectionTextE">
-<span id="_CPPv3N15DialogueBalloon11sectionTextE"></span><span id="_CPPv2N15DialogueBalloon11sectionTextE"></span><span id="DialogueBalloon::sectionText__DialogueTextSection"></span><span class="target" id="classDialogueBalloon_1ada81ef814d596b4e1e7f7d5b1c472147"></span><a class="reference internal" href="#_CPPv419DialogueTextSection" title="DialogueTextSection"><span class="n"><span class="pre">DialogueTextSection</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sectionText</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon11sectionTextE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon14firstCharTypedE">
-<span id="_CPPv3N15DialogueBalloon14firstCharTypedE"></span><span id="_CPPv2N15DialogueBalloon14firstCharTypedE"></span><span id="DialogueBalloon::firstCharTyped__b"></span><span class="target" id="classDialogueBalloon_1a78255a4ca0d8ac976fb98fde6ce57fdb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">firstCharTyped</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon14firstCharTypedE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon14finishedTypingE">
-<span id="_CPPv3N15DialogueBalloon14finishedTypingE"></span><span id="_CPPv2N15DialogueBalloon14finishedTypingE"></span><span id="DialogueBalloon::finishedTyping__b"></span><span class="target" id="classDialogueBalloon_1a357cc116619bf12d253dbfc1196f79e0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">finishedTyping</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon14finishedTypingE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon6activeE">
-<span id="_CPPv3N15DialogueBalloon6activeE"></span><span id="_CPPv2N15DialogueBalloon6activeE"></span><span id="DialogueBalloon::active__b"></span><span class="target" id="classDialogueBalloon_1a32a7d58bff63d56533bc09685b924c45"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">active</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon6activeE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon12frameCounterE">
-<span id="_CPPv3N15DialogueBalloon12frameCounterE"></span><span id="_CPPv2N15DialogueBalloon12frameCounterE"></span><span id="DialogueBalloon::frameCounter__i"></span><span class="target" id="classDialogueBalloon_1a72cb22bad82c464d6eac970575be7cbb"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">frameCounter</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon12frameCounterE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon9charIndexE">
-<span id="_CPPv3N15DialogueBalloon9charIndexE"></span><span id="_CPPv2N15DialogueBalloon9charIndexE"></span><span id="DialogueBalloon::charIndex__i"></span><span class="target" id="classDialogueBalloon_1afaa72a26c12f75cc4db1ee86d9200094"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">charIndex</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon9charIndexE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon9lineIndexE">
-<span id="_CPPv3N15DialogueBalloon9lineIndexE"></span><span id="_CPPv2N15DialogueBalloon9lineIndexE"></span><span id="DialogueBalloon::lineIndex__i"></span><span class="target" id="classDialogueBalloon_1a33cd81598e9b23cd61875d2fa176157f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lineIndex</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon9lineIndexE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon12sectionIndexE">
-<span id="_CPPv3N15DialogueBalloon12sectionIndexE"></span><span id="_CPPv2N15DialogueBalloon12sectionIndexE"></span><span id="DialogueBalloon::sectionIndex__i"></span><span class="target" id="classDialogueBalloon_1aff4f5c3bc1d455e81ec9266c618ef33e"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sectionIndex</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon12sectionIndexE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon14lastSectionLenE">
-<span id="_CPPv3N15DialogueBalloon14lastSectionLenE"></span><span id="_CPPv2N15DialogueBalloon14lastSectionLenE"></span><span id="DialogueBalloon::lastSectionLen__i"></span><span class="target" id="classDialogueBalloon_1a43a2c314f9c931c61f9bd889432d5840"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lastSectionLen</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon14lastSectionLenE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon9textColorE">
-<span id="_CPPv3N15DialogueBalloon9textColorE"></span><span id="_CPPv2N15DialogueBalloon9textColorE"></span><span id="DialogueBalloon::textColor__Color"></span><span class="target" id="classDialogueBalloon_1a3e51a81dc7a423aa4baeb6e3c5572559"></span><span class="n"><span class="pre">Color</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">textColor</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon9textColorE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon7textPosE">
-<span id="_CPPv3N15DialogueBalloon7textPosE"></span><span id="_CPPv2N15DialogueBalloon7textPosE"></span><span id="DialogueBalloon::textPos__Vector2"></span><span class="target" id="classDialogueBalloon_1ab1845eaac8f5e449fdc7907394c80bf1"></span><span class="n"><span class="pre">Vector2</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">textPos</span></span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon7textPosE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon5delayE">
-<span id="_CPPv3N15DialogueBalloon5delayE"></span><span id="_CPPv2N15DialogueBalloon5delayE"></span><span id="DialogueBalloon::delay__b"></span><span class="target" id="classDialogueBalloon_1aa118764b2faac2925088b4cb2edc7c81"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delay</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon5delayE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon13delayDurationE">
-<span id="_CPPv3N15DialogueBalloon13delayDurationE"></span><span id="_CPPv2N15DialogueBalloon13delayDurationE"></span><span id="DialogueBalloon::delayDuration__float"></span><span class="target" id="classDialogueBalloon_1ad70867a49e07e19588beb3a4947732ee"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delayDuration</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0f</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon13delayDurationE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon13hoveredOptionE">
-<span id="_CPPv3N15DialogueBalloon13hoveredOptionE"></span><span id="_CPPv2N15DialogueBalloon13hoveredOptionE"></span><span id="DialogueBalloon::hoveredOption__i"></span><span class="target" id="classDialogueBalloon_1a95a93b96bbe66962642f67a4dcf15a1a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hoveredOption</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon13hoveredOptionE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon7paddingE">
-<span id="_CPPv3N15DialogueBalloon7paddingE"></span><span id="_CPPv2N15DialogueBalloon7paddingE"></span><span id="DialogueBalloon::padding__float"></span><span class="target" id="classDialogueBalloon_1a4b93698f603f4c6acaf8873f9a22da13"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">padding</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0f</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon7paddingE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon13maxLineHeightE">
-<span id="_CPPv3N15DialogueBalloon13maxLineHeightE"></span><span id="_CPPv2N15DialogueBalloon13maxLineHeightE"></span><span id="DialogueBalloon::maxLineHeight__float"></span><span class="target" id="classDialogueBalloon_1aa6cebd934b5afd963bbf18df7a89fded"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">maxLineHeight</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0f</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon13maxLineHeightE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N15DialogueBalloon10appliedTagE">
-<span id="_CPPv3N15DialogueBalloon10appliedTagE"></span><span id="_CPPv2N15DialogueBalloon10appliedTagE"></span><span id="DialogueBalloon::appliedTag__b"></span><span class="target" id="classDialogueBalloon_1aae384c4238270598426b7e0a7039c58b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">appliedTag</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N15DialogueBalloon10appliedTagE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
-</dd></dl>
-
 </section>
 
         </article>
@@ -727,23 +600,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="dialogueParser_8hpp.html">
+          <a class="next-page" href="dialogueInterfaceView_8hpp.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">File dialogueParser.hpp</div>
+                <div class="title">File dialogueInterfaceView.hpp</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="conversion_8hpp.html">
+          <a class="prev-page" href="dialogueArea_8hpp.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">File conversion.hpp</div>
+                <div class="title">File dialogueArea.hpp</div>
                 
               </div>
             </a>
@@ -814,42 +687,6 @@
 <li><a class="reference internal" href="#_CPPv411DialogueBin"><code class="docutils literal notranslate"><span class="pre">DialogueBin</span></code></a><ul>
 <li><a class="reference internal" href="#_CPPv4N11DialogueBin5titleE"><code class="docutils literal notranslate"><span class="pre">title</span></code></a></li>
 <li><a class="reference internal" href="#_CPPv4N11DialogueBin5linesE"><code class="docutils literal notranslate"><span class="pre">lines</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#_CPPv415DialogueBalloon"><code class="docutils literal notranslate"><span class="pre">DialogueBalloon</span></code></a><ul>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon15DialogueBalloonEv"><code class="docutils literal notranslate"><span class="pre">DialogueBalloon()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon15DialogueBalloonE9Rectangle"><code class="docutils literal notranslate"><span class="pre">DialogueBalloon()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon6updateEv"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon4drawEv"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon12showDialogueERK11DialogueBin"><code class="docutils literal notranslate"><span class="pre">showDialogue()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon12hideDialogueEv"><code class="docutils literal notranslate"><span class="pre">hideDialogue()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon5charPE7Vector2PKcR12DialogueLineR19DialogueTextSection"><code class="docutils literal notranslate"><span class="pre">charP()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4NK15DialogueBalloon12drawPortraitEv"><code class="docutils literal notranslate"><span class="pre">drawPortrait()</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon8fontNameE"><code class="docutils literal notranslate"><span class="pre">fontName</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon4fontE"><code class="docutils literal notranslate"><span class="pre">font</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon4rectE"><code class="docutils literal notranslate"><span class="pre">rect</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon8textRectE"><code class="docutils literal notranslate"><span class="pre">textRect</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon16textPortraitRectE"><code class="docutils literal notranslate"><span class="pre">textPortraitRect</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon11optionsRectE"><code class="docutils literal notranslate"><span class="pre">optionsRect</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon8dialogueE"><code class="docutils literal notranslate"><span class="pre">dialogue</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon4textE"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon11sectionTextE"><code class="docutils literal notranslate"><span class="pre">sectionText</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon14firstCharTypedE"><code class="docutils literal notranslate"><span class="pre">firstCharTyped</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon14finishedTypingE"><code class="docutils literal notranslate"><span class="pre">finishedTyping</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon6activeE"><code class="docutils literal notranslate"><span class="pre">active</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon12frameCounterE"><code class="docutils literal notranslate"><span class="pre">frameCounter</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon9charIndexE"><code class="docutils literal notranslate"><span class="pre">charIndex</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon9lineIndexE"><code class="docutils literal notranslate"><span class="pre">lineIndex</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon12sectionIndexE"><code class="docutils literal notranslate"><span class="pre">sectionIndex</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon14lastSectionLenE"><code class="docutils literal notranslate"><span class="pre">lastSectionLen</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon9textColorE"><code class="docutils literal notranslate"><span class="pre">textColor</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon7textPosE"><code class="docutils literal notranslate"><span class="pre">textPos</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon5delayE"><code class="docutils literal notranslate"><span class="pre">delay</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon13delayDurationE"><code class="docutils literal notranslate"><span class="pre">delayDuration</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon13hoveredOptionE"><code class="docutils literal notranslate"><span class="pre">hoveredOption</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon7paddingE"><code class="docutils literal notranslate"><span class="pre">padding</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon13maxLineHeightE"><code class="docutils literal notranslate"><span class="pre">maxLineHeight</span></code></a></li>
-<li><a class="reference internal" href="#_CPPv4N15DialogueBalloon10appliedTagE"><code class="docutils literal notranslate"><span class="pre">appliedTag</span></code></a></li>
 </ul>
 </li>
 </ul>

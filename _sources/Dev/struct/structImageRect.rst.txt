@@ -1,0 +1,5 @@
+Struct ImageRect
+================
+
+.. doxygenstruct:: ImageRect
+   :members:

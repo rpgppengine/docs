@@ -1,0 +1,1058 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html"><link rel="next" title="File uiElement.hpp" href="uiElement_8hpp.html"><link rel="prev" title="File tweenContainer.hpp" href="tweenContainer_8hpp.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>File tween.hpp - RPG++ documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/lua.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">RPG++  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <span class="sidebar-brand-text">RPG++  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../guide.html">User Guide</a><input aria-label="Toggle navigation of User Guide" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/install.html">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/newproject.html">Make a New Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/mainconcepts.html">Main Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/editorlayout.html">Editor Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/editoroptions.html">Editor Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guide/projectsettings.html">Project Settings</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../guide/typesindex.html">Resource Types</a><input aria-label="Toggle navigation of Resource Types" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/tileset.html">TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/room.html">Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/actor.html">Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/dialogue.html">Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/prop.html">Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interactable.html">Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guide/resourcetypes/interfaceview.html">Interface View</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scripting:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user.html">User Docs</a><input aria-label="Toggle navigation of User Docs" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html">Lua API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actor">Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#actorcontainer">ActorContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#collisionscontainer">CollisionsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#direction">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#game">Game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#gamestate">GameState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactable">Interactable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interactablescontainer">InteractablesContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interface">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#interfaceview">InterfaceView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#luals">LuaLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#player">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#prop">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#propscontainer">PropsContainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#room">Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#sounds">Sounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tilemap">TileMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#tweentype">TweenType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#uielement">UIElement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#vector2">Vector2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../userapi/doc.html#world">World</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../dev.html">Developer Docs</a><input aria-label="Toggle navigation of Developer Docs" checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../dev-additional/compile.html">Compiling RPG++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../classlist.html">Class list</a><input aria-label="Toggle navigation of Class list" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActor.html">Class Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classActorContainer.html">Class ActorContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classAtlasTile.html">Class AtlasTile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classBaseContainer.html">Class BaseContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classCollisionsContainer.html">Class CollisionsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogue.html">Class Dialogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classDialogueInterfaceView.html">Class DialogueInterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classGame.html">Class Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classISaveable.html">Class ISaveable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractable.html">Class Interactable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInteractablesContainer.html">Class InteractablesContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceService.html">Class InterfaceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classInterfaceView.html">Class InterfaceView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPlayer.html">Class Player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classProp.html">Class Prop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classPropsContainer.html">Class PropsContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classResourceService.html">Class ResourceService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classRoom.html">Class Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptFile.html">Class ScriptFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classScriptService.html">Class ScriptService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classSoundService.html">Class SoundService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classStateService.html">Class StateService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTile.html">Class Tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileMap.html">Class TileMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTileSet.html">Class TileSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classTweenContainer.html">Class TweenContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classWorldService.html">Class WorldService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIFile.html">Class mINI::INIFile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIGenerator.html">Class mINI::INIGenerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIMap.html">Class mINI::INIMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIReader.html">Class mINI::INIReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class/classmINI_1_1INIWriter.html">Class mINI::INIWriter</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../structlist.html">Struct list</a><input aria-label="Toggle navigation of Struct list" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorBin.html">Struct ActorBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structActorInRoomBin.html">Struct ActorInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structButton.html">Struct Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structCallbacksArray.html">Struct CallbacksArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structColorRect.html">Struct ColorRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structComboBox.html">Struct ComboBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDataSerialization.html">Struct DataSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueArea.html">Struct DialogueArea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueBin.html">Struct DialogueBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueLine.html">Struct DialogueLine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueOption.html">Struct DialogueOption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structDialogueTextSection.html">Struct DialogueTextSection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structElementFactory.html">Struct ElementFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structEvent.html">Struct Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontBin.html">Struct FontBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structFontRef.html">Struct FontRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structGameData.html">Struct GameData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structHorizontalAlignment.html">Struct HorizontalAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIRect.html">Struct IRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structIVector.html">Struct IVector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageBin.html">Struct ImageBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRect.html">Struct ImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structImageRef.html">Struct ImageRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInputC.html">Struct InputC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableBin.html">Struct InteractableBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInteractableInRoomBin.html">Struct InteractableInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structInterfaceViewBin.html">Struct InterfaceViewBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structLabel.html">Struct Label</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structMusicBin.html">Struct MusicBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structNinePatchImageRect.html">Struct NinePatchImageRect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectGameSettings.html">Struct ProjectGameSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structProjectProgramSettings.html">Struct ProjectProgramSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropBin.html">Struct PropBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structPropInRoomBin.html">Struct PropInRoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structRoomBin.html">Struct RoomBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structScriptBin.html">Struct ScriptBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTextBox.html">Struct TextBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileBin.html">Struct TileBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTileSetBin.html">Struct TileSetBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTween.html">Struct Tween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenLua.html">Struct TweenLua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structTweenProvider.html">Struct TweenProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElement.html">Struct UIElement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementBin.html">Struct UIElementBin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structUIElementRef.html">Struct UIElementRef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structValueSlider.html">Struct ValueSlider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVerticalAlignment.html">Struct VerticalAlignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../struct/structVsInfo.html">Struct VsInfo</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../filelist.html">File list</a><input aria-label="Toggle navigation of File list" checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="actorContainer_8hpp.html">File actorContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actor_8hpp.html">File actor.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlasTile_8hpp.html">File atlasTile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baseContainer_8hpp.html">File baseContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_8hpp.html">File button.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collisionsContainer_8hpp.html">File collisionsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="colorRect_8hpp.html">File colorRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comboBox_8hpp.html">File comboBox.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conversion_8hpp.html">File conversion.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueArea_8hpp.html">File dialogueArea.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueBalloon_8hpp.html">File dialogueBalloon.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueInterfaceView_8hpp.html">File dialogueInterfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogueParser_8hpp.html">File dialogueParser.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialogue_8hpp.html">File dialogue.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawHelper_8hpp.html">File drawHelper.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementFactory_8hpp.html">File elementFactory.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="game_8hpp.html">File game.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gamedata_8hpp.html">File gamedata.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="imageRect_8hpp.html">File imageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ini_8h.html">File ini.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactable_8hpp.html">File interactable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interactablesContainer_8hpp.html">File interactablesContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceService_8hpp.html">File interfaceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interfaceView_8hpp.html">File interfaceView.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jsonConversions_8hpp.html">File jsonConversions.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="label_8hpp.html">File label.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ninePatchImageRect_8hpp.html">File ninePatchImageRect.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="player_8hpp.html">File player.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop_8hpp.html">File prop.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="propsContainer_8hpp.html">File propsContainer.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resourceService_8hpp.html">File resourceService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="room_8hpp.html">File room.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saveable_8hpp.html">File saveable.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptFile_8h.html">File scriptFile.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scriptService_8hpp.html">File scriptService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soundService_8hpp.html">File soundService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stateService_8hpp.html">File stateService.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textBox_8hpp.html">File textBox.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile_8hpp.html">File tile.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap_8hpp.html">File tilemap.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tileset_8hpp.html">File tileset.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tweenContainer_8hpp.html">File tweenContainer.hpp</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">File tween.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uiElement_8hpp.html">File uiElement.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="valueSlider_8hpp.html">File valueSlider.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="winapi_8hpp.html">File winapi.hpp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="worldService_8hpp.html">File worldService.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../namespacelist.html">Namespace list</a><input aria-label="Toggle navigation of Namespace list" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI.html">Namespace mINI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIParser.html">Namespace mINI::INIParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../namespace/namespacemINI_1_1INIStringUtil.html">Namespace mINI::INIStringUtil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/Dev/file/tween_8hpp.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="file-tween-hpp">
+<h1>File tween.hpp<a class="headerlink" href="#file-tween-hpp" title="Link to this heading">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TWEEN_TYPE_MAX">
+<span class="target" id="tween_8hpp_1ab570bc25af3d4328ec6a5ab5de4f5b5f"></span><span class="sig-name descname"><span class="n"><span class="pre">TWEEN_TYPE_MAX</span></span></span><a class="headerlink" href="#c.TWEEN_TYPE_MAX" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv49TweenType">
+<span id="_CPPv39TweenType"></span><span id="_CPPv29TweenType"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7eff"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TweenType</span></span></span><a class="headerlink" href="#_CPPv49TweenType" title="Link to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType6LINEARE">
+<span id="_CPPv3N9TweenType6LINEARE"></span><span id="_CPPv2N9TweenType6LINEARE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effaaac544aacc3615aada24897a215f5046"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LINEAR</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType6LINEARE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType6INSINEE">
+<span id="_CPPv3N9TweenType6INSINEE"></span><span id="_CPPv2N9TweenType6INSINEE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa0cfca9f8919d7cf7457a1d61596c5d27"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INSINE</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType6INSINEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7OUTSINEE">
+<span id="_CPPv3N9TweenType7OUTSINEE"></span><span id="_CPPv2N9TweenType7OUTSINEE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effac90506050ab9562eb5e9a63d23e99c50"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTSINE</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7OUTSINEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9INOUTSINEE">
+<span id="_CPPv3N9TweenType9INOUTSINEE"></span><span id="_CPPv2N9TweenType9INOUTSINEE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effad85e81bae423b1841c780d9e54aac8cd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTSINE</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9INOUTSINEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType6INQUADE">
+<span id="_CPPv3N9TweenType6INQUADE"></span><span id="_CPPv2N9TweenType6INQUADE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa4323edb66087869a4e2b5bd43cebbcd6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INQUAD</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType6INQUADE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7OUTQUADE">
+<span id="_CPPv3N9TweenType7OUTQUADE"></span><span id="_CPPv2N9TweenType7OUTQUADE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa18f353c1d63f10dcac498f20a9886500"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTQUAD</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7OUTQUADE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9INOUTQUADE">
+<span id="_CPPv3N9TweenType9INOUTQUADE"></span><span id="_CPPv2N9TweenType9INOUTQUADE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa6450af1638641c6406b948ecbc0ff6be"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTQUAD</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9INOUTQUADE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7INCUBICE">
+<span id="_CPPv3N9TweenType7INCUBICE"></span><span id="_CPPv2N9TweenType7INCUBICE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa2c0345944d743af9f0206ba5882c105a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INCUBIC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7INCUBICE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType8OUTCUBICE">
+<span id="_CPPv3N9TweenType8OUTCUBICE"></span><span id="_CPPv2N9TweenType8OUTCUBICE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effaffe58a5e5a6efc8cdff44f77cf48da27"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTCUBIC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType8OUTCUBICE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType10INOUTCUBICE">
+<span id="_CPPv3N9TweenType10INOUTCUBICE"></span><span id="_CPPv2N9TweenType10INOUTCUBICE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa2bcafec6eed0ed2b2363c4f99a0ce3a9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTCUBIC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType10INOUTCUBICE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7INQUARTE">
+<span id="_CPPv3N9TweenType7INQUARTE"></span><span id="_CPPv2N9TweenType7INQUARTE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effaa1839f9d52367400b76fff03d46e19b1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INQUART</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7INQUARTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType8OUTQUARTE">
+<span id="_CPPv3N9TweenType8OUTQUARTE"></span><span id="_CPPv2N9TweenType8OUTQUARTE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effad4eb211b45be121e4e5420897ad2ad5e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTQUART</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType8OUTQUARTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType10INOUTQUARTE">
+<span id="_CPPv3N9TweenType10INOUTQUARTE"></span><span id="_CPPv2N9TweenType10INOUTQUARTE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa3c71023f5d07c23521c43077dc949556"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTQUART</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType10INOUTQUARTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7INQUINTE">
+<span id="_CPPv3N9TweenType7INQUINTE"></span><span id="_CPPv2N9TweenType7INQUINTE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effac13ee57cd1320c34676af8cbb01fdbf4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INQUINT</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7INQUINTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType8OUTQUINTE">
+<span id="_CPPv3N9TweenType8OUTQUINTE"></span><span id="_CPPv2N9TweenType8OUTQUINTE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effacbbb56597f2f97202a24fe974333c1e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTQUINT</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType8OUTQUINTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType10INOUTQUINTE">
+<span id="_CPPv3N9TweenType10INOUTQUINTE"></span><span id="_CPPv2N9TweenType10INOUTQUINTE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effaf772ba5a2568ee93b1f53fcd9be27a23"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTQUINT</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType10INOUTQUINTE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType6INEXPOE">
+<span id="_CPPv3N9TweenType6INEXPOE"></span><span id="_CPPv2N9TweenType6INEXPOE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa8aa8507b3ccb78ac9524820472d74f80"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INEXPO</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType6INEXPOE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7OUTEXPOE">
+<span id="_CPPv3N9TweenType7OUTEXPOE"></span><span id="_CPPv2N9TweenType7OUTEXPOE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effad5433e20793931ac66dd6fa726030c2e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTEXPO</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7OUTEXPOE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9INOUTEXPOE">
+<span id="_CPPv3N9TweenType9INOUTEXPOE"></span><span id="_CPPv2N9TweenType9INOUTEXPOE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa03dcf9e9b0f509770e0395971a8f2e08"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTEXPO</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9INOUTEXPOE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType6INCIRCE">
+<span id="_CPPv3N9TweenType6INCIRCE"></span><span id="_CPPv2N9TweenType6INCIRCE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effadd0d1c0c007b18ae0cd91286a59869b0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INCIRC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType6INCIRCE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7OUTCIRCE">
+<span id="_CPPv3N9TweenType7OUTCIRCE"></span><span id="_CPPv2N9TweenType7OUTCIRCE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effabc4556d81281258b796da54f204a408c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTCIRC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7OUTCIRCE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9INOUTCIRCE">
+<span id="_CPPv3N9TweenType9INOUTCIRCE"></span><span id="_CPPv2N9TweenType9INOUTCIRCE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa77b0766f6db1cc22bc845b878023aa85"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTCIRC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9INOUTCIRCE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType6INBACKE">
+<span id="_CPPv3N9TweenType6INBACKE"></span><span id="_CPPv2N9TweenType6INBACKE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effab75741789e73040b70fe5e795f2d4aef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INBACK</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType6INBACKE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType7OUTBACKE">
+<span id="_CPPv3N9TweenType7OUTBACKE"></span><span id="_CPPv2N9TweenType7OUTBACKE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effacffc687763cc9c0e6109497395db2ecb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTBACK</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType7OUTBACKE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9INOUTBACKE">
+<span id="_CPPv3N9TweenType9INOUTBACKE"></span><span id="_CPPv2N9TweenType9INOUTBACKE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa69c9bad21429da8b61c70ec511c7e909"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTBACK</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9INOUTBACKE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9INELASTICE">
+<span id="_CPPv3N9TweenType9INELASTICE"></span><span id="_CPPv2N9TweenType9INELASTICE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effaaace0d260e3b606810ec1eef1914ec0e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INELASTIC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9INELASTICE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType10OUTELASTICE">
+<span id="_CPPv3N9TweenType10OUTELASTICE"></span><span id="_CPPv2N9TweenType10OUTELASTICE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa94fbedfa2f5954c7a16fa2a0b6c9274e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTELASTIC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType10OUTELASTICE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType12INOUTELASTICE">
+<span id="_CPPv3N9TweenType12INOUTELASTICE"></span><span id="_CPPv2N9TweenType12INOUTELASTICE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa755d29f29b54fee7947df4df1f20c2bf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTELASTIC</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType12INOUTELASTICE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType8INBOUNCEE">
+<span id="_CPPv3N9TweenType8INBOUNCEE"></span><span id="_CPPv2N9TweenType8INBOUNCEE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effab2ebb1ddb3863fccb1c360229e322c9a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INBOUNCE</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType8INBOUNCEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType9OUTBOUNCEE">
+<span id="_CPPv3N9TweenType9OUTBOUNCEE"></span><span id="_CPPv2N9TweenType9OUTBOUNCEE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effaf1922b1c4bf85d2a0c112087f85476d5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OUTBOUNCE</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType9OUTBOUNCEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N9TweenType11INOUTBOUNCEE">
+<span id="_CPPv3N9TweenType11INOUTBOUNCEE"></span><span id="_CPPv2N9TweenType11INOUTBOUNCEE"></span><span class="target" id="tween_8hpp_1acf990bd9a225afd9c440069be86a7effa78706dc4fe22b6d0467ca9ac30b9cbc0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INOUTBOUNCE</span></span></span><a class="headerlink" href="#_CPPv4N9TweenType11INOUTBOUNCEE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46linearf">
+<span id="_CPPv36linearf"></span><span id="_CPPv26linearf"></span><span id="linear__float"></span><span class="target" id="tween_8hpp_1ae468ae107a1569db09a27b939f9d9ede"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linear</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46linearf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46inSinef">
+<span id="_CPPv36inSinef"></span><span id="_CPPv26inSinef"></span><span id="inSine__float"></span><span class="target" id="tween_8hpp_1a339d565905be834fb387fa607f9bfa53"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inSine</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46inSinef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47outSinef">
+<span id="_CPPv37outSinef"></span><span id="_CPPv27outSinef"></span><span id="outSine__float"></span><span class="target" id="tween_8hpp_1aaaf4d923fb376e91a3db0eb0171acc59"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outSine</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47outSinef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49inOutSinef">
+<span id="_CPPv39inOutSinef"></span><span id="_CPPv29inOutSinef"></span><span id="inOutSine__float"></span><span class="target" id="tween_8hpp_1a4ff5992b715a47e94abbd919bf83ce9c"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutSine</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49inOutSinef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46inQuadf">
+<span id="_CPPv36inQuadf"></span><span id="_CPPv26inQuadf"></span><span id="inQuad__float"></span><span class="target" id="tween_8hpp_1a8d20ffb9be8da52d516a59a3201eaea9"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inQuad</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46inQuadf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47outQuadf">
+<span id="_CPPv37outQuadf"></span><span id="_CPPv27outQuadf"></span><span id="outQuad__float"></span><span class="target" id="tween_8hpp_1ab2be47543b12bdedf0d972af00f6d505"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outQuad</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47outQuadf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49inOutQuadf">
+<span id="_CPPv39inOutQuadf"></span><span id="_CPPv29inOutQuadf"></span><span id="inOutQuad__float"></span><span class="target" id="tween_8hpp_1aa944957d3c6f8494920d72ad6afbe46b"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutQuad</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49inOutQuadf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47inCubicf">
+<span id="_CPPv37inCubicf"></span><span id="_CPPv27inCubicf"></span><span id="inCubic__float"></span><span class="target" id="tween_8hpp_1acad5e9103d5e9cfdee0a6b72cd380be1"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inCubic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47inCubicf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48outCubicf">
+<span id="_CPPv38outCubicf"></span><span id="_CPPv28outCubicf"></span><span id="outCubic__float"></span><span class="target" id="tween_8hpp_1a861f72552568e13641bd961a7c830863"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outCubic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48outCubicf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410inOutCubicf">
+<span id="_CPPv310inOutCubicf"></span><span id="_CPPv210inOutCubicf"></span><span id="inOutCubic__float"></span><span class="target" id="tween_8hpp_1a32a13710ee69e873f79299d1faa0dee8"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutCubic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410inOutCubicf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47inQuartf">
+<span id="_CPPv37inQuartf"></span><span id="_CPPv27inQuartf"></span><span id="inQuart__float"></span><span class="target" id="tween_8hpp_1aa4faa23803e53683037b2074ab45ef79"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inQuart</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47inQuartf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48outQuartf">
+<span id="_CPPv38outQuartf"></span><span id="_CPPv28outQuartf"></span><span id="outQuart__float"></span><span class="target" id="tween_8hpp_1a797ef2400befac92a8f2249006ba7129"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outQuart</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48outQuartf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410inOutQuartf">
+<span id="_CPPv310inOutQuartf"></span><span id="_CPPv210inOutQuartf"></span><span id="inOutQuart__float"></span><span class="target" id="tween_8hpp_1a1c9875b968015da6cf7c3acd6b496c29"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutQuart</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410inOutQuartf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47inQuintf">
+<span id="_CPPv37inQuintf"></span><span id="_CPPv27inQuintf"></span><span id="inQuint__float"></span><span class="target" id="tween_8hpp_1addcd4602e653eb30dd87b810fd9b0615"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inQuint</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47inQuintf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48outQuintf">
+<span id="_CPPv38outQuintf"></span><span id="_CPPv28outQuintf"></span><span id="outQuint__float"></span><span class="target" id="tween_8hpp_1ac60a3478869794070d6c238a7b53d3b8"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outQuint</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48outQuintf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410inOutQuintf">
+<span id="_CPPv310inOutQuintf"></span><span id="_CPPv210inOutQuintf"></span><span id="inOutQuint__float"></span><span class="target" id="tween_8hpp_1add45ff916299e5854e0e8b6ec68cf21d"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutQuint</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410inOutQuintf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46inExpof">
+<span id="_CPPv36inExpof"></span><span id="_CPPv26inExpof"></span><span id="inExpo__float"></span><span class="target" id="tween_8hpp_1a98492e023b12aa0d5b63e7333f4bfbc1"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inExpo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46inExpof" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47outExpof">
+<span id="_CPPv37outExpof"></span><span id="_CPPv27outExpof"></span><span id="outExpo__float"></span><span class="target" id="tween_8hpp_1aa0150894be82f0f555131bdc1a447911"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outExpo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47outExpof" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49inOutExpof">
+<span id="_CPPv39inOutExpof"></span><span id="_CPPv29inOutExpof"></span><span id="inOutExpo__float"></span><span class="target" id="tween_8hpp_1ac4efb947d3188e0380a21aabca01585f"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutExpo</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49inOutExpof" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46inCircf">
+<span id="_CPPv36inCircf"></span><span id="_CPPv26inCircf"></span><span id="inCirc__float"></span><span class="target" id="tween_8hpp_1aafe6b049840d488ae00ca4b290187256"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inCirc</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46inCircf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47outCircf">
+<span id="_CPPv37outCircf"></span><span id="_CPPv27outCircf"></span><span id="outCirc__float"></span><span class="target" id="tween_8hpp_1a24f9748b8b8699c1586e9d4260eca3ca"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outCirc</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47outCircf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49inOutCircf">
+<span id="_CPPv39inOutCircf"></span><span id="_CPPv29inOutCircf"></span><span id="inOutCirc__float"></span><span class="target" id="tween_8hpp_1a279ee481fbf7da680425ecb43a4558f1"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutCirc</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49inOutCircf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46inBackf">
+<span id="_CPPv36inBackf"></span><span id="_CPPv26inBackf"></span><span id="inBack__float"></span><span class="target" id="tween_8hpp_1aeb19a4e14f706919eebf4774af17ba8d"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inBack</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46inBackf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47outBackf">
+<span id="_CPPv37outBackf"></span><span id="_CPPv27outBackf"></span><span id="outBack__float"></span><span class="target" id="tween_8hpp_1a5d39221ccb7abf59ae84af75a04a8542"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outBack</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47outBackf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49inOutBackf">
+<span id="_CPPv39inOutBackf"></span><span id="_CPPv29inOutBackf"></span><span id="inOutBack__float"></span><span class="target" id="tween_8hpp_1abb12c08c98ba4b51f0fb439163ecb2dc"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutBack</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49inOutBackf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49inElasticf">
+<span id="_CPPv39inElasticf"></span><span id="_CPPv29inElasticf"></span><span id="inElastic__float"></span><span class="target" id="tween_8hpp_1a907e92d315f6882ae8b9a1de615cd935"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inElastic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49inElasticf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410outElasticf">
+<span id="_CPPv310outElasticf"></span><span id="_CPPv210outElasticf"></span><span id="outElastic__float"></span><span class="target" id="tween_8hpp_1a80a7460cedec2bd234d0f55714cb15d4"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outElastic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410outElasticf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412inOutElasticf">
+<span id="_CPPv312inOutElasticf"></span><span id="_CPPv212inOutElasticf"></span><span id="inOutElastic__float"></span><span class="target" id="tween_8hpp_1a77e275efddacf6277ee83ab0a13c07ef"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutElastic</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412inOutElasticf" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48inBouncef">
+<span id="_CPPv38inBouncef"></span><span id="_CPPv28inBouncef"></span><span id="inBounce__float"></span><span class="target" id="tween_8hpp_1aa5ad10411bf5345f5bc2a3712130aa40"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inBounce</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48inBouncef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv49outBouncef">
+<span id="_CPPv39outBouncef"></span><span id="_CPPv29outBouncef"></span><span id="outBounce__float"></span><span class="target" id="tween_8hpp_1a17bc7bffa7886a277593acc4236dd854"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outBounce</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49outBouncef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv411inOutBouncef">
+<span id="_CPPv311inOutBouncef"></span><span id="_CPPv211inOutBouncef"></span><span id="inOutBounce__float"></span><span class="target" id="tween_8hpp_1a10f49d91b49fe6e899c80b665b72b6d2"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inOutBounce</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411inOutBouncef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv45Tween">
+<span id="_CPPv35Tween"></span><span id="_CPPv25Tween"></span><span id="Tween"></span><span class="target" id="structTween"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Tween</span></span></span><a class="headerlink" href="#_CPPv45Tween" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;tween.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Tween1aE">
+<span id="_CPPv3N5Tween1aE"></span><span id="_CPPv2N5Tween1aE"></span><span id="Tween::a__float"></span><span class="target" id="structTween_1a725bb1618943930c47b8880e9c177f19"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">a</span></span></span><a class="headerlink" href="#_CPPv4N5Tween1aE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Tween1bE">
+<span id="_CPPv3N5Tween1bE"></span><span id="_CPPv2N5Tween1bE"></span><span id="Tween::b__float"></span><span class="target" id="structTween_1a9eb5f88deaf4bc92be71c5b0706cb31e"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">b</span></span></span><a class="headerlink" href="#_CPPv4N5Tween1bE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Tween3ptrE">
+<span id="_CPPv3N5Tween3ptrE"></span><span id="_CPPv2N5Tween3ptrE"></span><span id="Tween::ptr__floatP"></span><span class="target" id="structTween_1a46ba6632d6aa5e5be37542f36020db14"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ptr</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><a class="headerlink" href="#_CPPv4N5Tween3ptrE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Tween8durationE">
+<span id="_CPPv3N5Tween8durationE"></span><span id="_CPPv2N5Tween8durationE"></span><span id="Tween::duration__float"></span><span class="target" id="structTween_1ac818b922d4b4003a528556f45e54b390"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">duration</span></span></span><a class="headerlink" href="#_CPPv4N5Tween8durationE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Tween4typeE">
+<span id="_CPPv3N5Tween4typeE"></span><span id="_CPPv2N5Tween4typeE"></span><span id="Tween::type__TweenType"></span><span class="target" id="structTween_1a3a72997f163a882e03bdd024647fad37"></span><a class="reference internal" href="#_CPPv49TweenType" title="TweenType"><span class="n"><span class="pre">TweenType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49TweenType" title="TweenType"><span class="n"><span class="pre">TweenType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9TweenType6LINEARE" title="TweenType::LINEAR"><span class="n"><span class="pre">LINEAR</span></span></a><a class="headerlink" href="#_CPPv4N5Tween4typeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N5Tween4leftE">
+<span id="_CPPv3N5Tween4leftE"></span><span id="_CPPv2N5Tween4leftE"></span><span id="Tween::left__float"></span><span class="target" id="structTween_1a70ee6f195d25e43819e113b832668535"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">left</span></span></span><a class="headerlink" href="#_CPPv4N5Tween4leftE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv48TweenLua">
+<span id="_CPPv38TweenLua"></span><span id="_CPPv28TweenLua"></span><span id="TweenLua"></span><span class="target" id="structTweenLua"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TweenLua</span></span></span><a class="headerlink" href="#_CPPv48TweenLua" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;tween.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua1aE">
+<span id="_CPPv3N8TweenLua1aE"></span><span id="_CPPv2N8TweenLua1aE"></span><span id="TweenLua::a__float"></span><span class="target" id="structTweenLua_1aa1fbda7d549f9ac03bea37d1aa85eecf"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">a</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua1aE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua1bE">
+<span id="_CPPv3N8TweenLua1bE"></span><span id="_CPPv2N8TweenLua1bE"></span><span id="TweenLua::b__float"></span><span class="target" id="structTweenLua_1a33919ec2e7b08c7f989990c8cd957f0c"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">b</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua1bE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua6sourceE">
+<span id="_CPPv3N8TweenLua6sourceE"></span><span id="_CPPv2N8TweenLua6sourceE"></span><span id="TweenLua::source__sol::userdata"></span><span class="target" id="structTweenLua_1a95cf4fd0e73618df06930e0d4b894cc4"></span><span class="n"><span class="pre">sol</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">userdata</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">source</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua6sourceE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua4destE">
+<span id="_CPPv3N8TweenLua4destE"></span><span id="_CPPv2N8TweenLua4destE"></span><span id="TweenLua::dest__sol::userdata"></span><span class="target" id="structTweenLua_1af822b81c29d5bdd7e24a6d2764a91118"></span><span class="n"><span class="pre">sol</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">userdata</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dest</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua4destE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua3keyE">
+<span id="_CPPv3N8TweenLua3keyE"></span><span id="_CPPv2N8TweenLua3keyE"></span><span id="TweenLua::key__ss"></span><span class="target" id="structTweenLua_1a341d770c3d5652729680f67bc1fcdaed"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">key</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua3keyE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua8durationE">
+<span id="_CPPv3N8TweenLua8durationE"></span><span id="_CPPv2N8TweenLua8durationE"></span><span id="TweenLua::duration__float"></span><span class="target" id="structTweenLua_1a74a7537f2a9b6e3dbe3dd57f1317efff"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">duration</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua8durationE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua4typeE">
+<span id="_CPPv3N8TweenLua4typeE"></span><span id="_CPPv2N8TweenLua4typeE"></span><span id="TweenLua::type__TweenType"></span><span class="target" id="structTweenLua_1af8b787e0e14a3a2d37881f13c385b51e"></span><a class="reference internal" href="#_CPPv49TweenType" title="TweenType"><span class="n"><span class="pre">TweenType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49TweenType" title="TweenType"><span class="n"><span class="pre">TweenType</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N9TweenType6LINEARE" title="TweenType::LINEAR"><span class="n"><span class="pre">LINEAR</span></span></a><a class="headerlink" href="#_CPPv4N8TweenLua4typeE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua4leftE">
+<span id="_CPPv3N8TweenLua4leftE"></span><span id="_CPPv2N8TweenLua4leftE"></span><span id="TweenLua::left__float"></span><span class="target" id="structTweenLua_1aaa42643873e8a3ba2f5a83816f2c8c05"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">left</span></span></span><a class="headerlink" href="#_CPPv4N8TweenLua4leftE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N8TweenLua5emptyE">
+<span id="_CPPv3N8TweenLua5emptyE"></span><span id="_CPPv2N8TweenLua5emptyE"></span><span id="TweenLua::empty__b"></span><span class="target" id="structTweenLua_1a1f432d2d073e3b86f50a54743571bf45"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">empty</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><a class="headerlink" href="#_CPPv4N8TweenLua5emptyE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv413TweenProvider">
+<span id="_CPPv313TweenProvider"></span><span id="_CPPv213TweenProvider"></span><span id="TweenProvider"></span><span class="target" id="structTweenProvider"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TweenProvider</span></span></span><a class="headerlink" href="#_CPPv413TweenProvider" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;tween.hpp&gt;</em></div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13TweenProvider9tweenFuncE9TweenTypef">
+<span id="_CPPv3N13TweenProvider9tweenFuncE9TweenTypef"></span><span id="_CPPv2N13TweenProvider9tweenFuncE9TweenTypef"></span><span id="TweenProvider::tweenFunc__TweenType.float"></span><span class="target" id="structTweenProvider_1a2829cb81dbefff1b7b226f32fac31fed"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tweenFunc</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49TweenType" title="TweenType"><span class="n"><span class="pre">TweenType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13TweenProvider9tweenFuncE9TweenTypef" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13TweenProvider15setupTweenFuncsEv">
+<span id="_CPPv3N13TweenProvider15setupTweenFuncsEv"></span><span id="_CPPv2N13TweenProvider15setupTweenFuncsEv"></span><span id="TweenProvider::setupTweenFuncs"></span><span class="target" id="structTweenProvider_1a8e2b8f31be946f8f32a524c03c8c3392"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setupTweenFuncs</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13TweenProvider15setupTweenFuncsEv" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13TweenProvider13initPropTweenEP15ElementProperty15ElementPropertyf9TweenType">
+<span id="_CPPv3N13TweenProvider13initPropTweenEP15ElementProperty15ElementPropertyf9TweenType"></span><span id="_CPPv2N13TweenProvider13initPropTweenEP15ElementProperty15ElementPropertyf9TweenType"></span><span id="TweenProvider::initPropTween__ElementPropertyP.ElementProperty.float.TweenType"></span><span class="target" id="structTweenProvider_1ab82703ed975bd7cb58cfc43a05210cb5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv45Tween" title="Tween"><span class="n"><span class="pre">Tween</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initPropTween</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="gamedata_8hpp.html#_CPPv415ElementProperty" title="ElementProperty"><span class="n"><span class="pre">ElementProperty</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <a class="reference internal" href="gamedata_8hpp.html#_CPPv415ElementProperty" title="ElementProperty"><span class="n"><span class="pre">ElementProperty</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">source</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">duration</span></span>, <a class="reference internal" href="#_CPPv49TweenType" title="TweenType"><span class="n"><span class="pre">TweenType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13TweenProvider13initPropTweenEP15ElementProperty15ElementPropertyf9TweenType" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13TweenProvider3arrE">
+<span id="_CPPv3N13TweenProvider3arrE"></span><span id="_CPPv2N13TweenProvider3arrE"></span><span class="target" id="structTweenProvider_1a1f60c3afb2042f76fe729e9ee2f8c7a4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">TWEEN_TYPE_MAX</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">arr</span></span></span><a class="headerlink" href="#_CPPv4N13TweenProvider3arrE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="uiElement_8hpp.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">File uiElement.hpp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="tweenContainer_8hpp.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">File tweenContainer.hpp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, RPG++ Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">File tween.hpp</a><ul>
+<li><a class="reference internal" href="#c.TWEEN_TYPE_MAX"><code class="docutils literal notranslate"><span class="pre">TWEEN_TYPE_MAX</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49TweenType"><code class="docutils literal notranslate"><span class="pre">TweenType</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N9TweenType6LINEARE"><code class="docutils literal notranslate"><span class="pre">LINEAR</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType6INSINEE"><code class="docutils literal notranslate"><span class="pre">INSINE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7OUTSINEE"><code class="docutils literal notranslate"><span class="pre">OUTSINE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9INOUTSINEE"><code class="docutils literal notranslate"><span class="pre">INOUTSINE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType6INQUADE"><code class="docutils literal notranslate"><span class="pre">INQUAD</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7OUTQUADE"><code class="docutils literal notranslate"><span class="pre">OUTQUAD</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9INOUTQUADE"><code class="docutils literal notranslate"><span class="pre">INOUTQUAD</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7INCUBICE"><code class="docutils literal notranslate"><span class="pre">INCUBIC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType8OUTCUBICE"><code class="docutils literal notranslate"><span class="pre">OUTCUBIC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType10INOUTCUBICE"><code class="docutils literal notranslate"><span class="pre">INOUTCUBIC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7INQUARTE"><code class="docutils literal notranslate"><span class="pre">INQUART</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType8OUTQUARTE"><code class="docutils literal notranslate"><span class="pre">OUTQUART</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType10INOUTQUARTE"><code class="docutils literal notranslate"><span class="pre">INOUTQUART</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7INQUINTE"><code class="docutils literal notranslate"><span class="pre">INQUINT</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType8OUTQUINTE"><code class="docutils literal notranslate"><span class="pre">OUTQUINT</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType10INOUTQUINTE"><code class="docutils literal notranslate"><span class="pre">INOUTQUINT</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType6INEXPOE"><code class="docutils literal notranslate"><span class="pre">INEXPO</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7OUTEXPOE"><code class="docutils literal notranslate"><span class="pre">OUTEXPO</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9INOUTEXPOE"><code class="docutils literal notranslate"><span class="pre">INOUTEXPO</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType6INCIRCE"><code class="docutils literal notranslate"><span class="pre">INCIRC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7OUTCIRCE"><code class="docutils literal notranslate"><span class="pre">OUTCIRC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9INOUTCIRCE"><code class="docutils literal notranslate"><span class="pre">INOUTCIRC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType6INBACKE"><code class="docutils literal notranslate"><span class="pre">INBACK</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType7OUTBACKE"><code class="docutils literal notranslate"><span class="pre">OUTBACK</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9INOUTBACKE"><code class="docutils literal notranslate"><span class="pre">INOUTBACK</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9INELASTICE"><code class="docutils literal notranslate"><span class="pre">INELASTIC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType10OUTELASTICE"><code class="docutils literal notranslate"><span class="pre">OUTELASTIC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType12INOUTELASTICE"><code class="docutils literal notranslate"><span class="pre">INOUTELASTIC</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType8INBOUNCEE"><code class="docutils literal notranslate"><span class="pre">INBOUNCE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType9OUTBOUNCEE"><code class="docutils literal notranslate"><span class="pre">OUTBOUNCE</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N9TweenType11INOUTBOUNCEE"><code class="docutils literal notranslate"><span class="pre">INOUTBOUNCE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv46linearf"><code class="docutils literal notranslate"><span class="pre">linear()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46inSinef"><code class="docutils literal notranslate"><span class="pre">inSine()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47outSinef"><code class="docutils literal notranslate"><span class="pre">outSine()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49inOutSinef"><code class="docutils literal notranslate"><span class="pre">inOutSine()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46inQuadf"><code class="docutils literal notranslate"><span class="pre">inQuad()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47outQuadf"><code class="docutils literal notranslate"><span class="pre">outQuad()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49inOutQuadf"><code class="docutils literal notranslate"><span class="pre">inOutQuad()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47inCubicf"><code class="docutils literal notranslate"><span class="pre">inCubic()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48outCubicf"><code class="docutils literal notranslate"><span class="pre">outCubic()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410inOutCubicf"><code class="docutils literal notranslate"><span class="pre">inOutCubic()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47inQuartf"><code class="docutils literal notranslate"><span class="pre">inQuart()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48outQuartf"><code class="docutils literal notranslate"><span class="pre">outQuart()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410inOutQuartf"><code class="docutils literal notranslate"><span class="pre">inOutQuart()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47inQuintf"><code class="docutils literal notranslate"><span class="pre">inQuint()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48outQuintf"><code class="docutils literal notranslate"><span class="pre">outQuint()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410inOutQuintf"><code class="docutils literal notranslate"><span class="pre">inOutQuint()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46inExpof"><code class="docutils literal notranslate"><span class="pre">inExpo()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47outExpof"><code class="docutils literal notranslate"><span class="pre">outExpo()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49inOutExpof"><code class="docutils literal notranslate"><span class="pre">inOutExpo()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46inCircf"><code class="docutils literal notranslate"><span class="pre">inCirc()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47outCircf"><code class="docutils literal notranslate"><span class="pre">outCirc()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49inOutCircf"><code class="docutils literal notranslate"><span class="pre">inOutCirc()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv46inBackf"><code class="docutils literal notranslate"><span class="pre">inBack()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv47outBackf"><code class="docutils literal notranslate"><span class="pre">outBack()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49inOutBackf"><code class="docutils literal notranslate"><span class="pre">inOutBack()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49inElasticf"><code class="docutils literal notranslate"><span class="pre">inElastic()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv410outElasticf"><code class="docutils literal notranslate"><span class="pre">outElastic()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv412inOutElasticf"><code class="docutils literal notranslate"><span class="pre">inOutElastic()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv48inBouncef"><code class="docutils literal notranslate"><span class="pre">inBounce()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv49outBouncef"><code class="docutils literal notranslate"><span class="pre">outBounce()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv411inOutBouncef"><code class="docutils literal notranslate"><span class="pre">inOutBounce()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv45Tween"><code class="docutils literal notranslate"><span class="pre">Tween</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N5Tween1aE"><code class="docutils literal notranslate"><span class="pre">a</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Tween1bE"><code class="docutils literal notranslate"><span class="pre">b</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Tween3ptrE"><code class="docutils literal notranslate"><span class="pre">ptr</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Tween8durationE"><code class="docutils literal notranslate"><span class="pre">duration</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Tween4typeE"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N5Tween4leftE"><code class="docutils literal notranslate"><span class="pre">left</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv48TweenLua"><code class="docutils literal notranslate"><span class="pre">TweenLua</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua1aE"><code class="docutils literal notranslate"><span class="pre">a</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua1bE"><code class="docutils literal notranslate"><span class="pre">b</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua6sourceE"><code class="docutils literal notranslate"><span class="pre">source</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua4destE"><code class="docutils literal notranslate"><span class="pre">dest</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua3keyE"><code class="docutils literal notranslate"><span class="pre">key</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua8durationE"><code class="docutils literal notranslate"><span class="pre">duration</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua4typeE"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua4leftE"><code class="docutils literal notranslate"><span class="pre">left</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N8TweenLua5emptyE"><code class="docutils literal notranslate"><span class="pre">empty</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#_CPPv413TweenProvider"><code class="docutils literal notranslate"><span class="pre">TweenProvider</span></code></a><ul>
+<li><a class="reference internal" href="#_CPPv4N13TweenProvider9tweenFuncE9TweenTypef"><code class="docutils literal notranslate"><span class="pre">tweenFunc()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13TweenProvider15setupTweenFuncsEv"><code class="docutils literal notranslate"><span class="pre">setupTweenFuncs()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13TweenProvider13initPropTweenEP15ElementProperty15ElementPropertyf9TweenType"><code class="docutils literal notranslate"><span class="pre">initPropTween()</span></code></a></li>
+<li><a class="reference internal" href="#_CPPv4N13TweenProvider3arrE"><code class="docutils literal notranslate"><span class="pre">arr</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>
